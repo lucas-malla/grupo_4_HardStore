@@ -2,7 +2,7 @@
 
 2. Definir la temática del Market Place
 ¿Qué productos o servicios brindará nuestro sitio?
-El sitio será para comercializar hardware ofreciendo diferentes categorías: Notebooks, motherboards, procesadores, gabinetes, monitores entre otros productos.
+El sitio será para comercializar hardware ofreciendo diferentes categorías: Teclados, Mouses, HeadSets Monitores, Parlantes, Sillas y Juegos.
 Por otro lado también existe la posibilidad de armar PC’s o de comprarlas prearmadas.
 
 ¿Quién será nuestra audiencia objetivo?
@@ -16,10 +16,16 @@ Todos los integrantes del grupo aportaron de manera generalista. Luego en el tra
 
 Juan Ignacio Ezcurra: sin experiencia previa en programación o diseño. Aporte desde el conocimiento adquirido en la cursada. 
 
+Federico Wagner: Mi principal lenguaje es Python, desarrolle proyectos de Web scraping y manejo frameworks como Django y Selenium.
+
 
 Inspiración en referentes del mercado
 
 https://www.mexx.com.ar/
+
+https://compragamer.com/index.php
+
+https://www.fullh4rd.com.ar/
 
 https://www.gezatek.com.ar/
 
@@ -28,4 +34,3 @@ https://www.maximus.com.ar/
 https://www.armytech.com.ar/
 
 https://www.venex.com.ar/
-
