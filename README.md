@@ -1,4 +1,4 @@
-# -grupo_4_Sticker
+# -grupo_4_Productos_Hardware
 
 2. Definir la temática del Market Place
 ¿Qué productos o servicios brindará nuestro sitio?
