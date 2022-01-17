@@ -20,6 +20,7 @@ Federico Wagner: Mi principal lenguaje es Python, desarrolle proyectos de Web sc
 
 Genesis Leal: Sin experiencia previa en programacion o diseño. Aporte desde los temas vistos en el curso.
 
+Lucas Malla :La experiencia que tengo se basa en HTML y CSS basico.Esta seria mi primera ves trabandon en un proyecto de desarrollando Web.   
 
 Inspiración en referentes del mercado
 
