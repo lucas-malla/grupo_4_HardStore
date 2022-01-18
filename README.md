@@ -16,7 +16,7 @@ Todos los integrantes del grupo aportaron de manera generalista. Luego en el tra
 
 Juan Ignacio Ezcurra: sin experiencia previa en programación o diseño. Aporte desde el conocimiento adquirido en la cursada. 
 
-Federico Wagner: Mi principal lenguaje es Python, desarrolle proyectos de Web scraping y manejo frameworks como Django y Selenium.
+Federico Wagner: Mi principal lenguaje es Python, desarrolle proyectos de Web scraping y manejo frameworks como Django y Selenium. Mi perfil es mas  tecnico y analitico que creativo y grafico.
 
 Genesis Leal: Sin experiencia previa en programacion o diseño. Aporte desde los temas vistos en el curso.
 
