@@ -47,4 +47,7 @@ Subtitulos o enlaces: 20px
 Texto: 16px
 Precio 18px
 
+Resolucion CELULAR;
+375 x 677  px
+
 
