@@ -39,3 +39,12 @@ https://www.maximus.com.ar/
 https://www.armytech.com.ar/
 
 https://www.venex.com.ar/
+
+
+TAMAÑOS DE TEXTO:
+Titulos : 24 px
+Subtitulos o enlaces: 20px
+Texto: 16px
+Precio 18px
+
+
