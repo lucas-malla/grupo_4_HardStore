@@ -1,0 +1,55 @@
+.baner{
+    width: 100%;
+}
+
+h3{
+    text-align: center;
+    margin: 5px;
+}
+
+.categories{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categories a{
+    width: 45%;
+    max-width: 170px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.705);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    display: flex;
+    flex-wrap: wrap;
+    border: black solid 2px;
+    border-radius: 10px;
+}
+
+a img{
+    height: 100px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+.categories a p{
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.img_juegos{
+    max-width: 80%;
+    padding: 10px 20px;
+    height: auto;
+}

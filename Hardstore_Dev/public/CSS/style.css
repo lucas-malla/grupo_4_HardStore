@@ -1,0 +1,45 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+header{
+    background-color: rgba(255, 0, 0, 0.925); 
+}
+
+header .head_up{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+header .search_bar{
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+    background-color: rgb(238, 234, 234);
+    border-radius: 10px;
+    padding: 2px 10px;
+}
+
+header .search_bar p{
+    font-weight: bold;
+    align-self: center;
+}
+
+header i{
+    font-size: 25px;
+    padding-right: 25px;
+}
+
+header .head_down{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+header .head_down p{
+    padding-left: 20%;
+    font-weight: bold;
+}
