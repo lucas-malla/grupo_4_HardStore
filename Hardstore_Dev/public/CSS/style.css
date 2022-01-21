@@ -2,9 +2,22 @@
     box-sizing: border-box;
     margin: 0px;
 }
+.desktop{
+    display: none;
+}
 
 header{
-    background-color: rgba(255, 0, 0, 0.925); 
+    background-color: rgb(255, 49, 49); 
+}
+
+.logo_1{
+    
+    align-self: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    border: black solid 3px;
+    margin-right: 40px;
 }
 
 header .head_up{
@@ -29,7 +42,7 @@ header .search_bar p{
 
 header i{
     font-size: 25px;
-    padding-right: 25px;
+    align-self: center;
 }
 
 header .head_down{
@@ -39,7 +52,39 @@ header .head_down{
     padding-bottom: 5px;
 }
 
-header .head_down p{
+header .head_down .user_menu{
     padding-left: 20%;
     font-weight: bold;
+    border: black solid 2px;
+    border-radius: 15px;
+}
+
+@media (min-width: 500px){
+.desktop{
+    display: block;
+}
+
+.cell_phone{
+    display: none;
+}
+
+.structure{
+    display: flex;
+    justify-content: center;
+}
+
+header .head_down .user_menu{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    margin-right: 50px;
+}
+header .head_down .user_menu a{
+    display: flex;
+}
+header .head_down .user_menu a p{
+    align-self: center;
+}
 }
