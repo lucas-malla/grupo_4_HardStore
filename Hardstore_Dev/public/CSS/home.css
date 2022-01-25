@@ -2,39 +2,46 @@
     width: 100%;
 }
 
+main{
+    background-color: rgba(236, 236, 236, 0.966)
+}
 h3{
     text-align: center;
     margin: 5px;
 }
-
 .categories{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .categories a{
     width: 45%;
     max-width: 170px;
     margin: 5px;
     background-color: rgba(255, 255, 255, 0.705);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main .categories a{
-    display: flex;
-    flex-wrap: wrap;
     border: black solid 2px;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );
 }
-
 a img{
-    height: 100px;
+    height: 80%;
     max-width: 100%;
     border-radius: 10px;
+}
+
+.categories a{
+    background-color: white;
+}
+.products a{
+    background-color: white;
+}
+
+.products a img{
+    height: 100px;
 }
 
 a {
@@ -42,70 +49,79 @@ a {
     font-weight: bold;
     color: #000;
 }
-
 .categories a p{
     text-align: center;
     padding-bottom: 5px;
 }
-
 .img_juegos{
-    max-width: 80%;
-    padding: 10px 20px;
+    max-width: 90%;
+    padding: 10px;
     height: auto;
 }
-
 main .search_bar{
     display: flex;
     justify-self: center;
     width: 300px;
     justify-content: space-between;
-    background-color: rgb(238, 234, 234);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
     padding: 2px 10px;
     margin: auto;
     margin-top: 15px;
+    align-items: center;
 }
-
 .nav_bar{
     display: flex;
     margin: 10px;
     margin-top: 15px;
     justify-content: center;
     padding: 0px;
+    font-size: 24px;
 }
-
 .nav_bar li{
     margin: 0px 10px;
     font-weight: bold;  
 }
-
 main .line{
-    width: 600px;
+    width: 57%;
     margin: auto;
 }
-
 h4{
     text-align: center;
     margin-top: 20px;
     margin-bottom: 5px;
 }
-
 .destacados .products{
     margin-top: 2px;
 }
-
 @media (min-width: 500px){
     .carrusel{
         width: 100%;
-        height: 300px;
+        height: 200px;
         background-color: rgb(115, 236, 115);
         margin: auto;
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
-
+    .categories a{
+        max-width: 250px;
+        height: 200px;
+        margin: 15px;
+        border: black solid 1px;
+        border-radius: 1px;
+        box-shadow : 0px 0px 10px rgb( 100 , 100 , 100 );
+    }
+    .categories a p{
+        text-align: center;
+        padding-bottom: 5px;
+        background-color: black;
+        color: white;
+        font-weight: bold;
+        width: 100%;
+        padding: 7px;
+        font-size: 20px;
+    }
     .destacados .products{
         display: flex;
         flex-wrap: wrap;
@@ -115,7 +131,6 @@ h4{
         margin: auto;
         justify-content: center;
     }
-
     .products a{
         display: flex;
         flex-wrap: wrap;
@@ -130,27 +145,22 @@ h4{
         border-radius: 10px;
         margin-top: 10px;
     }
-
     .destacados .products img{
         margin: 15px 0px;
         
     }
-
     .destacados .products .prod_name{
         text-align: center;
         width: 100%;
         height: 35px;
     }
-
     hr{
         color: grey;
-
     }
     .destacados .products .prices{
         display: block;
         margin-top: 10px;
         width: 70%;
-
     }
     .destacados .products .price{
         margin-top: 10px;
@@ -158,7 +168,6 @@ h4{
         color: gray;
         text-decoration: line-through;
         display: block;
-
     }
 
     .destacados .products .price_down{
@@ -186,6 +195,5 @@ h4{
         align-items: center;
         display: flex;
         margin-top: 6px;
-
     }
 }
