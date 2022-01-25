@@ -9,7 +9,7 @@ app.listen(PORT, () => console.log("server: ON  Port:", PORT))
 
 //HOME
 app.get('/', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/home.html"))
+    res.sendFile(path.resolve(__dirname, "./views/index.html"))
 })
 
 //PRODUCT GALERY
