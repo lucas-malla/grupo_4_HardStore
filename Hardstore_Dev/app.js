@@ -13,7 +13,7 @@ app.get('/', function(req, res){
 })
 
 //PRODUCT GALERY
-app.get('/Products', function(req, res){
+app.get('/products', function(req, res){
     res.sendFile(path.resolve(__dirname, "./views/products_galery.html"))
 })
 

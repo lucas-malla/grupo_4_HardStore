@@ -39,20 +39,20 @@ header .search_bar p{
 header i{
     font-size: 25px;
     align-self: center;
-    margin-right: 10px;
+    margin-right: 30px;
 }
 header .head_down{
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 5px;
+    padding: 10px 0px;
 }
 header .head_down .user_menu{
     padding: 0px 15px;
     font-weight: bold;
     border: black solid 2px;
     border-radius: 15px;
-    margin-left: 10px;
+    margin-left: 22%;
+
 }
 @media (min-width: 500px){
     .desktop{

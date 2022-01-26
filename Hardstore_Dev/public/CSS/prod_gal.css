@@ -1,0 +1,67 @@
+main .filt-ord{
+    display: flex;
+    justify-content: space-around;
+    margin: 8px 0px;
+}
+main .filt-ord p {
+    background-color: rgb(213, 213, 213);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+main .producto{
+    display: flex;
+    margin: 5px auto;
+
+    height: 110px;
+    align-items: center;
+}
+main .producto img{
+    max-height: 90px;
+    max-width: 180px;
+    width: 35%;
+}
+main .producto .info{
+    margin: 5px;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+}
+main .producto .info h4{
+    margin: 0px;
+    justify-content: start;
+    margin-bottom: 5px;  
+}
+main .producto .info button{
+    background-color: rgb(115, 236, 115); 
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    padding: 3px 8px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+main .producto .info .prices{
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    font-weight: normal;
+    margin-top: 5px;
+    justify-content: start;
+    align-items: center;
+}
+main .producto .info .prices .price{
+    font-size: 12px;
+    color: gray;
+    text-decoration: line-through;
+    display: block;
+    margin-right: 5px;
+}
+main .producto .info .prices .dto{
+    color: rgb(10, 212, 10);
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 10px;
+}
