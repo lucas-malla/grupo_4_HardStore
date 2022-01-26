@@ -18,11 +18,14 @@
         <div class="cell_phone">
             <div class="head_up">
                 <img class="logo_1" src="images/logo_prueba.png" alt="Logo">
-                <div class="search_bar">
-                    <i class="fas fa-search"></i>
-                    <p>Buscar</p>
-                </div>
-                <i class="fas fa-shopping-cart"></i>
+                <form action="products" method="get">
+                    <div class="search_bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" name="search" id="search">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+                <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
             </div>
              <div class="head_down">
                  <div class="user_menu">
@@ -31,7 +34,6 @@
                 <i class="fas fa-bars"></i>
             </div>       
         </div>
-
         <div class="desktop">
             <div class="structure">
                 <img class="logo_1" src="images/logo_prueba.png" alt="Logo1">
@@ -42,27 +44,26 @@
                         <div class="head_down">
                             <div class="user_menu">
                                 <a>
-                                <p>Registrarme</p>
+                                <a href="/register">Registrarme</a>
                                 <i class="far fa-user"></i>
                                 </a>
                                 <a>
-                                <p>Login</p>
+                                <a href="login">Login</a>
                                 <i class="fas fa-sign-in-alt"></i>
                                 </a>
                             </div>
-                            <i class="fas fa-shopping-cart"></i>
+                            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
-
     </header>
 
     <main>
         <div class="cell_phone">
             <h3 class="seccion_title">¿Que estas buscando?</h3>
             <div class="categories">
-                <a href="Products"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
+                <a href="products"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
                 <a href=""><img src="images/monitores.jpg"><p>Monitores</p></a>
                 <a href=""><img src="images/auris.png"><p>Auriculares y Parlantes</p></a>
                 <a href=""><img class="img_juegos" src="images/games.png"><p>Juegos</p></a>
@@ -73,10 +74,13 @@
 
         <div class="desktop">
             <p class="carrusel">Soy el carrusel</p>
-            <div class="search_bar">
-                <i class="fas fa-search"></i>
-                <p>Buscar</p>
-            </div>
+            <form action="/products" method="get">
+                <div class="search_bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" name="search" id="search">
+                    <button type="submit">Buscar</button>
+                </div>
+            </form>
 
             <ul class="nav_bar" type="none">
                 <li><a href="/products">Teclados</a></li>

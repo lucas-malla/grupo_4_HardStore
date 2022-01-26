@@ -18,11 +18,14 @@
         <div class="cell_phone">
             <div class="head_up">
                 <img class="logo_1" src="images/logo_prueba.png" alt="Logo">
-                <div class="search_bar">
-                    <i class="fas fa-search"></i>
-                    <p>Buscar</p>
-                </div>
-                <i class="fas fa-shopping-cart"></i>
+                <form action="products" method="get">
+                    <div class="search_bar">
+                        <i class="fas fa-search"></i>
+                        <input type="text" name="search" id="search">
+                        <button type="submit">Buscar</button>
+                    </div>
+                </form>
+                <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
             </div>
              <div class="head_down">
                  <div class="user_menu">
@@ -42,15 +45,15 @@
                         <div class="head_down">
                             <div class="user_menu">
                                 <a>
-                                <p>Registrarme</p>
+                                <a href="/register">Registrarme</a>
                                 <i class="far fa-user"></i>
                                 </a>
                                 <a>
-                                <p>Login</p>
+                                <a href="login">Login</a>
                                 <i class="fas fa-sign-in-alt"></i>
                                 </a>
                             </div>
-                            <i class="fas fa-shopping-cart"></i>
+                            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                     </div>
                 </div>

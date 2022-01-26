@@ -1,7 +1,6 @@
 .baner{
     width: 100%;
 }
-
 main{
     background-color: rgba(236, 236, 236, 0.966)
 }
@@ -32,22 +31,14 @@ a img{
     max-width: 100%;
     border-radius: 10px;
 }
-
 .categories a{
     background-color: white;
 }
 .products a{
     background-color: white;
 }
-
 .products a img{
     height: 100px;
-}
-
-a {
-    text-decoration: none;
-    font-weight: bold;
-    color: #000;
 }
 .categories a p{
     text-align: center;
@@ -69,6 +60,18 @@ main .search_bar{
     margin: auto;
     margin-top: 15px;
     align-items: center;
+}
+main .search_bar input{
+    border: none;
+    width: 100%;
+}
+main .search_bar button{
+    border: none;
+    background-color: white;
+    transition: 0.7s;
+}
+main .search_bar button:hover{
+    background-color: lightblue;
 }
 .nav_bar{
     display: flex;
