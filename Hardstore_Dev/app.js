@@ -28,11 +28,11 @@ app.get('/X', function(req, res){
 })
 
 //LOGIN
-app.get('/X', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
+app.get('/login', function(req, res){
+    res.sendFile(path.resolve(__dirname, "./views/login.html"))
 })
 
 //REGISTER
-app.get('/X', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
+app.get('/register', function(req, res){
+    res.sendFile(path.resolve(__dirname, "./views/register.html"))
 })
