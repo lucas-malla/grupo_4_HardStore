@@ -1,0 +1,90 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+}
+.desktop{
+    display: none;
+}
+
+header{
+    background-color: rgb(255, 49, 49); 
+}
+
+.logo_1{
+    
+    align-self: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    border: black solid 3px;
+    margin-right: 40px;
+}
+
+header .head_up{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+header .search_bar{
+    display: flex;
+    width: 55%;
+    justify-content: space-between;
+    background-color: rgb(238, 234, 234);
+    border-radius: 10px;
+    padding: 2px 10px;
+}
+
+header .search_bar p{
+    font-weight: bold;
+    align-self: center;
+}
+
+header i{
+    font-size: 25px;
+    align-self: center;
+}
+
+header .head_down{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+header .head_down .user_menu{
+    padding-left: 20%;
+    font-weight: bold;
+    border: black solid 2px;
+    border-radius: 15px;
+}
+
+@media (min-width: 500px){
+.desktop{
+    display: block;
+}
+
+.cell_phone{
+    display: none;
+}
+
+.structure{
+    display: flex;
+    justify-content: center;
+}
+
+header .head_down .user_menu{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    margin-right: 50px;
+}
+header .head_down .user_menu a{
+    display: flex;
+}
+header .head_down .user_menu a p{
+    align-self: center;
+}
+}
