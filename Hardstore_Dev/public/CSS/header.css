@@ -14,25 +14,26 @@ a {
 header{
     background-color: #F3CF2B; 
 }
-
+header .cell_phone{
+    display: flex;
+}
 .central_head{
-    margin: 0px 80px 0px 20px ;
+    margin: 10px 15px 10px 0px ;
+    display: flex;
+    flex-direction: column;
 }
-.logo_1{
+.logo{
     align-self: center;
-    width: 60px;
-    height: 60px;
-    border-radius: 35px;
-    border: black solid 3px;
-    margin-right: 30px;
-    margin-left: 15px;
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    margin-left: 20px;
 }
-.logo_2{
+header .baner{
     align-self: center;
-    width: 300px;
-    border: black solid 1px;
+    width: 330px;
+    height: 90px;
 }
-
 header .head_up{
     display: flex;
     justify-content: space-between;
@@ -46,13 +47,12 @@ header .search_bar{
     background-color: white;
     border-radius: 10px;
     padding: 2px 10px;
-    height: 25px;
+    height: 26px;
 }
 header .search_bar input{
     border: none;
     background-color: white;
     width: 100%;
-
 }
 header .search_bar button{
     font-weight: bold;
@@ -70,25 +70,36 @@ header i{
 header .head_down{
     display: flex;
     justify-content: space-between;
-    padding: 10px 0px;
+    padding: 20px 0px 5px 0px;
 }
 header .head_down .user_menu{
-    padding: 0px 15px;
-    margin-left: 15px;
+    padding: 0px 20px;
+    margin-left: 0px;
     font-weight: bold;
     border: black solid 2px;
     border-radius: 15px;
 }
 @media (min-width: 500px){
-    .desktop{
+    header .desktop{
         display: block;
     }
-    .cell_phone{
+    header .cell_phone{
         display: none;
     }
     .structure{
         display: flex;
         justify-content: center;
+    }
+    .logo{
+        align-self: center;
+        width: 90px;
+        height: 70px;
+        margin-right: 15px;
+        margin-left: 20px;
+    }
+    header .central_head{
+        display: flex;
+        flex-direction: row;
     }
     header .head_down .user_menu{
         display: flex;
@@ -97,6 +108,9 @@ header .head_down .user_menu{
         align-items: center;
         width: 250px;
         margin-right: 20px;
+        margin-left: 20px;
+        height: 35px;
+        align-self: center;
     }
     header .head_down .carrito{
         display: flex;

@@ -3,12 +3,11 @@
 }
 .carrusel{
     max-width: none;
-
-
 }
-
 main{
-    background-color: rgba(236, 236, 236, 0.966)
+    background-color: rgba(236, 236, 236, 0.966);
+    display: flex;
+    flex-direction: column;
 }
 h3{
     text-align: center;
@@ -104,6 +103,12 @@ h4{
     margin-top: 2px;
 }
 @media (min-width: 500px){
+    main .desktop{
+        display: block;
+    }
+    main .cell_phone{
+        display: none;
+    }
     .carrusel{
         width: 100%;
         height: 200px;
@@ -178,7 +183,6 @@ h4{
         text-decoration: line-through;
         display: block;
     }
-
     .destacados .products .price_down{
         width: 100%;
         font-size: 18px;
@@ -193,7 +197,6 @@ h4{
         font-size: 12px;
         align-self: end;
     }
-
     .envios{
         background-color: rgb(10, 212, 10);
         color: white;

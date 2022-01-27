@@ -9,10 +9,9 @@ main .filt-ord p {
     border-radius: 12px;
     font-weight: bold;
 }
-main .producto{
+main .producto a{
     display: flex;
-    margin: 5px auto;
-
+    justify-content: center;
     height: 110px;
     align-items: center;
 }
@@ -23,10 +22,11 @@ main .producto img{
 }
 main .producto .info{
     margin: 5px;
-    width: 65%;
+    
     display: flex;
     flex-direction: column;
     height: 80px;
+    margin-right: 5%;
 }
 main .producto .info h4{
     margin: 0px;
@@ -64,4 +64,42 @@ main .producto .info .prices .dto{
     font-weight: bold;
     font-size: 12px;
     margin-left: 10px;
+}
+main .filtro{
+    display: none;
+}
+@media (min-width: 500px){
+    .filtro-desplegable{
+        display: none;
+    }
+    .ordenar-por{
+        position: relative;
+        left: 75px;
+    }
+    main .productos{
+        
+    }
+    main .producto a{
+        display: flex;
+        justify-content: start;
+        height: 110px;
+        align-items: center;
+
+    }
+    .filt-prod{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        right: 60px;
+    }
+    main .filtro{
+        display: block;
+        height: 400px;
+        width: 200px;
+        border: gray 2px solid;
+        margin: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
 }

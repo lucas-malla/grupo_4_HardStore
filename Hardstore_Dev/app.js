@@ -4,7 +4,7 @@ const path = require('path')
 
 app.use(express.static(path.resolve(__dirname, './public')))
 
-let PORT = 3010
+let PORT = 3000
 app.listen(PORT, () => console.log("server: ON  Port:", PORT))
 
 //HOME

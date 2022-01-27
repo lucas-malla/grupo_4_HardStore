@@ -16,31 +16,33 @@
 <body>
     <header>
         <div class="cell_phone">
-            <div class="head_up">
-                <img class="logo_1" src="images/logo_prueba.png" alt="Logo">
-                <form action="products" method="get">
-                    <div class="search_bar">
-                        <i class="fas fa-search"></i>
-                        <input type="text" name="search" id="search">
-                        <button type="submit">Buscar</button>
+            <img class="logo" src="images/header/logo.png" alt="Logo">
+            <div class="central_head">
+                <div class="head_up">
+                    <form action="products" method="get">
+                        <div class="search_bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" name="search" id="search">
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
+                    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            
+                <div class="head_down">
+                    <div class="user_menu">
+                        <p>User Name</p>
                     </div>
-                </form>
-                <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                    <i class="fas fa-bars"></i>
+                </div>       
             </div>
-             <div class="head_down">
-                 <div class="user_menu">
-                    <p>User Name</p>
-                 </div>
-                <i class="fas fa-bars"></i>
-            </div>       
         </div>
-
         <div class="desktop">
             <div class="structure">
-                <img class="logo_1" src="images/logo_prueba.png" alt="Logo1">
+                <img class="logo" src="images/header/logo.png" alt="Logo1">
                 <div class="central_head">
                     <div class="head_up">
-                        <img class="logo_2" src="" alt="Logo2-baner">
+                        <img class="baner" src="images/header/baner.png" alt="Logo2-baner">
                     </div>
                         <div class="head_down">
                             <div class="user_menu">
@@ -53,7 +55,7 @@
                                 <i class="fas fa-sign-in-alt"></i>
                                 </a>
                             </div>
-                            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                            <a class="carrito" href="/cart"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                     </div>
                 </div>
@@ -61,59 +63,75 @@
     </header>
     <main>
         <div class="filt-ord">
-            <p>Filtrar: <i class="fas fa-sort-down"></i></p>
-            <p>Ordenar por: <i class="fas fa-sort-down"></i></p>
+            <p class="filtro-desplegable">Filtrar: <i class="fas fa-sort-down"></i></p>
+            <p class="ordenar-por">Ordenar por: <i class="fas fa-sort-down"></i></p>
         </div>
         <hr>
-        <div class="producto">
-            <img src="images/monitores.jpg">
-            <div class="info">
-                <h4 class="producto">Monitor Samsung</h4>
-                <div class="prices">
-                    <p class="price">$36.000</p>
-                    <p class="price_dto">$28.800</p>
-                    <p class="dto">20%OFF</p>
-                </div>
-                <button>Agregar al carrito</button>
+        <div class="filt-prod">
+            <div class="filtro">
+                <p>Soy un filtro de productos</p>
             </div>
-        </div>
-        <hr>
-        <div class="producto">
-            <img src="images/monitores.jpg">
-            <div class="info">
-                <h4 class="producto">Monitor Samsung</h4>
-                <div class="prices">
-                    <p class="price">$36.000</p>
-                    <p class="price_dto">$28.800</p>
-                    <p class="dto">20%OFF</p>
+            <div class="productos">
+                <div class="producto">
+                    <a href="/product-detail">
+                        <img src="images/monitores.jpg">
+                        <div class="info">
+                            <h4 class="product_name">Monitor Samsung</h4>
+                            <div class="prices">
+                                <p class="price">$36.000</p>
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                            <button><p>Agregar al carrito</p></button>
+                        </div>
+                    </a>
                 </div>
-                <button>Agregar al carrito</button>
-            </div>
-        </div>
-        <hr>
-        <div class="producto">
-            <img src="images/monitores.jpg">
-            <div class="info">
-                <h4 class="producto">Monitor Samsung</h4>
-                <div class="prices">
-                    <p class="price">$36.000</p>
-                    <p class="price_dto">$28.800</p>
-                    <p class="dto">20%OFF</p>
+                
+                <hr>
+                <div class="producto">
+                    <a href="/product-detail">
+                        <img src="images/monitores.jpg">
+                        <div class="info">
+                            <h4 class="producto">Monitor Samsung</h4>
+                            <div class="prices">
+                                <p class="price">$36.000</p>
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </a>
                 </div>
-                <button>Agregar al carrito</button>
-            </div>
-        </div>
-        <hr>
-        <div class="producto">
-            <img src="images/monitores.jpg">
-            <div class="info">
-                <h4 class="producto">Monitor Samsung</h4>
-                <div class="prices">
-                    <p class="price">$36.000</p>
-                    <p class="price_dto">$28.800</p>
-                    <p class="dto">20%OFF</p>
+                <hr>
+                <div class="producto">
+                    <a href="/product-detail">
+                        <img src="images/monitores.jpg">
+                        <div class="info">
+                            <h4 class="producto">Monitor Samsung</h4>
+                            <div class="prices">
+                                <p class="price">$36.000</p>
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </a>
                 </div>
-                <button>Agregar al carrito</button>
+                <hr>
+                <div class="producto">
+                    <a href="/product-detail">
+                        <img src="images/monitores.jpg">
+                        <div class="info">
+                            <h4 class="producto">Monitor Samsung</h4>
+                            <div class="prices">
+                                <p class="price">$36.000</p>
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                            <button>Agregar al carrito</button>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </main>

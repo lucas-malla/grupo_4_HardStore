@@ -3,7 +3,7 @@
 <head>
     <title>Hardstore</title>
     <link href="CSS/header.css" rel="stylesheet">
-    <link href="CSS/detail.css" rel="stylesheet">
+    <!-- <link href="CSS/detail.css" rel="stylesheet">  comentada por que me pisa el header esta mal el css corresponde a un header viejo-->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,46 +13,50 @@
 <body>
     <header>
         <div class="cell_phone">
-            <div class="head_up">
-                <img class="logo_1" src="images/logo_prueba.png" alt="Logo">
-                <div class="search_bar">
-                    <i class="fas fa-search"></i>
-                    <p>Buscar</p>
+            <img class="logo" src="images/header/logo.png" alt="Logo">
+            <div class="central_head">
+                <div class="head_up">
+                    <form action="products" method="get">
+                        <div class="search_bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" name="search" id="search">
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
+                    <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
                 </div>
-                <i class="fas fa-shopping-cart"></i>
-            </div>
-            <div class="head_down">
-                <div class="user_menu">
-                    <p>User Name</p>
-                </div>
-                <i class="fas fa-bars"></i>
+            
+                <div class="head_down">
+                    <div class="user_menu">
+                        <p>User Name</p>
+                    </div>
+                    <i class="fas fa-bars"></i>
+                </div>       
             </div>
         </div>
-
         <div class="desktop">
             <div class="structure">
-                <img class="logo_1" src="images/logo_prueba.png" alt="Logo1">
+                <img class="logo" src="images/header/logo.png" alt="Logo1">
                 <div class="central_head">
                     <div class="head_up">
-                        <img class="images/logo_2" src="" alt="images/Logo2-baner">
+                        <img class="baner" src="images/header/baner.png" alt="Logo2-baner">
                     </div>
-                    <div class="head_down">
-                        <div class="user_menu">
-                            <a>
-                                <p>Registrarme</p>
+                        <div class="head_down">
+                            <div class="user_menu">
+                                <a>
+                                <a href="/register">Registrarme</a>
                                 <i class="far fa-user"></i>
-                            </a>
-                            <a>
-                                <p>Login</p>
+                                </a>
+                                <a>
+                                <a href="login">Login</a>
                                 <i class="fas fa-sign-in-alt"></i>
-                            </a>
+                                </a>
+                            </div>
+                            <a class="carrito" href="/cart"><i class="fas fa-shopping-cart"></i></a>
                         </div>
-                        <i class="fas fa-shopping-cart"></i>
                     </div>
                 </div>
             </div>
-        </div>
-
     </header>
     <!-- detail product -->
     <section class="productos">
