@@ -18,12 +18,12 @@ app.get('/products', function(req, res){
 })
 
 //PRODUCT DETAIL
-app.get('/X', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
+app.get('/product-detail', function(req, res){
+    res.sendFile(path.resolve(__dirname, "./views/detail.html"))
 })
 
 //SHOPING CART
-app.get('/X', function(req, res){
+app.get('/cart', function(req, res){
     res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
 })
 

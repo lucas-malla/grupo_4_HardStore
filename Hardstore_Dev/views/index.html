@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <title>Hardstore</title>
-    <link href="CSS/header.css" rel="stylesheet" >
-    <link href="CSS/home.css" rel="stylesheet" >
+    <link href="CSS/header.css" rel="stylesheet">
+    <link href="CSS/home.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +17,7 @@
     <header>
         <div class="cell_phone">
             <div class="head_up">
-                <img class="logo_1" src="images/logo_prueba.png" alt="Logo">
+                <img class="logo_1" src="images/header/logo_prueba.png" alt="Logo">
                 <form action="products" method="get">
                     <div class="search_bar">
                         <i class="fas fa-search"></i>
@@ -36,10 +36,10 @@
         </div>
         <div class="desktop">
             <div class="structure">
-                <img class="logo_1" src="images/logo_prueba.png" alt="Logo1">
+                <img class="logo_1" src="images/header/logo_prueba.png" alt="Logo1">
                 <div class="central_head">
                     <div class="head_up">
-                        <img class="logo_2" src="" alt="Logo2-baner">
+                        <img class="logo_2" src="images/header/hardstore2.png" alt="Logo2-baner">
                     </div>
                         <div class="head_down">
                             <div class="user_menu">
@@ -52,7 +52,7 @@
                                 <i class="fas fa-sign-in-alt"></i>
                                 </a>
                             </div>
-                            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                            <a class="carrito" href="/cart"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                     </div>
                 </div>
@@ -73,7 +73,9 @@
         </div>
 
         <div class="desktop">
-            <p class="carrusel">Soy el carrusel</p>
+            <p class="carrusel">
+                <img class="baner" src="images/baner_navidad.png" alt="Falta banner">
+            </p>
             <form action="/products" method="get">
                 <div class="search_bar">
                     <i class="fas fa-search"></i>
@@ -153,60 +155,118 @@
                         </div>
                         <p class="envios">Envios a todo el pais</p>
                     </a>
-                    <a href=""><img src="images/silla.jpg">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
-                    <a href=""><img src="images/silla.jpg">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
                 </div>
 
                 <h4>NUESTRA SELECCION</h4>
                 <hr class="line">
                 <div class="products">
-                    <a href="Products"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
-                    <a href=""><img src="images/monitores.jpg"><p>Monitores</p></a>
-                    <a href=""><img src="images/auris.png"><p>Auriculares y Parlantes</p></a>
-                    <a href=""><img src="images/silla.jpg"><p>Sillas Gamer</p></a>
+                    <a href="Products">
+                        <img src="images/monitor.webp">
+                        <p class="prod_name">Monitor Curvo Led 27 Samsung F390</p>
+                        <div class="prices">
+                            <hr>
+                            <p class="price">$36.000</p>
+                            <div class="price_down">
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                        </div>
+                        <p class="envios">Envios a todo el pais</p>
+                    </a>
+                    <a href=""><img src="images/note.png">
+                        <p class="prod_name">Monitores</p>
+                        <div class="prices">
+                            <hr>
+                            <p class="price">$36.000</p>
+                            <div class="price_down">
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                        </div>
+                        <p class="envios">Envios a todo el pais</p>
+                    </a>
+                    <a href=""><img src="images/auris.png">
+                        <p class="prod_name">Monitores</p>
+                        <div class="prices">
+                            <hr>
+                            <p class="price">$36.000</p>
+                            <div class="price_down">
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                        </div>
+                        <p class="envios">Envios a todo el pais</p>
+                    </a>                    
+                    <a href=""><img src="images/silla.jpg">
+                        <p class="prod_name">Monitores</p>
+                        <div class="prices">
+                            <hr>
+                            <p class="price">$36.000</p>
+                            <div class="price_down">
+                                <p class="price_dto">$28.800</p>
+                                <p class="dto">20%OFF</p>
+                            </div>
+                        </div>
+                        <p class="envios">Envios a todo el pais</p>
+                    </a>
                 </div>
+
                 <h4>OFERTAS</h4>
                 <hr class="line">
-                <div class="products">
-                    <a href="Products"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
-                    <a href=""><img src="images/monitores.jpg"><p>Monitores</p></a>
-                    <a href=""><img src="images/auris.png"><p>Auriculares y Parlantes</p></a>
-                    <a href=""><img src="images/silla.jpg"><p>Sillas Gamer</p></a>
+                    <div class="products">
+                        <a href="Products">
+                            <img src="images/monitor.webp">
+                            <p class="prod_name">Monitor Curvo Led 27 Samsung F390</p>
+                            <div class="prices">
+                                <hr>
+                                <p class="price">$36.000</p>
+                                <div class="price_down">
+                                    <p class="price_dto">$28.800</p>
+                                    <p class="dto">20%OFF</p>
+                                </div>
+                            </div>
+                            <p class="envios">Envios a todo el pais</p>
+                        </a>
+                        <a href=""><img src="images/note.png">
+                            <p class="prod_name">Monitores</p>
+                            <div class="prices">
+                                <hr>
+                                <p class="price">$36.000</p>
+                                <div class="price_down">
+                                    <p class="price_dto">$28.800</p>
+                                    <p class="dto">20%OFF</p>
+                                </div>
+                            </div>
+                            <p class="envios">Envios a todo el pais</p>
+                        </a>
+                        <a href=""><img src="images/auris.png">
+                            <p class="prod_name">Monitores</p>
+                            <div class="prices">
+                                <hr>
+                                <p class="price">$36.000</p>
+                                <div class="price_down">
+                                    <p class="price_dto">$28.800</p>
+                                    <p class="dto">20%OFF</p>
+                                </div>
+                            </div>
+                            <p class="envios">Envios a todo el pais</p>
+                        </a>                    
+                        <a href=""><img src="images/silla.jpg">
+                            <p class="prod_name">Monitores</p>
+                            <div class="prices">
+                                <hr>
+                                <p class="price">$36.000</p>
+                                <div class="price_down">
+                                    <p class="price_dto">$28.800</p>
+                                    <p class="dto">20%OFF</p>
+                                </div>
+                            </div>
+                            <p class="envios">Envios a todo el pais</p>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-
-
-
-
         </div>
-
-
-
-
-
     </main>
     <footer>
 

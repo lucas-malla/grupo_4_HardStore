@@ -1,6 +1,12 @@
 .baner{
-    width: 100%;
+    height: 200px;
 }
+.carrusel{
+    max-width: none;
+
+
+}
+
 main{
     background-color: rgba(236, 236, 236, 0.966)
 }
@@ -101,7 +107,7 @@ h4{
     .carrusel{
         width: 100%;
         height: 200px;
-        background-color: rgb(115, 236, 115);
+        background-color: #EAE7DC;
         margin: auto;
         display: flex;
         justify-content: center;
