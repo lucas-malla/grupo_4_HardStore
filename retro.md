@@ -1,0 +1,1 @@
+Debemos movilizarnos rapidamente e intentar poner en comun el avance frecuentemente para llegar bien con las proximas entregas

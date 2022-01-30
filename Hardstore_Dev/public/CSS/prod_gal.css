@@ -1,0 +1,105 @@
+main .filt-ord{
+    display: flex;
+    justify-content: space-around;
+    margin: 8px 0px;
+}
+main .filt-ord p {
+    background-color: rgb(213, 213, 213);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+main .producto a{
+    display: flex;
+    justify-content: center;
+    height: 110px;
+    align-items: center;
+}
+main .producto img{
+    max-height: 90px;
+    max-width: 180px;
+    width: 35%;
+}
+main .producto .info{
+    margin: 5px;
+    
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    margin-right: 5%;
+}
+main .producto .info h4{
+    margin: 0px;
+    justify-content: start;
+    margin-bottom: 5px;  
+}
+main .producto .info button{
+    background-color: rgb(115, 236, 115); 
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    padding: 3px 8px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+main .producto .info .prices{
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    font-weight: normal;
+    margin-top: 5px;
+    justify-content: start;
+    align-items: center;
+}
+main .producto .info .prices .price{
+    font-size: 12px;
+    color: gray;
+    text-decoration: line-through;
+    display: block;
+    margin-right: 5px;
+}
+main .producto .info .prices .dto{
+    color: rgb(10, 212, 10);
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 10px;
+}
+main .filtro{
+    display: none;
+}
+@media (min-width: 500px){
+    .filtro-desplegable{
+        display: none;
+    }
+    .ordenar-por{
+        position: relative;
+        left: 75px;
+    }
+    main .productos{
+        
+    }
+    main .producto a{
+        display: flex;
+        justify-content: start;
+        height: 110px;
+        align-items: center;
+
+    }
+    .filt-prod{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        right: 60px;
+    }
+    main .filtro{
+        display: block;
+        height: 400px;
+        width: 200px;
+        border: gray 2px solid;
+        margin: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+}

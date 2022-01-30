@@ -50,4 +50,6 @@ Precio 18px
 Resolucion CELULAR;
 375 x 677  px
 
+TRELLO:
+https://trello.com/b/x1jmYy5k/tablero-principal
 

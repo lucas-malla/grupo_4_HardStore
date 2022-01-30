@@ -1,0 +1,130 @@
+*{
+    margin: 0px;
+    padding: 0px;    
+    box-sizing: border-box;
+    }
+    
+    .form-register{
+    width:400px ;
+    background:#24303c;
+    padding:30px;
+    margin:auto;
+    margin-top:100px;
+    border-radius:4px;
+    font-family:'calibri';
+    }
+    button.sing-in-btn{
+    text-align: center;
+    margin:auto;
+    }
+    body{
+    width: 210px;
+    height: 380px;
+    border: solid rgb(15, 14, 14) 1px;
+    padding: 5px;
+    margin: 10px;
+    }
+    div.iconos{
+    padding-top: 10%;
+    justify-content: center;
+    align-items:center
+        }
+    hr{
+    font-size: 10px;
+            }
+     input{
+    width: 100px;
+    height:18px;
+    text-align: center;
+    font-size: 10 arial black;
+    align-items: center;}
+    
+    .butoon-register :hover {
+    color:rgb(17, 16, 16);
+    text-decoration:underline;
+    }
+    
+    div.usuario{
+    margin-left:auto;
+    margin-right:auto;
+    display: inline-flex;
+    justify-content: center;
+    }
+    
+    div.border-icon{
+    align-items :center ;
+    justify-content: center
+    }
+          
+    img{
+    width: 50px;
+    height:50px;
+    box-sizing: border-box;
+    margin: auto;
+    border: 3px solid black;
+    padding: 10px;
+    }
+    
+    .log-in-btn{
+    color:rgba(12, 0, 0, 0.932);
+    text-decoration:auto;
+    }
+        
+    button.mensaje{
+    color:black;
+    font-weight:bold;
+    
+        }
+    
+    @media (max-width:320px){
+    }
+    @media (min-width:768px){
+    }
+    
+    body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #ebebeb;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    }
+     
+    h2{
+    color: rgb(7, 7, 7);
+    font-weight: normal;
+    font-size: 24px;
+    font-family: Arial;
+    padding-top: 10%;
+    align-content:center;
+    text-align: center;
+    }
+    p{
+    background:rgb(123, 132, 139)
+      }
+    
+    div.border-icon{
+    align-items :center ;
+    width:200px;
+    flex:content;
+    justify-content: center;
+    }
+    p.cuenta-gratis{
+    color:auto;
+    font-size: 12px;
+    
+    }
+    div.contenedor{
+    width:100%;
+    background:#24303c;
+    padding:15px;
+    border-radius:4px;
+    margin-bottom:10px;
+    border:1px solid#1f53c5
+    }
+    form{
+    float: right;
+    width: 200px;
+    border: 10px solid #4d4597;
+    padding: 15px;
+    text-align: center;
+    }

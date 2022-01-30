@@ -1,0 +1,125 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+.desktop{
+    display: none;
+}
+header{
+    background-color: #F3CF2B; 
+}
+header .cell_phone{
+    display: flex;
+}
+.central_head{
+    margin: 10px 15px 10px 0px ;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    align-self: center;
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    margin-left: 20px;
+}
+header .baner{
+    align-self: center;
+    width: 330px;
+    height: 90px;
+}
+header .head_up{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    align-items: center;
+}
+header .search_bar{
+    display: flex;
+    width: fit-content;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2px 10px;
+    height: 26px;
+}
+header .search_bar input{
+    border: none;
+    background-color: white;
+    width: 100%;
+}
+header .search_bar button{
+    font-weight: bold;
+    border: none;
+    background-color: white;
+}
+header .search_bar i{
+    margin: 0px;
+}
+header i{
+    font-size: 25px;
+    align-self: center;
+    margin: 0px 20px 0px 15px;
+}
+header .head_down{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px 5px 0px;
+}
+header .head_down .user_menu{
+    padding: 0px 20px;
+    margin-left: 0px;
+    font-weight: bold;
+    border: black solid 2px;
+    border-radius: 15px;
+}
+@media (min-width: 500px){
+    header .desktop{
+        display: block;
+    }
+    header .cell_phone{
+        display: none;
+    }
+    .structure{
+        display: flex;
+        justify-content: center;
+    }
+    .logo{
+        align-self: center;
+        width: 90px;
+        height: 70px;
+        margin-right: 15px;
+        margin-left: 20px;
+    }
+    header .central_head{
+        display: flex;
+        flex-direction: row;
+    }
+    header .head_down .user_menu{
+        display: flex;
+        padding: 5px;
+        justify-content: space-between;
+        align-items: center;
+        width: 250px;
+        margin-right: 20px;
+        margin-left: 20px;
+        height: 35px;
+        align-self: center;
+    }
+    header .head_down .carrito{
+        display: flex;
+        align-items: center;
+    }
+    header .head_down .user_menu a{
+        display: flex;
+    }
+    header .head_down .user_menu a p{
+        align-self: center;
+    }
+}

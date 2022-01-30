@@ -9,17 +9,17 @@ app.listen(PORT, () => console.log("server: ON  Port:", PORT))
 
 //HOME
 app.get('/', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/home.html"))
+    res.sendFile(path.resolve(__dirname, "./views/index.html"))
 })
 
 //PRODUCT GALERY
-app.get('/Products', function(req, res){
+app.get('/products', function(req, res){
     res.sendFile(path.resolve(__dirname, "./views/products_galery.html"))
 })
 
 //PRODUCT DETAIL
-app.get('/X', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
+app.get('/product-detail', function(req, res){
+    res.sendFile(path.resolve(__dirname, "./views/detail.html"))
 })
 
 //SHOPING CART
@@ -28,11 +28,11 @@ app.get('/productCart', function(req, res){
 })
 
 //LOGIN
-app.get('/X', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
+app.get('/login', function(req, res){
+    res.sendFile(path.resolve(__dirname, "./views/login.html"))
 })
 
 //REGISTER
-app.get('/X', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
+app.get('/register', function(req, res){
+    res.sendFile(path.resolve(__dirname, "./views/register.html"))
 })
