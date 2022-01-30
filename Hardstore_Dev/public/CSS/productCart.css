@@ -5,6 +5,7 @@
 
 body{
     background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
 }
 .contenedor{
     width: 90%;
@@ -65,10 +66,10 @@ footer{
 }
 .btn-apply-coupon{
     background-color: #ffffff;
-    color: rgb(35, 64, 230);
+    color: #070707;
     font-weight: 700;
-    border: solid 0.5px rgb(35, 64, 230);
-    box-shadow: 0.5px 0.5px rgba(7, 7, 12, 0.5) ;
+    border: solid 0.5px #070707;
+    box-shadow: 0.3px 0.2px rgba(7, 7, 12, 0.5) ;
     padding: 0.5rem 1rem;
     width: 30%;
 }
@@ -112,11 +113,11 @@ padding: 0.8rem 2.3rem;
     text-align: right;
   }
 .btn-buy{
-    background: rgb(35, 64, 230);
-    box-shadow: 0 2px 2px rgb(17, 17, 34);
+    background: #070707;
+    box-shadow: 0 2px 2px rgb(140, 140, 146);
     color:#ffffff;
     font-weight: 700;
-    border: none;
+    border-radius: 35px;
     padding: 0.8rem 1rem;
     width: 90%;
     position: relative;
@@ -220,9 +221,9 @@ border: none;
 }
 .add-item .btn{
     width: 160px;
-    background: rgb(35, 64, 230);
+    background: #070707;
     color:#ffffff;
-    border: none;
+    border-radius: 45px;
     padding: 8px 5px;
     margin-top: 25px;
 }
