@@ -23,8 +23,8 @@ app.get('/X', function(req, res){
 })
 
 //SHOPING CART
-app.get('/X', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/XXXX.html"))
+app.get('/productCart', function(req, res){
+    res.sendFile(path.resolve(__dirname, "./views/productCart.html"))
 })
 
 //LOGIN
