@@ -21,10 +21,7 @@ body{
 }
 
 .contenedor header{
-    background-color: black;
-    color: white;
     grid-area: header;
-
 }
 
 main{

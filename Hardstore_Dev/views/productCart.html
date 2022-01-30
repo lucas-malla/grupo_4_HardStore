@@ -7,11 +7,58 @@
     <title>Mi Carrito</title>
     <script src="https://kit.fontawesome.com/190d2f0c87.js" crossorigin="anonymous"></script>
     <link href="CSS/productCart.css" rel="stylesheet" >
+    <link href="CSS/header.css" rel="stylesheet">
 </head>
 <body>
     <div class="contenedor">
         <header>
-        <h2>HEADER</h2>
+            <header>
+                <div class="cell_phone">
+                    <img class="logo" src="images/header/logo.png" alt="Logo">
+                    <div class="central_head">
+                        <div class="head_up">
+                            <form action="products" method="get">
+                                <div class="search_bar">
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" name="search" id="search">
+                                    <button type="submit">Buscar</button>
+                                </div>
+                            </form>
+                            <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                        </div>
+                    
+                        <div class="head_down">
+                            <div class="user_menu">
+                                <p>User Name</p>
+                            </div>
+                            <i class="fas fa-bars"></i>
+                        </div>       
+                    </div>
+                </div>
+                <div class="desktop">
+                    <div class="structure">
+                        <img class="logo" src="images/header/logo.png" alt="Logo1">
+                        <div class="central_head">
+                            <div class="head_up">
+                                <img class="baner" src="images/header/baner.png" alt="Logo2-baner">
+                            </div>
+                                <div class="head_down">
+                                    <div class="user_menu">
+                                        <a>
+                                        <a href="/register">Registrarme</a>
+                                        <i class="far fa-user"></i>
+                                        </a>
+                                        <a>
+                                        <a href="login">Login</a>
+                                        <i class="fas fa-sign-in-alt"></i>
+                                        </a>
+                                    </div>
+                                    <a class="carrito" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </header>
         </header>
         <main>
         <section class="cart">
