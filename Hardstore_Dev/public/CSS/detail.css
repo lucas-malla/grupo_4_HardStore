@@ -1,17 +1,18 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0px;
 }
-.desktop{
+
+.desktop {
     display: none;
 }
 
-header{
-    background-color: rgb(255, 49, 49); 
+header {
+    background-color: rgb(255, 49, 49);
 }
 
-.logo_1{
-    
+.logo_1 {
+
     align-self: center;
     width: 70px;
     height: 70px;
@@ -20,13 +21,13 @@ header{
     margin-right: 40px;
 }
 
-header .head_up{
+header .head_up {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
 }
 
-header .search_bar{
+header .search_bar {
     display: flex;
     width: 55%;
     justify-content: space-between;
@@ -35,56 +36,183 @@ header .search_bar{
     padding: 2px 10px;
 }
 
-header .search_bar p{
+header .search_bar p {
     font-weight: bold;
     align-self: center;
 }
 
-header i{
+header i {
     font-size: 25px;
     align-self: center;
 }
 
-header .head_down{
+header .head_down {
     display: flex;
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 5px;
 }
 
-header .head_down .user_menu{
+header .head_down .user_menu {
     padding-left: 20%;
     font-weight: bold;
     border: black solid 2px;
     border-radius: 15px;
 }
 
-@media (min-width: 500px){
-.desktop{
-    display: block;
+@media (min-width: 500px) {
+    .desktop {
+        display: block;
+    }
+
+    .cell_phone {
+        display: none;
+    }
+
+    .structure {
+        display: flex;
+        justify-content: center;
+    }
+
+    header .head_down .user_menu {
+        display: flex;
+        padding: 5px;
+        justify-content: space-between;
+        align-items: center;
+        width: 250px;
+        margin-right: 50px;
+    }
+
+    header .head_down .user_menu a {
+        display: flex;
+    }
+
+    header .head_down .user_menu a p {
+        align-self: center;
+    }
 }
 
-.cell_phone{
-    display: none;
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
 }
 
-.structure{
+hr {
+    border: 1px solid red;
+}
+
+.general {
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 130px;
+}
+
+.general .monitor {
+    width: 900px;
+}
+
+div .main-producto {
+    padding: 15px 0px;
+    font-size: xx-large;
+}
+
+div .precio {
+    display: flex;
+    padding: 50px 0px;
+    font-size: xx-large;
+    justify-content: space-between;
+}
+
+div .precio p {
+    color: rgb(115, 190, 1);
+    font-style: unset;
+}
+
+div .cuotas {
+    display: flex;
+    justify-content: space-between;
+}
+
+div .cuotas .sin-interes {
+    font-size: x-large;
+}
+
+div .cuotas .envios {
+    font-size: x-large;
+}
+
+div .button {
+    display: flex;
+    padding: 150px 150px;
+    align-content: stretch;
+    justify-content: space-between;
+}
+
+.btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.comprar {
+    border-color: rgb(115, 190, 1);
+    color: green;
+}
+
+.comprar:hover {
+    background-color: rgb(115, 190, 1);
+    color: white;
+}
+
+.general .detallePro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(252, 247, 247, 0.966);
+    border-radius: 5px;
+    font-size: xx-large;
+    padding: 25px
+}
+
+.general .detallePro p {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.842);
+}
+
+.detallePro .hr {
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.general .main-interesar {
     display: flex;
     justify-content: center;
+    font-size: xx-large;
+    width: 100%;
+    padding: 50px;
+
+
 }
 
-header .head_down .user_menu{
+.general .interes {
     display: flex;
-    padding: 5px;
-    justify-content: space-between;
-    align-items: center;
-    width: 250px;
-    margin-right: 50px;
+    padding: 80px;
+    width: 100%;
+    justify-content: space-around;
+    background-color: rgba(223, 219, 219, 0.397);
 }
-header .head_down .user_menu a{
-    display: flex;
+
+.general .interes img {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
+    width: 500px;
 }
-header .head_down .user_menu a p{
-    align-self: center;
-}
+
+.general .interes i {
+
+    font-size: 75px;
+    padding-top: 80px;
 }

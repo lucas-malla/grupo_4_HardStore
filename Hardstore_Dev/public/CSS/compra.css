@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.315);
+}
+
+div.main-añadido{
+   margin: 50rem;
+    margin-top: 200px;
+    text-align: center;
+    width: 600px;
+    background-color: white;
+   border:  5px solid white;
+   box-shadow: 10px 10px rgba(0, 0, 0, 0.116);
+}
+.main-añadido h2{
+  font-size: xx-large;
+  margin: 100px;
+  
+  padding-bottom: 50px;
+}
+
+.main-añadido .button{
+   display: flex;
+   justify-content: space-around;
+   margin-bottom: 50px;
+
+}
+
+  .btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+  .comprar {
+    border-color: rgb(115, 190, 1);
+    color: green;
+  }
+  
+  .comprar:hover {
+    background-color: rgb(115, 190, 1);
+    color: white;
+  }

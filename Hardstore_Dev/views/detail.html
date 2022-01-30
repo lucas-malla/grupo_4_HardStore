@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Hardstore</title>
+    <link rel="stylesheet" href="CSS/detail.css">
     <link href="CSS/header.css" rel="stylesheet">
     <!-- <link href="CSS/detail.css" rel="stylesheet">  comentada por que me pisa el header esta mal el css corresponde a un header viejo-->
     <meta charset="UTF-8">
@@ -25,13 +27,13 @@
                     </form>
                     <a href="/cart"><i class="fas fa-shopping-cart"></i></a>
                 </div>
-            
+
                 <div class="head_down">
                     <div class="user_menu">
                         <p>User Name</p>
                     </div>
                     <i class="fas fa-bars"></i>
-                </div>       
+                </div>
             </div>
         </div>
         <div class="desktop">
@@ -41,69 +43,87 @@
                     <div class="head_up">
                         <img class="baner" src="images/header/baner.png" alt="Logo2-baner">
                     </div>
-                        <div class="head_down">
-                            <div class="user_menu">
-                                <a>
+                    <div class="head_down">
+                        <div class="user_menu">
+                            <a>
                                 <a href="/register">Registrarme</a>
                                 <i class="far fa-user"></i>
-                                </a>
-                                <a>
+                            </a>
+                            <a>
                                 <a href="login">Login</a>
                                 <i class="fas fa-sign-in-alt"></i>
-                                </a>
-                            </div>
-                            <a class="carrito" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+                            </a>
                         </div>
+                        <a class="carrito" href="/cart"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
+        </div>
     </header>
     <!-- detail product -->
-    <section class="productos">
-        <div class="monitor">
-            <img src="/images/Monitores.jpg" alt="monitor">
-        </div>
-        <div class="descripcion">
+    <div class="general">
+        <img class="monitor" src="/images/Monitores.jpg" alt="monitor">
+        <div class="productos">
 
-            <div class="main-producto">
-                <p class="Asus">Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</p>
-                <p class="precio">Ar$ 76.880</p>
-                <p class="estock">En Estock</p>
-            </div>
-            <div class="cuotas">
-                <i class="fas fa-credit-card"></i><p>¡ 18 Cuotas sin Interes</p>
-            </div>
-            <div class="envios">
-                <i class="fas fa-truck"></i>
-                <p>Envios Gratis</p>
-            </div>
+            <div class="descripcion">
 
+                <div class="main-producto">
+                    <div>
+                        <h3>>Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</h3>
+                    </div>
+                </div>
+                <hr>
+                <div class="precio">
+                    <h3>Ar$ 76.880</h3>
+                    <hr>
+
+                    <p> <i class="fas fa-check"></i>En Estock</p>
+                </div>
+
+                <div class="cuotas">
+                    <div class="sin-interes">
+                        <h4>¡ 18 Cuotas sin Interes ¡ <i class="fas fa-credit-card"></i></h4>
+                    </div>
+                    <div class="envios">
+                        <p> <i class="fas fa-truck"></i>Envios Gratis</p>
+                    </div>
+                </div>
+            </div>
             <div class="button">
-                <a href="#">
-                    <p>Comprar Ahora</p>
+                <!--button copiado-->
+                <a href="/compra.html">
+                    <button class="btn comprar">Comprar Ahora</button>
                 </a>
+                <button class="btn comprar">Volver al Carrito</button>
+
             </div>
 
         </div>
-
         <div class="detallePro">
-            <h4>Detalle del Producto</h4>
-            <p>Características Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</p>
-            <p>Color Negro</p>
-            <p>Uso Recomendado Gaming</p>
-            <p>Conexiones HDMI
+            <h3>Detalle del Producto</h3>
+            <hr>
+            <p>Características: Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</p>
+            <hr class="hr">
+            <p>Color: Negro</p>
+            <hr class="hr">
+            <p>Uso: Recomendado Gaming</p>
+            <hr class="hr">
+            <p>Conexiones: HDMI
                 USB</p>
-            <p>Frecuencia De Refresco 201-240 Hz</p>
+            <hr class="hr">
+            <p>Frecuencia De Refresco: 201-240 Hz</p>
         </div>
-
+        <div class="main-interesar">
+            <h4>Te puede interesar</h4>
+        </div>
 
         <div class="interes">
-            <h4>Te puede interesar</h4>
-            <img src="/images/monitores.jpg" alt="monitor">
-            <img src="/images/monitores.jpg" alt="monitor">
-            <!-- <img src="/images/monitor.png" alt="monitor" width="35%"> -->
+            <i class="fas fa-angle-left"></i>
+            <img src="/images/Monitores.jpg" alt="monitor">
+            <img src="/images/Monitores.jpg" alt="monitor">
+            <img src="/images/Monitores.jpg" alt="monitor">
+            <i class="fas fa-angle-right"></i>
         </div>
-
-    </section>
+    </div>
 
 </body>
