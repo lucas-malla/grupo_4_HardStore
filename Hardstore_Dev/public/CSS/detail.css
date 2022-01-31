@@ -98,121 +98,123 @@ body {
 }
 
 hr {
-    border: 1px solid red;
-}
-
-.general {
-    background-color: white;
+    width: 80%;
+  
+  }
+  
+  div.general {
+    margin: 5%;
+  }
+  
+  .productos {
     display: flex;
-    flex-wrap: wrap;
-    margin: 130px;
-}
-
-.general .monitor {
-    width: 900px;
-}
-
-div .main-producto {
-    padding: 15px 0px;
-    font-size: xx-large;
-}
-
-div .precio {
+    width: 100%;
+  }
+  
+  .productos img {
+    margin-top: 10px;
+    width: 55%;
+  }
+  
+  .productos .main-producto {
     display: flex;
-    padding: 50px 0px;
-    font-size: xx-large;
+    align-items: flex-end;
+    flex-direction: column;
     justify-content: space-between;
-}
-
-div .precio p {
+    padding: 10px;
+    width: 80%;
+  }
+  
+  .main-producto h3 {
+    font-size: 24px;
+  }
+  
+  .main-producto p {
+    font-size: 20px;
+  }
+  
+  .main-producto .stock {
+    text-decoration: none;
     color: rgb(115, 190, 1);
-    font-style: unset;
-}
-
-div .cuotas {
+  }
+  
+  .main-producto .envios {
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(115, 190, 1);
+    color: white;
+  }
+  
+  div .button {
     display: flex;
-    justify-content: space-between;
-}
-
-div .cuotas .sin-interes {
-    font-size: x-large;
-}
-
-div .cuotas .envios {
-    font-size: x-large;
-}
-
-div .button {
-    display: flex;
-    padding: 150px 150px;
-    align-content: stretch;
-    justify-content: space-between;
-}
-
-.btn {
+    justify-content: flex-end;
+    width: 100%;
+  
+  }
+  
+  div .button a {
+    padding: 5px ;
+  }
+  
+  .btn {
     border: 2px solid black;
     border-radius: 5px;
     background-color: white;
     color: black;
-    padding: 14px 28px;
-    font-size: 17px;
+    padding: 17px 35px;
+    font-size: 24px;
     cursor: pointer;
-}
-
-.comprar {
+  }
+  
+  .comprar {
     border-color: rgb(115, 190, 1);
     color: green;
-}
-
-.comprar:hover {
+  }
+  
+  .comprar:hover {
     background-color: rgb(115, 190, 1);
     color: white;
-}
-
-.general .detallePro {
+  }
+  
+  
+  .general .detallePro {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(252, 247, 247, 0.966);
-    border-radius: 5px;
-    font-size: xx-large;
-    padding: 25px
-}
-
-.general .detallePro p {
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.842);
-}
-
-.detallePro .hr {
-    border: 1px solid rgba(255, 255, 255, 0);
-}
-
-.general .main-interesar {
-    display: flex;
-    justify-content: center;
-    font-size: xx-large;
+    border-radius: 5px red;
+    font-size: 20px;
+    padding: 100px 5px 100px 5px;
+  }
+  
+  .general .detallePro p {
+    padding: 20px 0px; 
+  }
+  
+  .general .main-interesar {
+    text-align: center;
+    font-size: 24px;
     width: 100%;
-    padding: 50px;
-
-
-}
-
-.general .interes {
+    padding-bottom: 50px;
+  
+  }
+  
+  .general .interes {
     display: flex;
-    padding: 80px;
+    justify-content: space-between;
     width: 100%;
-    justify-content: space-around;
-    background-color: rgba(223, 219, 219, 0.397);
-}
-
-.general .interes img {
+    padding: 10px;
+  }
+  
+  .general .interes img {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
-    width: 500px;
-}
-
-.general .interes i {
-
-    font-size: 75px;
-    padding-top: 80px;
-}
+    width: 25%;
+  }
+  
+  .interes i {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+  
+  }
+  
