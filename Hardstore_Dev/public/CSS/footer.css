@@ -1,71 +1,68 @@
 footer {
-    background-color: #f5e8af;
- }
+    background-color: #F3CF2B; 
+}
  
- 
+footer h2{
+    text-align: center;
+    margin: 10px;
+    padding-top: 15px;
+}
  footer .DetailFooter{
      display: flex;
- }
- 
- 
+     margin-bottom: 3px;
+}
  footer .CopyRight {
      margin-top: 20px;
-     margin-bottom: 20px;
      text-align: center;
- }
- 
+     padding-bottom: 10px;
+}
  footer .MediosDePago {
  display: block;
  text-align: center;
  margin-bottom: 30px;
  margin-top: 10px;
  }
- 
  footer .FooterItems{ 
      display: flex;
  }
- 
  footer .DetailFooter {
      margin-top: 20px;
      text-align: center;
  }
- 
  footer .DetailFooter p {
  font-weight: bold;
+ font-size: 20px;
  }
- 
  footer .LeftPanel {
      flex-direction: column;
      width: 50%;
      margin-left: 15%;
-     
  }
- 
  footer .RightPanel {
      flex-direction: column;
      width: 50%;    
      align-content: center;
      margin-left: 5%;
  }
- 
  footer hr{
  margin: auto;
  width: 90%;
  }
- 
  footer .RedesSociales {
      display: flex;
      justify-content: center;
      margin-bottom: 10px;
      margin-top: 10px;
  }
- 
+ footer .RedesSociales i{
+padding: 10px;
+font-size: 30px;
+}
  footer .instagram {
      width: 10%;
      height: 10%;
      margin-left: 10px;
  }
- 
  footer .facebook {
      width: 10%;
  }
@@ -101,27 +98,19 @@ footer {
      
  
  }
- 
- 
- 
+
  @media (min-width: 900px){
- 
     footer .RedesSociales{
          margin:auto;
          max-width: 40%;
      }
- 
      footer .LeftPanel {
          display: flex;
          flex-direction: row;
          width: 50%;
          justify-content: space-around;
-         margin-left: 0%;
-         
-         
+         margin-left: 0%;   
      }
-  
- 
      footer .RightPanel {
          display: flex;
          flex-direction: row;
@@ -129,6 +118,4 @@ footer {
          justify-content: space-around;
          max-width: 500px;
      }
- 
-     
  }
