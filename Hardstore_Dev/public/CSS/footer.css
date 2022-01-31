@@ -118,4 +118,11 @@ font-size: 30px;
          justify-content: space-around;
          max-width: 500px;
      }
+
+     .FooterItems {
+        max-width: 1000px;
+       margin: auto;
+
+    }
+
  }
