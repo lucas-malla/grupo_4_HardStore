@@ -79,7 +79,7 @@ header .head_down .user_menu{
     border: black solid 2px;
     border-radius: 15px;
 }
-@media (min-width: 500px){
+@media (min-width: 450px){
     header .desktop{
         display: block;
     }

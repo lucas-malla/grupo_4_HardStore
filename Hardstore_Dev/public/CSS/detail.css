@@ -60,37 +60,24 @@ header .head_down .user_menu {
     border-radius: 15px;
 }
 
-@media (min-width: 500px) {
-    .desktop {
-        display: block;
-    }
 
-    .cell_phone {
-        display: none;
-    }
-
-    .structure {
-        display: flex;
-        justify-content: center;
-    }
-
-    header .head_down .user_menu {
-        display: flex;
-        padding: 5px;
-        justify-content: space-between;
-        align-items: center;
-        width: 250px;
-        margin-right: 50px;
-    }
-
-    header .head_down .user_menu a {
-        display: flex;
-    }
-
-    header .head_down .user_menu a p {
-        align-self: center;
-    }
+header .head_down .user_menu {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    margin-right: 50px;
 }
+
+header .head_down .user_menu a {
+    display: flex;
+}
+
+header .head_down .user_menu a p {
+    align-self: center;
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -98,64 +85,71 @@ body {
 }
 
 hr {
-    border: 1px solid red;
+    width: 80%;
+
 }
 
-.general {
-    background-color: white;
+div.general {
+    margin: 5%;
+}
+
+.productos {
     display: flex;
-    flex-wrap: wrap;
-    margin: 130px;
+    width: 100%;
+    flex-wrap: nowrap;
 }
 
-.general .monitor {
-    width: 900px;
+.productos img {
+    margin-top: 10px;
+    min-width: 50%;
 }
 
-div .main-producto {
-    padding: 15px 0px;
-    font-size: xx-large;
-}
-
-div .precio {
+.productos .main-producto {
     display: flex;
-    padding: 50px 0px;
-    font-size: xx-large;
+    align-items: flex-end;
+    flex-direction: column;
     justify-content: space-between;
+    padding: 10px;
+    width: 80%;
 }
 
-div .precio p {
+.main-producto h3 {
+    font-size: 24px;
+}
+
+.main-producto p {
+    font-size: 20px;
+}
+
+.main-producto .stock {
+    text-decoration: none;
     color: rgb(115, 190, 1);
-    font-style: unset;
 }
 
-div .cuotas {
-    display: flex;
-    justify-content: space-between;
-}
-
-div .cuotas .sin-interes {
-    font-size: x-large;
-}
-
-div .cuotas .envios {
-    font-size: x-large;
+.main-producto .envios {
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(115, 190, 1);
+    color: white;
 }
 
 div .button {
     display: flex;
-    padding: 150px 150px;
-    align-content: stretch;
-    justify-content: space-between;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 15px;
+
 }
 
+/* ver btn .comprar */
 .btn {
     border: 2px solid black;
     border-radius: 5px;
     background-color: white;
     color: black;
-    padding: 14px 28px;
-    font-size: 17px;
+    padding: 17px 35px;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -169,50 +163,74 @@ div .button {
     color: white;
 }
 
+
 .general .detallePro {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: rgba(252, 247, 247, 0.966);
-    border-radius: 5px;
-    font-size: xx-large;
-    padding: 25px
+    font-size: 20px;
+    padding: 100px 5px 100px 5px;
+    box-shadow: 0px 0px 18px 8px rgb(0, 0, 0, 0.1);
 }
 
 .general .detallePro p {
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0.842);
+    padding: 20px 0px;
 }
 
-.detallePro .hr {
-    border: 1px solid rgba(255, 255, 255, 0);
+.general .detallePro hr {
+    width: 100%;
 }
 
 .general .main-interesar {
-    display: flex;
-    justify-content: center;
-    font-size: xx-large;
+    text-align: center;
+    font-size: 24px;
     width: 100%;
-    padding: 50px;
-
+    padding-bottom: 50px;
 
 }
 
 .general .interes {
     display: flex;
-    padding: 80px;
+    justify-content: space-between;
     width: 100%;
-    justify-content: space-around;
-    background-color: rgba(223, 219, 219, 0.397);
+    padding: 10px;
 }
-
+/* ver box-shadow*/
 .general .interes img {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
-    width: 500px;
+    width: 25%;
 }
 
-.general .interes i {
+.interes i {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
 
-    font-size: 75px;
-    padding-top: 80px;
+}
+
+@media (min-width: 500px) {
+    .desktop {
+        display: block;
+    }
+
+    .cell_phone {
+        display: none;
+    }
+
+    .structure {
+        display: flex;
+        justify-content: center;
+
+    }
+
+}
+
+@media (max-width: 500px) {
+    .productos {
+        flex-wrap: wrap;
+    }
+
+    .main-producto {
+        text-align: center;
+    }
 }
