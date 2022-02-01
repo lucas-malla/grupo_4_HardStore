@@ -31,11 +31,6 @@ header{
         "pago"
         "add-product"
         "footer";
-    /*grid-template-areas:
-      'header header header'
-      'table-cart table-cart pago'
-      'add-product add-product add-product'
-      'footer footer footer';*/
     grid-gap: 15px;
     padding: 0 5px;
   }
