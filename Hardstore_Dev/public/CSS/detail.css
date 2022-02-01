@@ -60,6 +60,154 @@ header .head_down .user_menu {
     border-radius: 15px;
 }
 
+
+header .head_down .user_menu {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    width: 250px;
+    margin-right: 50px;
+}
+
+header .head_down .user_menu a {
+    display: flex;
+}
+
+header .head_down .user_menu a p {
+    align-self: center;
+}
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+}
+
+hr {
+    width: 80%;
+
+}
+
+div.general {
+    margin: 5%;
+}
+
+.productos {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.productos img {
+    margin-top: 10px;
+    min-width: 50%;
+}
+
+.productos .main-producto {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    width: 80%;
+}
+
+.main-producto h3 {
+    font-size: 24px;
+}
+
+.main-producto p {
+    font-size: 20px;
+}
+
+.main-producto .stock {
+    text-decoration: none;
+    color: rgb(115, 190, 1);
+}
+
+.main-producto .envios {
+    text-decoration: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: rgb(115, 190, 1);
+    color: white;
+}
+
+div .button {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 15px;
+
+}
+
+/* ver btn .comprar */
+.btn {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 17px 35px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.comprar {
+    border-color: rgb(115, 190, 1);
+    color: green;
+}
+
+.comprar:hover {
+    background-color: rgb(115, 190, 1);
+    color: white;
+}
+
+
+.general .detallePro {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 20px;
+    padding: 100px 5px 100px 5px;
+    box-shadow: 0px 0px 18px 8px rgb(0, 0, 0, 0.1);
+}
+
+.general .detallePro p {
+    padding: 20px 0px;
+}
+
+.general .detallePro hr {
+    width: 100%;
+}
+
+.general .main-interesar {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    padding-bottom: 50px;
+
+}
+
+.general .interes {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+/* ver box-shadow*/
+.general .interes img {
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
+    width: 25%;
+}
+
+.interes i {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+
+}
+
 @media (min-width: 500px) {
     .desktop {
         display: block;
@@ -72,149 +220,17 @@ header .head_down .user_menu {
     .structure {
         display: flex;
         justify-content: center;
+
     }
 
-    header .head_down .user_menu {
-        display: flex;
-        padding: 5px;
-        justify-content: space-between;
-        align-items: center;
-        width: 250px;
-        margin-right: 50px;
-    }
-
-    header .head_down .user_menu a {
-        display: flex;
-    }
-
-    header .head_down .user_menu a p {
-        align-self: center;
-    }
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: white;
-}
+@media (max-width: 500px) {
+    .productos {
+        flex-wrap: wrap;
+    }
 
-hr {
-    width: 80%;
-  
-  }
-  
-  div.general {
-    margin: 5%;
-  }
-  
-  .productos {
-    display: flex;
-    width: 100%;
-  }
-  
-  .productos img {
-    margin-top: 10px;
-    width: 55%;
-  }
-  
-  .productos .main-producto {
-    display: flex;
-    align-items: flex-end;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    width: 80%;
-  }
-  
-  .main-producto h3 {
-    font-size: 24px;
-  }
-  
-  .main-producto p {
-    font-size: 20px;
-  }
-  
-  .main-producto .stock {
-    text-decoration: none;
-    color: rgb(115, 190, 1);
-  }
-  
-  .main-producto .envios {
-    text-decoration: none;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: rgb(115, 190, 1);
-    color: white;
-  }
-  
-  div .button {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-  
-  }
-  
-  div .button a {
-    padding: 5px ;
-  }
-  
-  .btn {
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-    padding: 17px 35px;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .comprar {
-    border-color: rgb(115, 190, 1);
-    color: green;
-  }
-  
-  .comprar:hover {
-    background-color: rgb(115, 190, 1);
-    color: white;
-  }
-  
-  
-  .general .detallePro {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    border-radius: 5px red;
-    font-size: 20px;
-    padding: 100px 5px 100px 5px;
-  }
-  
-  .general .detallePro p {
-    padding: 20px 0px; 
-  }
-  
-  .general .main-interesar {
-    text-align: center;
-    font-size: 24px;
-    width: 100%;
-    padding-bottom: 50px;
-  
-  }
-  
-  .general .interes {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px;
-  }
-  
-  .general .interes img {
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
-    width: 25%;
-  }
-  
-  .interes i {
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-  
-  }
-  
+    .main-producto {
+        text-align: center;
+    }
+}
