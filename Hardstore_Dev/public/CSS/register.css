@@ -6,29 +6,30 @@
 
 @media (max-width:500px) {
     .desktop {
-        display: block;
+    display: block;
     }
   }
     
-
 div.Registro{
 color:black;
 font-size: 24px;
 text-align: center;
 padding-top: 20px;
-      
-      }
+margin-bottom: 10px;
+}
+
 div.iconos{
 text-align: center;
-justify-content: center;
+float: right;
 margin-top: 5%;
-      }
+}
     
 p.cuenta-gratis{
 padding-top:5%;
 text-align: center;
 justify-content: center;
-    }
+}
+
 svg.iconify.iconify--ion{
 padding-top:5%;
 margin-left: 35%;
@@ -39,28 +40,29 @@ border: 3px solid black;}
     
 div.formulario{
 width:200px ;
-background:#24303c;
+background:chartreuse;
 padding:10px;
 margin:auto;
 margin-top:20px;
 border-radius:4px;
 font-family:'calibri';
-    }
+}
 
 input{
 text-align: center;
 font-size: black;
 align-items: center;
-padding-top: -10%;
-    }
+}
+
 header{
-background-color: #eb3939; 
+background-color: #F3CF2B;
 justify-content: space-between;
 padding-top: 10px;
 align-items: center;
 width: 210px;
 height: 175px;
-    }
+}
+
 form{
 width: 100px;
 height: 100px;
@@ -68,3 +70,70 @@ margin-top: 20px;
 margin-left: 10px;
 margin-right: 10px;
 }
+
+body{
+width:210px;
+height:400px;
+border: solid rgb(15, 14, 14) 1px;
+padding: 5px;
+margin-left:50px;
+margin-top: 100px;
+background-color:white;
+margin-right:20px;
+}
+.icons{
+margin-top: 0 5px 0 5px;
+padding: 0 5px 0 5px;
+margin-right: 5px;
+margin-left: 75px;
+  }
+    
+button.mensaje{
+margin-left: 55px;
+margin-right: 58px;
+margin-top: 10px;
+color: black;
+outline-color: grey;
+}
+div.log-in-btn{
+font-size: 15px;
+color: black;
+margin-left: 26%;
+margin-right:-58% ;
+text-align: center;
+margin-top: 5%;
+ }
+input{
+background: silver;
+border: 1px solid black;
+border-radius: 5px 5px 5px 5px;
+color: #393939;
+font-size: 12px;
+padding: 3px;
+margin-left: 15%;
+margin-bottom: 10%;
+ }
+ hr{
+margin-left:-10%;
+margin-right:-100%;
+margin-top:10%;
+inline-size: black;
+}
+button{
+    padding: 5px;
+    background-color: rgb(115,190,1);
+    border-radius:5px ;
+
+}
+    
+     
+
+    
+
+   
+
+
+
+      
+
+    

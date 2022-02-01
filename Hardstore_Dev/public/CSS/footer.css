@@ -76,7 +76,7 @@ font-size: 30px;
  }
  
  
- @media (min-width: 500px){
+ @media (min-width: 450px){
  
     footer .instagram {
          width: 8%;
@@ -95,8 +95,6 @@ font-size: 30px;
      footer .mail   {
          width: 8%;
      }
-     
- 
  }
 
  @media (min-width: 900px){
@@ -118,4 +116,8 @@ font-size: 30px;
          justify-content: space-around;
          max-width: 500px;
      }
+     .FooterItems {
+        max-width: 1000px;
+       margin: auto;
+    }
  }

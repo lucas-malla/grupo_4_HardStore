@@ -103,7 +103,7 @@ h4{
 .destacados .products{
     margin-top: 2px;
 }
-@media (min-width: 500px){
+@media (min-width: 450px){
     main .desktop{
         display: block;
     }
