@@ -2,37 +2,26 @@ const express = require('express');
 const app = express();
 const path = require('path')
 
+let rutasProductos = require('./src/routes/products.js')
+let rutaUsers = require('./src/routes/users.js')
+
 app.use(express.static(path.resolve(__dirname, './public')))
 
-let PUERTO = 3000
+let PUERTO = 3020
 app.listen(process.env.PORT || PUERTO, () => console.log("server: ON  Port:", PUERTO))
 
 //HOME
 app.get('/', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/index.html"))
-})
-
-//PRODUCT GALERY
-app.get('/products', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/products_galery.html"))
-})
-
-//PRODUCT DETAIL
-app.get('/product-detail', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/detail.html"))
+    res.sendFile(path.resolve(__dirname, "./src/views/index.html"))
 })
 
 //SHOPING CART
 app.get('/productCart', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/productCart.html"))
+    res.sendFile(path.resolve(__dirname, "./src/views/productCart.html"))
 })
 
-//LOGIN
-app.get('/login', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/login.html"))
-})
+//PRODUCT DETAIL & PRODUCT GALERY
+app.use('/products', rutasProductos);
 
-//REGISTER
-app.get('/register', function(req, res){
-    res.sendFile(path.resolve(__dirname, "./views/register.html"))
-})
+//USERS
+app.use('/user', rutaUsers);
