@@ -90,6 +90,9 @@ header .head_down .user_menu{
         display: flex;
         justify-content: center;
     }
+    .structure a{
+        align-self: center;
+    }
     .logo{
         align-self: center;
         width: 90px;

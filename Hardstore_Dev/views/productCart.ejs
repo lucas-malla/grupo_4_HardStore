@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Carrito</title>
+    <script src="https://kit.fontawesome.com/190d2f0c87.js" crossorigin="anonymous"></script>
+    <link href="CSS/header.css" rel="stylesheet">
+    <link href="CSS/productCart.css" rel="stylesheet">
+    <link href="CSS/footer.css" rel="stylesheet">
+</head>
+<body>
+    <div class="grid-container">
+        <header>
+            <%- include("./partials/header.ejs") %>
+        </header>
+        
+        <div class="table-cart">
+            <h2>MI CARRITO</h2>
+            <div class="item">
+                <img src="images/monitores.jpg" alt="Monitor" class="product-image">
+                <p class="name"> Monitor gamer Curvo Led 34" </p>
+                <div class="quantity"> <div class="quantity-buttons">
+                    <input type="button" value="-" class="minus"><input type="tel" class="Qty-value" value="1"><input type="button" value="+" class="plus"></div>
+                </div>
+                <p class="price">$64,999</p>
+                <div class="delete">
+                    <button type="button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="item">
+                <img src="images/note.png" alt="notebook" class="product-image">
+                <p class="name"> Notebook Intel Core I5 15" Ultrabook Gamer </p>
+                <div class="quantity"> <div class="quantity-buttons">
+                    <input type="button" value="-" class="minus"><input type="tel" class="Qty-value" value="1" title="Qty"><input type="button" value="+" class="plus"></div>
+                </div>
+                <p class="price">$102,999</p>
+                <div class="delete">
+                    <button type="button"><i class="fas fa-times"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="pago">
+            <div class="cupon">
+                <label for="codigo">¿Tenés un cupon de descuentos?</label>
+                <div class="input-coupon"> <input type="text" class="coupon-box" name="cupon" placeholder="Código" id="codigo"> <span class="input-group-append"> <button class="btn-apply-coupon">APLICAR</button> </span> </div>
+            </div>
+            <div class="buy">
+                <div class="buy-table">
+                    <div class="table-price">
+                    <dl class="Sub-total">
+                    <dt>Sub-total</dt>
+                    <dd class="Price-right">$167.998</dd>
+                    </dl>
+                    <dl class="total">
+                    <dt><strong>Total</strong></dt>
+                    <dd class="Price-right bold"><strong>$167.998</strong></dd>
+                    </dl></div>
+                    <button class="btn-buy">FINALIZAR COMPRA</button> 
+                </div>
+            </div>
+        </div>
+        <div class="add-product">
+            <h2>Personas que compraron este producto también compraron</h2>
+            <div class="add-product-table">
+                <div class="add-item">
+                    <img src="images/Lenovo_Tab_M8.jpg" alt="Tablet" class="product-add-image">
+                        <ul class="details">
+                        <li><p>Lenovo Tablet m8 HD</p></li>
+                        <li><p class="price">$32,999</p></li>
+                        <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
+                        </ul>
+                </div>
+                <div class="add-item">
+                    <img src="images/notebook-asus_40675_1.jpeg" alt="Notebook" class="product-add-image">
+                        <ul class="details">
+                        <li><p>Notebook ASUS i3</p></li>
+                        <li><p class="price">$93,999</p></li>
+                        <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
+                        </ul>
+                </div>
+                <div class="add-item">
+                    <img src="images/Teclado Gamer.jpeg" alt="Teclado" class="product-add-image">
+                    <ul class="details">
+                    <li><p>Teclado Gamer</p></li>
+                    <li><p class="price">$4,999</p></li>
+                    <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <%- include("./partials/footer.ejs") %>
+        </footer>
+
+    </div>
+</body>
+</html>
