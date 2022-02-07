@@ -92,7 +92,8 @@ main .search_bar button:hover{
     font-weight: bold;  
 }
 main .line{
-    width: 57%;
+    max-width: 850px;
+    width: 67%;
     margin: auto;
 }
 h4{
@@ -103,7 +104,7 @@ h4{
 .destacados .products{
     margin-top: 2px;
 }
-@media (min-width: 450px){
+@media (min-width: 500px){
     main .desktop{
         display: block;
     }
@@ -140,7 +141,7 @@ h4{
     .destacados .products{
         display: flex;
         flex-wrap: wrap;
-        max-width: 60%;
+        max-width: 70%;
         padding: 0px;
         margin-top: 15px;
         margin: auto;
@@ -152,7 +153,7 @@ h4{
         align-content: start;
         width: 180px;
         height: 270px;
-        margin: 5px;
+        margin: 15px;
         border-radius: 10px;
         display: flex;
         justify-content: center;
@@ -209,4 +210,19 @@ h4{
         display: flex;
         margin-top: 6px;
     }
+}
+
+
+@media (min-width: 1000px){
+    main .desktop .nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    main .desktop .nav_bar{
+        margin: 10px 0px;
+     
+    }
+
+
 }

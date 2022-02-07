@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <title>Hardstore</title>
-    <link href="/CSS/header.css" rel="stylesheet">
     <link href="/CSS/prod_gal.css" rel="stylesheet">
     <link href="/CSS/footer.css" rel="stylesheet">
+    <link href="/CSS/header.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,64 +29,23 @@
             </div>
             <div class="productos">
                 <div class="producto">
-                    <a href="/products/product-detail">
-                        <img src="/images/monitores.jpg">
-                        <div class="info">
-                            <h4 class="product_name">Monitor Samsung</h4>
-                            <div class="prices">
-                                <p class="price">$36.000</p>
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
+
+                    <% for (product of search){ %>
+                        <a href="/products/product-detail">
+                            <div class="img"><img src=<%= product.prod_img %> ></div>
+                            
+                            <div class="info">
+                                <h4 class="product_name"><%= product.prod_name %></h4>
+                                <div class="prices">
+                                    <p class="price"><%= product.price %></p>
+                                    <p class="price_dto"><%= product.price_dto %></p>
+                                    <p class="dto"><%= product.dto %></p>
+                                </div>
+                                <button><p>Agregar al carrito</p></button>
                             </div>
-                            <button><p>Agregar al carrito</p></button>
-                        </div>
-                    </a>
-                </div>
-                
-                <hr>
-                <div class="producto">
-                    <a href="/product-detail">
-                        <img src="/images/monitores.jpg">
-                        <div class="info">
-                            <h4 class="producto">Monitor Samsung</h4>
-                            <div class="prices">
-                                <p class="price">$36.000</p>
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                            <button>Agregar al carrito</button>
-                        </div>
-                    </a>
-                </div>
-                <hr>
-                <div class="producto">
-                    <a href="/product-detail">
-                        <img src="/images/monitores.jpg">
-                        <div class="info">
-                            <h4 class="producto">Monitor Samsung</h4>
-                            <div class="prices">
-                                <p class="price">$36.000</p>
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                            <button>Agregar al carrito</button>
-                        </div>
-                    </a>
-                </div>
-                <hr>
-                <div class="producto">
-                    <a href="/product-detail">
-                        <img src="/images/monitores.jpg">
-                        <div class="info">
-                            <h4 class="producto">Monitor Samsung</h4>
-                            <div class="prices">
-                                <p class="price">$36.000</p>
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                            <button>Agregar al carrito</button>
-                        </div>
-                    </a>
+                        </a>
+                        <hr>
+                    <% } %>
                 </div>
             </div>
         </div>

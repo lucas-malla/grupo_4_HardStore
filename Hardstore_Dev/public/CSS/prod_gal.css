@@ -12,20 +12,24 @@ main .filt-ord p {
 main .producto a{
     display: flex;
     justify-content: center;
-    height: 110px;
     align-items: center;
 }
+main .producto a{
+    justify-content: start;
+}
+main .producto .img{
+    width: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
 main .producto img{
-    max-height: 90px;
+    max-height: 110px;
     max-width: 180px;
-    width: 35%;
 }
 main .producto .info{
     margin: 5px;
-    
     display: flex;
     flex-direction: column;
-    height: 80px;
     margin-right: 5%;
 }
 main .producto .info h4{
@@ -74,24 +78,25 @@ main .filtro{
     }
     .ordenar-por{
         position: relative;
-        left: 75px;
+        left: 50px;
+    }
+    main .producto .img{
+        width: 130px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     main .productos{
-        
+        width: 60%;
     }
     main .producto a{
         display: flex;
         justify-content: start;
-        height: 110px;
         align-items: center;
-
     }
     .filt-prod{
         display: flex;
         flex-direction: row;
         justify-content: center;
-        position: relative;
-        right: 60px;
     }
     main .filtro{
         display: block;
@@ -102,4 +107,13 @@ main .filtro{
         border-radius: 10px;
         text-align: center;
     }
+}
+
+@media (min-width: 1000px){
+    main .productos{
+        max-width: 600px;
+
+        
+    }
+
 }

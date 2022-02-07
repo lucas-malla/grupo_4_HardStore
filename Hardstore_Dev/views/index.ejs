@@ -43,16 +43,20 @@
                     <button type="submit">Buscar</button>
                 </div>
             </form>
+            <div class="nav">
+                <ul class="nav_bar" type="none">
+                    <li><a href="/products">Teclados</a></li>
+                    <li>Mouses</li>
+                    <li>Headsets</li>
+                    <li>Monitores</li>
+                </ul>
 
-            <ul class="nav_bar" type="none">
-                <li><a href="/products">Teclados</a></li>
-                <li>Mouses</li>
-                <li>Headsets</li>
-                <li>Monitores</li>
-                <li>Parlantes</li>
-                <li>Sillas Gamer</li>
-                <li>Juegos</li>
-            </ul>
+                <ul class="nav_bar" type="none">
+                    <li>Parlantes</li>
+                    <li>Sillas Gamer</li>
+                    <li>Juegos</li>
+                </ul>
+            </div>
             <hr class="line">
 
             <div class="categories">
@@ -66,163 +70,59 @@
                 <h4>LO MAS VENDIDO</h4>
                 <hr class="line">
                 <div class="products">
-                    <a href="Products">
-                        <img src="images/monitor.webp">
-                        <p class="prod_name">Monitor Curvo Led 27 Samsung F390</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
+                    <% for (product of mostSold){ %>
+                        <a href="Products">
+                            <img src=<%= product.prod_img %> >
+                            <p class="prod_name"><%= product.prod_name %></p>
+                            <div class="prices">
+                                <hr>
+                                <p class="price"><%= product.price %></p>
+                                <div class="price_down">
+                                    <p class="price_dto"><%= product.price_dto %></p>
+                                    <p class="dto"><%= product.dto %></p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
-                    <a href=""><img src="images/note.png">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
-                    <a href=""><img src="images/auris.png">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>                    
-                    <a href=""><img src="images/silla.jpg">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
+                            <p class="envios">Envios a todo el pais</p>
+                        </a>
+                    <% } %>
                 </div>
-
                 <h4>NUESTRA SELECCION</h4>
                 <hr class="line">
                 <div class="products">
-                    <a href="Products">
-                        <img src="images/monitor.webp">
-                        <p class="prod_name">Monitor Curvo Led 27 Samsung F390</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
+                    <% for (product of ourSelection){ %>
+                        <a href="Products">
+                            <img src=<%= product.prod_img %> >
+                            <p class="prod_name"><%= product.prod_name %></p>
+                            <div class="prices">
+                                <hr>
+                                <p class="price"><%= product.price %></p>
+                                <div class="price_down">
+                                    <p class="price_dto"><%= product.price_dto %></p>
+                                    <p class="dto"><%= product.dto %></p>
+                                </div>
                             </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
-                    <a href=""><img src="images/note.png">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
-                    <a href=""><img src="images/auris.png">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>                    
-                    <a href=""><img src="images/silla.jpg">
-                        <p class="prod_name">Monitores</p>
-                        <div class="prices">
-                            <hr>
-                            <p class="price">$36.000</p>
-                            <div class="price_down">
-                                <p class="price_dto">$28.800</p>
-                                <p class="dto">20%OFF</p>
-                            </div>
-                        </div>
-                        <p class="envios">Envios a todo el pais</p>
-                    </a>
+                            <p class="envios">Envios a todo el pais</p>
+                        </a>
+                    <% } %>
                 </div>
-
                 <h4>OFERTAS</h4>
                 <hr class="line">
                     <div class="products">
-                        <a href="Products">
-                            <img src="images/monitor.webp">
-                            <p class="prod_name">Monitor Curvo Led 27 Samsung F390</p>
-                            <div class="prices">
-                                <hr>
-                                <p class="price">$36.000</p>
-                                <div class="price_down">
-                                    <p class="price_dto">$28.800</p>
-                                    <p class="dto">20%OFF</p>
+                        <% for (product of offers){ %>
+                            <a href="Products">
+                                <img src=<%= product.prod_img %> >
+                                <p class="prod_name"><%= product.prod_name %></p>
+                                <div class="prices">
+                                    <hr>
+                                    <p class="price"><%= product.price %></p>
+                                    <div class="price_down">
+                                        <p class="price_dto"><%= product.price_dto %></p>
+                                        <p class="dto"><%= product.dto %></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <p class="envios">Envios a todo el pais</p>
-                        </a>
-                        <a href=""><img src="images/note.png">
-                            <p class="prod_name">Monitores</p>
-                            <div class="prices">
-                                <hr>
-                                <p class="price">$36.000</p>
-                                <div class="price_down">
-                                    <p class="price_dto">$28.800</p>
-                                    <p class="dto">20%OFF</p>
-                                </div>
-                            </div>
-                            <p class="envios">Envios a todo el pais</p>
-                        </a>
-                        <a href=""><img src="images/auris.png">
-                            <p class="prod_name">Monitores</p>
-                            <div class="prices">
-                                <hr>
-                                <p class="price">$36.000</p>
-                                <div class="price_down">
-                                    <p class="price_dto">$28.800</p>
-                                    <p class="dto">20%OFF</p>
-                                </div>
-                            </div>
-                            <p class="envios">Envios a todo el pais</p>
-                        </a>                    
-                        <a href=""><img src="images/silla.jpg">
-                            <p class="prod_name">Monitores</p>
-                            <div class="prices">
-                                <hr>
-                                <p class="price">$36.000</p>
-                                <div class="price_down">
-                                    <p class="price_dto">$28.800</p>
-                                    <p class="dto">20%OFF</p>
-                                </div>
-                            </div>
-                            <p class="envios">Envios a todo el pais</p>
-                        </a>
+                                <p class="envios">Envios a todo el pais</p>
+                            </a>
+                        <% } %>
                     </div>
                 </div>
             </div>

@@ -16,9 +16,10 @@ header{
 }
 header .cell_phone{
     display: flex;
+    justify-content: center;
 }
 .central_head{
-    margin: 10px 15px 10px 0px ;
+    
     display: flex;
     flex-direction: column;
 }
@@ -72,6 +73,8 @@ header .head_down{
     justify-content: space-between;
     padding: 20px 0px 5px 0px;
 }
+
+
 header .head_down .user_menu{
     padding: 0px 20px;
     margin-left: 0px;
@@ -79,7 +82,7 @@ header .head_down .user_menu{
     border: black solid 2px;
     border-radius: 15px;
 }
-@media (min-width: 450px){
+@media (min-width: 500px){
     header .desktop{
         display: block;
     }
@@ -93,6 +96,11 @@ header .head_down .user_menu{
     .structure a{
         align-self: center;
     }
+    header .desktop .structure a img{
+        height: 80%;
+        max-width: 100%;
+        border-radius: 10px;
+    }
     .logo{
         align-self: center;
         width: 90px;
@@ -104,6 +112,10 @@ header .head_down .user_menu{
         display: flex;
         flex-direction: row;
     }
+    header .central_head .head_up{
+        max-width: 300px;
+    }
+
     header .head_down .user_menu{
         display: flex;
         padding: 5px;
