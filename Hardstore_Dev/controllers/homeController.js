@@ -11,7 +11,7 @@ mostSold = [
         'dto':"20%OFF",
     },
     {
-        'prod_name': "Notebook DELL i5",
+        'prod_name': "Notebook DELL i3",
         'prod_img':"images/note.png",
         'price':"$35.000",
         'price_dto':"$27.800",
