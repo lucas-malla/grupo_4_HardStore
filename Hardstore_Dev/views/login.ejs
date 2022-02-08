@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <%- include("./partials/head.ejs") %>
+      <title>Login Hardstore</title>
+      <link href="/CSS/login.css" rel="stylesheet" >
+      <!-- iconos -->
+      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+      <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+  </head>
+  <body>
+      <header>
+        <%- include("./partials/header.ejs") %>
+      </header>
+      <main>
+        <header class="login">
+          <h1>Iniciar Sesión</h1>
+          <span class="iconify" data-icon="ion:person-outline"></span>
+        </header>
+        <form action="#" method="post">
+          <input type="name" placeholder="Usuario"> 
+          <input type="contraseña" value=""placeholder="Contraseña">
+          <a href="#">Recuperar contraseña</a>
+          <button type="submit" class="mensaje">LOGIN</button>
+        </form>
+        <hr>                     
+        <p>Ingresar con:</p>
+        <div class= icons>
+          <i class='bx bxl-instagram'></i>
+          <span class="iconify-inline" data-icon="logos:google-gmail"></span>
+          <i class='bx bxl-facebook-circle' ></i>
+          </div>
+        <p>¿Todavía no tenes cuenta?</p>
+        <a href="/register">Hace click acá</a>
+      </main>
+      <footer>
+        <%- include("./partials/footer.ejs") %>
+      </footer>
+  </body> 
+</html> 

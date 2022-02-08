@@ -3,13 +3,15 @@
   padding: 0px; 
   font-family: 'Roboto', sans-serif;
 }
-body{
+main{
   width: 300px;
   border: black solid 1px;
   display: flex;
   flex-direction: column;
+  margin: auto;
+  margin-top: 15px;
 }
-header{
+main header.login{
   background-color: #F3CF2B;
   padding-top: 10px;
   width: 95%;
@@ -18,10 +20,10 @@ header{
   text-align: center;
   padding-bottom: 15px;
 }
-h1{
+main h1{
   margin: 10px 0px;
 }
-svg.iconify.iconify--ion{
+main svg.iconify.iconify--ion{
   display: flex;
   padding-top:10px;
   margin: auto;
@@ -30,21 +32,21 @@ svg.iconify.iconify--ion{
   height:60px;
   border: 2px solid black;
 }
-p.cuenta-gratis{
+main p.cuenta-gratis{
   padding: 20px 0px;
   text-align: center;
   justify-content: center;
 }
-form{
+main form{
   text-align: center;
   margin-top: 15px;
 }
-input{
+main input{
   margin: 5px;
   text-align: center;
   font-size: 15px;
 }
-button{
+main button{
   margin: 15px;
   margin-top: 10px;
   padding: 4px 30px;
@@ -55,23 +57,23 @@ button{
   border-radius: 5px;
   font-size: 18px;
 }
-hr{
+main hr{
   width: 90%;
   margin: auto;
 }
-p{
+main p{
   text-align: center;
 }
-.icons{
+main .icons{
   text-align: center;
   font-size: 40px;
   margin-top: 10px;
 }
-.icons .iconify-inline{
+main .icons .iconify-inline{
   height: 28px;
   padding-bottom: 10px;
 }
-a{
+main a{
   display: block;
   text-align: center;
   color: gray;

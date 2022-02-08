@@ -1,7 +1,7 @@
 const path = require('path')
 
 
-search =[
+results =[
     {
         'prod_name': "Monitor Curvo Led 27 Samsung F390",
         'prod_img': "/images/monitor.webp",
@@ -34,10 +34,17 @@ search =[
 
 const controller = {
     galery: function(req, res){
+
+        console.log(req.query.search) //es el input del usuario al buscar un producto
+
+        //Busqueda en  Base de Datos
+
         res.render("products_galery",
         {
-            'search':search
+            'results':results
         })
+
+
     },
     detail: function(req, res){
         res.render("detail")

@@ -1,16 +1,20 @@
 const express = require('express');
 const app = express();
-const path = require('path')
+const path = require('path');
 
 app.set("view engine", 'ejs');
-app.use(express.static(path.resolve(__dirname, './public')))
+app.use(express.static(path.resolve(__dirname, './public')));
+
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+
 
 let rutasProductos = require('./routes/products.js');
 let mainRoutes = require('./routes/main.js');
 
 
 let PUERTO = 3010
-app.listen(process.env.PORT || PUERTO, () => console.log("server: ON  Port:", PUERTO))
+app.listen(process.env.PORT || PUERTO, () => console.log("server: ON  Port:", PUERTO));
 
 
 //MAIN ROUTES (home-login-register)
