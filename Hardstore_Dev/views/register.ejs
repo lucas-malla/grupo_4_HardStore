@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
       <%- include("./partials/head.ejs") %>
-      <title>Login Hardstore</title>
-      <link href="/CSS/login.css" rel="stylesheet" >
+      <title>register Hardstore</title>
+      <link href="/CSS/register.css" rel="stylesheet" >
       <!-- iconos -->
       <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
       <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
@@ -13,15 +13,16 @@
         <%- include("./partials/header.ejs") %>
       </header>
       <main>
-        <header class="login">
-          <h1>Iniciar Sesión</h1>
+        <header class="register">
+          <h1>Registrarme</h1>
           <span class="iconify" data-icon="ion:person-outline"></span>
         </header>
         <form action="#" method="post">
           <input type="name" placeholder="Usuario"> 
+          <input type="email" value=""placeholder="email">
           <input type="contraseña" value=""placeholder="Contraseña">
-          <a href="#">Recordar contraseña</a>
-          <button type="submit" class="mensaje">LOGIN</button>
+          <a href="#">Recuperar contraseña</a>
+          <button type="submit" class="mensaje"></button>
         </form>
         <hr>                     
         <p>Ingresar con:</p>
@@ -30,8 +31,8 @@
           <span class="iconify-inline" data-icon="logos:google-gmail"></span>
           <i class='bx bxl-facebook-circle' ></i>
           </div>
-        <p>¿Todavía no tenes cuenta?</p>
-        <a href="/registrarme">Hace click acá</a>
+        <p>¿Ya tenes cuenta?</p>
+        <a href="/login">Hace click acá</a>
       </main>
       <footer>
         <%- include("./partials/footer.ejs") %>

@@ -1,139 +1,82 @@
 *{
   margin: 0px;
   padding: 0px; 
-    
+  font-family: 'Roboto', sans-serif;
 }
-
-@media (max-width:500px) {
-    .desktop {
-    display: block;
-    }
-  }
-    
-div.Registro{
-color:black;
-font-size: 24px;
-text-align: center;
-padding-top: 20px;
-margin-bottom: 10px;
+main{
+  width: 300px;
+  border: black solid 1px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 15px;
 }
-
-div.iconos{
-text-align: center;
-float: right;
-margin-top: 5%;
+main header.login{
+  background-color: #F3CF2B;
+  padding-top: 10px;
+  width: 95%;
+  margin: auto;
+  margin-top: 5px;
+  text-align: center;
+  padding-bottom: 15px;
 }
-    
-p.cuenta-gratis{
-padding-top:5%;
-text-align: center;
-justify-content: center;
+main h1{
+  margin: 10px 0px;
 }
-
-svg.iconify.iconify--ion{
-padding-top:5%;
-margin-left: 35%;
-border-right: black;
-width: 60px;
-height:50px;
-border: 3px solid black;}
-    
-div.formulario{
-width:200px ;
-background:chartreuse;
-padding:10px;
-margin:auto;
-margin-top:20px;
-border-radius:4px;
-font-family:'calibri';
+main svg.iconify.iconify--ion{
+  display: flex;
+  padding-top:10px;
+  margin: auto;
+  border-right: black;
+  width: 70px;
+  height:60px;
+  border: 2px solid black;
 }
-
-input{
-text-align: center;
-font-size: black;
-align-items: center;
+main p.cuenta-gratis{
+  padding: 20px 0px;
+  text-align: center;
+  justify-content: center;
 }
-
-header{
-background-color: #F3CF2B;
-justify-content: space-between;
-padding-top: 10px;
-align-items: center;
-width: 210px;
-height: 175px;
+main form{
+  text-align: center;
+  margin-top: 15px;
 }
-
-form{
-width: 100px;
-height: 100px;
-margin-top: 20px;
-margin-left: 10px;
-margin-right: 10px;
+main input{
+  margin: 5px;
+  text-align: center;
+  font-size: 15px;
 }
-
-body{
-width:210px;
-height:400px;
-border: solid rgb(15, 14, 14) 1px;
-padding: 5px;
-margin-left:50px;
-margin-top: 100px;
-background-color:white;
-margin-right:20px;
+main button{
+  margin: 15px;
+  margin-top: 10px;
+  padding: 4px 30px;
+  background-color: rgb(115, 190, 1);
+  font-weight: bold;
+  color: white;
+  border: solid black 1px;
+  border-radius: 5px;
+  font-size: 18px;
 }
-.icons{
-margin-top: 0 5px 0 5px;
-padding: 0 5px 0 5px;
-margin-right: 5px;
-margin-left: 75px;
-  }
-    
-button.mensaje{
-margin-left: 55px;
-margin-right: 58px;
-margin-top: 10px;
-color: black;
-outline-color: grey;
+main hr{
+  width: 90%;
+  margin: auto;
 }
-div.log-in-btn{
-font-size: 15px;
-color: black;
-margin-left: 26%;
-margin-right:-58% ;
-text-align: center;
-margin-top: 5%;
- }
-input{
-background: silver;
-border: 1px solid black;
-border-radius: 5px 5px 5px 5px;
-color: #393939;
-font-size: 12px;
-padding: 3px;
-margin-left: 15%;
-margin-bottom: 10%;
- }
- hr{
-margin-left:-10%;
-margin-right:-100%;
-margin-top:10%;
-inline-size: black;
+main p{
+  text-align: center;
 }
-button{
-    padding: 5px;
-    background-color: rgb(115,190,1);
-    border-radius:5px ;
-
+main .icons{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 10px;
 }
-    
-     
-
-    
-
-   
-
-
-
-      
-
+main .icons .iconify-inline{
+  height: 28px;
+  padding-bottom: 10px;
+}
+main a{
+  display: block;
+  text-align: center;
+  color: gray;
+  padding-bottom: 5px;
+}
     
