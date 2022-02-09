@@ -9,12 +9,14 @@ app.use(express.static(path.resolve(__dirname, './public')));
 
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"))
 
-let rutasProductos = require('./routes/products.js');
 let mainRoutes = require('./routes/main.js');
+let rutasProductos = require('./routes/products.js');
 let adminRoutes = require('./routes/admin.js');
 
-let PUERTO = 3010
+let PUERTO = 3000
 app.listen(process.env.PORT || PUERTO, () => console.log("server: ON  Port:", PUERTO));
 
 //MAIN ROUTES (home-login-register)
@@ -30,3 +32,9 @@ app.use('/products', rutasProductos);
 
 //ADMIN
 app.use('/admin', adminRoutes)
+
+
+//404
+app.use((req, res, next)=>{
+    res.status(404).render('notFound')
+})

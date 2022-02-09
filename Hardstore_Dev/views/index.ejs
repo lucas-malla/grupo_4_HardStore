@@ -39,25 +39,25 @@
 
             <div class="nav">
                 <ul class="nav_bar" type="none">
-                    <li><a href="/products">Teclados</a></li>
-                    <li>Mouses</li>
-                    <li>Headsets</li>
-                    <li>Monitores</li>
+                    <li><a href="/products/galery/teclados">Teclados</a></li>
+                    <li><a href="/products/galery/mouses">Mouses</a></li>
+                    <li><a href="/products/galery/headsets">Headsets</a></li>
+                    <li><a href="/products/galery/monitores">Monitores</a></li>
                 </ul>
 
                 <ul class="nav_bar" type="none">
-                    <li>Parlantes</li>
-                    <li>Sillas Gamer</li>
-                    <li>Juegos</li>
+                    <li><a href="/products/galery/parlantes">Parlantes</a></li>
+                    <li><a href="/products/galery/sillas">Sillas Gamer</a></li>
+                    <li><a href="/products/galery/juegoss">Juegos</a></li>
                 </ul>
             </div>
             <hr class="line">
 
             <div class="categories">
-                <a href="products/galery"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
-                <a href=""><img src="images/monitores.jpg"><p>Monitores</p></a>
-                <a href=""><img src="images/auris.png"><p>Auriculares y Parlantes</p></a>
-                <a href=""><img src="images/silla.jpg"><p>Sillas Gamer</p></a>
+                <a href="products/galery/teclados_mouses"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
+                <a href="products/galery/monitores"><img src="images/monitores.jpg"><p>Monitores</p></a>
+                <a href="products/galery/headsets"><img src="images/auris.png"><p>Headsets</p></a>
+                <a href="products/galery/sillas"><img src="images/silla.jpg"><p>Sillas Gamer</p></a>
             </div>
             
             <div class="destacados">
@@ -65,7 +65,7 @@
                 <hr class="line">
                 <div class="products">
                     <% for (product of mostSold){ %>
-                        <a href="Products">
+                        <a href="Products/product-detail?<%= product.prod_id %>">
                             <img src=<%= product.prod_img %> >
                             <p class="prod_name"><%= product.prod_name %></p>
                             <div class="prices">
