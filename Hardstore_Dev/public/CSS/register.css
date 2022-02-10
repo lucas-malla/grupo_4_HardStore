@@ -2,6 +2,7 @@
   margin: 0px;
   padding: 0px; 
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
 main{
   width: 300px;
@@ -11,7 +12,7 @@ main{
   margin: auto;
   margin-top: 15px;
 }
-main header.login{
+main header.r{
   background-color: #F3CF2B;
   padding-top: 10px;
   width: 95%;
@@ -49,7 +50,7 @@ main input{
 main button{
   margin: 15px;
   margin-top: 10px;
-  padding: 4px 30px;
+  padding: 5px 20px;
   background-color: rgb(115, 190, 1);
   font-weight: bold;
   color: white;
@@ -79,4 +80,3 @@ main a{
   color: gray;
   padding-bottom: 5px;
 }
-    
