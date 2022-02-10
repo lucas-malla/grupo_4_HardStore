@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin - Product Manager</title>
+    <%- include("../partials/head.ejs") %>
+    <link href="/CSS/admin/prodModification.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <%- include("./partials/header.ejs") %>
+    </header>
+    <main>
+        <!-- <p>Salector de Producto no se como y me envia una variable con los datos del producto</p> -->
+        <h1>Modificacion de datos de producto</h1>
+        <div class="data">
+            <div class="newData">
+                <form action="/admin/controlPanel" method="POST" enctype="multipart/form-data">
+                    <h3>Nuevos datos</h3>
+                    <label for="categoria">Categoria de Producto</label>
+                    <select name="categoria" id="categoria" form="categoria">
+                        <option value="volvo">monitores</option>
+                        <option value="saab">headsets</option>
+                        <option value="opel">sillas</option>
+                        <option value="audi">teclados</option>
+                        <option value="audi">mouses</option>
+                        <option value="audi">parlantes</option>
+                        <option value="audi">juegos</option>
+                    </select>
+                    <label>Nombre de Producto</label>
+                    <input type="text" name="prodName" placeholder="123">
+                    <label>Precio</label>
+                    <input type="text" name="price" placeholder="456">
+                    <label>Descuento</label>
+                    <input type="text" name="dto" placeholder="">
+                    <label>Descripcion</label>
+                    <input type="text" name="description" placeholder="">
+                    <p>Caracteristicas:</p>
+                    <div class="caracteristicas">
+                        <label><input type="checkbox" name="mostSold" placeholder=""> Mas vendido </label>
+                        <label><input type="checkbox" name="selection" placeholder=""> Nuestra seleccion </label>
+                        <label><input type="checkbox" name="offer" placeholder=""> Ofertas </label>
+                    </div>
+                    <p>Imagen del producto</p>
+                    <input class="file" type="file" name="prodImg">
+                    
+                    <div class="buttons">
+                        <button type="reset">Reset</button>
+                        <button type="submit">Guardar</button>
+                    </div>
+                </form>
+            </div>
+            <div class="oldData">
+                <h3>Datos actuales</h3>
+                <p>Categoria</p>
+                <p>Nombre de Producto</p>
+                <p>Precio</p>
+                <p>Descuento</p>
+                <p>Precio con Descuento</p>
+                <p>Descripcion:</p> 
+                <p>Caracteristicas</p>
+                <p>Mas vendido</p>
+                <p>Nuestra seleccion</p>
+                <p>Ofertas</p>
+            </div>
+    </div>
+    </main>
+    <footer>
+        <%- include("./partials/footer.ejs") %>
+    </footer>
+</body>
+</html>

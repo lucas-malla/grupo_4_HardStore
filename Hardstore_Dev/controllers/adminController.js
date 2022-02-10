@@ -3,11 +3,14 @@ const controller = {
     login: function(req, res){
         res.render("adminLogin")
     },
+    controlPanel:function(req, res){
+        res.render("adminControlPanel")
+    },
     addProduct: function(req, res){
-        res.render("prodCreation")
+        res.render("adminProdCreation")
     },
     manageProduct: function(req, res){
-        res.render("prodModification")
+        res.render("adminProdModification")
     }
 }
 
