@@ -91,26 +91,24 @@ hr {
 
 div.general {
     margin: 5%;
+    margin-top: 0;
 }
 
 .productos {
-    display: flex;
+    display: grid;
     width: 100%;
-    flex-wrap: nowrap;
+    grid-template-columns: 60% auto;
 }
 
 .productos img {
-    margin-top: 10px;
-    min-width: 50%;
+    max-width: 100%;
 }
 
 .productos .main-producto {
     display: flex;
-    align-items: flex-end;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 10px;
-    width: 80%;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .main-producto h3 {
@@ -129,26 +127,38 @@ div.general {
 .main-producto .envios {
     text-decoration: none;
     border-radius: 5px;
-    padding: 5px;
+    padding: 2px;
     background-color: rgb(115, 190, 1);
     color: white;
+    width: 20%;
+}
+
+.main-producto .main-envios {
+    font-size: 15px;
 }
 
 div .button {
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 15px;
 
 }
 
 /* ver btn .comprar */
+.ahora {
+    display: flex;
+    justify-content: center;
+}
+
 .btn {
     border: 2px solid black;
     border-radius: 5px;
     background-color: white;
     color: black;
-    padding: 17px 35px;
+    padding: 17px 0;
     font-size: 24px;
     cursor: pointer;
 }
@@ -156,11 +166,32 @@ div .button {
 .comprar {
     border-color: rgb(115, 190, 1);
     color: green;
+    width: 30%;
 }
 
 .comprar:hover {
     background-color: rgb(115, 190, 1);
     color: white;
+}
+
+
+.main-ul {
+    display: flex;
+    /* min-height: 15px; */
+    /* margin: 60px 150px 0; */
+    justify-content: center;
+}
+
+.main-ul img {
+    max-height: 50px;
+    width: auto;
+    margin: 0 0 28px 16px;
+    background-color: ;
+
+}
+
+.main-ul li {
+    list-style: none;
 }
 
 
@@ -195,6 +226,7 @@ div .button {
     width: 100%;
     padding: 10px;
 }
+
 /* ver box-shadow*/
 .general .interes img {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
