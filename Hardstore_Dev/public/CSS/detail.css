@@ -90,7 +90,7 @@ hr {
 }
 
 div.general {
-    margin: 5%;
+    margin: 10%;
     margin-top: 0;
 }
 
@@ -98,6 +98,7 @@ div.general {
     display: grid;
     width: 100%;
     grid-template-columns: 60% auto;
+    padding-bottom: 15px;
 }
 
 .productos img {
@@ -124,10 +125,21 @@ div.general {
     color: rgb(115, 190, 1);
 }
 
+.cuotas-envios {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.precio-stock {
+    display: flex;
+    flex-direction: column;
+}
+
 .main-producto .envios {
     text-decoration: none;
     border-radius: 5px;
-    padding: 2px;
+    padding: 2px 2px;
     background-color: rgb(115, 190, 1);
     color: white;
     width: 20%;
@@ -135,6 +147,7 @@ div.general {
 
 .main-producto .main-envios {
     font-size: 15px;
+    text-align: center;
 }
 
 div .button {
@@ -150,7 +163,7 @@ div .button {
 /* ver btn .comprar */
 .ahora {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .btn {
@@ -166,7 +179,7 @@ div .button {
 .comprar {
     border-color: rgb(115, 190, 1);
     color: green;
-    width: 30%;
+    width: 80%;
 }
 
 .comprar:hover {
@@ -176,10 +189,9 @@ div .button {
 
 
 .main-ul {
-    display: flex;
-    /* min-height: 15px; */
-    /* margin: 60px 150px 0; */
-    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around
 }
 
 .main-ul img {
@@ -238,13 +250,13 @@ div .button {
 
 }
 
+.general .interes-2 {
+    display: none;
+}
+
 @media (min-width: 500px) {
     .desktop {
         display: block;
-    }
-
-    .cell_phone {
-        display: none;
     }
 
     .structure {
@@ -253,14 +265,59 @@ div .button {
 
     }
 
+    .envios {
+        width: 100%;
+
+    }
+
 }
+
 
 @media (max-width: 500px) {
     .productos {
-        flex-wrap: wrap;
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
-    .main-producto {
-        text-align: center;
+    .envios {
+        display: none;
+    }
+
+    div .main-ul {
+        display: none;
+    }
+
+    div .button {
+        display: flex;
+        justify-content: space-evenly
+    }
+
+    .btn {
+        width: 150%;
+        padding: 17px 75px;
+    }
+
+    .general .interes {
+        display: none;
+    }
+
+    .general .interes-2 {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .general .interes-2 img {
+        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
+        width: 75%;
+    }
+
+    .interes-2 i {
+        display: flex;
+        align-items: center;
+        font-size: 25px;
+
     }
 }
