@@ -7,9 +7,7 @@ body{
     background-color: #ffffff;
     font-family: "roboto", sans-serif;
 }
-header{
-    grid-area: header;
-}
+
 .table-cart{
     grid-area: table-cart;
 }
@@ -19,18 +17,13 @@ header{
 .add-product{
     grid-area: add-product;
 }
-.footer{
-    grid-area: footer;
-}
 
 .grid-container {
     display: grid;
         grid-template-areas:
-        "header"
         "table-cart"
         "pago"
-        "add-product"
-        "footer";
+        "add-product";
     grid-gap: 15px;
     padding: 0 2px;
   }
@@ -47,7 +40,6 @@ header{
 
 }
 .pago{
-    grid-template-areas: pago;
     background-color: #ffffff;
     display: flex;
     flex-flow: column;
@@ -256,10 +248,10 @@ footer{
 @media (min-width: 992px){
     .grid-container{
         grid-template-areas:
-        'header header header'
         'table-cart table-cart pago'
-        'add-product add-product add-product'
-        'footer footer footer'
+        'add-product add-product add-product';
+        max-width: 1250px;
+        margin: 0 auto;
 }
 .item{
     display: flex;
@@ -320,9 +312,7 @@ border: none;
 @media (min-width:760px){
    .grid-container{
     grid-template-areas:
-    "header header"
     "table-cart pago"
-    "add-product add-product"
-    "footer footer";
+    "add-product add-product";
    }
 }
