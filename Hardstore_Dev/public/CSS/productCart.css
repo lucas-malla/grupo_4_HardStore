@@ -260,37 +260,30 @@ footer{
         max-width: 1250px;
         margin: 0 auto;
 }
-.item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-top: 1px solid #e9e9e9;
-    padding: 3px 5px 10px;
+.item-order{
+    margin-left: 5px;
 }
 .item .name{
-    font-size: 16px;
-    text-align: justify;
-    width: 25%;
+    font-size: 18px;
+    text-align: left;
+    max-width: 12rem;
+    padding-top: 10px;
+    font-weight: 500;
 }
 .item .quantity .quantity-buttons{
-    padding-left: 26%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    top: -0.1em;
-
+    transform: translateY(26px);
 }
 .item .quantity .quantity-buttons .Qty-value{
-width: 20%;
+max-width: 15%;
 text-align: center;
 font-size: 14px;
 font-weight: 500;
 border: none;
+word-spacing: auto;
 }
 .quantity .quantity-buttons .minus, .quantity .quantity-buttons .plus{
-    width: 18%;
-    font-size: 18px;
+    
+    font-size: 20px;
     font-weight: 300;
     border-radius: 50%;
     border-color: #c5c5c5cc;
@@ -300,15 +293,12 @@ border: none;
 
 }
 .item .price{
-    font-size: 16px;
-    font-weight: 520;
+    font-size: 18px;
+    font-weight: 550;
 }
 .item .delete button[type="button"]{
-    width: 2rem;
-    background-color: transparent;
-    border: none;
     font-size: 14px;
-    position: relative;
+    
 
 }
 .item .delete .fas{
