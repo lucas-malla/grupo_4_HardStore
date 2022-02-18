@@ -28,7 +28,10 @@ const controller = {
         })
     },
     detail: function(req, res){
-        res.render("detail")
+        producto = data_base.find(producto => 
+            producto.prod_id == req.params.id)
+        console.log(producto);
+        res.render("detail", {'producto': producto})
     }
 }
 

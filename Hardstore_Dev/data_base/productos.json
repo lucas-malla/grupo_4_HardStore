@@ -10,7 +10,8 @@
             "prod_img":"/images/monitor.webp",
             "price":"$36.000",
             "price_dto":"$28.800",
-            "dto":"20%OFF"
+            "dto":"20%OFF",
+            "description": "Color: Negro"
         },
         {
             "prod_id": 6,
