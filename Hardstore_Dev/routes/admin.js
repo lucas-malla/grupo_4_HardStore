@@ -29,27 +29,3 @@ router.post('/addProduct', uploadFile.single('prodImg'), adminController.addProd
 router.post('/manageProduct', adminController.manageProductPost);
 
 module.exports = router;
-
-
-
-const express = require('express');
-const router = express.Router();
-
-const multer = require('multer')
-
-var storage = multer.diskStorage({
-    destination: function (req, file, cb){
-        let folder_path = path.join(__dirname, '../public/images/products');
-        cb(null, folder_path)
-    },
-    filename: function (req, file, cb){
-        console.log(file);
-        let image_name =  `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
-        cb(null, image_name)
-    }
-})
-
-var upload = multer({ storage });
-
-
-router.post('/register', upload.any(), usersController.save);
