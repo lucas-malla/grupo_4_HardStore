@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path')
 
-
 //Base de Datos de productos
 dataBasePath = path.join(__dirname, '../data_base/productos.json')
 data_base = fs.readFileSync(dataBasePath)

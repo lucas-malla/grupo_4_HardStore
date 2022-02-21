@@ -1,52 +1,50 @@
-{
-    "data_base" : [
-        {
-            "prod_id": 5,
-            "prod_name": "Monitor Curvo Led 27 Samsung F390",
-            "prod_category": "monitores",
-            "most_sold" : "True",
-            "selection": "True",
-            "offer": "True",
-            "prod_img":"/images/monitor.webp",
-            "price":"$36.000",
-            "price_dto":"$28.800",
-            "dto":"20%OFF"
-        },
-        {
-            "prod_id": 6,
-            "prod_name": "Notebook DELL i5",
-            "prod_category": "notebook",
-            "most_sold" : "True",
-            "selection": "True",
-            "offer": "True",
-            "prod_img":"/images/note.png",
-            "price":"$35.000",
-            "price_dto":"$27.800",
-            "dto":"15%OFF"
-        },
-        {
-            "prod_id": 7,
-            "prod_name": "Auriculares",
-            "prod_category": "headsets",
-            "most_sold" : "True",
-            "selection": "True",
-            "offer": "True",
-            "prod_img":"/images/auris.png",
-            "price":"$26.000",
-            "price_dto":"$18.800",
-            "dto":"10%OFF"
-        },
-        {
-            "prod_id": 8,
-            "prod_name": "Silla Gamer ROJA",
-            "prod_category": "sillas",
-            "most_sold" : "True",
-            "selection": "True",
-            "offer": "True",
-            "prod_img":"/images/silla.jpg",
-            "price":"$10.000",
-            "price_dto":"$8.800",
-            "dto":"5%OFF"
-        }
-    ]
-}
+[
+    {
+        "prod_id": 5,
+        "prod_name": "Monitor Curvo Led 27 Samsung F390",
+        "prod_category": "monitores",
+        "most_sold": "true",
+        "selection": "true",
+        "offer": "true",
+        "prod_img": "/images/monitor.webp",
+        "price": "$36.000",
+        "price_dto": "$28.800",
+        "dto": "20"
+    },
+    {
+        "prod_id": 6,
+        "prod_name": "Notebook DELL i5",
+        "prod_category": "notebook",
+        "most_sold": "true",
+        "selection": "true",
+        "offer": "true",
+        "prod_img": "/images/note.png",
+        "price": "$35.000",
+        "price_dto": "$27.800",
+        "dto": "15"
+    },
+    {
+        "prod_id": 7,
+        "prod_name": "Auriculares",
+        "prod_category": "headsets",
+        "most_sold": "true",
+        "selection": "true",
+        "offer": "true",
+        "prod_img": "/images/auris.png",
+        "price": "$26.000",
+        "price_dto": "$18.800",
+        "dto": "10"
+    },
+    {
+        "prod_id": 8,
+        "prod_name": "Silla Gamer ROJA",
+        "prod_category": "sillas",
+        "most_sold": "true",
+        "selection": "true",
+        "offer": "true",
+        "prod_img": "/images/silla.jpg",
+        "price": "$10.000",
+        "price_dto": "$8.800",
+        "dto": "5"
+    }
+]
