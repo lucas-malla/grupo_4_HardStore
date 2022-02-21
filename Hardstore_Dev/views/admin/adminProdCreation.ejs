@@ -13,7 +13,7 @@
             <h1>Creación de datos de producto</h1>
             <div class="data">
                 <div class="newData">
-                    <form action="/admin/addProduct" method="POST" >
+                    <form action="/admin/addProduct" method="POST" enctype="multipart/form-data" >
                         <h3>Nuevos datos</h3>
                         <!-- 
                         <label for="id">ID Producto</label>
@@ -44,10 +44,10 @@
                             <label><input type="checkbox" name="offer" value="true"> Ofertas </label>
                         </div>
                         <!-- 
-                            enctype="multipart/form-data"
+                            enctype="multipart/form-data"-->
                         <p>Imagen del producto</p>
                         <input class="file" type="file" name="prodImg">
-                        -->
+                        
                         <div class="buttons">
                             <button type="reset">Reset</button>
                             <button type="submit">Guardar</button>

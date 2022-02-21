@@ -34,7 +34,7 @@ const controller = {
     },
 
     addProductPost: function(req, res){
-        console.log(req.body)
+        //console.log(req.body)
         //creo objeto del producto nuevo
         newProduct = {
             //prod_id: String(get_next_id()),
