@@ -9,6 +9,11 @@ main{
     display: flex;
     flex-direction: column;
 }
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
 h3{
     text-align: center;
     margin: 5px;

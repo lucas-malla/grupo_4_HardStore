@@ -9,6 +9,10 @@ main .filt-ord p {
     border-radius: 12px;
     font-weight: bold;
 }
+main a{
+    text-decoration: none;
+    color: black;
+}
 main .producto a{
     display: flex;
     justify-content: center;
