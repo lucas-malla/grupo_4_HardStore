@@ -10,14 +10,23 @@ var storage = multer.diskStorage({
         cb(null, folder_path)
     },
     filename: function (req, file, cb){
-        console.log(file);
         let image_name =  `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
-        console.log(image_name);
         cb(null, image_name)
     }
 })
+// validacion de formato de multer
+var uploadFile = multer({
+    storage: storage,
+    fileFilter: (req, file, cb) => {
+        const whitelist = ['image/png', 'image/jpeg', 'image/jpg', 'image/webp']   
+        if (whitelist.includes(file.mimetype)){
+            cb(null, true);
+        } else {
+            cb(null, false);
+        }
+    }
+  });
 
-var uploadFile = multer({ storage });
 const adminController =  require('../controllers/adminController');
 
 router.get('/', adminController.login);

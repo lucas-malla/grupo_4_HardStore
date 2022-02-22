@@ -28,7 +28,7 @@ main .producto .img{
 }
 main .producto img{
     max-height: 110px;
-    max-width: 180px;
+    max-width: 140px;
 }
 main .producto .info{
     margin: 5px;
