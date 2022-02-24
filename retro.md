@@ -11,7 +11,7 @@ Observaciones generales: el balance es positivo, se pudieron cumplir con los obj
 
 
 SPRINT: 3
-1. Comenzar a hacer:
+1. Comenzar a hacer: Pedir ayuda entre compañeros para avanzar con el proyecto integrador
 2. Hacer más:
 3. Continuar haciendo: 
 4. Hacer menos:
