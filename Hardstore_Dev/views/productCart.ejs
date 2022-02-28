@@ -56,7 +56,7 @@
             <div class="add-product-table">
                 <% showRandom.forEach(function(product){%>
                 <div class="add-item">
-                    <img src=<%= product.prod_img %> alt="Tablet" class="product-add-image">
+                    <img src=<%= product.prod_img %> alt="<%=product.prod_name%>" class="product-add-image">
                         <ul class="details">
                         <li><p><%= product.prod_name %></p></li>
                         <li><p class="price"><%= product.price %></p></li>
