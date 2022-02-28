@@ -54,30 +54,16 @@
         <div class="add-product">
             <h2>Personas que compraron este producto también compraron</h2>
             <div class="add-product-table">
+                <% showRandom.forEach(function(product){%>
                 <div class="add-item">
-                    <img src="images/Lenovo_Tab_M8.jpg" alt="Tablet" class="product-add-image">
+                    <img src=<%= product.prod_img %> alt="Tablet" class="product-add-image">
                         <ul class="details">
-                        <li><p>Lenovo Tablet m8 HD</p></li>
-                        <li><p class="price">$32,999</p></li>
+                        <li><p><%= product.prod_name %></p></li>
+                        <li><p class="price"><%= product.price %></p></li>
                         <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
                         </ul>
                 </div>
-                <div class="add-item">
-                    <img src="images/notebook-asus_40675_1.jpeg" alt="Notebook" class="product-add-image">
-                        <ul class="details">
-                        <li><p>Notebook ASUS i3</p></li>
-                        <li><p class="price">$93,999</p></li>
-                        <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
-                        </ul>
-                </div>
-                <div class="add-item">
-                    <img src="images/Teclado Gamer.jpeg" alt="Teclado" class="product-add-image">
-                    <ul class="details">
-                    <li><p>Teclado Gamer</p></li>
-                    <li><p class="price">$4,999</p></li>
-                    <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
-                    </ul>
-                </div>
+                <% }) %>
             </div>
         </div>
 

@@ -47,7 +47,7 @@ header{
     gap: 10%;
     margin: 30px 0;
     padding: 10px;
-    width: 90%;
+    width: 85%;
     margin-left: 20px;
     
 }
@@ -69,13 +69,13 @@ header{
 .btn-apply-coupon{
     background-color: #ffffff;
     color: rgb(115, 190, 1);
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 700;
     border: solid 0.5px rgb(115, 190, 1);
     border-radius: 5px;
     box-shadow: 0.5px 0.5px rgba(7, 7, 12, 0.5) ;
     padding: 0.5rem 1rem;
-    width: 30%;
+    width: 28%;
 }
 .pago .buy{
     background-color: #fcfcfc;
@@ -123,11 +123,11 @@ padding: 0.8rem 2.3rem;
     background:rgb(115, 190, 1);
     box-shadow: 0 2px 2px rgb(17, 17, 34);
     color:#ffffff;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 700;
     border: none;
     padding: 0.8rem 1rem;
-    width: 90%;
+    width: 82%;
     align-self: center;
     border-radius: 5px;
 }
@@ -303,6 +303,14 @@ word-spacing: auto;
 }
 .item .delete .fas{
     color: rgba(196, 28, 42, 0.774)
+}
+.pago{
+justify-content: flex-start;
+max-width: 460px;
+margin-left: 40px;
+}
+.buy{
+    max-height: 300px
 }
 
 }
