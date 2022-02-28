@@ -30,15 +30,15 @@
             <div class="productos">
                 <div class="producto">
                     <% for (product of results){ %>
-                        <a href="/products/product-detail">
-                            <div class="img"><img src=<%= product.prod_img %> ></div>
+                        <a href=/products/product-detail/<%= product.prod_id %>>
+                            <div class="img"><img src=/images/products/<%= product.prod_img %> ></div>
                             
                             <div class="info">
                                 <h4 class="product_name"><%= product.prod_name %></h4>
                                 <div class="prices">
-                                    <p class="price"><%= product.price %></p>
-                                    <p class="price_dto"><%= product.price_dto %></p>
-                                    <p class="dto"><%= product.dto %></p>
+                                    <p class="price">$<%= product.price %></p>
+                                    <p class="price_dto">$<%= product.price_dto %></p>
+                                    <p class="dto"><%= product.dto %>%OFF</p>
                                 </div>
                                 <button><p>Agregar al carrito</p></button>
                             </div>

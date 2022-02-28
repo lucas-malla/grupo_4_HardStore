@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+body main .data{
+    display: flex;
+    justify-content: center;
+}
+body main .newData{
+    width: 330px;
+    margin: 30px;
+}
+body main .newData form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+body main .newData form label{
+    margin-top: 7px;
+    padding-left: 3px;
+}
+body main .newData form select{
+    margin: 3px;
+    }
+body main .newData form input{
+margin: 3px;
+}
+body main .newData form input.file{
+    background-color: rgb(206, 206, 206);
+    margin-top: 8px;
+    border-radius: 5px;
+    padding: 3px;
+}
+body main h1{
+    text-align: center;
+    margin-top: 30px;
+}
+body main h3{
+    text-align: center;
+}
+body main p{
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+body main .newData form .caracteristicas{
+    display: flex;
+    flex-direction: column;
+}
+body main .newData form .buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    
+}
+body main .newData form button{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40%;
+    padding: 3px;
+    border-radius: 10%;
+}

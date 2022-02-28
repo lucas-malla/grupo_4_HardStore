@@ -1,19 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Admin - Product Manager</title>
-    <%- include("../partials/head.ejs") %>
-    <link href="/CSS/admin/prodModification.css" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <%- include("./partials/header.ejs") %>
-    </header>
-    <main>
-        <h1>prod creation</h1>
-    </main>
-    <footer>
-        <%- include("./partials/footer.ejs") %>
-    </footer>
-</body>
+    <head>
+        <title>Admin - Product Manager</title>
+        <%- include("../partials/head.ejs") %>
+        <link href="/CSS/admin/prodCreation.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <%- include("./partials/header.ejs") %>
+        </header>
+        <main>
+            <h1>Creación de datos de producto</h1>
+            <div class="data">
+                <div class="newData">
+                    <form action="/admin/addProduct" method="POST" enctype="multipart/form-data" >
+                        <h3>Nuevos datos</h3>
+                        <!-- 
+                        <label for="id">ID Producto</label>
+                        <input type="text" name="id" id="id" placeholder="25">
+                        -->
+                        <label for="categoria">Categoria de Producto</label>
+                        <select name="categoria" id="categoria" >
+                            <option value="monitores">monitores</option>
+                            <option value="headsets">headsets</option>
+                            <option value="sillas">sillas</option>
+                            <option value="teclados">teclados</option>
+                            <option value="mouses">mouses</option>
+                            <option value="parlantes">parlantes</option>
+                            <option value="juegos">juegos</option>
+                        </select>
+                        <label>Nombre de Producto</label>
+                        <input type="text" name="prodName" placeholder="Monitor">
+                        <label>Precio</label>
+                        <input type="number" name="price" placeholder="8300">
+                        <label>Descuento %</label>
+                        <input type="number" name="dto" placeholder="0">
+                        <label>Descripcion</label>
+                        <input type="text" name="description" placeholder="...">
+                        <p>Caracteristicas:</p>
+                        <div class="caracteristicas">
+                            <label><input type="checkbox" name="mostSold" value="true" > Mas vendido </label>
+                            <label><input type="checkbox" name="selection" value="true"> Nuestra seleccion </label>
+                            <label><input type="checkbox" name="offer" value="true"> Ofertas </label>
+                        </div>
+                        <p>Imagen del producto</p>
+                        <input class="file" type="file" name="prodImg">
+                        
+                        <div class="buttons">
+                            <button type="reset">Reset</button>
+                            <button type="submit">Guardar</button>
+                        </div>
+                    </form>
+                    <h4><%= mesage %></h4>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <%- include("./partials/footer.ejs") %>
+        </footer>
+    </body>
 </html>

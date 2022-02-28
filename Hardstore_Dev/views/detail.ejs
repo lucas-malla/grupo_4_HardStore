@@ -22,13 +22,15 @@
 
         <div class="productos">
             <div class="imagen">
-                <img class="monitor" src="/images/Monitores.jpg" alt="monitor">
+                <img class="monitor" src="<%= producto.prod_img %> " alt="monitor">
             </div>
             <div class="main-producto">
-                <h3 class="asus">>Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</h3>
+                <h3 class="asus"><%= producto.prod_name %></h3>
 
                 <div class="precio-stock">
-                    <h3 class="precio">Ar$ 76.880</h3>
+                    <h3 class="precio"><%= producto.price %></h3>
+                    <h3 class="dto"><%= producto.dto %></h3>
+                    <h3 class="price_dto"><%= producto.price_dto %></h3>
                     <br>
                     <a href="#" class="stock">
                         <p> <i class="fas fa-check"></i>En Stock</p>
@@ -48,9 +50,9 @@
         <div class="button">
             <!-- ver butoon -->
             <ul class="main-ul">
-                <li><img class="monitor" src="/images/Monitores.jpg" alt="monitor"></li>
-                <li><img class="monitor" src="/images/Monitores.jpg" alt="monitor"></li>
-                <li><img class="monitor" src="/images/Monitores.jpg" alt="monitor"></li>
+                <li><img class="monitor" src='<%= producto.prod_img %> ' alt="monitor"></li>
+                <li><img class="monitor" src='<%= producto.prod_img %> ' alt="monitor"></li>
+                <li><img class="monitor" src="<%= producto.prod_img %> " alt="monitor"></li>
             </ul>
 
             <a href="/compra.html" class="ahora">
@@ -60,19 +62,20 @@
 
         <br>
         <div class="detallePro">
-            <h3>Detalle del Producto</h3>
+            <h3>Detalle del Producto</h3>                
+            <p><%= producto.tamaño%></p>
             <hr>
+            <p><%= producto.tipo %></p>
+            <hr>
+            <p><%= producto.color %> </p>
+            <hr>
+            <p><%= producto.descripcion %></p>
+            <hr>
+            <p><%= producto.tecno %></p>
+            <hr>
+            <p><%= producto.pollo %></p>
 
-            <p>Características: Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</p>
-            <hr>
-            <p>Color: Negro</p>
-            <hr>
-            <p>Uso: Recomendado Gaming</p>
-            <hr>
-            <p>Conexiones: HDMI
-                USB</p>
-            <hr>
-            <p>Frecuencia De Refresco: 201-240 Hz</p>
+        
         </div>
 
         <br>
