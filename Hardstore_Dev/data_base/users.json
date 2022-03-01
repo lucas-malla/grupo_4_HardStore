@@ -1,0 +1,55 @@
+[
+    {
+        "id": 1,
+        "nombre": "maria",
+        "apellido":"ggsgfdjsgkds",
+        "email": "gaby0@marriott.com",
+        "Contraseña": "iWeh3RqXTZ",
+        "Categoria": "53.61.80.78"
+        
+        
+    },
+    {
+        "id": 2,
+        "nombre": "Genesis",
+        "apellido":"kflghkf",
+        "email": "tomato@simplemachines.org",
+        "Contraseña": "pTqusw",
+        "Categoria": "83.206.38.17"
+        
+        
+        
+    },
+    {
+        "id": 3,
+        "nombre": "lucas",
+        "email": "pwemd2@blogspot.com",
+        "apellido":"dkghklfhl",
+        "Contraseña": "RyS9FWpFf1u",
+        "Categoria": "148.75.176.113"
+        
+ 
+    },
+    {
+        "id": 4,
+        "nombre": "federico",
+        "email": "ktatam3@oaic.gov.au",
+        "apellido":"ggjghjh",
+        "Contraseña": "kg0yGl3bT",
+        "Categoria": "73.212.204.18"
+        
+        
+       
+    },
+    {
+        "id": 5,
+        "nombre": "juan",
+        "email": "wwecalinden4@ovh.net",
+        "apellido":"gjhfjhf",
+        "Contraseña": "rJ3sOkAe",
+        "Categoria": "456.238.99.215"
+        
+        
+        
+    }
+]
