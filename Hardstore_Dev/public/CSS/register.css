@@ -12,7 +12,7 @@ main{
   margin: auto;
   margin-top: 15px;
 }
-main header.r{
+main header.register{
   background-color: #F3CF2B;
   padding-top: 10px;
   width: 95%;
@@ -21,7 +21,7 @@ main header.r{
   text-align: center;
   padding-bottom: 15px;
 }
-main h1{
+main h2{
   margin: 10px 0px;
 }
 main svg.iconify.iconify--ion{
