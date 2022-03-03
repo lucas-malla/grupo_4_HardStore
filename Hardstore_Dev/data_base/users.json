@@ -6,8 +6,6 @@
         "email": "gaby0@marriott.com",
         "Contraseña": "iWeh3RqXTZ",
         "Categoria": "53.61.80.78"
-        
-        
     },
     {
         "id": 2,
@@ -16,9 +14,6 @@
         "email": "tomato@simplemachines.org",
         "Contraseña": "pTqusw",
         "Categoria": "83.206.38.17"
-        
-        
-        
     },
     {
         "id": 3,
@@ -27,8 +22,6 @@
         "apellido":"dkghklfhl",
         "Contraseña": "RyS9FWpFf1u",
         "Categoria": "148.75.176.113"
-        
- 
     },
     {
         "id": 4,
@@ -36,10 +29,7 @@
         "email": "ktatam3@oaic.gov.au",
         "apellido":"ggjghjh",
         "Contraseña": "kg0yGl3bT",
-        "Categoria": "73.212.204.18"
-        
-        
-       
+        "Categoria": "73.212.204.18" 
     },
     {
         "id": 5,
@@ -48,8 +38,5 @@
         "apellido":"gjhfjhf",
         "Contraseña": "rJ3sOkAe",
         "Categoria": "456.238.99.215"
-        
-        
-        
     }
 ]

@@ -66,7 +66,7 @@
                 <hr class="line">
                 <div class="products">
                     <% for (product of mostSold){ %>
-                        <a href=products/product-detail/<%= product.prod_id %>>
+                        <a href=products/<%= product.prod_id %>>
                             <img src=images/products/<%= product.prod_img %> >
                             <p class="prod_name"><%= product.prod_name %></p>
                             <div class="prices">
@@ -85,7 +85,7 @@
                 <hr class="line">
                 <div class="products">
                     <% for (product of ourSelection){ %>
-                        <a href=products/product-detail/<%= product.prod_id %>>
+                        <a href=products/<%= product.prod_id %>>
                             <img src=images/products/<%= product.prod_img %> >
                             <p class="prod_name"><%= product.prod_name %></p>
                             <div class="prices">
@@ -104,7 +104,7 @@
                 <hr class="line">
                     <div class="products">
                         <% for (product of offers){ %>
-                            <a href=products/product-detail/<%= product.prod_id %>>
+                            <a href=products/<%= product.prod_id %>>
                                 <img src=images/products/<%= product.prod_img %> >
                                 <p class="prod_name"><%= product.prod_name %></p>
                                 <div class="prices">

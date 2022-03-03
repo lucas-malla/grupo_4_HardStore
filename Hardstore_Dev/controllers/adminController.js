@@ -26,13 +26,18 @@ const controller = {
     controlPanel:function(req, res){
         res.render("adminControlPanel")
     },
+    products:function(req, res){
+        dataBasePath = path.join(__dirname, '../data_base/productos.json')
+        data_base = fs.readFileSync(dataBasePath)
+        data_base = JSON.parse(data_base)
+        res.render("products_galery", {'results': data_base})
+    },
     addProduct: function(req, res){
         res.render("adminProdCreation", {mesage:null})
     },
     manageProduct: function(req, res){
         res.render("adminProdModification")
     },
-
     addProductPost: function(req, res){     
         if (req.file != undefined) {
             //creo objeto del producto nuevo
@@ -48,7 +53,7 @@ const controller = {
                 dto: req.body.dto
             },
             prod_id = agregarProducto(newProduct)
-            res.redirect("/products/product-detail/"+ String(prod_id));
+            res.redirect("/products/"+ String(prod_id));
         }else{
             res.render("adminProdCreation", {mesage: "La imagen no ha sido cargada correctamente"})
         }
