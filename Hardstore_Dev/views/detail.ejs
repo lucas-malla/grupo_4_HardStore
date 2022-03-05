@@ -22,22 +22,24 @@
 
         <div class="productos">
             <div class="imagen">
-                <img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor">
+                <h3 class="name_product"><%= producto.prod_name %></h3>
+                <img class="img_product" src=/images/products/<%= producto.prod_img %> alt="monitor">
             </div>
             <div class="main-producto">
-                <h3 class="asus"><%= producto.prod_name %></h3>
-
                 <div class="precio-stock">
-                    <h3 class="precio"><%= producto.price %></h3>
-                    <h3 class="dto"><%= producto.dto %></h3>
-                    <h3 class="price_dto"><%= producto.price_dto %></h3>
+                    <div class="detail-product">
+                        <h3 class="producto-price"><%= producto.price %></h3>
+                        <p><%= producto.offer %></p>
+                    </div>
+                    <h3 class="producto-dto"><%= producto.dto %></h3>
+                    <h3 class="producto-price-dto"><%= producto.price_dto %></h3>
                     <br>
                     <a href="#" class="stock">
-                        <p> <i class="fas fa-check"></i>En Stock</p>
+                        <p class="producto-stock"> <i class="fas fa-check"></i><%= producto.stock %></p>
                     </a>
                 </div>
                 <div class="cuotas-envios">
-                    <p class="cuotas">¡ 18 Cuotas sin Interes ¡ <i class="fas fa-credit-card"></i></p>
+                    <p class="cuotas"><%= producto.prod_deus %> <i class="fas fa-credit-card"></i></p>
                     <br>
                     <a href="#" class="envios">
                         <p class="main-envios">Envios gratis</p>
@@ -72,10 +74,6 @@
             <p><%= producto.descripcion %></p>
             <hr>
             <p><%= producto.tecno %></p>
-            <hr>
-            <p><%= producto.pollo %></p>
-
-        
         </div>
 
         <br>

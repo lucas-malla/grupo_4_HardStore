@@ -99,25 +99,45 @@ div.general {
     width: 100%;
     grid-template-columns: 60% auto;
     padding-bottom: 15px;
+    padding-top: 15px;
 }
 
-.productos img {
+.productos .imagen {
+    text-align: center;
     max-width: 100%;
+    border: 1px solid red;
+}
+.productos .name_product{
+    border: 1px solid blue;
+    padding: 10px 0;
+    font-size: 25px;
+}
+.productos .img_product{
+    border: 1px solid red;
+    width:60%;
 }
 
 .productos .main-producto {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
+}
+.detail-product{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid red;
+
 }
 
 .main-producto h3 {
-    font-size: 24px;
+    font-size: 35px;
 }
 
 .main-producto p {
-    font-size: 20px;
+    font-size: 10px;
 }
 
 .main-producto .stock {
@@ -134,7 +154,9 @@ div.general {
 .precio-stock {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
+
 
 .main-producto .envios {
     text-decoration: none;
