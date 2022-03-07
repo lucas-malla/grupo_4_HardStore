@@ -76,6 +76,31 @@ main .producto .info .prices .dto{
 main .filtro{
     display: none;
 }
+.options{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    transform: translate(500px, -70px);
+}
+.action-button {
+    border: none;
+    border-radius: 8px;
+    font-size: 0.6em;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+  
+  .action-button.edit {
+    background-color: rgb(231, 231, 24);
+    display: inline;
+    padding: 12px 16px;
+  }
+  .action-button.delete {
+    background-color: rgb(248, 69, 37);
+  }
 @media (min-width: 500px){
     .filtro-desplegable{
         display: none;

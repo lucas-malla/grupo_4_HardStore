@@ -37,4 +37,7 @@ router.get('/manageProduct', adminController.manageProduct);
 router.post('/addProduct', uploadFile.single('prodImg'), adminController.addProductPost);
 router.post('/manageProduct', adminController.manageProductPost);
 
+/*** DELETE ONE PRODUCT***/ 
+router.delete('/delete/:id', adminController.delete); 
+
 module.exports = router;
