@@ -34,7 +34,7 @@ const controller = {
         let producto = data_base.find(function(producto){
             return  producto.prod_id == req.params.id
         })
-        console.log(producto); 
+        //console.log(producto); 
         res.render('detail', {'producto': producto});
         }
     }
