@@ -27,11 +27,10 @@ function allDataBase (){
     return data_base;
 }
 
-function editarProductoJSON (array){
+function writeFile (array){
     dataBasePath = path.join(__dirname, '../data_base/productos.json');
     dataBase = JSON.stringify (array, null, 4);
     fs.writeFileSync (dataBasePath, dataBase );
-    
 }
 
 const controller = {
@@ -39,14 +38,18 @@ const controller = {
         res.render("adminLogin")
     },
     controlPanel:function(req, res){
-        res.render("adminControlPanel")
+        let results = allDataBase();
+        res.render("adminControlPanel", {results: results})
+    },
+    products:function(req, res){
+        dataBasePath = path.join(__dirname, '../data_base/productos.json')
+        data_base = fs.readFileSync(dataBasePath)
+        data_base = JSON.parse(data_base)
+        res.render("products_galery", {'results': data_base})
     },
     addProduct: function(req, res){
         res.render("adminProdCreation", {mesage:null})
     },
-    // manageProduct: function(req, res){
-    //     res.render("adminProdModification")
-    // },
 
     manageProductEdit: function(req, res){
         //obtengo la información
@@ -59,7 +62,7 @@ const controller = {
         },
 
     manageProductUpdate: function (req,res){
-        console.log ("body0", req.body.prodName);
+        
         let products = allDataBase ();
         let productFound = products.find (function (product){
         return product.prod_id== req.params.id 
@@ -76,12 +79,13 @@ const controller = {
             productFound.dto=req.body.dto
             productFound.descripcion=req.body.description
             
-            editarProductoJSON (products);
+            writeFile (products);
             
-            res.redirect ('/');
+            res.redirect ('/products/'+ String (productFound.prod_id));
         },
 
-    addProductPost: function(req,res){
+
+    addProductPost: function(req, res){     
         if (req.file != undefined) {
             //creo objeto del producto nuevo
             newProduct = {
@@ -96,16 +100,26 @@ const controller = {
                 dto: req.body.dto
             },
             prod_id = agregarProducto(newProduct)
-            res.redirect("/products/product-detail/"+ String(prod_id));
+            res.redirect("/products/"+ String(prod_id));
         }else{
             res.render("adminProdCreation", {mesage: "La imagen no ha sido cargada correctamente"})
         }
     },
-    manageProductPost: function(req, res){
-        console.log("entre por post a manageProductPost")
-        
-        res.redirect("/products/product-detail/"+ String(8));
-    }
+    
+    delete: (req, res) => {
+		let products = allDataBase();
+
+		let productIndex = products.findIndex(function(product){
+			return product.prod_id == req.params.id
+		})
+
+		products.splice(productIndex, 1)
+
+		writeFile(products)
+
+		res.redirect('/admin/ControlPanel')
+	}
+
 }
 
 module.exports = controller

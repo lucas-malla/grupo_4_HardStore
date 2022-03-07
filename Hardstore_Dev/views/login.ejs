@@ -14,13 +14,13 @@
       </header>
       <main>
         <header class="login">
-          <h1>Iniciar Sesión</h1>
+          <h2>Iniciar Sesión</h2>
           <span class="iconify" data-icon="ion:person-outline"></span>
         </header>
-        <form action="#" method="post">
-          <input type="name" placeholder="Usuario"> 
-          <input type="contraseña" value=""placeholder="Contraseña">
-          <a href="#">Recordar contraseña</a>
+        <form action="/login" method="POST">
+          <input type="name" placeholder="Usuario" name="userName"> 
+          <input type="contraseña" value=""placeholder="Contraseña" name="password">
+          <a href="#">Recuperar contraseña</a>
           <button type="submit" class="mensaje">LOGIN</button>
         </form>
         <hr>                     
