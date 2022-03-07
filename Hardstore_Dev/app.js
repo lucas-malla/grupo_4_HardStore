@@ -17,12 +17,16 @@ let mainRoutes = require('./routes/main.js');
 let rutasProductos = require('./routes/products.js');
 let cartRoutes = require('./routes/prodCart.js');
 let adminRoutes = require('./routes/admin.js');
+let userRoutes = require('./routes/users.js');
 
 let PUERTO = 3000
 app.listen(process.env.PORT || PUERTO, () => console.log("server: ON  Port:", PUERTO));
 
-//MAIN ROUTES (home-login-register)
+//MAIN ROUTES (home)
 app.use('/', mainRoutes);
+
+//login-register
+app.use('/', userRoutes);
 
 //SHOPING CART
 app.use('/', cartRoutes);

@@ -14,18 +14,18 @@
       </header>
       <main>
         <header class="register">
-          <h1>Registrarme</h1>
+          <h2>Registrarme</h2>
           <span class="iconify" data-icon="ion:person-outline"></span>
         </header>
-        <form action="#" method="post">
-          <input type="name" placeholder="Usuario"> 
-          <input type="email" value=""placeholder="email">
-          <input type="contraseña" value=""placeholder="Contraseña">
-          <a href="#">Recuperar contraseña</a>
+        <form action="/register" method="POST">
+          <input type="name" placeholder="Usuario" name="userName"> 
+          <input type="email" value=""placeholder="email" name="email">
+          <input type="contraseña" value=""placeholder="Contraseña" name="password_1">
+          <input type="contraseña" value=""placeholder="Repite tu contraseña" name="password_2">
           <button type="submit" class="mensaje">Registrarme</button>
         </form>
         <hr>                     
-        <p>Ingresar con:</p>
+        <p>Registrate con:</p>
         <div class= icons>
           <i class='bx bxl-instagram'></i>
           <span class="iconify-inline" data-icon="logos:google-gmail"></span>

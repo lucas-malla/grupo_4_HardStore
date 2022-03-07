@@ -15,18 +15,18 @@
         <div class="cell_phone">
             <h3 class="seccion_title">¿Que estas buscando?</h3>
             <div class="categories">
-                <a href="products"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
-                <a href=""><img src="images/monitores.jpg"><p>Monitores</p></a>
-                <a href=""><img src="images/auris.png"><p>Auriculares y Parlantes</p></a>
-                <a href=""><img class="img_juegos" src="images/games.png"><p>Juegos</p></a>
-                <a href=""><img src="images/silla.jpg"><p>Sillas Gamer</p></a>
+                <a href="products"><img src="images/home/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
+                <a href=""><img src="images/home/monitores.jpg"><p>Monitores</p></a>
+                <a href=""><img src="images/home/auris.png"><p>Auriculares y Parlantes</p></a>
+                <a href=""><img class="img_juegos" src="images/home/games.png"><p>Juegos</p></a>
+                <a href=""><img src="images/home/silla.jpg"><p>Sillas Gamer</p></a>
                 <a href=""><p>Todos los productos</p></a>
             </div>
         </div>
 
         <div class="desktop">
             <p class="carrusel">
-                <img class="baner" src="images/baner_navidad.png" alt="Falta banner">
+                <img class="baner" src="images/home/baner_navidad.png" alt="Falta banner">
             </p>
 
             <form action="/products/galery" method="get">
@@ -55,10 +55,10 @@
             <hr class="line">
 
             <div class="categories">
-                <a href="products/galery/teclados_mouses"><img src="images/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
-                <a href="products/galery/monitores"><img src="images/monitores.jpg"><p>Monitores</p></a>
-                <a href="products/galery/headsets"><img src="images/auris.png"><p>Headsets</p></a>
-                <a href="products/galery/sillas"><img src="images/silla.jpg"><p>Sillas Gamer</p></a>
+                <a href="products/galery/teclados_mouses"><img src="images/home/tecl_mouse.jfif"><p>Teclados y Mouses</p></a>
+                <a href="products/galery/monitores"><img src="images/home/monitores.jpg"><p>Monitores</p></a>
+                <a href="products/galery/headsets"><img src="images/home/auris.png"><p>Headsets</p></a>
+                <a href="products/galery/sillas"><img src="images/home/silla.jpg"><p>Sillas Gamer</p></a>
             </div>
             
             <div class="destacados">
@@ -66,7 +66,7 @@
                 <hr class="line">
                 <div class="products">
                     <% for (product of mostSold){ %>
-                        <a href="Products/product-detail?<%= product.prod_id %>">
+                        <a href=products/<%= product.prod_id %>>
                             <img src=images/products/<%= product.prod_img %> >
                             <p class="prod_name"><%= product.prod_name %></p>
                             <div class="prices">
@@ -85,7 +85,7 @@
                 <hr class="line">
                 <div class="products">
                     <% for (product of ourSelection){ %>
-                        <a href="Products">
+                        <a href=products/<%= product.prod_id %>>
                             <img src=images/products/<%= product.prod_img %> >
                             <p class="prod_name"><%= product.prod_name %></p>
                             <div class="prices">
@@ -104,7 +104,7 @@
                 <hr class="line">
                     <div class="products">
                         <% for (product of offers){ %>
-                            <a href="Products">
+                            <a href=products/<%= product.prod_id %>>
                                 <img src=images/products/<%= product.prod_img %> >
                                 <p class="prod_name"><%= product.prod_name %></p>
                                 <div class="prices">

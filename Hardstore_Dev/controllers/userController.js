@@ -4,6 +4,16 @@ const controller = {
     },
     register: function(req, res){
         res.render("register")
+    },
+    loginPost: function(req, res){
+        console.log(req.body);
+        console.log("post de login")
+        res.render("login")
+    },
+    registerPost: function(req, res){
+        console.log(req.body);
+        console.log("post de register")
+        res.render("register")
     }
 }
 

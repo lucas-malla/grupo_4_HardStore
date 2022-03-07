@@ -31,11 +31,13 @@ const adminController =  require('../controllers/adminController');
 
 router.get('/', adminController.login);
 router.get('/controlPanel', adminController.controlPanel);
-router.get('/addProduct', adminController.addProduct);
-router.get('/manageProduct', adminController.manageProduct);
+router.get('/products', adminController.products);
 
-router.post('/addProduct', uploadFile.single('prodImg'), adminController.addProductPost);
-router.post('/manageProduct', adminController.manageProductPost);
+router.get('/products/create', adminController.addProduct);
+router.get('/products/:id/edit', adminController.manageProduct);
+
+router.post('/products/create', uploadFile.single('prodImg'), adminController.addProductPost);
+router.post('/products/:id/edit', adminController.manageProductPost);
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/delete/:id', adminController.delete); 

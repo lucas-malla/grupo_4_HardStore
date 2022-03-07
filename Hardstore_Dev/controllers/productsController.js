@@ -30,14 +30,12 @@ const controller = {
         })
     },
     detail: function(req, res){
-        
-    let producto = data_base.find(function(producto){
-        console.log(producto); 
-         return  producto.prod_id == req.params.id
-         
-    })
-    res.render('detail', {producto: producto});
-}
-
-}
+        refreshContent()
+        let producto = data_base.find(function(producto){
+            return  producto.prod_id == req.params.id
+        })
+        //console.log(producto); 
+        res.render('detail', {'producto': producto});
+        }
+    }
 module.exports = controller
