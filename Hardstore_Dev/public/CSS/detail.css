@@ -84,11 +84,12 @@ body {
     background-color: white;
 }
 
-hr {
-    width: 80%;
-
-}
-
+/* .hr{
+    display: flex;
+    border:solid ;
+    width: 70%;
+    opacity: 15%;
+} */
 div.general {
     margin: 10%;
     margin-top: 0;
@@ -99,25 +100,62 @@ div.general {
     width: 100%;
     grid-template-columns: 60% auto;
     padding-bottom: 15px;
+    padding-top: 15px;
 }
 
-.productos img {
+.productos .imagen {
+    text-align: center;
     max-width: 100%;
+}
+
+.productos .name_product {
+    padding: 10px 0;
+    font-size: 25px;
+}
+
+.productos .img_product {
+    width: 60%;
 }
 
 .productos .main-producto {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 
-.main-producto h3 {
-    font-size: 24px;
+.detail-product {
+    margin-left: 15px;
+    width: 100%;
+    border-bottom: 1px solid;
+}
+
+.detail-product-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+
+}
+
+.detail-product-3 {
+    color: rgb(115, 190, 1);
+    padding-left: 15px;
+}
+
+.producto-dto {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.main-producto {
+    font-size: 35px;
 }
 
 .main-producto p {
-    font-size: 20px;
+    font-size: 10px;
 }
 
 .main-producto .stock {
@@ -131,10 +169,62 @@ div.general {
     width: 100%;
 }
 
+.icon_deus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.icon_deus img {
+    max-width: 15%;
+}
+
+.icon_deus_12 {
+    display: flex;
+
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon_stock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.icon_stock i {
+    padding: 25px 25px;
+    width: 15%;
+    border: 1px solid blue;
+}
+
+.icon_Shipping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.icon_Shipping i {
+    width: 15%;
+    border: 1px solid blue;
+}
+
 .precio-stock {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
+
 
 .main-producto .envios {
     text-decoration: none;
@@ -152,17 +242,20 @@ div.general {
 
 div .button {
     display: grid;
-    grid-template-columns: 50% 50%;
-    justify-content: space-between;
+    grid-template-columns: 50% 50% 50%;
     align-items: center;
-    width: 100%;
     padding: 15px;
 
+}
+
+a {
+    text-decoration: none;
 }
 
 /* ver btn .comprar */
 .ahora {
     display: flex;
+    width: 45%;
     justify-content: flex-end;
 }
 
@@ -174,6 +267,13 @@ div .button {
     padding: 17px 0;
     font-size: 24px;
     cursor: pointer;
+}
+
+.button div {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    padding-left: 70px;
 }
 
 .comprar {

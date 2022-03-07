@@ -22,31 +22,47 @@
 
         <div class="productos">
             <div class="imagen">
-                <img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor">
+                <h3 class="name_product"><%= producto.prod_name %></h3>
+                <img class="img_product" src=/images/products/<%= producto.prod_img %> alt="monitor">
             </div>
             <div class="main-producto">
-                <h3 class="asus"><%= producto.prod_name %></h3>
-
-                <div class="precio-stock">
-                    <h3 class="precio"><%= producto.price %></h3>
-                    <h3 class="dto"><%= producto.dto %></h3>
-                    <h3 class="price_dto"><%= producto.price_dto %></h3>
-                    <br>
-                    <a href="#" class="stock">
-                        <p> <i class="fas fa-check"></i>En Stock</p>
-                    </a>
+                <div class="detail-product">
+                    <div class="detail-product-2">
+                        <h3 class="producto-price"><%= producto.price %></h3>
+                        <div class="detail-product-3">
+                            <p>PRECIO ESPECIAL </p>
+                            <p>EFECTIVO / TRANSFERENCIA</p>
+                        </div>
+                    </div>
+                    <h6 class="producto-dto"><%= producto.dto %></h6>
                 </div>
-                <div class="cuotas-envios">
-                    <p class="cuotas">¡ 18 Cuotas sin Interes ¡ <i class="fas fa-credit-card"></i></p>
-                    <br>
-                    <a href="#" class="envios">
-                        <p class="main-envios">Envios gratis</p>
 
-                    </a>
-
+                <div class="icon_deus">
+                    <img class="icon_deus_img" src="/images/products/ahora_12.png" alt="Logo ahora 12">
+                    <div class="icon_deus_12">
+                        <p>12 cuotas sin interés de $4.955,33</p>
+                        <p>Sobre precio de lista</p>
+                    </div>
                 </div>
+                <div class="icon_stock">
+                    <i class="fa-solid fa-square-check"></i>
+                    <div class="icon_deus_stock">
+                        <p>STOCK DISPONIBLE</p>
+                    </div>
+                </div>
+
+                <div class="icon_Shipping">
+                    <i class="fa-solid fa-truck"></i>
+                    <div class="icon_deus_12">
+                        <p>ENVIO A TODO EL PAIS</p>
+                        <p> Con OCA</p>
+                    </div>
+                </div>
+
             </div>
+
         </div>
+
         <div class="button">
             <!-- ver butoon -->
             <ul class="main-ul">
@@ -54,15 +70,18 @@
                 <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
                 <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
             </ul>
-
-            <a href="/compra.html" class="ahora">
-                <button class="btn comprar">Comprar Ahora</button>
-            </a>
+            <div>
+                <a href="/login" class="ahora">
+                    <button class="btn comprar">Añadir al carrito</button>
+                </a>
+                <a href="/productCart" class="ahora">
+                    <button class="btn comprar">Comprar Ahora</button>
+                </a>
+            </div>
         </div>
-
         <br>
         <div class="detallePro">
-            <h3>Detalle del Producto</h3>                
+            <h3>Detalle del Producto</h3>
             <p><%= producto.tamaño%></p>
             <hr>
             <p><%= producto.tipo %></p>
@@ -72,10 +91,6 @@
             <p><%= producto.descripcion %></p>
             <hr>
             <p><%= producto.tecno %></p>
-            <hr>
-            <p><%= producto.pollo %></p>
-
-        
         </div>
 
         <br>
