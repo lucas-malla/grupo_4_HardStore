@@ -40,5 +40,6 @@ app.use('/admin', adminRoutes)
 
 //404
 app.use((req, res, next)=>{
-    res.status(404).render('notFound')
+    res.status(404).render('notFound');
+    next();
 })

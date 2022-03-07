@@ -84,8 +84,8 @@
         "prod_name": "Notebook DELL i5 PROBAR",
         "most_sold": "true",
         "selection": "true",
-        "offer": "false",
-        "prod_img": "prodImg-1646662745979.png",
+        "offer": "true",
+        "prod_img": "prodImg-1646692222756.jpg",
         "price": "35.000",
         "price_dto": 29.75,
         "dto": "15",
@@ -138,5 +138,29 @@
         "price_dto": 4340.55,
         "dto": "5",
         "prod_id": 10
+    },
+    {
+        "prod_name": "Headset sentey",
+        "prod_category": "headsets",
+        "most_sold": "false",
+        "selection": "true",
+        "offer": "true",
+        "prod_img": "prodImg-1646691408095.jpg",
+        "price": "5500",
+        "price_dto": 4675,
+        "dto": "15",
+        "prod_id": 11
+    },
+    {
+        "prod_name": "Spiderman PC Game",
+        "prod_category": "juegos",
+        "most_sold": "true",
+        "selection": "true",
+        "offer": "true",
+        "prod_img": "prodImg-1646692384918.jpg",
+        "price": "11300",
+        "price_dto": 10735,
+        "dto": "5",
+        "prod_id": 12
     }
 ]
