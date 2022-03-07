@@ -19,12 +19,25 @@ function agregarProducto(newProduct){
     return newProduct["prod_id"]
 }
 
+function allDataBase(){
+    dataBasePath = path.join(__dirname, '../data_base/productos.json')
+    data_base = fs.readFileSync(dataBasePath)
+    data_base = JSON.parse(data_base)
+    return data_base
+}
+
+function writeFile(array){
+    let string = JSON.stringify(array, null, 4)
+    fs.writeFileSync(path.join(__dirname, "../data_base/productos.json"), string)
+}
+
 const controller = {
     login: function(req, res){
         res.render("adminLogin")
     },
     controlPanel:function(req, res){
-        res.render("adminControlPanel")
+        let results = allDataBase();
+        res.render("adminControlPanel", {results: results})
     },
     products:function(req, res){
         dataBasePath = path.join(__dirname, '../data_base/productos.json')
@@ -62,7 +75,21 @@ const controller = {
         console.log("entre por post a manageProductPost")
         
         res.redirect("/products/product-detail/"+ String(8));
-    }
+    },
+    delete: (req, res) => {
+		let products = allDataBase();
+
+		let productIndex = products.findIndex(function(product){
+			return product.prod_id == req.params.id
+		})
+
+		products.splice(productIndex, 1)
+
+		writeFile(products)
+
+		res.redirect('/admin/ControlPanel')
+	}
+
 }
 
 module.exports = controller

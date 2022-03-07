@@ -1,18 +1,60 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Admin - Product Manager</title>
-    <%- include("../partials/head.ejs") %>
-    <link href="/CSS/admin/prodModification.css" rel="stylesheet">
+    <title>Hardstore</title>
+    <link href="/CSS/prod_gal.css" rel="stylesheet">
+    <link href="/CSS/footer.css" rel="stylesheet">
+    <link href="/CSS/header.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/190d2f0c87.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
-<body>
+<body>    
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        <h1>admin Control panel</h1>
+        <div class="filt-ord">
+            <p class="filtro-desplegable">Filtrar: <i class="fas fa-sort-down"></i></p>
+            <p class="ordenar-por">Ordenar por: <i class="fas fa-sort-down"></i></p>
+        </div>
+        <hr>
+        <div class="filt-prod">
+            <div class="filtro">
+                <p>Soy un filtro de productos</p>
+            </div>
+            <div class="productos">
+                <div class="producto">
+                    <% for (product of results){ %>
+                        <hr>
+                        <a href=/products/product-detail/<%= product.prod_id %>>
+                            <div class="img"><img src=/images/products/<%= product.prod_img %> ></div>
+                            
+                            <div class="info">
+                                <h4 class="product_name"><%= product.prod_name %></h4>
+                                <div class="prices">
+                                    <p class="price">$<%= product.price %></p>
+                                    <p class="price_dto">$<%= product.price_dto %></p>
+                                    <p class="dto"><%= product.dto %>% OFF</p>
+                                </div>
+                            </div>
+                            <div class="options">
+                                <a href="/admin/manageProduct/<%= product.prod_id %>" class="action-button edit">MODIFICAR</a>
+						        <form action="/admin/delete/<%= product.prod_id %>?_method=DELETE" method="POST" style="display: inline-flex">
+							        <button type="submit" class="action-button delete">ELIMINAR</button>
+						        </form>
+                            </div>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
     </main>
+
     <footer>
         <%- include("./partials/footer.ejs") %>
     </footer>
