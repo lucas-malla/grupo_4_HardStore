@@ -71,38 +71,38 @@
     {
         "prod_id": 5,
         "prod_name": "Monitor Curvo Led 27 Samsung F390",
-        "prod_category": "monitores",
         "most_sold": "true",
-        "selection": "true",
-        "offer": "true",
-        "prod_img": "monitor.webp",
+        "selection": "false",
+        "offer": "false",
+        "prod_img": "prodImg-1646662413662.png",
         "price": "36.000",
-        "price_dto": "28.800",
-        "dto": "20"
+        "price_dto": 28.8,
+        "dto": "20",
+        "descripcion": "Monitor ultimo modelo"
     },
     {
         "prod_id": 6,
-        "prod_name": "Notebook DELL i5",
-        "prod_category": "notebook",
+        "prod_name": "Notebook DELL i5 PROBAR",
         "most_sold": "true",
         "selection": "true",
-        "offer": "true",
-        "prod_img": "note.png",
+        "offer": "false",
+        "prod_img": "prodImg-1646662745979.png",
         "price": "35.000",
-        "price_dto": "27.800",
-        "dto": "15"
+        "price_dto": 29.75,
+        "dto": "15",
+        "descripcion": ""
     },
     {
         "prod_id": 7,
-        "prod_name": "Auriculares",
-        "prod_category": "headsets",
+        "prod_name": "Auriculares ARGENTINA",
+        "offer": "false",
+        "prod_img": "prodImg-1646659810874.png",
+        "price": "20000",
+        "price_dto": 18000,
+        "dto": "10",
+        "descripcion": "Auriculares de alta calidad",
         "most_sold": "true",
-        "selection": "true",
-        "offer": "true",
-        "prod_img": "auris.png",
-        "price": "26.000",
-        "price_dto": "18.800",
-        "dto": "10"
+        "selection": "false"
     },
     {
         "prod_id": 8,

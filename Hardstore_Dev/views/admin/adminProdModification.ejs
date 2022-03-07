@@ -10,15 +10,16 @@
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        <!-- <p>Salector de Producto no se como y me envia una variable con los datos del producto</p> -->
+        
         <h1>Modificacion de datos de producto</h1>
         <div class="data">
             <div class="newData">
-                <form action="/admin/products/:id/edit" method="POST" enctype="multipart/form-data">
+
+                <form action="/admin/products/<%=product.prod_id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
                     <h3>Nuevos datos</h3>
                     <label for="categoria">Categoria de Producto</label>
                     <select name="categoria" id="categoria" form="categoria">
-                        <option value="volvo">monitores</option>
+                        <option value="volvo"><%= product.prod_category%></option>
                         <option value="saab">headsets</option>
                         <option value="opel">sillas</option>
                         <option value="audi">teclados</option>
@@ -27,18 +28,20 @@
                         <option value="audi">juegos</option>
                     </select>
                     <label>Nombre de Producto</label>
-                    <input type="text" name="prodName" placeholder="123">
+                    <input type="text" name="prodName" value="<%= product.prod_name%>">
                     <label>Precio</label>
-                    <input type="text" name="price" placeholder="456">
+                    <input type="text" name="price" value=<%= product.price%>>
                     <label>Descuento</label>
-                    <input type="text" name="dto" placeholder="">
-                    <label>Descripcion</label>
-                    <input type="text" name="description" placeholder="">
+                    <input type="text" name="dto" value=<%= product.dto%>>
+                    <label>Precio con Descuento</label>
+                    <input type="text" name="pricedto" value=<%= product.price_dto%>>
+                    <label>Descripción</label>
+                    <textarea name="description"><%= product.descripcion%></textarea>
                     <p>Caracteristicas:</p>
                     <div class="caracteristicas">
-                        <label><input type="checkbox" name="mostSold" placeholder=""> Mas vendido </label>
-                        <label><input type="checkbox" name="selection" placeholder=""> Nuestra seleccion </label>
-                        <label><input type="checkbox" name="offer" placeholder=""> Ofertas </label>
+                        <label><input type="checkbox" name="mostSold" > Mas vendido </label>
+                        <label><input type="checkbox" name="selection" > Nuestra seleccion </label>
+                        <label><input type="checkbox" name="offer" > Ofertas </label>
                     </div>
                     <p>Imagen del producto</p>
                     <input class="file" type="file" name="prodImg">
@@ -49,19 +52,7 @@
                     </div>
                 </form>
             </div>
-            <div class="oldData">
-                <h3>Datos actuales</h3>
-                <p>Categoria</p>
-                <p>Nombre de Producto</p>
-                <p>Precio</p>
-                <p>Descuento</p>
-                <p>Precio con Descuento</p>
-                <p>Descripcion:</p> 
-                <p>Caracteristicas</p>
-                <p>Mas vendido</p>
-                <p>Nuestra seleccion</p>
-                <p>Ofertas</p>
-            </div>
+            
     </div>
     </main>
     <footer>

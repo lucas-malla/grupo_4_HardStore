@@ -9,6 +9,7 @@ app.use(express.static(path.resolve(__dirname, './public')));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+
 //para metodos post
 const methodOverride = require("method-override"); 
 app.use(methodOverride("_method"))
