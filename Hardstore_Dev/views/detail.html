@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hardstore</title>
+    <link rel="stylesheet" href="CSS/detail.css">
+    <link href="CSS/header.css" rel="stylesheet">
+    <link href="CSS/footer.css" rel="stylesheet">
+    <!-- <link href="CSS/detail.css" rel="stylesheet">  comentada por que me pisa el header esta mal el css corresponde a un header viejo-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/190d2f0c87.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="cell_phone">
+            <img class="logo" src="images/header/logo.png" alt="Logo">
+            <div class="central_head">
+                <div class="head_up">
+                    <form action="products" method="get">
+                        <div class="search_bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" name="search" id="search">
+                            <button type="submit">Buscar</button>
+                        </div>
+                    </form>
+                    <a href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+
+                <div class="head_down">
+                    <div class="user_menu">
+                        <p>User Name</p>
+                    </div>
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+        <div class="desktop">
+            <div class="structure">
+                <img class="logo" src="images/header/logo.png" alt="Logo1">
+                <div class="central_head">
+                    <div class="head_up">
+                        <img class="baner" src="images/header/baner.png" alt="Logo2-baner">
+                    </div>
+                    <div class="head_down">
+                        <div class="user_menu">
+                            <a>
+                                <a href="/register">Registrarme</a>
+                                <i class="far fa-user"></i>
+                            </a>
+                            <a>
+                                <a href="login">Login</a>
+                                <i class="fas fa-sign-in-alt"></i>
+                            </a>
+                        </div>
+                        <a class="carrito" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- detail product -->
+    <div class="general">
+
+        <div class="productos">
+
+            <img class="monitor" src="/images/Monitores.jpg" alt="monitor">
+
+
+            <div class="main-producto">
+                <h3 class="asus">>Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</h3>
+                <br>
+                <hr>
+                <br>
+                <h3 class="precio">Ar$ 76.880</h3>
+                <br>
+                <a href="#" class="stock">
+                    <p> <i class="fas fa-check"></i>En Stock</p>
+                </a>
+                <br>
+                <p class="cuotas">¡ 18 Cuotas sin Interes ¡ <i class="fas fa-credit-card"></i></p>
+                <br>
+                <a href="#" class="envios">
+                    <p> <i class="fas fa-truck"></i>Envíos Gratis</p>
+                </a>
+
+                <div class="button">
+                    <!-- ver butoon -->
+                    <a href="/compra.html" class="ahora">
+                        <button class="btn comprar">Comprar Ahora</button>
+                    </a><br>
+                    <a href="#" class="carrito">
+                        <button class="btn comprar">Volver al Carrito</button>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <div class="detallePro">
+            <h3>Detalle del Producto</h3>
+            <hr>
+
+            <p>Características: Asus Monitor Gaming ROG Strix XG258Q 24.5 Full HD WLED</p>
+            <hr>
+            <p>Color: Negro</p>
+            <hr>
+            <p>Uso: Recomendado Gaming</p>
+            <hr>
+            <p>Conexiones: HDMI
+                USB</p>
+            <hr>
+            <p>Frecuencia De Refresco: 201-240 Hz</p>
+        </div>
+
+
+        <div class="main-interesar">
+            <h4>Te puede interesar</h4>
+        </div>
+
+        <div class="interes">
+            <i class="fas fa-angle-left"></i>
+            <img src="/images/Monitores.jpg" alt="monitor">
+            <img src="/images/Monitores.jpg" alt="monitor">
+            <img src="/images/Monitores.jpg" alt="monitor">
+            <i class="fas fa-angle-right"></i>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <h2>Hardstore</h2>
+            <div class="FooterItems">
+                <div class="LeftPanel">
+                    <div class="FooterPanel">
+                        <div class="DetailFooter">
+                            <p>Contacto</p>
+                        </div>
+                        <p>Av. Fox 1730</p>
+                        <p>info@hardstore.com</p>
+                    </div>
+                    <div class="FooterPanel">
+                        <div class="DetailFooter">
+                            <p>Productos</p>
+                        </div>
+                        <p class=DetailText>Más vendidos</p>
+                        <p class=DetailText>Tendencias</p>
+                    </div>
+                </div>
+                <div class="RightPanel">
+                    <div class="FooterPanel">
+                        <div class="DetailFooter">
+                            <p>Nosotros</p>
+                        </div>
+                        <p>Envíos</p>
+                        <p>Ayuda</p>
+                    </div>
+                    <div class="FooterPanel">
+                        <div class="DetailFooter">
+                            <p>Otros</p>
+                        </div>
+                        <p>Contacto</p>
+                        <p>Privacidad</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="RedesSociales">
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-facebook-square"></i>
+            <i class="fas fa-map-marker-alt"></i>
+            <i class="far fa-envelope"></i>
+        </div>
+        <hr>
+        <div class="MediosDePago">
+            <img src="images/footer/medios de Pago.png" alt="tarjeta" class="FooterIcons">
+        </div>
+        <div class="CopyRight">
+            <p>© 2021 Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+</body>

@@ -1,3 +1,4 @@
+const req = require('express/lib/request');
 const fs = require('fs');
 const path = require('path')
 
@@ -19,6 +20,20 @@ function agregarProducto(newProduct){
     return newProduct["prod_id"]
 }
 
+function allDataBase (){
+    dataBasePath = path.join(__dirname, '../data_base/productos.json');
+    data_base = fs.readFileSync((dataBasePath), "utf-8");
+    data_base = JSON.parse(data_base);
+    return data_base;
+}
+
+function editarProductoJSON (array){
+    dataBasePath = path.join(__dirname, '../data_base/productos.json');
+    dataBase = JSON.stringify (array, null, 4);
+    fs.writeFileSync (dataBasePath, dataBase );
+    
+}
+
 const controller = {
     login: function(req, res){
         res.render("adminLogin")
@@ -29,11 +44,44 @@ const controller = {
     addProduct: function(req, res){
         res.render("adminProdCreation", {mesage:null})
     },
-    manageProduct: function(req, res){
-        res.render("adminProdModification")
-    },
+    // manageProduct: function(req, res){
+    //     res.render("adminProdModification")
+    // },
 
-    addProductPost: function(req, res){     
+    manageProductEdit: function(req, res){
+        //obtengo la información
+        let products = allDataBase ()
+        let productFound = products.find (function(product){
+        return product.prod_id == req.params.id
+        })
+        console.log (productFound);
+        res.render ("adminProdModification", {product: productFound}); 
+        },
+
+    manageProductUpdate: function (req,res){
+        console.log ("body0", req.body.prodName);
+        let products = allDataBase ();
+        let productFound = products.find (function (product){
+        return product.prod_id== req.params.id 
+            })
+        
+            productFound.prod_name= req.body.prodName
+            productFound.prod_category=req.body.categoria 
+            productFound.most_sold = req.body.mostSold == "on" ? "true" : "false"
+            productFound.selection = req.body.selection == "on" ? "true" : "false"
+            productFound.offer = req.body.offer == "on" ? "true" : "false"
+            productFound.prod_img=req.file.filename
+            productFound.price=req.body.price
+            productFound.price_dto= req.body.price * (100- req.body.dto)/100
+            productFound.dto=req.body.dto
+            productFound.descripcion=req.body.description
+            
+            editarProductoJSON (products);
+            
+            res.redirect ('/');
+        },
+
+    addProductPost: function(req,res){
         if (req.file != undefined) {
             //creo objeto del producto nuevo
             newProduct = {

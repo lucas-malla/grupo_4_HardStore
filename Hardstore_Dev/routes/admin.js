@@ -32,9 +32,14 @@ const adminController =  require('../controllers/adminController');
 router.get('/', adminController.login);
 router.get('/controlPanel', adminController.controlPanel);
 router.get('/addProduct', adminController.addProduct);
-router.get('/manageProduct', adminController.manageProduct);
+
+router.get('/manageProduct/:id', adminController.manageProductEdit);
+router.put('/manageProduct/:id',uploadFile.single('prodImg'), adminController.manageProductUpdate);
+
 
 router.post('/addProduct', uploadFile.single('prodImg'), adminController.addProductPost);
 router.post('/manageProduct', adminController.manageProductPost);
+
+
 
 module.exports = router;
