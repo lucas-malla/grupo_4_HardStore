@@ -22,8 +22,8 @@ Observaciones generales:
 
 SPRINT: 4 . JSON + Métodos HTTP
 1. Comenzar a hacer: si bien los puntos de los Sprint a priori están cubiertos, hay algo de homogeneización que hay que efectuar graficamente y en el código para evitar que continue creciendo el proyecto y cada cambio sea más complejo de implementar hacia atrás.
-2. Hacer más: volcar detalles de las modificaciones en Trello.
-3. Continuar haciendo: en este sprint tuvimos una buenas respuesta grupal ante las dificultades de cada compañero con el código.
+2. Hacer más: volcar detalles de las modificaciones pendientes que encontremos en las revisiones en Trello.
+3. Continuar haciendo: en este sprint tuvimos una buena respuesta grupal ante las dificultades de cada compañero con el código.
 4. Hacer menos: 
 5. Dejar de hacer: 
 
