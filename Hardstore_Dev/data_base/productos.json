@@ -2,24 +2,23 @@
     {
         "prod_id": 3,
         "prod_name": "Auriculares",
-        "prod_category": " headsets",
-        "most_sold": "True",
-        "selection": "True",
-        "offer": "True",
-        "prod_img": "auris.png",
-        "price": "26.000",
-        "price_dto": "18.800",
-        "dto": "10",
+        "most_sold": "true",
+        "selection": "false",
+        "offer": "false",
+        "prod_img": "prodImg-1646771356969.jpg",
+        "price": "8500",
+        "price_dto": 7225,
+        "dto": "15",
         "color": "Color: Negro",
         "tamaño": "Marca: GameMax",
         "tipo": "Modelo: HG3500 Pro",
-        "descripcion": "Es gamer: Sí",
+        "descripcion": "Es gamer: Sí\r\nColor: rojo\r\nTipo: Headset\r\n",
         "tecno": "Conexión: USB"
     },
     {
         "prod_id": 4,
         "prod_name": "SILLA GAMER PRIMUS THRONOS 100T BLACK/RED",
-        "prod_category": "sillas",
+        "prod_category": "Sillas",
         "most_sold": "True",
         "selection": "True",
         "offer": "off",
@@ -49,7 +48,7 @@
     {
         "prod_id": 8,
         "prod_name": "Silla Gamer ROJA",
-        "prod_category": "sillas",
+        "prod_category": "Sillas",
         "most_sold": "true",
         "selection": "true",
         "offer": "true",
@@ -60,7 +59,7 @@
     },
     {
         "prod_name": "Tres juegos triple A",
-        "prod_category": "juegos",
+        "prod_category": "Juegos",
         "most_sold": "false",
         "selection": "false",
         "offer": "false",
@@ -72,7 +71,7 @@
     },
     {
         "prod_name": "Headset sentey",
-        "prod_category": "headsets",
+        "prod_category": "Headsets",
         "most_sold": "false",
         "selection": "true",
         "offer": "true",
@@ -84,7 +83,7 @@
     },
     {
         "prod_name": "Spiderman PC Game",
-        "prod_category": "juegos",
+        "prod_category": "Juegos",
         "most_sold": "true",
         "selection": "true",
         "offer": "true",
@@ -96,7 +95,7 @@
     },
     {
         "prod_name": "headst rojo",
-        "prod_category": "headsets",
+        "prod_category": "Headsets",
         "most_sold": "false",
         "selection": "false",
         "offer": "true",
@@ -105,5 +104,17 @@
         "price_dto": 5000,
         "dto": "0",
         "prod_id": 13
+    },
+    {
+        "prod_name": "",
+        "prod_category": "Monitores",
+        "most_sold": "false",
+        "selection": "false",
+        "offer": "false",
+        "prod_img": "prodImg-1646771090394.jpg",
+        "price": "",
+        "price_dto": 0,
+        "dto": "",
+        "prod_id": 14
     }
 ]

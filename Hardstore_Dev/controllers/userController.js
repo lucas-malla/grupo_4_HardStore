@@ -30,7 +30,6 @@ const controller = {
             //read db
             UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
             UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath))
-            console.log(UsersdataBase)
             //create new user
             let new_user = {}
             new_user = {...req.body}
