@@ -6,7 +6,7 @@ app.set("view engine", 'ejs');
 app.set("views",["./views","./views/admin"]);
 
 app.use(express.static(path.resolve(__dirname, './public')));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })); //para capturar envios por post en "req.body"
 app.use(express.json());
 
 

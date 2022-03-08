@@ -80,3 +80,6 @@ main a{
   color: gray;
   padding-bottom: 5px;
 }
+.errores {
+  color: red;
+}

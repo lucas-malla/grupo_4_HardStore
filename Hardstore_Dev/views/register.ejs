@@ -18,12 +18,18 @@
           <span class="iconify" data-icon="ion:person-outline"></span>
         </header>
         <form action="/register" method="POST">
-          <input type="name" placeholder="Usuario" name="userName"> 
-          <input type="email" value=""placeholder="email" name="email">
-          <input type="contraseña" value=""placeholder="Contraseña" name="password_1">
-          <input type="contraseña" value=""placeholder="Repite tu contraseña" name="password_2">
+          <input type="name" placeholder="Usuario" name="userName" value="<%= locals.old ? old.userName : '' %>" > 
+          <input type="email" placeholder="email" name="email" value="<%= locals.old ? old.email : '' %>">
+          <input type="contraseña" placeholder="Contraseña" name="password_1">
+          <input type="contraseña" placeholder="Repite tu contraseña" name="password_2">
           <button type="submit" class="mensaje">Registrarme</button>
         </form>
+        <div class="errores">
+          <% if(locals.errors){ %>
+            <% for (error of errors){ %>
+              <p><%= error.msg %></p>
+          <% }} %>
+        </div>
         <hr>                     
         <p>Registrate con:</p>
         <div class= icons>
