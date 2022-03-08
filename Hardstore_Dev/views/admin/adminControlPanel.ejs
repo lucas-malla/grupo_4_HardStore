@@ -43,7 +43,7 @@
                                 </div>
                             </div>
                             <div class="options">
-                                <a href="/admin/manageProduct/<%= product.prod_id %>" class="action-button edit">MODIFICAR</a>
+                                <a href="/admin/products/<%= product.prod_id %>/edit" class="action-button edit">MODIFICAR</a>
 						        <form action="/admin/delete/<%= product.prod_id %>?_method=DELETE" method="POST" style="display: inline-flex">
 							        <button type="submit" class="action-button delete">ELIMINAR</button>
 						        </form>

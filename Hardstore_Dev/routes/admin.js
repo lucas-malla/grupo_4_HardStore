@@ -10,8 +10,6 @@ router.get('/controlPanel', adminController.controlPanel);
 router.get('/products/:id/edit', adminController.manageProductEdit);
 router.put('/products/:id/edit',uploadFile.single('prodImg'), adminController.manageProductUpdate);
 
-router.get('/products', adminController.products);
-
 router.get('/products/create', adminController.addProduct);
 router.post('/products/create', uploadFile.single('prodImg'), adminController.addProductPost);
 

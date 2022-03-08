@@ -1,10 +1,8 @@
 const req = require('express/lib/request');
 const fs = require('fs');
 const path = require('path')
+const {agregarProducto, allDataBase, writeFile } = require('../services/adminServices')
 
-const agregarProducto = require('../services/adminServices').agregarProducto
-const allDataBase = require('../services/adminServices').allDataBase
-const writeFile = require('../services/adminServices').writeFile
 
 const controller = {
     login: function(req, res){
@@ -13,12 +11,6 @@ const controller = {
     controlPanel:function(req, res){
         let results = allDataBase();
         res.render("adminControlPanel", {results: results})
-    },
-    products:function(req, res){
-        dataBasePath = path.join(__dirname, '../data_base/productos.json')
-        data_base = fs.readFileSync(dataBasePath)
-        data_base = JSON.parse(data_base)
-        res.render("products_galery", {'results': data_base})
     },
     addProduct: function(req, res){
         res.render("adminProdCreation", {mesage:null})

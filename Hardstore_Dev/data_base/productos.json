@@ -1,39 +1,5 @@
 [
     {
-        "prod_id": 1,
-        "prod_name": "Monitor Curvo Led 27 Samsung F390",
-        "prod_category": "monitores",
-        "most_sold": "True",
-        "selection": "True",
-        "offer": "True",
-        "prod_img": "monitor.webp",
-        "price": "$36.000",
-        "price_dto": "$28.800",
-        "dto": "20",
-        "tamaño": "Tamaño de la pantalla: 24",
-        "tipo": "Tipo de pantalla: LED",
-        "descripcion": "Resolución de la pantalla: 1920 px x 1080 px",
-        "tecno": "Tecnologías de la pantalla: FreeSync",
-        "color": "Color: Blanco"
-    },
-    {
-        "prod_id": 2,
-        "prod_name": "Notebook DELL i5",
-        "prod_category": "notebook",
-        "most_sold": "True",
-        "selection": "True",
-        "offer": "True",
-        "prod_img": "note.png",
-        "price": "$ 35.000",
-        "price_dto": "$ 27.800",
-        "dto": "15",
-        "color": "Color: Gris",
-        "tamaño": "Pantalla : Samsung AMOLED de 15.6\" de marco fino UHD 3840x2160 (PantallaHDR VESA 400 Negro real, 100%",
-        "tipo": "Disco: M.2 SSD ( PCIe ) 1TB",
-        "descripcion": "Memoria: 2x ranuras DDR4 (Max 64GB)",
-        "tecno": "Tecnoligia : GIGABYTE Fusion RGB Teclado retro iluminado por tecla"
-    },
-    {
         "prod_id": 3,
         "prod_name": "Auriculares",
         "prod_category": " headsets",
@@ -58,27 +24,15 @@
         "selection": "True",
         "offer": "off",
         "prod_img": "silla.jpg",
-        "dto": "Precio lista: $ 59.464",
+        "dto": "30",
         "stock": "En stock",
-        "price": "$ 44.700",
-        "price_dto": "$ -8.800",
+        "price": "44.700",
+        "price_dto": "8.800",
         "color": "Color: Roja",
         "tamaño": "Modelo: TC3",
         "tipo": "Tipo de espuma: Espuma de alta densidad",
         "descripcion": "Tipo de mecanismo: Mecanismo de mariposa",
         "tecno": "Material de la cubierta: Cuero sintético con dibujo de carbono"
-    },
-    {
-        "prod_id": 5,
-        "prod_name": "Monitor Curvo Led 27 Samsung F390",
-        "most_sold": "true",
-        "selection": "false",
-        "offer": "false",
-        "prod_img": "prodImg-1646662413662.png",
-        "price": "36.000",
-        "price_dto": 28.8,
-        "dto": "20",
-        "descripcion": "Monitor ultimo modelo"
     },
     {
         "prod_id": 6,
@@ -91,18 +45,6 @@
         "price_dto": 29.75,
         "dto": "15",
         "descripcion": ""
-    },
-    {
-        "prod_id": 7,
-        "prod_name": "Auriculares ARGENTINA",
-        "offer": "false",
-        "prod_img": "prodImg-1646659810874.png",
-        "price": "20000",
-        "price_dto": 18000,
-        "dto": "10",
-        "descripcion": "Auriculares de alta calidad",
-        "most_sold": "true",
-        "selection": "false"
     },
     {
         "prod_id": 8,
@@ -129,18 +71,6 @@
         "prod_id": 9
     },
     {
-        "prod_name": "teclado gamer sentey",
-        "prod_category": "teclados",
-        "most_sold": "false",
-        "selection": "false",
-        "offer": "false",
-        "prod_img": "prodImg-1646339541512.jpg",
-        "price": "4569",
-        "price_dto": 4340.55,
-        "dto": "5",
-        "prod_id": 10
-    },
-    {
         "prod_name": "Headset sentey",
         "prod_category": "headsets",
         "most_sold": "false",
@@ -163,5 +93,17 @@
         "price_dto": 10735,
         "dto": "5",
         "prod_id": 12
+    },
+    {
+        "prod_name": "headst rojo",
+        "prod_category": "headsets",
+        "most_sold": "false",
+        "selection": "false",
+        "offer": "true",
+        "prod_img": "prodImg-1646702509097.jpg",
+        "price": "5000",
+        "price_dto": 5000,
+        "dto": "0",
+        "prod_id": 13
     }
 ]
