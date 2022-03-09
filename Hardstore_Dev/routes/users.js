@@ -5,10 +5,11 @@ const userController =  require('../controllers/userController');
 
 
 const validationsReg = [
-    body('userName').notEmpty().withMessage("Nombre de usuario no ingresado"),
-    body('email').isEmail().withMessage("Email invalido"),
-    body('password_1').notEmpty().withMessage("Ingrese una contraseña"),
-    body('password_2').notEmpty().withMessage("Repita su contraseña"),
+    body('userName').notEmpty().withMessage("Ingresa tu nombre de usuario"),
+    body('email').notEmpty().withMessage("Ingresa un Email").bail()
+                .isEmail().withMessage("Email invalido"),
+    body('password').notEmpty().withMessage("Ingrese una contraseña"),
+    body('password_repeat').notEmpty().withMessage("Repita su contraseña"),
     //body('password_1').matches(body('password_2')).withMessage("Las contraseñas no coinciden"),
 ]
 

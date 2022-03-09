@@ -20,8 +20,8 @@
         <form action="/register" method="POST">
           <input type="name" placeholder="Usuario" name="userName" value="<%= locals.old ? old.userName : '' %>" > 
           <input type="email" placeholder="email" name="email" value="<%= locals.old ? old.email : '' %>">
-          <input type="contraseña" placeholder="Contraseña" name="password_1">
-          <input type="contraseña" placeholder="Repite tu contraseña" name="password_2">
+          <input type="contraseña" placeholder="Contraseña" name="password">
+          <input type="contraseña" placeholder="Repite tu contraseña" name="password_repeat">
           <button type="submit" class="mensaje">Registrarme</button>
         </form>
         <div class="errores">

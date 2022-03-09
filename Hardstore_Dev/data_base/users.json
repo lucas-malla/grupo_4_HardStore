@@ -1,49 +1,24 @@
 [
     {
-        "id": 1,
-        "nombre": "maria",
-        "apellido": "ggsgfdjsgkds",
-        "email": "gaby0@marriott.com",
-        "Contraseña": "iWeh3RqXTZ",
-        "celular": "1532134985"
+        "userName": "fede",
+        "email": "fede@gmail.com",
+        "password": "$2a$10$LcazC6FAppGL3bwv/jc9zOqHg.SG6CRwzPdxcFvD9zAubnPBOIPaO",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 1
     },
     {
-        "id": 2,
-        "nombre": "Genesis",
-        "apellido": "kflghkf",
-        "email": "tomato@simplemachines.org",
-        "Contraseña": "pTqusw",
-        "celular": "1532134985"
-    },
-    {
-        "id": 3,
-        "nombre": "lucas",
-        "email": "pwemd2@blogspot.com",
-        "apellido": "dkghklfhl",
-        "Contraseña": "RyS9FWpFf1u",
-        "celular": "1532134985"
-    },
-    {
-        "id": 4,
-        "nombre": "federico",
-        "email": "ktatam3@oaic.gov.au",
-        "apellido": "ggjghjh",
-        "Contraseña": "kg0yGl3bT",
-        "celular": "1532134985"
-    },
-    {
-        "id": 5,
-        "nombre": "juan",
-        "email": "wwecalinden4@ovh.net",
-        "apellido": "gjhfjhf",
-        "Contraseña": "rJ3sOkAe",
-        "celular": "1532134985"
-    },
-    {
-        "userName": "fede0104",
-        "email": "fede0104@gmail.com",
-        "password_1": "claveBancaria",
-        "password_2": "claveBancaria",
-        "id": 6
+        "userName": "juancho",
+        "email": "juancho@gmail.com",
+        "password": "$2a$10$UbDN5SyEBVn6GVHs8QI8hOBVq/4ZNfbGl3uORVFiXeIcRQ/E32t..",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 2
     }
 ]
