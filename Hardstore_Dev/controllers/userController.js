@@ -9,7 +9,6 @@ function get_next_id(data_base){
     return ((data_base.slice(-1))[0].id)+1
 }
 
-
 const controller = {
     login: function(req, res){
         res.render("login")
@@ -26,7 +25,6 @@ const controller = {
         let validation = validationResult(req) //array de errores
         if (validation.errors.length > 0){
             //registry error
-            console.log(validation.errors)
             res.render("register",{errors : validation.errors, old : req.body})
         }else{
             //no errors -> user register in DB
@@ -42,6 +40,7 @@ const controller = {
                 new_user["userName"] = req.body.userName
                 new_user["email"] = req.body.email
                 new_user["password"] = bcryptjs.hashSync(req.body.password, 10)
+                new_user["avatar"] = req.file.filename
                 new_user["name"] = ""
                 new_user["surname"] = ""
                 new_user["street"] = ""
@@ -55,8 +54,7 @@ const controller = {
                 fs.writeFileSync (UsersdataBasePath, UsersdataBase );
                 res.redirect("/")
             }else{
-                console.log(["salgo?"])
-                res.render("register",{errors :[{ msg :"Las contraseñas incresadas no coinciden"}], old : req.body})
+                res.render("register",{errors :[{ msg :"Las contraseñas ingresadas no coinciden"}], old : req.body})
             }
         }
     }

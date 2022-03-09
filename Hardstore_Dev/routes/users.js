@@ -4,6 +4,9 @@ const { body } = require('express-validator')
 const userController =  require('../controllers/userController');
 
 
+var multerWraper = require('../services/multer') //multer as a function
+var uploadFile = multerWraper("users") //multer for user avatar
+
 const validationsReg = [
     body('userName').notEmpty().withMessage("Ingresa tu nombre de usuario"),
     body('email').notEmpty().withMessage("Ingresa un Email").bail()
@@ -17,6 +20,6 @@ router.get('/login', userController.login);
 router.get('/register', userController.register);
 
 router.post('/login', userController.loginPost);
-router.post('/register', validationsReg, userController.registerPost)
+router.post('/register',uploadFile.single('avatar'), validationsReg, userController.registerPost)
 
 module.exports = router;

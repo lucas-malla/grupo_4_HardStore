@@ -106,15 +106,15 @@
         "prod_id": 13
     },
     {
-        "prod_name": "",
-        "prod_category": "Monitores",
+        "prod_name": "silla normal",
+        "prod_category": "Sillas",
         "most_sold": "false",
         "selection": "false",
         "offer": "false",
-        "prod_img": "prodImg-1646771090394.jpg",
-        "price": "",
-        "price_dto": 0,
-        "dto": "",
-        "prod_id": 14
+        "prod_img": "prodImg-1646850323283.jpg",
+        "price": "5500",
+        "price_dto": 5500,
+        "dto": "0",
+        "prod_id": 18
     }
 ]

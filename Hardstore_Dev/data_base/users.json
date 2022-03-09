@@ -20,5 +20,28 @@
         "number": "",
         "celphone": "",
         "id": 2
+    },
+    {
+        "userName": "federiquito",
+        "email": "fede94@gmail.com",
+        "password": "$2a$10$UcFr6lN3rPbdl9G2NZ8PHO4elvNMgnwIuSmttWXMv4jFqvPdOo586",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 3
+    },
+    {
+        "userName": "pepe",
+        "email": "pepin@gmail.com",
+        "password": "$2a$10$7C.hjOWJgOFi87IWpKLqbO9LEbRRb.Mu3Y2o0QE8X.LqExclWiiaK",
+        "avatar": "avatar-1646851531247.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 4
     }
 ]
