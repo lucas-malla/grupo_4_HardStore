@@ -116,5 +116,20 @@
         "price_dto": 5500,
         "dto": "0",
         "prod_id": 18
+    },
+    {
+        "prod_name": "silla normal",
+        "prod_category": "Sillas",
+        "most_sold": "false",
+        "selection": "false",
+        "offer": "false",
+        "prod_img": "prodImg-1646850323283.jpg",
+        "price": "5500",
+        "price_dto": 5500,
+        "dto": "0",
+        "prod_id": 18,
+        "marca": "Samsung",
+        "modelo": "TC3",
+        "descripcion": ["Color: Roja", "tipo: Tipo de espuma: Espuma de alta densidad", "descripcion: Tipo de mecanismo: Mecanismo de mariposa"]
     }
 ]

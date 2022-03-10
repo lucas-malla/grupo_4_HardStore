@@ -3,6 +3,7 @@
         "userName": "fede",
         "email": "fede@gmail.com",
         "password": "$2a$10$LcazC6FAppGL3bwv/jc9zOqHg.SG6CRwzPdxcFvD9zAubnPBOIPaO",
+        "avatar": "",
         "name": "",
         "surname": "",
         "street": "",
@@ -14,6 +15,7 @@
         "userName": "juancho",
         "email": "juancho@gmail.com",
         "password": "$2a$10$UbDN5SyEBVn6GVHs8QI8hOBVq/4ZNfbGl3uORVFiXeIcRQ/E32t..",
+        "avatar": "",
         "name": "",
         "surname": "",
         "street": "",
@@ -25,6 +27,7 @@
         "userName": "federiquito",
         "email": "fede94@gmail.com",
         "password": "$2a$10$UcFr6lN3rPbdl9G2NZ8PHO4elvNMgnwIuSmttWXMv4jFqvPdOo586",
+        "avatar": "",
         "name": "",
         "surname": "",
         "street": "",
@@ -43,5 +46,17 @@
         "number": "",
         "celphone": "",
         "id": 4
+    },
+    {
+        "userName": "lucas",
+        "email": "lucas@gmail.com",
+        "password": "$2a$10$kl3OC8n9tHz2IgW.afEpGepjeLbSrH6Ocle8Z0C0gZFDLZXDl0BXm",
+        "avatar": "avatar-1646873089291.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 5
     }
 ]

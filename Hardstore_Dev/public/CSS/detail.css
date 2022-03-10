@@ -2,99 +2,17 @@
     box-sizing: border-box;
     margin: 0px;
 }
-
 .desktop {
     display: none;
 }
-
-header {
-    background-color: rgb(255, 49, 49);
-}
-
-.logo_1 {
-
-    align-self: center;
-    width: 70px;
-    height: 70px;
-    border-radius: 35px;
-    border: black solid 3px;
-    margin-right: 40px;
-}
-
-header .head_up {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-}
-
-header .search_bar {
-    display: flex;
-    width: 55%;
-    justify-content: space-between;
-    background-color: rgb(238, 234, 234);
-    border-radius: 10px;
-    padding: 2px 10px;
-}
-
-header .search_bar p {
-    font-weight: bold;
-    align-self: center;
-}
-
-header i {
-    font-size: 25px;
-    align-self: center;
-}
-
-header .head_down {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 5px;
-}
-
-header .head_down .user_menu {
-    padding-left: 20%;
-    font-weight: bold;
-    border: black solid 2px;
-    border-radius: 15px;
-}
-
-
-header .head_down .user_menu {
-    display: flex;
-    padding: 5px;
-    justify-content: space-between;
-    align-items: center;
-    width: 250px;
-    margin-right: 50px;
-}
-
-header .head_down .user_menu a {
-    display: flex;
-}
-
-header .head_down .user_menu a p {
-    align-self: center;
-}
-
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: white;
 }
-
-/* .hr{
-    display: flex;
-    border:solid ;
-    width: 70%;
-    opacity: 15%;
-} */
 div.general {
     margin: 10%;
     margin-top: 0;
 }
-
 .productos {
     display: grid;
     width: 100%;
@@ -102,73 +20,59 @@ div.general {
     padding-bottom: 15px;
     padding-top: 15px;
 }
-
 .productos .imagen {
     text-align: center;
     max-width: 100%;
 }
-
 .productos .name_product {
     padding: 10px 0;
     font-size: 25px;
 }
-
 .productos .img_product {
     width: 60%;
 }
-
 .productos .main-producto {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
-
 .detail-product {
     margin-left: 15px;
     width: 100%;
     border-bottom: 1px solid;
 }
-
 .detail-product-2 {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 10px;
     margin-bottom: 0;
-
 }
-
 .detail-product-3 {
     color: rgb(115, 190, 1);
     padding-left: 15px;
 }
-
 .producto-dto {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 15px;
 }
-
 .main-producto {
     font-size: 35px;
 }
-
 .main-producto p {
     font-size: 10px;
 }
-
 .main-producto .stock {
     text-decoration: none;
     color: rgb(115, 190, 1);
 }
-
 .cuotas-envios {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-
 .icon_deus {
     display: flex;
     align-items: center;
@@ -177,11 +81,9 @@ div.general {
     width: 100%;
     margin-left: 15px;
 }
-
 .icon_deus img {
     max-width: 15%;
 }
-
 .icon_deus_12 {
     display: flex;
 
@@ -189,7 +91,6 @@ div.general {
     flex-direction: column;
     align-items: center;
 }
-
 .icon_stock {
     display: flex;
     align-items: center;
@@ -198,13 +99,11 @@ div.general {
     width: 100%;
     margin-left: 15px;
 }
-
 .icon_stock i {
     padding: 25px 25px;
     width: 15%;
     border: 1px solid blue;
 }
-
 .icon_Shipping {
     display: flex;
     align-items: center;
@@ -213,19 +112,15 @@ div.general {
     width: 100%;
     margin-left: 15px;
 }
-
 .icon_Shipping i {
     width: 15%;
     border: 1px solid blue;
 }
-
 .precio-stock {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-
 .main-producto .envios {
     text-decoration: none;
     border-radius: 5px;
@@ -234,31 +129,25 @@ div.general {
     color: white;
     width: 20%;
 }
-
 .main-producto .main-envios {
     font-size: 15px;
     text-align: center;
 }
-
 div .button {
     display: grid;
     grid-template-columns: 50% 50% 50%;
     align-items: center;
     padding: 15px;
-
 }
-
 a {
     text-decoration: none;
 }
-
 /* ver btn .comprar */
 .ahora {
     display: flex;
     width: 45%;
     justify-content: flex-end;
 }
-
 .btn {
     border: 2px solid black;
     border-radius: 5px;
@@ -268,43 +157,34 @@ a {
     font-size: 24px;
     cursor: pointer;
 }
-
 .button div {
     display: flex;
     justify-content: flex-end;
     margin: 10px;
     padding-left: 70px;
 }
-
 .comprar {
     border-color: rgb(115, 190, 1);
     color: green;
     width: 80%;
 }
-
 .comprar:hover {
     background-color: rgb(115, 190, 1);
     color: white;
 }
-
-
 .main-ul {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: space-around
 }
-
 .main-ul img {
     max-height: 50px;
     width: auto;
     margin: 0 0 28px 16px;
 }
-
 .main-ul li {
     list-style: none;
 }
-
-
 .general .detallePro {
     display: flex;
     flex-direction: column;
@@ -313,111 +193,85 @@ a {
     padding: 100px 5px 100px 5px;
     box-shadow: 0px 0px 18px 8px rgb(0, 0, 0, 0.1);
 }
-
 .general .detallePro p {
     padding: 20px 0px;
 }
-
 .general .detallePro hr {
     width: 100%;
 }
-
 .general .main-interesar {
     text-align: center;
     font-size: 24px;
     width: 100%;
     padding-bottom: 50px;
-
 }
-
 .general .interes {
     display: flex;
     justify-content: space-between;
     width: 100%;
     padding: 10px;
 }
-
 /* ver box-shadow*/
 .general .interes img {
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
     width: 25%;
 }
-
 .interes i {
     display: flex;
     align-items: center;
     font-size: 25px;
-
 }
-
 .general .interes-2 {
     display: none;
 }
-
 @media (min-width: 500px) {
     .desktop {
         display: block;
     }
-
     .structure {
         display: flex;
         justify-content: center;
-
     }
-
     .envios {
         width: 100%;
-
     }
-
 }
-
-
 @media (max-width: 500px) {
     .productos {
         display: block;
         width: 100%;
         text-align: center;
     }
-
     .envios {
         display: none;
     }
-
     div .main-ul {
         display: none;
     }
-
     div .button {
         display: flex;
         justify-content: space-evenly
     }
-
     .btn {
         width: 150%;
         padding: 17px 75px;
     }
-
     .general .interes {
         display: none;
     }
-
     .general .interes-2 {
         display: flex;
         justify-content: space-between;
         width: 100%;
         padding: 10px;
     }
-
     .general .interes-2 img {
         box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
         width: 75%;
     }
-
     .interes-2 i {
         display: flex;
         align-items: center;
         font-size: 25px;
-
     }
 }
