@@ -1,42 +1,86 @@
 [
     {
-        "id": 1,
-        "nombre": "maria",
-        "apellido":"ggsgfdjsgkds",
-        "email": "gaby0@marriott.com",
-        "Contraseña": "iWeh3RqXTZ",
-        "Categoria": "53.61.80.78"
+        "userName": "fede",
+        "email": "fede@gmail.com",
+        "password": "$2a$10$LcazC6FAppGL3bwv/jc9zOqHg.SG6CRwzPdxcFvD9zAubnPBOIPaO",
+        "avatar": "",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 1
     },
     {
-        "id": 2,
-        "nombre": "Genesis",
-        "apellido":"kflghkf",
-        "email": "tomato@simplemachines.org",
-        "Contraseña": "pTqusw",
-        "Categoria": "83.206.38.17"
+        "userName": "juancho",
+        "email": "juancho@gmail.com",
+        "password": "$2a$10$UbDN5SyEBVn6GVHs8QI8hOBVq/4ZNfbGl3uORVFiXeIcRQ/E32t..",
+        "avatar": "",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 2
     },
     {
-        "id": 3,
-        "nombre": "lucas",
-        "email": "pwemd2@blogspot.com",
-        "apellido":"dkghklfhl",
-        "Contraseña": "RyS9FWpFf1u",
-        "Categoria": "148.75.176.113"
+        "userName": "federiquito",
+        "email": "fede94@gmail.com",
+        "password": "$2a$10$UcFr6lN3rPbdl9G2NZ8PHO4elvNMgnwIuSmttWXMv4jFqvPdOo586",
+        "avatar": "",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 3
     },
     {
-        "id": 4,
-        "nombre": "federico",
-        "email": "ktatam3@oaic.gov.au",
-        "apellido":"ggjghjh",
-        "Contraseña": "kg0yGl3bT",
-        "Categoria": "73.212.204.18" 
+        "userName": "pepe",
+        "email": "pepin@gmail.com",
+        "password": "$2a$10$7C.hjOWJgOFi87IWpKLqbO9LEbRRb.Mu3Y2o0QE8X.LqExclWiiaK",
+        "avatar": "avatar-1646851531247.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 4
     },
     {
-        "id": 5,
-        "nombre": "juan",
-        "email": "wwecalinden4@ovh.net",
-        "apellido":"gjhfjhf",
-        "Contraseña": "rJ3sOkAe",
-        "Categoria": "456.238.99.215"
+        "userName": "lucas",
+        "email": "lucas@gmail.com",
+        "password": "$2a$10$kl3OC8n9tHz2IgW.afEpGepjeLbSrH6Ocle8Z0C0gZFDLZXDl0BXm",
+        "avatar": "avatar-1646873089291.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 5
+    },
+    {
+        "userName": "genesis",
+        "email": "genesis@gmail.com",
+        "password": "$2a$10$4aJLSGET/UlXS5BPpvSvaOPRvOBbSfhRls.x3D3dM7xYXVlO/.uGq",
+        "avatar": "avatar-1647034435810.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 6
+    },
+    {
+        "userName": "1",
+        "email": "1@2.com",
+        "password": "$2a$10$s4jFvn6VW1QlEtxElAMYCek37MiKlEPz0zyTpg7SZULNqjvzTe8qy",
+        "avatar": "default.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 7
     }
 ]
