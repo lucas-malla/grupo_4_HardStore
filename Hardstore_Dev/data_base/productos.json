@@ -59,14 +59,9 @@
         "offer": "off",
         "prod_img": "silla.jpg",
         "dto": "Precio lista: $ 59.464",
-        "stock": "En stock",
         "price": "$ 44.700",
-        "price_dto": "$ -8.800",
         "color": "Color: Roja",
-        "tamaño": "Modelo: TC3",
-        "tipo": "Tipo de espuma: Espuma de alta densidad",
-        "descripcion": "Tipo de mecanismo: Mecanismo de mariposa",
-        "tecno": "Material de la cubierta: Cuero sintético con dibujo de carbono"
+        "descripcion": [{"Altura":"25"},{"Altura":"25"},{"Altura":"25"}]
     },
     {
         "prod_id": 5,

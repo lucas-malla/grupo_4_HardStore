@@ -81,52 +81,62 @@ header .head_down .user_menu a p {
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: white;
+    background-color:#f8f9fa; 
 }
-
-/* .hr{
-    display: flex;
-    border:solid ;
-    width: 70%;
-    opacity: 15%;
-} */
-div.general {
+/* div.general {
     margin: 10%;
     margin-top: 0;
-}
+} */
+.general{
+margin: 60px;
+background-color:#f8f9fa; 
 
+}
 .productos {
     display: grid;
-    width: 100%;
-    grid-template-columns: 60% auto;
-    padding-bottom: 15px;
-    padding-top: 15px;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+    padding-bottom: 20px;
 }
 
 .productos .imagen {
+    display: grid;
+    align-content: space-around;
+    background-color: #fff;
+    border-radius: 5px;
     text-align: center;
-    max-width: 100%;
+}
+.imagen {
+    width: 100%;
+}
+.productos img{
+    max-width: 50%;
+    transition: all 300ms;
+    position: relative;
+}
+.productos img:hover{
+    transform: scale(1.15);
 }
 
-.productos .name_product {
-    padding: 10px 0;
+ .name_product {
+    padding-bottom: 60px ;
     font-size: 25px;
 }
 
-.productos .img_product {
-    width: 60%;
-}
-
-.productos .main-producto {
+ .main-producto {
     display: flex;
+    background-color: #fff;
+    border-radius: 5px;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
 }
+.main-producto div{
+    margin: 15px;
+}
 
 .detail-product {
-    margin-left: 15px;
-    width: 100%;
+    width: 95%;
     border-bottom: 1px solid;
 }
 
@@ -211,7 +221,6 @@ div.general {
     justify-content: center;
     justify-content: space-evenly;
     width: 100%;
-    margin-left: 15px;
 }
 
 .icon_Shipping i {
@@ -240,14 +249,6 @@ div.general {
     text-align: center;
 }
 
-div .button {
-    display: grid;
-    grid-template-columns: 50% 50% 50%;
-    align-items: center;
-    padding: 15px;
-
-}
-
 a {
     text-decoration: none;
 }
@@ -256,7 +257,7 @@ a {
 .ahora {
     display: flex;
     width: 45%;
-    justify-content: flex-end;
+    justify-content: space-around
 }
 
 .btn {
@@ -269,13 +270,16 @@ a {
     cursor: pointer;
 }
 
-.button div {
+.button {
     display: flex;
-    justify-content: flex-end;
-    margin: 10px;
-    padding-left: 70px;
 }
-
+.button div{
+    display: flex;
+    width: 100%;
+}
+.button div a{
+width: 100%;
+}
 .comprar {
     border-color: rgb(115, 190, 1);
     color: green;
@@ -289,37 +293,35 @@ a {
 
 
 .main-ul {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-around
+    display:flex;
+    justify-content: space-around;
+    
 }
 
 .main-ul img {
-    max-height: 50px;
-    width: auto;
-    margin: 0 0 28px 16px;
+    max-width: 50%;
 }
 
 .main-ul li {
     list-style: none;
 }
-
-
-.general .detallePro {
+.detail_product_title{
     display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-size: 20px;
-    padding: 100px 5px 100px 5px;
-    box-shadow: 0px 0px 18px 8px rgb(0, 0, 0, 0.1);
-}
+    justify-content: center;
+    font-size: 24px;
+    padding: 30px;
 
-.general .detallePro p {
-    padding: 20px 0px;
 }
-
-.general .detallePro hr {
-    width: 100%;
+.general .detail_product {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    background-color: #fff;
+    padding: 50px 50px ;
+}
+.detail_product div{
+    margin-top: 20px;
 }
 
 .general .main-interesar {

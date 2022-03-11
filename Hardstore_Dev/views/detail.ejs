@@ -20,11 +20,20 @@
     <!-- detail product -->
     <div class="general">
 
-        <div class="productos">
+        <div class="productos ">
+
             <div class="imagen">
-                <h3 class="name_product"><%= producto.prod_name %></h3>
-                <img class="img_product" src=/images/products/<%= producto.prod_img %> alt="monitor">
+                <div>
+                    <h3 class="name_product"><%= producto.prod_name %></h3>
+                    <img class="img_product" src=/images/products/<%= producto.prod_img %> alt="monitor">
+                </div>
+                <ul class="main-ul">
+                    <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
+                    <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
+                    <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
+                </ul>
             </div>
+
             <div class="main-producto">
                 <div class="detail-product">
                     <div class="detail-product-2">
@@ -44,6 +53,7 @@
                         <p>Sobre precio de lista</p>
                     </div>
                 </div>
+
                 <div class="icon_stock">
                     <i class="fa-solid fa-square-check"></i>
                     <div class="icon_deus_stock">
@@ -59,41 +69,59 @@
                     </div>
                 </div>
 
-            </div>
+                <div class="button">
+                    <div>
+                        <a href="/login" class="ahora">
+                            <button class="btn comprar">Añadir al carrito</button>
+                        </a>
+                        <a href="/productCart" class="ahora">
+                            <button class="btn comprar">Comprar Ahora</button>
+                        </a>
+                    </div>
+                </div>
 
-        </div>
-
-        <div class="button">
-            <!-- ver butoon -->
-            <ul class="main-ul">
-                <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
-                <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
-                <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
-            </ul>
-            <div>
-                <a href="/login" class="ahora">
-                    <button class="btn comprar">Añadir al carrito</button>
-                </a>
-                <a href="/productCart" class="ahora">
-                    <button class="btn comprar">Comprar Ahora</button>
-                </a>
             </div>
+            
         </div>
-        <br>
-        <div class="detallePro">
+        
+        <div class="detail_product_title">
             <h3>Detalle del Producto</h3>
-            <p><%= producto.tamaño%></p>
-            <hr>
-            <p><%= producto.tipo %></p>
-            <hr>
-            <p><%= producto.color %> </p>
-            <hr>
-            <p><%= producto.descripcion %></p>
-            <hr>
-            <p><%= producto.tecno %></p>
+        </div>
+        <div class="detail_product">
+            <div>
+               <div>La silla de juegos CORSAIR T3 RUSH combina un diseño inspirado en las carreras y una comodidad contorneada con un exterior de tela suave y transpirable, una almohada cervical acolchada y un soporte lumbar de espuma viscoelástica.</div>
+              <div>
+               Altura máxima del asiento: 54cm
+                Altura mínima del asiento: 44cm
+                Altura máxima del brazo: 36,5cm
+                Altura mínima del brazo: 28,5cm
+                Altura del respaldo: 85cm
+                Ancho del hombro del respaldo: 54cm
+                Tamaño del paquete: 88,5 x 69 x 37,5 cm
+                Peso neto: 22,5 kg
+                Peso bruto: 25,5 kg
+                Capacidad de peso: 120 kg
+                Almohada lumbar ajustable: si
+                Almohada de cuello ajustable: si
+                Material de la base de la silla: Nylon
+                Tamaño de la rueda: 65 mm
+                Material de la rueda: Nylon
+                Tamaño del asiento: Los 56cm los x 58cm
+                Tipo de espuma de asiento: Espuma de poliuretano (espuma fría)
+                Densidad de la espuma del asiento: 55 kg / m³
+                Color del marco del asiento: Negro
+                Construcción del marco del asiento: Metal
+                Material de la superficie del asiento: Tela Suave
+                Material del respaldo del asiento: Tela Suave
+            </div> 
+            </div>
+        <div>
+            <%= producto.descripcion %>
+
         </div>
 
-        <br>
+        </div>
+        
         <div class="main-interesar">
             <h4>Te puede interesar</h4>
         </div>
@@ -105,12 +133,15 @@
             <img src="/images/products/monitor.webp" alt="monitor">
             <i class="fas fa-angle-right"></i>
         </div>
+
         <div class="interes-2">
             <i class="fas fa-angle-left"></i>
             <img src="/images/Monitores.jpg" alt="monitor">
             <i class="fas fa-angle-right"></i>
         </div>
+
     </div>
+
     <footer>
         <%- include("./partials/footer.ejs") %>
     </footer>
