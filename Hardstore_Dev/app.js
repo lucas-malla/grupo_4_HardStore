@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 
 app.set("view engine", 'ejs');
-app.set("views",["./views","./views/admin"]);
+app.set("views",["./views","./views/admin","./views/users"]);
 
 app.use(express.static(path.resolve(__dirname, './public')));
 app.use(express.urlencoded({ extended: false })); //para capturar envios por post en "req.body"
@@ -26,7 +26,7 @@ app.listen(process.env.PORT || PUERTO, () => console.log("server: ON  Port:", PU
 //MAIN ROUTES (home)
 app.use('/', mainRoutes);
 
-//login-register
+//login-register-profile
 app.use('/', userRoutes);
 
 //SHOPING CART

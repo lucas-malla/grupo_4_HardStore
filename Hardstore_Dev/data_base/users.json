@@ -58,5 +58,29 @@
         "number": "",
         "celphone": "",
         "id": 5
+    },
+    {
+        "userName": "genesis",
+        "email": "genesis@gmail.com",
+        "password": "$2a$10$4aJLSGET/UlXS5BPpvSvaOPRvOBbSfhRls.x3D3dM7xYXVlO/.uGq",
+        "avatar": "avatar-1647034435810.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 6
+    },
+    {
+        "userName": "1",
+        "email": "1@2.com",
+        "password": "$2a$10$s4jFvn6VW1QlEtxElAMYCek37MiKlEPz0zyTpg7SZULNqjvzTe8qy",
+        "avatar": "default.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 7
     }
 ]
