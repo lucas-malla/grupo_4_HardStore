@@ -16,10 +16,17 @@ const validationsReg = [
     //body('password_1').matches(body('password_2')).withMessage("Las contraseñas no coinciden"),
 ]
 
+const validationsLogin = [
+    body('userName').notEmpty().withMessage("Ingresa tu nombre de usuario"),
+    body('password').notEmpty().withMessage("Ingrese una contraseña"),
+]
+
 router.get('/login', userController.login);
 router.get('/register', userController.register);
 
-router.post('/login', userController.loginPost);
+
+router.get('/check', userController.userCheck);
+router.post('/login', validationsLogin, userController.loginPost);
 router.post('/register',uploadFile.single('avatar'), validationsReg, userController.registerPost)
 
 

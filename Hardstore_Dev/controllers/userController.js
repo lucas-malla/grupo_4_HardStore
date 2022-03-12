@@ -17,9 +17,35 @@ const controller = {
         res.render("register")
     },
     loginPost: function(req, res){
-        console.log(req.body);
-        console.log("post de login")
-        res.render("login")
+        let validation = validationResult(req) //array de errores
+        if (validation.errors.length > 0){
+            //registry error
+            res.render("login",{errors : validation.errors, old : req.body})
+        }
+        //cargar la user DB
+        UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
+        UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath))
+        //FIND
+        let user = UsersdataBase.find(user => user.userName == req.body.userName )
+        if (user){
+            //usuario registrado => check password
+            let check = bcryptjs.compareSync(req.body.password, user.password)
+              if (check){
+                //logear usuario
+                req.session.user = req.body.userName
+                //remember => COOCKIE
+                if (req.body.remember){
+                    console.log("cree una cookie");
+                    res.cookie('userName',req.session.user,{maxAge:600000})
+                }
+                res.redirect('/')
+            }
+        }
+        res.render('login', {error: "Usuario o contraseña invalida"})
+    },
+    userCheck: function(req, res){
+        //console.log(req.session.user);
+        res.send(req.session.user)
     },
     registerPost: function(req, res){
         let validation = validationResult(req) //array de errores
