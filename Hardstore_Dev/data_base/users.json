@@ -118,5 +118,17 @@
         "number": "",
         "celphone": "",
         "id": 10
+    },
+    {
+        "userName": "nand",
+        "email": "n@f.com",
+        "password": "$2a$10$TnPxQh/0Azw/iLiru1qGMO7Mewzyh8kz8jMzvTe8V.ycyVVFt3qdO",
+        "avatar": "avatar-1647047805492.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 11
     }
 ]
