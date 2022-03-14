@@ -82,5 +82,53 @@
         "number": "",
         "celphone": "",
         "id": 7
+    },
+    {
+        "userName": "2",
+        "email": "2@3.com",
+        "password": "$2a$10$Rj2NE1ZkNNhWHzYe9nJ8XefY8VtRqvjwDcHbABOzIBb.ndQcF2.dW",
+        "avatar": "default.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 8
+    },
+    {
+        "userName": "3",
+        "email": "3@3.com",
+        "password": "$2a$10$RDX4Q5Ua8PpWIrkHgmG4/./I5K/P6R3hT3TurFI7rYIwD/GaP8qIm",
+        "avatar": "default.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 9
+    },
+    {
+        "userName": "4",
+        "email": "4@4.com",
+        "password": "$2a$10$jBPU4zYoahT315ihhpW9NubBuAB8WSDo.sVCY0IITsvhVFYUjSllC",
+        "avatar": "default.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 10
+    },
+    {
+        "userName": "nand",
+        "email": "n@f.com",
+        "password": "$2a$10$TnPxQh/0Azw/iLiru1qGMO7Mewzyh8kz8jMzvTe8V.ycyVVFt3qdO",
+        "avatar": "avatar-1647047805492.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "celphone": "",
+        "id": 11
     }
 ]

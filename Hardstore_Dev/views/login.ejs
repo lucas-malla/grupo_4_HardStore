@@ -18,9 +18,25 @@
           <span class="iconify" data-icon="ion:person-outline"></span>
         </header>
         <form action="/login" method="POST">
-          <input type="name" placeholder="Usuario" name="userName"> 
+          <input type="name" placeholder="Usuario" name="userName" 
+          <% if (locals.old){ %>
+            value=<%= old.userName %>
+            <% } %>
+          > 
           <input type="contraseña" value=""placeholder="Contraseña" name="password">
+          <p><label><input type="checkbox" name="remember" value="true"> Recordarme </label></p>
           <a href="#">Recuperar contraseña</a>
+
+          <div class="error">
+            <% if (locals.error){ %>
+              <p><%= error %></p>
+            <% } %>
+            <% if(locals.errors){ %>
+              <% for (error of errors){ %>
+                <p><%= error.msg %></p>
+            <% }} %>
+          </div>
+
           <button type="submit" class="mensaje">LOGIN</button>
         </form>
         <hr>                     

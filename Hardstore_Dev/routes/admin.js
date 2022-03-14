@@ -1,10 +1,9 @@
 let express = require('express');
 let router = express.Router();
 const adminController =  require('../controllers/adminController');
-//var uploadFile = require('../services/multer') //multer as service
 
 
-var multerWraper = require('../services/multer') //multer as a function
+var multerWraper = require('../middlewares/multer') //multer as a function
 var uploadFile = multerWraper("products") //multer for products images
 
 router.get('/', adminController.login);

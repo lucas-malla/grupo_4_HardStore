@@ -28,7 +28,17 @@
         "price": "44.700",
         "price_dto": "8.800",
         "color": "Color: Roja",
-        "descripcion": [{"Altura":"25"},{"Altura":"25"},{"Altura":"25"}]
+        "descripcion": [
+            {
+                "Altura": "25"
+            },
+            {
+                "Altura": "25"
+            },
+            {
+                "Altura": "25"
+            }
+        ]
     },
     {
         "prod_id": 3,
@@ -127,6 +137,22 @@
         "prod_id": 10,
         "marca": "Samsung",
         "modelo": "TC3",
-        "descripcion": ["Color: Roja", "tipo: Tipo de espuma: Espuma de alta densidad", "descripcion: Tipo de mecanismo: Mecanismo de mariposa"]
+        "descripcion": [
+            "Color: Roja",
+            "tipo: Tipo de espuma: Espuma de alta densidad",
+            "descripcion: Tipo de mecanismo: Mecanismo de mariposa"
+        ]
+    },
+    {
+        "prod_name": "mouse reddragon",
+        "prod_category": "Mouses",
+        "most_sold": "false",
+        "selection": "true",
+        "offer": "false",
+        "prod_img": "prodImg-1647048206276.jpg",
+        "price": "5500",
+        "price_dto": 4950,
+        "dto": "10",
+        "prod_id": 11
     }
 ]
