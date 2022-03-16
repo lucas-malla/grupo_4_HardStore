@@ -221,31 +221,47 @@ width: 100%;
 .detail_product div{
     margin-top: 20px;
 }
-.general .main-interesar {
-    text-align: center;
-    font-size: 24px;
-    width: 100%;
-    padding-bottom: 50px;
+
+/* interes*/
+.add-product{
+    grid-area: add-product;
 }
-.general .interes {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    padding: 10px;
+.add-product-table{
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(365px,1fr));
+    background-color: #ffffff;
+    
 }
-/* ver box-shadow*/
-.general .interes img {
-    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
-    width: 25%;
+.add-product .add-item .product-add-image{
+    width: 175px;
+    height: 125px;
 }
-.interes i {
-    display: flex;
-    align-items: center;
-    font-size: 25px;
+.add-item .details{
+    list-style: none;
+    line-height: 25px;
+    margin-left: 15px;
+    text-align:left
+    
 }
-.general .interes-2 {
-    display: none;
+.item .price{
+    font-size: 20px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 1.6rem;
+    right: 1.2rem;
+
 }
+.add-item .details .price{
+    font-weight: 700;
+
+}
+.item .price{
+    font-size: 18px;
+    font-weight: 550;
+}
+/* interes */
+
 @media (min-width: 500px) {
     .desktop {
         display: block;
@@ -278,22 +294,5 @@ width: 100%;
         width: 150%;
         padding: 17px 75px;
     }
-    .general .interes {
-        display: none;
-    }
-    .general .interes-2 {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding: 10px;
-    }
-    .general .interes-2 img {
-        box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.219);
-        width: 75%;
-    }
-    .interes-2 i {
-        display: flex;
-        align-items: center;
-        font-size: 25px;
-    }
+    
 }

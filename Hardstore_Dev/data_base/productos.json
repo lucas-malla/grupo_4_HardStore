@@ -8,12 +8,7 @@
         "prod_img": "prodImg-1646771356969.jpg",
         "price": "8500",
         "price_dto": 7225,
-        "dto": "15",
-        "color": "Color: Negro",
-        "tamaño": "Marca: GameMax",
-        "tipo": "Modelo: HG3500 Pro",
-        "descripcion": "Es gamer: Sí\r\nColor: rojo\r\nTipo: Headset\r\n",
-        "tecno": "Conexión: USB"
+        "dto": "15"
     },
     {
         "prod_id": 2,
@@ -24,21 +19,8 @@
         "offer": "off",
         "prod_img": "silla.jpg",
         "dto": "30",
-        "stock": "En stock",
         "price": "44.700",
-        "price_dto": "8.800",
-        "color": "Color: Roja",
-        "descripcion": [
-            {
-                "Altura": "25"
-            },
-            {
-                "Altura": "25"
-            },
-            {
-                "Altura": "25"
-            }
-        ]
+        "price_dto": "8.800"
     },
     {
         "prod_id": 3,
@@ -134,14 +116,7 @@
         "price": "5500",
         "price_dto": 5500,
         "dto": "0",
-        "prod_id": 10,
-        "marca": "Samsung",
-        "modelo": "TC3",
-        "descripcion": [
-            "Color: Roja",
-            "tipo: Tipo de espuma: Espuma de alta densidad",
-            "descripcion: Tipo de mecanismo: Mecanismo de mariposa"
-        ]
+        "prod_id": 10
     },
     {
         "prod_name": "mouse reddragon",

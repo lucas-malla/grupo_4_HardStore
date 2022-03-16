@@ -80,69 +80,70 @@
                 </div>
 
             </div>
-            
+
         </div>
-        
+
         <div class="detail_product_title">
             <h3>Detalle del Producto</h3>
         </div>
         <div class="detail_product">
             <div>
-               <div>La silla de juegos CORSAIR T3 RUSH combina un diseño inspirado en las carreras y una comodidad contorneada con un exterior de tela suave y transpirable, una almohada cervical acolchada y un soporte lumbar de espuma viscoelástica.</div>
-              <div>
-               Altura máxima del asiento: 54cm
-                Altura mínima del asiento: 44cm
-                Altura máxima del brazo: 36,5cm
-                Altura mínima del brazo: 28,5cm
-                Altura del respaldo: 85cm
-                Ancho del hombro del respaldo: 54cm
-                Tamaño del paquete: 88,5 x 69 x 37,5 cm
-                Peso neto: 22,5 kg
-                Peso bruto: 25,5 kg
-                Capacidad de peso: 120 kg
-                Almohada lumbar ajustable: si
-                Almohada de cuello ajustable: si
-                Material de la base de la silla: Nylon
-                Tamaño de la rueda: 65 mm
-                Material de la rueda: Nylon
-                Tamaño del asiento: Los 56cm los x 58cm
-                Tipo de espuma de asiento: Espuma de poliuretano (espuma fría)
-                Densidad de la espuma del asiento: 55 kg / m³
-                Color del marco del asiento: Negro
-                Construcción del marco del asiento: Metal
-                Material de la superficie del asiento: Tela Suave
-                Material del respaldo del asiento: Tela Suave
-            </div> 
+                <div>La silla de juegos CORSAIR T3 RUSH combina un diseño inspirado en las carreras y una comodidad
+                    contorneada con un exterior de tela suave y transpirable, una almohada cervical acolchada y un
+                    soporte lumbar de espuma viscoelástica.</div>
+                <div>
+                    Altura máxima del asiento: 54cm
+                    Altura mínima del asiento: 44cm
+                    Altura máxima del brazo: 36,5cm
+                    Altura mínima del brazo: 28,5cm
+                    Altura del respaldo: 85cm
+                    Ancho del hombro del respaldo: 54cm
+                    Tamaño del paquete: 88,5 x 69 x 37,5 cm
+                    Peso neto: 22,5 kg
+                    Peso bruto: 25,5 kg
+                    Capacidad de peso: 120 kg
+                    Almohada lumbar ajustable: si
+                    Almohada de cuello ajustable: si
+                    Material de la base de la silla: Nylon
+                    Tamaño de la rueda: 65 mm
+                    Material de la rueda: Nylon
+                    Tamaño del asiento: Los 56cm los x 58cm
+                    Tipo de espuma de asiento: Espuma de poliuretano (espuma fría)
+                    Densidad de la espuma del asiento: 55 kg / m³
+                    Color del marco del asiento: Negro
+                    Construcción del marco del asiento: Metal
+                    Material de la superficie del asiento: Tela Suave
+                    Material del respaldo del asiento: Tela Suave
+                </div>
             </div>
-        <div>
-            <%= producto.descripcion %>
 
         </div>
 
-        </div>
-        
-        <div class="main-interesar">
-            <h4>Te puede interesar</h4>
-        </div>
-
-        <div class="interes">
-            <i class="fas fa-angle-left"></i>
-            <img src="/images/products/monitor.webp" alt="monitor">
-            <img src="/images/products/monitor.webp" alt="monitor">
-            <img src="/images/products/monitor.webp" alt="monitor">
-            <i class="fas fa-angle-right"></i>
-        </div>
-
-        <div class="interes-2">
-            <i class="fas fa-angle-left"></i>
-            <img src="/images/Monitores.jpg" alt="monitor">
-            <i class="fas fa-angle-right"></i>
+        <div class="add-product">
+            <h2>Personas que compraron este producto también compraron</h2>
+            <div class="add-product-table">
+                <% showRandom.forEach(function(product){%>
+                <div class="add-item">
+                    <img src=images/products/<%= product.prod_img %> alt="<%=product.prod_name%>"
+                        class="product-add-image">
+                    <ul class="details">
+                        <li>
+                            <p><%= product.prod_name %></p>
+                        </li>
+                        <li>
+                            <p class="price"><%= product.price %></p>
+                        </li>
+                        <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
+                    </ul>
+                </div>
+                <% }) %>
+            </div>
         </div>
 
     </div>
 
-    <footer>
-        <%- include("./partials/footer.ejs") %>
-    </footer>
+        <footer>
+            <%- include("./partials/footer.ejs") %>
+        </footer>
 
 </body>
