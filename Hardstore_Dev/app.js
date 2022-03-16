@@ -5,8 +5,15 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser')
 var remember = require('./middlewares/remember')
 
-app.set("view engine", 'ejs');
-app.set("views",["./views","./views/admin","./views/users"]);
+let mainRoutes = require('./routes/main.js');
+let rutasProductos = require('./routes/products.js');
+let cartRoutes = require('./routes/prodCart.js');
+let adminRoutes = require('./routes/admin.js');
+let userRoutes = require('./routes/users.js');
+
+//para metodos post
+const methodOverride = require("method-override"); 
+app.use(methodOverride("_method"));
 
 app.use(express.static(path.resolve(__dirname, './public')));
 app.use(express.urlencoded({ extended: false })); //para capturar envios por post en "req.body"
@@ -15,15 +22,8 @@ app.use(session( {secret: "la clave secreta"}));
 app.use(cookieParser());
 app.use(remember);
 
-//para metodos post
-const methodOverride = require("method-override"); 
-app.use(methodOverride("_method"));
-
-let mainRoutes = require('./routes/main.js');
-let rutasProductos = require('./routes/products.js');
-let cartRoutes = require('./routes/prodCart.js');
-let adminRoutes = require('./routes/admin.js');
-let userRoutes = require('./routes/users.js');
+app.set("view engine", 'ejs');
+app.set("views",["./views","./views/admin","./views/users"]);
 
 
 let PUERTO = 3000
