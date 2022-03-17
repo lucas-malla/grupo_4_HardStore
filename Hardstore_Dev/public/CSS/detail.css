@@ -34,12 +34,12 @@ background-color:#f8f9fa;
 .imagen {
     width: 100%;
 }
-.productos img{
+.productos .imagen img{
     max-width: 50%;
     transition: all 300ms;
     position: relative;
 }
-.productos img:hover{
+.productos .imagen img:hover{
     transform: scale(1.15);
 }
 
@@ -57,7 +57,7 @@ background-color:#f8f9fa;
     width: 100%;
 }
 .main-producto div{
-    margin: 15px;
+    margin: 10px;
 }
 
 .detail-product {
@@ -95,6 +95,9 @@ background-color:#f8f9fa;
     flex-direction: column;
     width: 100%;
 }
+.icon_deus_principal{
+    display: grid;
+}
 .icon_deus {
     display: flex;
     align-items: center;
@@ -104,43 +107,38 @@ background-color:#f8f9fa;
     margin-left: 15px;
 }
 .icon_deus img {
-    max-width: 15%;
+    max-width: 10%;
 }
 .icon_deus_12 {
     display: flex;
-
     align-items: center;
     flex-direction: column;
     align-items: center;
 }
-.icon_stock {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-left: 15px;
+.icon_deus .one{
+display: flex;
 }
-.icon_stock i {
-    padding: 25px 25px;
-    width: 15%;
-    border: 1px solid blue;
+.icon_deus p{
+    font-size: 18px;
+    padding: auto;
 }
-.icon_Shipping {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-evenly;
-    width: 100%;
+ .icon_deus .fa-check {
+    color:  rgb(115, 190, 1);
 }
-.icon_Shipping i {
-    width: 15%;
-    border: 1px solid blue;
+.icon_deus .icon_deus_stock{
+    color:  rgb(115, 190, 1);
 }
-.precio-stock {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.icon_deus .fa-user-shield{
+    color:  #338d8d;
+}
+.icon_deus .icon_deus_product{
+    color:  #338d8d;
+}
+.icon_deus .fa-truck{
+    color: #afafaf;
+}
+.icon_deus .icon_deus_send{
+    color: #afafaf;
 }
 .main-producto .envios {
     text-decoration: none;

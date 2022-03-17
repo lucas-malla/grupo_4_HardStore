@@ -42,29 +42,38 @@
                             <p>EFECTIVO / TRANSFERENCIA</p>
                         </div>
                     </div>
-                    <h6 class="producto-dto">Precio lista <%= producto.price_list %></h6>
+                    <h6 class="producto-dto">Precio lista: <%= producto.price_list %></h6>
                 </div>
 
-                <div class="icon_deus">
-                    <img class="icon_deus_img" src="/images/products/ahora_12.png" alt="Logo ahora 12">
-                    <div class="icon_deus_12">
-                        <p>12 cuotas sin interés de $4.955,33</p>
-                        <p>Sobre precio de lista</p>
+                <div class="icon_deus_principal">
+                    <div class="icon_deus">
+                        <img class="icon_deus_img" src="/images/detailView/ahora_12.png" alt="Logo ahora 12">
+                        <div class="icon_deus_12">
+                            <p>12 cuotas sin interés de $4.955,33</p>
+                            <p>Sobre precio de lista</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="icon_stock">
-                    <i class="fa-solid fa-square-check"></i>
-                    <div class="icon_deus_stock">
-                        <p>STOCK DISPONIBLE</p>
+                    <div class="icon_deus">
+                        <i class="fas fa-check"></i>
+                        <div class="icon_deus_stock">
+                            <p>STOCK DISPONIBLE</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="icon_Shipping">
-                    <i class="fa-solid fa-truck"></i>
-                    <div class="icon_deus_12">
-                        <p>ENVIO A TODO EL PAIS</p>
-                        <p> Con OCA</p>
+                    <div class="icon_deus">
+                        <i class="fas fa-truck"></i>
+                        <div class="icon_deus_send">
+                            <p>ENVIO A TODO EL PAIS</p>
+                            <p> Con OCA</p>
+                        </div>
+                    </div>
+
+                    <div class="icon_deus">
+                        <i class="fas fa-user-shield"></i>
+                        <div class="icon_deus_product">
+                            <p>PRODUCTO CON GARANTIA</p>
+                        </div>
                     </div>
                 </div>
 
@@ -142,8 +151,8 @@
 
     </div>
 
-        <footer>
-            <%- include("./partials/footer.ejs") %>
-        </footer>
+    <footer>
+        <%- include("./partials/footer.ejs") %>
+    </footer>
 
 </body>
