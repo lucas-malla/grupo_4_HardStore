@@ -2,28 +2,29 @@
     box-sizing: border-box;
     margin: 0px;
 }
+
 .desktop {
     display: none;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color:#f8f9fa; 
+    background-color: #f8f9fa;
 }
-/* div.general {
-    margin: 10%;
-    margin-top: 0;
-} */
-.general{
-margin: 60px;
-background-color:#f8f9fa; 
+
+.general {
+    margin: 60px;
+    background-color: #f8f9fa;
 
 }
+
 .productos {
     display: grid;
     grid-template-columns: 50% 50%;
     gap: 20px;
     padding-bottom: 20px;
 }
+
 .productos .imagen {
     display: grid;
     align-content: space-around;
@@ -31,24 +32,23 @@ background-color:#f8f9fa;
     border-radius: 5px;
     text-align: center;
 }
-.imagen {
-    width: 100%;
-}
-.productos .imagen img{
+
+.productos .imagen img {
     max-width: 50%;
     transition: all 300ms;
     position: relative;
 }
-.productos .imagen img:hover{
+
+.productos .imagen img:hover {
     transform: scale(1.15);
 }
 
- .name_product {
-    padding-bottom: 60px ;
+.name_product {
+    padding-bottom: 60px;
     font-size: 25px;
 }
 
- .main-producto {
+.main-producto {
     display: flex;
     background-color: #fff;
     border-radius: 5px;
@@ -56,7 +56,8 @@ background-color:#f8f9fa;
     justify-content: space-between;
     width: 100%;
 }
-.main-producto div{
+
+.main-producto div {
     margin: 10px;
 }
 
@@ -64,6 +65,7 @@ background-color:#f8f9fa;
     width: 95%;
     border-bottom: 1px solid;
 }
+
 .detail-product-2 {
     display: flex;
     justify-content: center;
@@ -71,33 +73,39 @@ background-color:#f8f9fa;
     margin-top: 10px;
     margin-bottom: 0;
 }
+
 .detail-product-3 {
     color: rgb(115, 190, 1);
     padding-left: 15px;
 }
+
 .producto-dto {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 15px;
 }
+
 .main-producto {
     font-size: 35px;
 }
+
 .main-producto p {
     font-size: 10px;
 }
+
 .main-producto .stock {
     text-decoration: none;
     color: rgb(115, 190, 1);
 }
-.cuotas-envios {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+.icon_deus_principal {
+display: grid;
+max-width: 100%;
 }
-.icon_deus_principal{
-    display: grid;
+
+.icon_deus_principal i {
+    max-width: 10%;
 }
+
 .icon_deus {
     display: flex;
     align-items: center;
@@ -106,40 +114,44 @@ background-color:#f8f9fa;
     width: 100%;
     margin-left: 15px;
 }
+
 .icon_deus img {
     max-width: 10%;
 }
-.icon_deus_12 {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    align-items: center;
-}
-.icon_deus .one{
-display: flex;
-}
-.icon_deus p{
+
+.icon_deus div p {
     font-size: 18px;
-    padding: auto;
 }
- .icon_deus .fa-check {
-    color:  rgb(115, 190, 1);
+
+.icon_deus .fa-check {
+    color: rgb(115, 190, 1);
 }
-.icon_deus .icon_deus_stock{
-    color:  rgb(115, 190, 1);
+
+.icon_deus .icon_deus_stock {
+    color: rgb(115, 190, 1);
+    padding-right: 80px;
 }
-.icon_deus .fa-user-shield{
-    color:  #338d8d;
+
+.icon_deus .fa-user-shield {
+    color: #338d8d;
 }
-.icon_deus .icon_deus_product{
-    color:  #338d8d;
+
+.icon_deus .icon_deus_product {
+    color: #338d8d;
+    padding-right: 20px;
+
 }
-.icon_deus .fa-truck{
+
+.icon_deus .fa-truck {
     color: #afafaf;
 }
-.icon_deus .icon_deus_send{
+
+.icon_deus .icon_deus_send {
     color: #afafaf;
+    padding-right: 60px;
+  
 }
+
 .main-producto .envios {
     text-decoration: none;
     border-radius: 5px;
@@ -148,19 +160,23 @@ display: flex;
     color: white;
     width: 20%;
 }
+
 .main-producto .main-envios {
     font-size: 15px;
     text-align: center;
 }
+
 a {
     text-decoration: none;
 }
+
 /* ver btn .comprar */
 .ahora {
     display: flex;
     width: 45%;
     justify-content: space-around
 }
+
 .btn {
     border: 2px solid black;
     border-radius: 5px;
@@ -174,75 +190,98 @@ a {
 .button {
     display: flex;
 }
-.button div{
+
+.button div {
     display: flex;
     width: 100%;
 }
-.button div a{
-width: 100%;
+
+.button div a {
+    width: 100%;
 }
+
 .comprar {
     border-color: rgb(115, 190, 1);
     color: green;
     width: 80%;
 }
+
 .comprar:hover {
     background-color: rgb(115, 190, 1);
     color: white;
 }
+
 .main-ul {
-    display:flex;
+    display: flex;
     justify-content: space-around;
-    
+
 }
+
 .main-ul img {
     max-width: 50%;
 }
+
 .main-ul li {
     list-style: none;
 }
-.detail_product_title{
+
+.detail_product_title {
     display: flex;
     justify-content: center;
     font-size: 24px;
-    padding: 30px;
-
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid ;
 }
 .general .detail_product {
     display: flex;
     flex-wrap: wrap;
+    background-color: #fff;
+    padding: 5px 50px;    
+}
+
+.detail_product div {
+    margin-top: 20px;
+}
+.detail-product_text{
+    display: flex;
+    flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
-    background-color: #fff;
-    padding: 50px 50px ;
 }
-.detail_product div{
+.row{
+    white-space: pre-wrap;
+    color: #0a072d;
+    font-weight: 600;
     margin-top: 20px;
 }
 
 /* interes*/
-.add-product{
+.add-product {
     grid-area: add-product;
 }
-.add-product-table{
+
+.add-product-table {
     display: grid;
     grid-gap: 5px;
-    grid-template-columns: repeat(auto-fit, minmax(365px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(365px, 1fr));
     background-color: #ffffff;
-    
+
 }
-.add-product .add-item .product-add-image{
+
+.add-product .add-item .product-add-image {
     width: 175px;
     height: 125px;
 }
-.add-item .details{
+
+.add-item .details {
     list-style: none;
     line-height: 25px;
     margin-left: 15px;
-    text-align:left
-    
+    text-align: left
 }
-.item .price{
+
+.item .price {
     font-size: 20px;
     font-weight: 600;
     position: absolute;
@@ -250,47 +289,57 @@ width: 100%;
     right: 1.2rem;
 
 }
-.add-item .details .price{
+
+.add-item .details .price {
     font-weight: 700;
 
 }
-.item .price{
+
+.item .price {
     font-size: 18px;
     font-weight: 550;
 }
+
 /* interes */
 
 @media (min-width: 500px) {
     .desktop {
         display: block;
     }
+
     .structure {
         display: flex;
         justify-content: center;
     }
+
     .envios {
         width: 100%;
     }
 }
+
 @media (max-width: 500px) {
     .productos {
         display: block;
         width: 100%;
         text-align: center;
     }
+
     .envios {
         display: none;
     }
+
     div .main-ul {
         display: none;
     }
+
     div .button {
         display: flex;
         justify-content: space-evenly
     }
+
     .btn {
         width: 150%;
         padding: 17px 75px;
     }
-    
+
 }
