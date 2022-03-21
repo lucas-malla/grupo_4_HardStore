@@ -68,11 +68,9 @@ const controller = {
                 new_user["userName"] = req.body.userName
                 new_user["email"] = req.body.email
                 new_user["password"] = bcryptjs.hashSync(req.body.password, 10)
-                if (req.file){
-                    new_user["avatar"] = req.file.filename
-                }else{
-                    new_user["avatar"] = "default.jpg"
-                }
+
+                console.log(req.file)
+                new_user["avatar"] = req.file ? req.file.filename : "default.jpg"
                 new_user["name"] = ""
                 new_user["surname"] = ""
                 new_user["street"] = ""
