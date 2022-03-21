@@ -42,29 +42,38 @@
                             <p>EFECTIVO / TRANSFERENCIA</p>
                         </div>
                     </div>
-                    <h6 class="producto-dto">Precio lista <%= producto.price_list %></h6>
+                    <h6 class="producto-dto">Precio lista: <%= producto.price_list %></h6>
                 </div>
 
-                <div class="icon_deus">
-                    <img class="icon_deus_img" src="/images/products/ahora_12.png" alt="Logo ahora 12">
-                    <div class="icon_deus_12">
-                        <p>12 cuotas sin interés de $4.955,33</p>
-                        <p>Sobre precio de lista</p>
+                <div class="icon_deus_principal">
+                    <div class="icon_deus">
+                        <img class="icon_deus_img" src="/images/detailView/ahora_12.png" alt="Logo ahora 12">
+                        <div class="icon_deus_12">
+                            <p>12 cuotas sin interés de $4.955,33</p>
+                            <p>Sobre precio de lista</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="icon_stock">
-                    <i class="fa-solid fa-square-check"></i>
-                    <div class="icon_deus_stock">
-                        <p>STOCK DISPONIBLE</p>
+                    <div class="icon_deus">
+                        <i class="fas fa-check"></i>
+                        <div class="icon_deus_stock">
+                            <p>STOCK DISPONIBLE</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="icon_Shipping">
-                    <i class="fa-solid fa-truck"></i>
-                    <div class="icon_deus_12">
-                        <p>ENVIO A TODO EL PAIS</p>
-                        <p> Con OCA</p>
+                    <div class="icon_deus">
+                        <i class="fas fa-truck"></i>
+                        <div class="icon_deus_send">
+                            <p>ENVIO A TODO EL PAIS</p>
+                            <p> Con OCA</p>
+                        </div>
+                    </div>
+
+                    <div class="icon_deus">
+                        <i class="fas fa-user-shield"></i>
+                        <div class="icon_deus_product">
+                            <p>PRODUCTO CON GARANTIA</p>
+                        </div>
                     </div>
                 </div>
 
@@ -84,14 +93,15 @@
         </div>
 
         <div class="detail_product_title">
-            <h3>Detalle del Producto</h3>
+            <p>Detalle del Producto</p>
         </div>
         <div class="detail_product">
-            <div>
-                <div>La silla de juegos CORSAIR T3 RUSH combina un diseño inspirado en las carreras y una comodidad
+            <div class="detail-product_text">
+                   <div class="row">
+                    La silla de juegos CORSAIR T3 RUSH combina un diseño inspirado en las carreras y una comodidad
                     contorneada con un exterior de tela suave y transpirable, una almohada cervical acolchada y un
-                    soporte lumbar de espuma viscoelástica.</div>
-                <div>
+                    soporte lumbar de espuma viscoelástica.
+               
                     Altura máxima del asiento: 54cm
                     Altura mínima del asiento: 44cm
                     Altura máxima del brazo: 36,5cm
@@ -114,7 +124,10 @@
                     Construcción del marco del asiento: Metal
                     Material de la superficie del asiento: Tela Suave
                     Material del respaldo del asiento: Tela Suave
-                </div>
+                
+                 
+                   </div>
+                   
             </div>
 
         </div>
@@ -142,8 +155,8 @@
 
     </div>
 
-        <footer>
-            <%- include("./partials/footer.ejs") %>
-        </footer>
+    <footer>
+        <%- include("./partials/footer.ejs") %>
+    </footer>
 
 </body>
