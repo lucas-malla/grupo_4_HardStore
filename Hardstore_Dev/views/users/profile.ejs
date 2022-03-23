@@ -3,14 +3,41 @@
 <head>
     <title>Admin - Product Manager</title>
     <%- include("../partials/head.ejs") %>
-    <link href="/CSS/admin/prodModification.css" rel="stylesheet">
+    <link href="/CSS/userProfile.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        <h1>Profile Details</h1>
+        <div class="userCont">
+            <div class="imgTitle">
+                <h2>Profile Details</h2>
+                <img src="/images/users/<%=data.avatar%>">
+            </div>
+            <div>
+                <div class="navbar">
+                    <a href="">Mis Datos</a>
+                    <a href="">Mis Compras</a>
+                    <a href="">Carrito</a>
+                </div>
+                <div class="datos">
+                    <h4>Usuario:</h4>
+                    <p><%=data.userName%></p>
+                    <h4>Email:</h4>
+                    <p><%=data.email%></p>
+                    <h4>Nombre:</h4>
+                    <p><%=data.name%></p>
+                    <h4>Apellido:</h4>
+                    <p><%=data.surname%></p>
+                    <h4>Direccion:</h4>
+                    <p>calle: <%=data.street%> altura: <%=data.number%></p>
+                    <h4>Contacto:</h4>
+                    <p>Celular: <%=data.cellphone%></p>
+                </div>
+            </div>
+        </div>
+
     </main>
     <footer>
         <%- include("./partials/footer.ejs") %>

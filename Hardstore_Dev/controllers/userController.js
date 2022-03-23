@@ -37,7 +37,7 @@ const controller = {
                 if (req.body.remember){
                     res.cookie('userName',req.session.user,{maxAge:60000})
                 }
-                res.redirect('/')
+                res.redirect('/user/' + String(req.session.user))
             }
         }
         res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
@@ -74,7 +74,7 @@ const controller = {
                 new_user["surname"] = ""
                 new_user["street"] = ""
                 new_user["number"] = ""
-                new_user["celphone"] = ""
+                new_user["cellphone"] = ""
                 new_user['id'] = get_next_id(UsersdataBase)
 
                 //Update DB
@@ -88,7 +88,34 @@ const controller = {
         }
     },
     profile: function(req, res){
-        res.render('profile')
+        let userReq = req.params.userName 
+        if (userReq  == req.session.user ){
+            //grant access
+
+            //read db
+            UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
+            UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath))
+
+            userData = UsersdataBase.find((usuario)=> {
+                return ( usuario.userName == req.session.user )
+            })
+            console.log(userData)
+            data = {
+                userName: userData.userName,
+                email: userData.email,
+                avatar: userData.avatar,
+                name: userData.name,
+                surname: userData.surname,
+                street: userData.street,
+                number: userData.number,
+                cellphone: userData.cellphone,
+                id: userData.id
+            }
+            res.render('profile',{data : data})
+
+        }
+
+        res.redirect('/')
     },
     profileEdit: function(req, res){
         res.render('profileEdit')
