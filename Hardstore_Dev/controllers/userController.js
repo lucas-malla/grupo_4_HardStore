@@ -90,16 +90,15 @@ const controller = {
     profile: function(req, res){
         let userReq = req.params.userName 
         if (userReq  == req.session.user ){
-            //grant access
-
+            // access granted
             //read db
             UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
             UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath))
-
+            //find user data
             userData = UsersdataBase.find((usuario)=> {
                 return ( usuario.userName == req.session.user )
             })
-            console.log(userData)
+            //rearrange data which will be sended to the view
             data = {
                 userName: userData.userName,
                 email: userData.email,
@@ -112,9 +111,8 @@ const controller = {
                 id: userData.id
             }
             res.render('profile',{data : data})
-
         }
-
+        //if not maching with loged user => redirect home
         res.redirect('/')
     },
     profileEdit: function(req, res){
