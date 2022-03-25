@@ -3,7 +3,7 @@ const path = require('path')
 
 
 function remember(req, res, next){
-    if(req.cookies){
+    if(req.cookies.userName && !req.session.user){
         //a cookie was seended in the request => check cookie 
        //load user DB
         UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
@@ -15,7 +15,7 @@ function remember(req, res, next){
             req.session.user = req.cookies.userName
         }
     }
-    next();
+    return next();
 }
 
 module.exports = remember

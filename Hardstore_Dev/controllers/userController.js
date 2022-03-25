@@ -43,8 +43,10 @@ const controller = {
         res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
     },
     logout: function(req, res){
-        req.session.user = undefined
-        res.cookie('userName',req.session.user,)
+        req.session.destroy()
+        res.clearCookie('userName')
+        //req.session.user = undefined
+        //res.cookie('userName',req.session.user,)
         res.redirect('/')
     },
     userCheck: function(req, res){
@@ -108,7 +110,6 @@ const controller = {
                 street: userData.street,
                 number: userData.number,
                 cellphone: userData.cellphone,
-                id: userData.id
             }
             res.render('profile',{data : data})
         }

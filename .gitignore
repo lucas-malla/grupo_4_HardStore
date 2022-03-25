@@ -1,1 +1,2 @@
-/Hardstore_Dev/node_modules
+node_modules
+database/config/config.js
