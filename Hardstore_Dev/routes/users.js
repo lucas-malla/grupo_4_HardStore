@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 const userController =  require('../controllers/userController');
+const prodCartController =  require('../controllers/prodCartController');
 const userMiddleware = require('../middlewares/user');
 
 //multer
@@ -23,6 +24,12 @@ router.post('/register',uploadFile.single('avatar'), validationsReg, userControl
 
 router.get('/user/:id',userMiddleware, userController.profile)
 router.get('/user/:userName/edit',userMiddleware, userController.profileEdit)
+
+//PRODUCT CART
+//logged user
+router.get('/user/:id/productCart' ,userMiddleware, prodCartController.cartLogged);
+//Unlogged user
+router.get('/user//productCart',prodCartController.cartUnlogged);
 
 //TEST
 router.get('/check', userController.userCheck);

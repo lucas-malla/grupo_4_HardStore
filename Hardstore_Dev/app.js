@@ -3,11 +3,12 @@ const app = express();
 const path = require('path');
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
-var remember = require('./middlewares/remember')
+const remember = require('./middlewares/remember')
+const locals = require('./middlewares/locals')
 
 let mainRoutes = require('./routes/main.js');
 let rutasProductos = require('./routes/products.js');
-let cartRoutes = require('./routes/prodCart.js');
+//let cartRoutes = require('./routes/prodCart.js');
 let adminRoutes = require('./routes/admin.js');
 let userRoutes = require('./routes/users.js');
 
@@ -22,9 +23,11 @@ app.use(express.json());
 app.use(session( {secret: "la clave secreta"}));
 app.use(cookieParser());
 app.use(remember);
+app.use(locals);
 
 app.set("view engine", 'ejs');
-app.set("views",["./views","./views/admin","./views/users"]);
+//app.set("views",["./views","./views/admin","./views/users"]);
+app.set("views","./views");
 
 
 let PUERTO = 3000
@@ -36,7 +39,7 @@ app.use('/', mainRoutes);
 app.use('/', userRoutes);
 
 //SHOPING CART
-app.use('/', cartRoutes);
+//app.use('/', cartRoutes);
 
 //PRODUCT DETAIL & PRODUCT GALERY
 app.use('/products', rutasProductos);

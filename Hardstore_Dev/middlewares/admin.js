@@ -6,10 +6,8 @@ function adminMiddleware(req, res, next){
     //load user DB
     UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
     UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath))
-    console.log(UsersdataBase)
     //FIND user
     let user = UsersdataBase.find(user => user.id == req.session.userID)
-    console.log(user)
     //check is user is admin
     if (user.admin){
         //is admin

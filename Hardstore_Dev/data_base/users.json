@@ -168,5 +168,17 @@
         "number": "",
         "cellphone": "",
         "id": 14
+    },
+    {
+        "userName": "fedewagner",
+        "email": "f@gmail.com",
+        "password": "$2a$10$fLmSXTjS2pRL0S5tJ1svnOd7Bk3Rhk6KEHSUl85kXTELZAm.2MZVC",
+        "avatar": "default.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "cellphone": "",
+        "id": 15
     }
 ]
