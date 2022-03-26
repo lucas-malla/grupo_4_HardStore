@@ -117,6 +117,7 @@
         "street": "la calle del 4",
         "number": "4444",
         "cellphone": "1544444444",
+        "admin": true,
         "id": 10
     },
     {
@@ -129,6 +130,7 @@
         "street": "",
         "number": "",
         "cellphone": "",
+        "admin": false,
         "id": 11
     },
     {

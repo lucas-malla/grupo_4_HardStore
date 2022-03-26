@@ -13,6 +13,7 @@ let userRoutes = require('./routes/users.js');
 
 //para metodos post
 const methodOverride = require("method-override"); 
+const req = require('express/lib/request');
 app.use(methodOverride("_method"));
 
 app.use(express.static(path.resolve(__dirname, './public')));
