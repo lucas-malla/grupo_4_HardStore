@@ -1,5 +1,4 @@
 const sequelize = require('sequelize')
-//const DataTypes = sequelize.DataTypes
 
 module.exports = (sequelize, DataTypes) => {
     let alias = 'User'; // esto debería estar en singular
@@ -33,9 +32,24 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true,
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        deletedAt: false
+        deletedAt: false,
+        tableName: 'user'
     }
     const User = sequelize.define(alias,cols,config);
+
+    User.associate = function(models){
+        User.belongsToMany(models.Product, {
+            as: "product",
+            through: "cart_product",
+            foreignKey: "user_id",
+            otherKey: "product_id",
+            timestamps: false,
+        })
+        User.hasMany(models.Cart, {
+            as: "cart",
+            foreignKey: "user_id"
+        })
+    }
 
     return User
 }

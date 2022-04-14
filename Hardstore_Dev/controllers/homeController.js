@@ -1,5 +1,8 @@
 const refreshContent = require('../services/homeServices')
 
+const db = require('../database/models');
+const sequelize = db.sequelize;
+
 const controller = {
     home: function(req, res){
         refreshContent()
@@ -10,6 +13,23 @@ const controller = {
             'offers': offers,
         })
     },
+    test_user: function(req, res){
+        db.User.findAll({
+            include:[
+            {association: "product"},
+            //{association: "cart"}
+        ]})
+            .then((usuario)=>{
+                res.send(usuario)
+            })
+    },
+    test_product: function(req, res){
+
+        db.Product.findAll()
+            .then((producto)=>{
+                res.send(producto)
+            })
+    }
 }
 
 module.exports = controller
