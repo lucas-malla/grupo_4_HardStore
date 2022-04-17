@@ -26,8 +26,8 @@ app.use(remember);
 app.use(locals);
 
 app.set("view engine", 'ejs');
-//app.set("views",["./views","./views/admin","./views/users"]);
-app.set("views","./views");
+app.set("views",["./views","./views/admin","./views/users"]);
+//app.set("views","./views");
 
 
 let PUERTO = 3000
