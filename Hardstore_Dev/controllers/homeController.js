@@ -15,9 +15,10 @@ const controller = {
     },
     test_user: function(req, res){
         db.User.findAll({
+            //subQuery: false,
             include:[
-            {association: "product"},
-            //{association: "cart"}
+            {association: "user_cart_products"},
+            {association: "cart"}
         ]})
             .then((usuario)=>{
                 res.send(usuario)
