@@ -18,8 +18,18 @@ return resultado
 let showRandom = random(data_base);
 
 const controller = { 
-    cart: (req, res) => {
-        res.render("productCart", { 'itemCart':itemCart, showRandom: showRandom})
+    cartLogged: (req, res) => {
+
+        res.render("productCart", { 'itemCart':itemCart, 'showRandom': showRandom})
+    },
+    cartUnlogged: (req, res) => {
+        //CART for non logged user
+
+        //guardar carito en una cookie 
+
+        //al loguearse añadir esos productos al servidor => base de datos para los carrito de los users
+
+        res.render("productCart", { 'itemCart':itemCart, 'showRandom': showRandom})
     }
 }
 

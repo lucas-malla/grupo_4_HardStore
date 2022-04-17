@@ -32,23 +32,23 @@ const controller = {
             let check = bcryptjs.compareSync(req.body.password, user.password)
               if (check){
                 //login user
-                req.session.user = req.body.userName
+                req.session.userID = user.id
                 //remember =>  GENERATE COOCKIE
                 if (req.body.remember){
-                    res.cookie('userName',req.session.user,{maxAge:60000})
+                    res.cookie('userID',req.session.userID,{maxAge:60000})
                 }
-                res.redirect('/')
+                res.redirect('/user/' + String(req.session.userID))
             }
         }
         res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
     },
     logout: function(req, res){
-        req.session.user = undefined
-        res.cookie('userName',req.session.user,)
+        req.session.destroy()
+        res.clearCookie('userID')
         res.redirect('/')
     },
     userCheck: function(req, res){
-        res.send(req.session.user)
+        res.send(req.session.userID)
     },
     registerPost: function(req, res){
         let validation = validationResult(req) //array de errores
@@ -68,16 +68,12 @@ const controller = {
                 new_user["userName"] = req.body.userName
                 new_user["email"] = req.body.email
                 new_user["password"] = bcryptjs.hashSync(req.body.password, 10)
-                if (req.file){
-                    new_user["avatar"] = req.file.filename
-                }else{
-                    new_user["avatar"] = "default.jpg"
-                }
+                new_user["avatar"] = req.file ? req.file.filename : "default.jpg"
                 new_user["name"] = ""
                 new_user["surname"] = ""
                 new_user["street"] = ""
                 new_user["number"] = ""
-                new_user["celphone"] = ""
+                new_user["cellphone"] = ""
                 new_user['id'] = get_next_id(UsersdataBase)
 
                 //Update DB
@@ -91,7 +87,18 @@ const controller = {
         }
     },
     profile: function(req, res){
-        res.render('profile')
+        //restringir acceso 
+        if(req.params.id  == req.session.userID){
+            //load user DB
+            UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
+            UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath));
+            //FIND user
+            let data = UsersdataBase.find(user => user.id == req.params.id )
+
+            res.render('profile',{data})
+        }
+
+        res.redirect('/')
     },
     profileEdit: function(req, res){
         res.render('profileEdit')

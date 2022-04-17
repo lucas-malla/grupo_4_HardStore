@@ -6,14 +6,10 @@
         "selection": "false",
         "offer": "false",
         "prod_img": "prodImg-1646771356969.jpg",
-        "price": "8500",
+        "price": "$8.500",
+        "price_list": "$10.200",
         "price_dto": 7225,
-        "dto": "15",
-        "color": "Color: Negro",
-        "tamaño": "Marca: GameMax",
-        "tipo": "Modelo: HG3500 Pro",
-        "descripcion": "Es gamer: Sí\r\nColor: rojo\r\nTipo: Headset\r\n",
-        "tecno": "Conexión: USB"
+        "dto": "15"
     },
     {
         "prod_id": 2,
@@ -24,21 +20,9 @@
         "offer": "off",
         "prod_img": "silla.jpg",
         "dto": "30",
-        "stock": "En stock",
-        "price": "44.700",
-        "price_dto": "8.800",
-        "color": "Color: Roja",
-        "descripcion": [
-            {
-                "Altura": "25"
-            },
-            {
-                "Altura": "25"
-            },
-            {
-                "Altura": "25"
-            }
-        ]
+        "price": "$44.700",
+        "price_list": "$50.000",
+        "price_dto": "8.800"
     },
     {
         "prod_id": 3,
@@ -47,7 +31,8 @@
         "selection": "true",
         "offer": "true",
         "prod_img": "prodImg-1646692222756.jpg",
-        "price": "35.000",
+        "price": "$35.000",
+        "price_list": "$48.300",
         "price_dto": 29.75,
         "dto": "15",
         "descripcion": ""
@@ -60,7 +45,8 @@
         "selection": "true",
         "offer": "true",
         "prod_img": "silla.jpg",
-        "price": "10.000",
+        "price": "$10.000",
+        "price_list": "$12.700",
         "price_dto": "8.800",
         "dto": "5"
     },
@@ -71,7 +57,8 @@
         "selection": "false",
         "offer": "false",
         "prod_img": "prodImg-1645487565358.png",
-        "price": "8500",
+        "price": "$8.500",
+        "price_list": "$8.700",
         "price_dto": 8075,
         "dto": "5",
         "prod_id": 5
@@ -83,7 +70,8 @@
         "selection": "true",
         "offer": "true",
         "prod_img": "prodImg-1646691408095.jpg",
-        "price": "5500",
+        "price": "$5.500",
+        "price_list": "$8.700",
         "price_dto": 4675,
         "dto": "15",
         "prod_id": 6
@@ -95,7 +83,8 @@
         "selection": "true",
         "offer": "true",
         "prod_img": "prodImg-1646692384918.jpg",
-        "price": "11300",
+        "price": "$11.300",
+        "price_list": "$15.700",
         "price_dto": 10735,
         "dto": "5",
         "prod_id": 7
@@ -107,7 +96,8 @@
         "selection": "false",
         "offer": "true",
         "prod_img": "prodImg-1646702509097.jpg",
-        "price": "5000",
+        "price": "$5.000",
+        "price_list": "$8.700",
         "price_dto": 5000,
         "dto": "0",
         "prod_id": 8
@@ -119,7 +109,8 @@
         "selection": "false",
         "offer": "false",
         "prod_img": "prodImg-1646850323283.jpg",
-        "price": "5500",
+        "price": "5.500",
+        "price_list": "$8.700",
         "price_dto": 5500,
         "dto": "0",
         "prod_id": 9
@@ -131,17 +122,11 @@
         "selection": "false",
         "offer": "false",
         "prod_img": "prodImg-1646850323283.jpg",
-        "price": "5500",
+        "price": "$5.500",
+        "price_list": "$6.700",
         "price_dto": 5500,
         "dto": "0",
-        "prod_id": 10,
-        "marca": "Samsung",
-        "modelo": "TC3",
-        "descripcion": [
-            "Color: Roja",
-            "tipo: Tipo de espuma: Espuma de alta densidad",
-            "descripcion: Tipo de mecanismo: Mecanismo de mariposa"
-        ]
+        "prod_id": 10
     },
     {
         "prod_name": "mouse reddragon",
@@ -150,7 +135,8 @@
         "selection": "true",
         "offer": "false",
         "prod_img": "prodImg-1647048206276.jpg",
-        "price": "5500",
+        "price": "$5.500",
+        "price_list": "$8.700",
         "price_dto": 4950,
         "dto": "10",
         "prod_id": 11
