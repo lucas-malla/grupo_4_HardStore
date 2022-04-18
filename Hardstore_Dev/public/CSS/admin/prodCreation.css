@@ -64,3 +64,7 @@ body main .newData form button{
     padding: 3px;
     border-radius: 10%;
 }
+
+.mesage{
+    color: red;
+}

@@ -1,10 +1,6 @@
 const fs = require('fs');
 const path = require('path')
 
-function get_next_id(data_base){
-    //devuelve el proximo id de producto a crear
-    return ((data_base.slice(-1))[0].prod_id)+1
-}
 
 const adminServices = {
     agregarProducto : function agregarProducto(newProduct){
@@ -13,7 +9,7 @@ const adminServices = {
         data_base = fs.readFileSync(dataBasePath)
         data_base = JSON.parse(data_base)
         // Generate id and Add new Product
-        newProduct["prod_id"] = get_next_id(data_base)
+        newProduct["prod_id"] = adminServices.get_next_id(data_base)
         data_base.push(newProduct)
         //Store DB
         data_base = JSON.stringify(data_base, null, 4) //por formato
@@ -26,10 +22,14 @@ const adminServices = {
         data_base = JSON.parse(data_base);
         return data_base;
     },
-    writeFile : function writeFile (array){
+    writeFile : function writeFile(array){
         dataBasePath = path.join(__dirname, '../data_base/productos.json');
         dataBase = JSON.stringify (array, null, 4);
         fs.writeFileSync (dataBasePath, dataBase );
+    },
+    get_next_id : function get_next_id(data_base){
+        //devuelve el proximo id de producto a crear
+        return ((data_base.slice(-1))[0].prod_id)+1
     }
 }
 

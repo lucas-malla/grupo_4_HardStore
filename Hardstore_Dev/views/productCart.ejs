@@ -2,20 +2,18 @@
 <html lang="es">
 <head>
     <%- include("./partials/head.ejs") %>
-    <link href="CSS/productCart.css" rel="stylesheet">
-    
+    <link href="/CSS/productCart.css" rel="stylesheet">
 </head>
 <body>
      <header>
             <%- include("./partials/header.ejs") %>
         </header>
     <div class="grid-container">
-        
         <div class="table-cart">
             <h2>MI CARRITO</h2>
             <% for (product of itemCart){ %>
             <div class="item">
-                <img src=images/products/<%= product.prod_img %> alt="Monitor" class="product-image">
+                <img src=/images/products/<%= product.prod_img %> alt="Monitor" class="product-image">
                 <ul class="item-order">
                     <li><p class="name"><%= product.prod_name %></p></li>
                    <li><div class="quantity"> <div class="quantity-buttons">
@@ -56,7 +54,7 @@
             <div class="add-product-table">
                 <% showRandom.forEach(function(product){%>
                 <div class="add-item">
-                    <img src=images/products/<%= product.prod_img %> alt="<%=product.prod_name%>" class="product-add-image">
+                    <img src=/images/products/<%= product.prod_img %> alt="<%=product.prod_name%>" class="product-add-image">
                         <ul class="details">
                         <li><p><%= product.prod_name %></p></li>
                         <li><p class="price"><%= product.price %></p></li>

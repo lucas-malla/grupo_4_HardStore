@@ -1,17 +1,7 @@
-const fs = require('fs');
-const path = require('path')
+const refreshContent = require('../services/homeServices')
 
-function refreshContent(){
-    //Base de Datos de productos
-    dataBasePath = path.join(__dirname, '../data_base/productos.json')
-    data_base = fs.readFileSync(dataBasePath)
-    data_base = JSON.parse(data_base)
-    //filtros de productos (secciones de home)
-    mostSold = data_base.filter(producto => producto.most_sold == 'true')
-    ourSelection = data_base.filter(producto => producto.selection == 'true')
-    offers = data_base.filter(producto => producto.offer == 'true')
-    return  [mostSold, ourSelection, offers]
-}
+const db = require('../database/models');
+const sequelize = db.sequelize;
 
 const controller = {
     home: function(req, res){
@@ -23,6 +13,23 @@ const controller = {
             'offers': offers,
         })
     },
+    test_user: function(req, res){
+        db.User.findAll({
+            include:[
+            {association: "user_cart_products"},
+            {association: "cart"}
+        ]})
+            .then((usuario)=>{
+                res.send(usuario)
+            })
+    },
+    test_product: function(req, res){
+
+        db.Product.findAll()
+            .then((producto)=>{
+                res.send(producto)
+            })
+    }
 }
 
 module.exports = controller

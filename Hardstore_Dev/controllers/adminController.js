@@ -13,7 +13,7 @@ const controller = {
         res.render("adminControlPanel", {results: results})
     },
     addProduct: function(req, res){
-        res.render("adminProdCreation", {mesage:null})
+        res.render("adminProdCreation")
     },
     manageProductEdit: function(req, res){
         //obtengo la información

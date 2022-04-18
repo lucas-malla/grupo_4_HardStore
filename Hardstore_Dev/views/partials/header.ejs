@@ -30,16 +30,21 @@
                 </div>
                     <div class="head_down">
                         <div class="user_menu">
-                            <a>
-                            <a href="/register">Registrarme</a>
-                            <i class="far fa-user"></i>
-                            </a>
-                            <a>
-                            <a href="/login">Login</a>
-                            <i class="fas fa-sign-in-alt"></i>
-                            </a>
+                            <% if(locals.userLocals){ %>
+                                <p> <%=locals.userLocals.userName %> </p>
+                                <a href="/logout">Logout
+                                <i class="fas fa-sign-in-alt"></i>
+                                </a>
+                                <% }else{ %>
+                                    <a href="/register">Registrarme
+                                        <i class="far fa-user"></i>
+                                    </a>
+                                    <a href="/login">Login
+                                        <i class="fas fa-sign-in-alt"></i>
+                                    </a>
+                                <% } %>
                         </div>
-                        <a class="carrito" href="/productCart"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="carrito" href="/user/<%=locals.userLocals.id %>/productCart"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>

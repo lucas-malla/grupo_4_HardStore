@@ -10,22 +10,20 @@
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        
         <h1>Modificacion de datos de producto</h1>
         <div class="data">
             <div class="newData">
-
-                <form action="/admin/products/<%=product.prod_id%>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <h3>Nuevos datos</h3>
+                <form action="/admin/products/<%=product.prod_id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <h3>Producto ID: <%= product.prod_id %></h3>
                     <label for="categoria">Categoria de Producto</label>
                     <select name="categoria" id="categoria" form="categoria">
-                        <option value="volvo"><%= product.prod_category%></option>
-                        <option value="saab">headsets</option>
-                        <option value="opel">sillas</option>
-                        <option value="audi">teclados</option>
-                        <option value="audi">mouses</option>
-                        <option value="audi">parlantes</option>
-                        <option value="audi">juegos</option>
+                        <% let categories = ["Monitores", "Headsets", "Sillas", "Teclados", "Mouses", "Parlantes", "Juegos"] %>
+                        <% for (category of categories){ %>
+                            <option value="<%= category %>"
+                                <%= product.prod_category === category ? 'selected' : null %>>
+                                <%= category %>
+                            </option> 
+                            <% } %>
                     </select>
                     <label>Nombre de Producto</label>
                     <input type="text" name="prodName" value="<%= product.prod_name%>">
@@ -33,8 +31,6 @@
                     <input type="text" name="price" value=<%= product.price%>>
                     <label>Descuento</label>
                     <input type="text" name="dto" value=<%= product.dto%>>
-                    <label>Precio con Descuento</label>
-                    <input type="text" name="pricedto" value=<%= product.price_dto%>>
                     <label>Descripción</label>
                     <textarea name="description"><%= product.descripcion%></textarea>
                     <p>Caracteristicas:</p>
