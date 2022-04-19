@@ -6,7 +6,7 @@ const sequelize = require('sequelize')
 const db = require('../database/models')
 const {User, Product, Cart } = db
 const { Op } = require("sequelize");
-const { Console } = require('console')
+
 
 
 function get_next_id(data_base){
@@ -34,7 +34,11 @@ const controller = {
             }})
             .then((user)=>{
                 // always throwing false
-                let check = bcryptjs.compareSync(req.body.password, user.dataValues.password)
+                bcryptjs.compare(req.body.password, user.dataValues.password)
+                .then((check)=>{
+                    console.log(check)
+                })
+                
 
                 if (req.body.password == user.dataValues.password){//provisorio
                   //login user
