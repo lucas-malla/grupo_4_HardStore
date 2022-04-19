@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": null,
-    "database": "hardstoreDB", //REVISEN ESTO EN SUS COMPUS
+    "database": "hardstoreDB", //REVISEN ESTO EN SUS COMPUS antes: mydb
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
