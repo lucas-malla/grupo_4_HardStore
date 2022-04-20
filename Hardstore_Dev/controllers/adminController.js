@@ -1,6 +1,10 @@
 const req = require('express/lib/request');
 const fs = require('fs');
 const path = require('path')
+const sequelize = require('sequelize')
+const db = require('../database/models')
+const {User, Product, Cart, Product_category, Product_image} = db
+const { Op } = require("sequelize");
 const {agregarProducto, allDataBase, writeFile } = require('../services/adminServices')
 
 
@@ -13,8 +17,41 @@ const controller = {
         res.render("adminControlPanel", {results: results})
     },
     addProduct: function(req, res){
-        res.render("adminProdCreation")
+        Product_category.findAll({raw:true})
+        .then((categories)=>{
+            res.render("adminProdCreation", {categories: categories})
+        })
+        
     },
+    addProductPost: function(req, res){     
+        if (req.file != undefined) {
+            //creo objeto del producto nuevo
+            Product.create(
+                {
+                    product_name: req.body.prodName,
+                    description: req.body.description,
+                    brand: req.body.brand,
+                    model: req.body.model,
+                    color: req.body.color,
+                    product_category_id: req.body.category,
+                    price: req.body.price,
+                    discount: req.body.dto
+                }
+            )
+            // .then((product)=>{
+            //     product.setImages(product.product_id);
+            //     Product_image.create({
+            //         image_name: req.file.filename
+            //     })
+            // })
+            .then(()=>{
+                res.redirect("/products/");
+            })
+            
+        }else{
+            res.render("adminProdCreation", {mesage: "La imagen no ha sido cargada correctamente"})
+        }
+    }, 
     manageProductEdit: function(req, res){
         //obtengo la información
         let products = allDataBase ()
@@ -42,26 +79,7 @@ const controller = {
             writeFile (products);
             res.redirect ('/products/'+ String (productFound.prod_id));
         },
-    addProductPost: function(req, res){     
-        if (req.file != undefined) {
-            //creo objeto del producto nuevo
-            newProduct = {
-                prod_name: req.body.prodName,
-                prod_category: req.body.categoria,
-                most_sold: req.body.mostSold || "false",
-                selection: req.body.selection || "false",
-                offer: req.body.offer || "false",
-                prod_img: req.file.filename,
-                price: req.body.price,
-                price_dto: req.body.price * (100- req.body.dto)/100,
-                dto: req.body.dto
-            },
-            prod_id = agregarProducto(newProduct)
-            res.redirect("/products/"+ String(prod_id));
-        }else{
-            res.render("adminProdCreation", {mesage: "La imagen no ha sido cargada correctamente"})
-        }
-    }, 
+    
     delete: (req, res) => {
 		let products = allDataBase();
 		let productIndex = products.findIndex(function(product){

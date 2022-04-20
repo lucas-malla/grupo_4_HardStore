@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         stock:{ 
             type: DataTypes.INTEGER,
-            allowNull: false
+            allowNull: true
         },
         product_name:{ 
             type: DataTypes.STRING(50),
@@ -40,8 +40,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         selection:{ 
             type: DataTypes.BOOLEAN,
-            allowNull: false
-        }
+            allowNull: true
+        },
+        description: {
+            type: DataTypes.STRING(500)
+        },
+        product_category_id: DataTypes.BIGINT(10)
     };
     let config = {
         timestamps: false,
