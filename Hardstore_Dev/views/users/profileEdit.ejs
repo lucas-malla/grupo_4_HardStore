@@ -3,6 +3,7 @@
 <head>
     <title>Admin - Product Manager</title>
     <%- include("../partials/head.ejs") %>
+    <link href="/CSS/userProfileEdit.css" rel="stylesheet">
     <link href="/CSS/admin/prodModification.css" rel="stylesheet">
 </head>
 <body>
@@ -10,7 +11,49 @@
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        <h1>Profile edit</h1>
+        <div class="userCont">
+            <div class="imgTitle">
+                <h2>Profile edit</h2>
+                <img src="/images/users/<%=data.avatar%>">
+            </div>
+            <div>
+                <div class="navbar">
+                    <a href="">Mis Datos</a>
+                    <a href="">Mis Compras</a>
+                    <a href="">Carrito</a>
+                </div>
+                <form method="post" action="/user/<%=data.id%>/edit">
+                    <div class="datos">
+                        <h4>Nombre de usuario:</h4>
+                        <input type="text" value="<%=data.username%>" name="username">
+
+                        <h4>Email:</h4>
+                        <input type="text" value="<%=data.email%>" name="email">
+
+                        <h4>Nombre:</h4>
+                        <input type="text" value="<%=data.first_name%>" name="first_name">
+
+                        <h4>Apellido:</h4>
+                        <input type="text" value="<%=data.last_name%>" name="last_name">
+
+                        <h4>Direccion:</h4>
+                        <p>calle: </p>
+                        <input type="text" value="<%=data.street%>" name="street">
+                        <p>altura: </p>
+                        <input type="text" value="<%=data.street_number%>" name="street_number">
+
+                        <h4>Contacto:</h4>
+                        <p>Celular:</p>
+                        <input type="text" value="<%=data.cellphone%>" name="cellphone">
+                        <div class="save_div">
+                            <a  class="cancel" href="/user/<%=data.id%>">Cancelar</a>
+                            <button type="submit">Guardar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
     </main>
     <footer>
         <%- include("./partials/footer.ejs") %>

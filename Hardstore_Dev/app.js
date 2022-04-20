@@ -26,8 +26,8 @@ app.use(remember);
 app.use(locals);
 
 app.set("view engine", 'ejs');
-//app.set("views",["./views","./views/admin","./views/users"]);
-app.set("views","./views");
+app.set("views",["./views","./views/admin","./views/users"]);
+//app.set("views","./views");
 
 
 let PUERTO = 3000
@@ -37,9 +37,6 @@ app.use('/', mainRoutes);
 
 //login-register-profile
 app.use('/', userRoutes);
-
-//SHOPING CART
-//app.use('/', cartRoutes);
 
 //PRODUCT DETAIL & PRODUCT GALERY
 app.use('/products', rutasProductos);

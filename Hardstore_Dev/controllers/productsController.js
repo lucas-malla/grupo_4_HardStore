@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path')
 
+
 function refreshContent(){
     //Base de Datos de productos
     dataBasePath = path.join(__dirname, '../data_base/productos.json')

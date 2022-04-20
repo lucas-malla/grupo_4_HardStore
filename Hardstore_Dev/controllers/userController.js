@@ -2,6 +2,10 @@ const fs = require('fs')
 const path = require('path')
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
+const sequelize = require('sequelize')
+const db = require('../database/models')
+const {User, Product, Cart } = db
+const { Op } = require("sequelize");
 
 
 function get_next_id(data_base){
@@ -22,25 +26,34 @@ const controller = {
             //form data error
             res.render("login",{errors : validation.errors, old : req.body})
         }
-        //load user DB
-        UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
-        UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath))
-        //FIND user
-        let user = UsersdataBase.find(user => user.userName == req.body.userName )
-        if (user){
-            //registeres user => check password
-            let check = bcryptjs.compareSync(req.body.password, user.password)
-              if (check){
-                //login user
-                req.session.userID = user.id
-                //remember =>  GENERATE COOCKIE
-                if (req.body.remember){
-                    res.cookie('userID',req.session.userID,{maxAge:60000})
+        //NEW
+        User.findOne({
+            where: {
+                username : req.body.userName
+            }})
+            .then((user)=>{
+                // always throwing false
+                bcryptjs.compare(req.body.password, user.dataValues.password)
+                .then((check)=>{
+                    console.log(check)
+                })
+                if (req.body.password == user.dataValues.password){//provisorio
+                  //login user
+                  req.session.userID = user.dataValues.id
+                  //remember =>  GENERATE COOCKIE
+                  if (req.body.remember){
+                      console.log("se ha creado la cookie")
+                      res.cookie('userID',req.session.userID,{maxAge:60000})
+                  }
+                  res.redirect('/user/' + String(req.session.userID))
                 }
-                res.redirect('/user/' + String(req.session.userID))
-            }
-        }
-        res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
+                res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
+            })
+            .catch(function(error){
+                console.log("catch")
+                //user not found
+                res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
+            })
     },
     logout: function(req, res){
         req.session.destroy()
@@ -59,27 +72,13 @@ const controller = {
             //no errors -> chech passwords maching
             if (req.body.password == req.body.password_repeat){   
                 //no errors -> user register in DB
-                //read db
-                UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
-                UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath))
-
-                //create new user
-                let new_user = {}
-                new_user["userName"] = req.body.userName
-                new_user["email"] = req.body.email
-                new_user["password"] = bcryptjs.hashSync(req.body.password, 10)
-                new_user["avatar"] = req.file ? req.file.filename : "default.jpg"
-                new_user["name"] = ""
-                new_user["surname"] = ""
-                new_user["street"] = ""
-                new_user["number"] = ""
-                new_user["cellphone"] = ""
-                new_user['id'] = get_next_id(UsersdataBase)
-
-                //Update DB
-                UsersdataBase.push(new_user)
-                UsersdataBase = JSON.stringify (UsersdataBase, null, 4);
-                fs.writeFileSync (UsersdataBasePath, UsersdataBase );
+                //NEW
+                let new_userSQL = {}
+                new_userSQL["username"] = req.body.userName
+                new_userSQL["email"] = req.body.email
+                new_userSQL["password"] = bcryptjs.hashSync(req.body.password, 10)
+                new_userSQL["avatar"] = req.file ? req.file.filename : "default.jpg"
+                User.create(new_userSQL)
                 res.redirect("/")
             }else{
                 res.render("register",{errors :[{ msg :"Las contraseñas ingresadas no coinciden"}], old : req.body})
@@ -89,20 +88,61 @@ const controller = {
     profile: function(req, res){
         //restringir acceso 
         if(req.params.id  == req.session.userID){
-            //load user DB
-            UsersdataBasePath = path.join(__dirname, '../data_base/users.json');
-            UsersdataBase = JSON.parse(fs.readFileSync(UsersdataBasePath));
-            //FIND user
-            let data = UsersdataBase.find(user => user.id == req.params.id )
-
-            res.render('profile',{data})
+            
+            User.findOne({
+                where: {
+                    id : req.session.userID
+                }})
+                .then((user)=>{
+                    let data = user.dataValues
+                    res.render('profile',{data})
+                })
+                .catch(function(error){
+                    console.log("sali por catch")
+                })
+        }else{
+            res.redirect('/') 
         }
 
-        res.redirect('/')
     },
     profileEdit: function(req, res){
-        res.render('profileEdit')
+        //restringir acceso 
+        if(req.params.id  == req.session.userID){
+            User.findOne({
+                where: {
+                    id : req.session.userID
+                }})
+                .then((user)=>{
+                    let data = user.dataValues
+                    console.log(data)
+                    res.render('profileEdit',{data})
+                })
+                .catch(function(error){
+                    console.log("sali por catch")
+                })
+        }else{
+            res.redirect('/') 
+        }
+    },
+    profileEditPost: function(req,res){
+        //restringir acceso 
+        if(req.params.id  == req.session.userID){
+            newData = req.body
+        User.update(newData,{
+                where: {
+                    id : req.session.userID
+                }})
+                .then(()=>{
+                    res.redirect('/user/' + String(req.params.id))
+                })
+                .catch(function(error){
+                    console.log("profileEditPost - sali por catch")
+                })
+        }else{
+            res.redirect('/') 
+        }
     }
 }
+
 
 module.exports = controller

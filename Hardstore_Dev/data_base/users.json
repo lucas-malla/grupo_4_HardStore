@@ -180,5 +180,17 @@
         "number": "",
         "cellphone": "",
         "id": 15
+    },
+    {
+        "userName": "juan",
+        "email": "juancho@gmail.com",
+        "password": "$2a$10$/dmyQEdvEXWyCGjBTDeS.OJzm2UWLysyx7HBUbH1xSSM6ZCB9BKHy",
+        "avatar": "default.jpg",
+        "name": "",
+        "surname": "",
+        "street": "",
+        "number": "",
+        "cellphone": "",
+        "id": 16
     }
 ]

@@ -34,8 +34,8 @@ header .cell_phone{
 }
 .logo{
     align-self: center;
-    width: 70px;
-    height: 70px;
+    width: 40px;
+    height: 40px;
     margin-right: 15px;
     margin-left: 20px;
 }
@@ -75,7 +75,7 @@ header .search_bar i{
 header i{
     font-size: 25px;
     align-self: center;
-    margin: 0px 20px 0px 15px;
+    margin: 0px 10px 0px 10px;
     color: #FCE05B;
 }
 header .head_down{
@@ -112,8 +112,7 @@ header .head_down .user_menu{
     }
     .logo{
         align-self: center;
-        width: 90px;
-        height: 70px;
+        width: 60px;
         margin-right: 15px;
         margin-left: 20px;
     }
@@ -128,7 +127,7 @@ header .head_down .user_menu{
     header .head_down .user_menu{
         display: flex;
         padding: 5px;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: 250px;
         margin-right: 20px;

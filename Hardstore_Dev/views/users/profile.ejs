@@ -4,6 +4,8 @@
     <title>Admin - Product Manager</title>
     <%- include("../partials/head.ejs") %>
     <link href="/CSS/userProfile.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/190d2f0c87.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css">
 </head>
 <body>
     <header>
@@ -22,18 +24,23 @@
                     <a href="">Carrito</a>
                 </div>
                 <div class="datos">
-                    <h4>Usuario:</h4>
-                    <p><%=data.userName%></p>
+                    <h4>Nombre de usuario:</h4>
+                    <p><%=data.username%></p>
                     <h4>Email:</h4>
                     <p><%=data.email%></p>
                     <h4>Nombre:</h4>
-                    <p><%=data.name%></p>
+                    <p><%=data.first_name%></p>
                     <h4>Apellido:</h4>
-                    <p><%=data.surname%></p>
+                    <p><%=data.last_name%></p>
                     <h4>Direccion:</h4>
-                    <p>calle: <%=data.street%> altura: <%=data.number%></p>
+                    <p>calle: <%=data.street%> altura: <%=data.street_number%></p>
                     <h4>Contacto:</h4>
                     <p>Celular: <%=data.cellphone%></p>
+                    <div class="edit_Button">
+                        <a href="/user/<%=data.id%>/edit">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

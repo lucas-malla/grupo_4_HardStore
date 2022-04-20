@@ -31,15 +31,17 @@
                     <div class="head_down">
                         <div class="user_menu">
                             <% if(locals.userLocals){ %>
-                                <p> <%=locals.userLocals.userName %> </p>
-                                <a href="/logout">Logout
+                                <a href="/user/<%=locals.userLocals.id%>">
+                                    <p> <%=locals.userLocals.username %> </p>
+                                </a>
+                                <a href="/logout"><p>Logout</p>
                                 <i class="fas fa-sign-in-alt"></i>
                                 </a>
                                 <% }else{ %>
-                                    <a href="/register">Registrarme
+                                    <a href="/register"><p>Registrarme</p>
                                         <i class="far fa-user"></i>
                                     </a>
-                                    <a href="/login">Login
+                                    <a href="/login"><p>Login</p>
                                         <i class="fas fa-sign-in-alt"></i>
                                     </a>
                                 <% } %>
