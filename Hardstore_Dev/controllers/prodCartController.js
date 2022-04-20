@@ -23,6 +23,8 @@ const controller = {
         res.render("productCart", { 'itemCart':itemCart, 'showRandom': showRandom})
     },
     cartUnlogged: (req, res) => {
+        //Problema para mas adelante
+
         //CART for non logged user
 
         //guardar carito en una cookie 
