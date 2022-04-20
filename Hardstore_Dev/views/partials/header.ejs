@@ -31,7 +31,9 @@
                     <div class="head_down">
                         <div class="user_menu">
                             <% if(locals.userLocals){ %>
-                                <p> <%=locals.userLocals.userName %> </p>
+                                <a href="/user/<%=locals.userLocals.id%>">
+                                    <p> <%=locals.userLocals.username %> </p>
+                                </a>
                                 <a href="/logout">Logout
                                 <i class="fas fa-sign-in-alt"></i>
                                 </a>

@@ -35,7 +35,7 @@ main .navbar a{
 .datos{
     margin-left: 20px;
     background-color: rgba(245, 245, 245, 0.712);
-    padding: 10px 20px 15px 20px;
+    padding: 10px 20px 20px 20px;
     width: 320px;
     border-radius: 15px;
 }
@@ -52,11 +52,36 @@ main p{
     margin-top: 0.2rem;
     margin-bottom: 0.7rem;
 }
-.edit_Button{
+
+.save_div{
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+
 }
-main p{
+button{
+    margin-top: 17px;
+    background-color: rgb(115, 190, 1);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    border: rgba(218, 218, 218, 0.712) solid 1px;
+    font-size: medium;
+    
+}
+.cancel{
+    margin-top: 17px;
+    background-color: rgb(255, 51, 0);
+    border-radius: 5px;
+    padding: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    border: rgba(218, 218, 218, 0.712) solid 1px;
+    font-size: medium;
+}
+input{
     border: rgba(218, 218, 218, 0.712) solid 1px;
     padding: 10px;
     width: 100%;
@@ -65,3 +90,4 @@ main p{
 h4{
     margin: 7px 0px 3px 0px;
 }
+

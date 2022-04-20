@@ -38,9 +38,6 @@ app.use('/', mainRoutes);
 //login-register-profile
 app.use('/', userRoutes);
 
-//SHOPING CART
-//app.use('/', cartRoutes);
-
 //PRODUCT DETAIL & PRODUCT GALERY
 app.use('/products', rutasProductos);
 
