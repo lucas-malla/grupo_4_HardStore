@@ -83,6 +83,9 @@ main .filtro{
     position: relative;
     transform: translate(500px, -70px);
 }
+.options .crear{
+    transform: translate(575px, 45px); 
+}
 .action-button {
     border: none;
     border-radius: 8px;
@@ -92,7 +95,9 @@ main .filtro{
     justify-content: center;
     padding: 12px 18px;
   }
-  
+  .action-button.edit.crear{
+    background-color: rgb(24, 48, 231);
+  }
   .action-button.edit {
     background-color: rgb(231, 231, 24);
     display: inline;
