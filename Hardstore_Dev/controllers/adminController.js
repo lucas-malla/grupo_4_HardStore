@@ -17,11 +17,10 @@ const controller = {
         res.render("adminControlPanel", {results: results})
     },
     addProduct: function(req, res){
-        Product_category.findAll({raw:true})
+        Product_category.findAll({raw:true}) //MIRAR ACA solucion de datavalues
         .then((categories)=>{
             res.render("adminProdCreation", {categories: categories})
-        })
-        
+        })   
     },
     addProductPost: function(req, res){     
         if (req.file != undefined) {
@@ -60,7 +59,7 @@ const controller = {
         })
         console.log (productFound);
         res.render ("adminProdModification", {product: productFound}); 
-        },
+    },
     manageProductUpdate: function (req,res){
         let products = allDataBase ();
         let productFound = products.find (function (product){
