@@ -13,8 +13,10 @@ const controller = {
         res.render("adminLogin")
     },
     controlPanel:function(req, res){
-        let results = allDataBase();
-        res.render("adminControlPanel", {results: results})
+        Product.findAll({raw: true, include: [{association: 'images', attributes:['image_name'] }]},) // Find product- Para incluir imagen en su columna 'image_name'
+        .then((results) =>{
+            res.render("adminControlPanel", {results: results})
+        })
     },
     addProduct: function(req, res){
         Product_category.findAll({raw:true}) //MIRAR ACA solucion de datavalues
@@ -34,17 +36,18 @@ const controller = {
                     color: req.body.color,
                     product_category_id: req.body.category,
                     price: req.body.price,
-                    discount: req.body.dto
+                    discount: req.body.dto,
+                    images: {
+                        image_name: req.file.filename
+                    }
+                }, {
+                    include: [{association: 'images'}]
                 }
-            )
-            // .then((product)=>{
-            //     product.setImages(product.product_id);
-            //     Product_image.create({
-            //         image_name: req.file.filename
-            //     })
-            // })
-            .then(()=>{
-                res.redirect("/products/");
+            ).then(()=> {
+                res.redirect("/admin/controlPanel");
+            })
+            .catch(err =>{
+                console.log(err)
             })
             
         }else{
@@ -53,32 +56,42 @@ const controller = {
     }, 
     manageProductEdit: function(req, res){
         //obtengo la información
-        let products = allDataBase ()
-        let productFound = products.find (function(product){
-        return product.prod_id == req.params.id
+        let product = Product.findByPk(req.params.id, {raw:true,
+            include: [{association: 'images'}]
+        });
+        let categories = Product_category.findAll();
+        let images = Product_image.findAll({
+            include: [{association: 'product'}]
         })
-        console.log (productFound);
-        res.render ("adminProdModification", {product: productFound}); 
-    },
-    manageProductUpdate: function (req,res){
-        let products = allDataBase ();
-        let productFound = products.find (function (product){
-        return product.prod_id== req.params.id 
-            })
-            productFound.prod_name= req.body.prodName
-            productFound.prod_category=req.body.categoria 
-            productFound.most_sold = req.body.mostSold == "on" ? "true" : "false"
-            productFound.selection = req.body.selection == "on" ? "true" : "false"
-            productFound.offer = req.body.offer == "on" ? "true" : "false"
-            productFound.prod_img=req.file.filename
-            productFound.price=req.body.price
-            productFound.price_dto= req.body.price * (100- req.body.dto)/100
-            productFound.dto=req.body.dto
-            productFound.descripcion=req.body.description
-            writeFile (products);
-            res.redirect ('/products/'+ String (productFound.prod_id));
+        Promise.all([product, categories, images]).then(([oneProduct, allCategories, allImages])=>{
+            res.render("adminProdModification", {oneProduct, allCategories, allImages});
+        console.log(oneProduct)})
+        
         },
-    
+    manageProductUpdate: function (req,res){
+        Product.update({
+            product_name: req.body.prodName,
+                    description: req.body.description,
+                    brand: req.body.brand,
+                    model: req.body.model,
+                    color: req.body.color,
+                    product_category_id: req.body.category,
+                    price: req.body.price,
+                    discount: req.body.dto
+        },
+        {
+            where: {product_id: req.params.id}
+        })
+        .then(function(){
+            return Product.findByPk(req.params.id) 
+        })
+        .then(product => {
+            return product.setImages(req.file.filename);
+         })
+        .then(() =>{
+            res.redirect("/admin/controlPanel");
+         })
+    },
     delete: (req, res) => {
 		let products = allDataBase();
 		let productIndex = products.findIndex(function(product){

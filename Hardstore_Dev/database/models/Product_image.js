@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         image_name: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.STRING,
             allowNull: false
         },
         product_id: DataTypes.BIGINT(10).UNSIGNED
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     let config = {
         timestamps: false,
         deletedAt: false,
-        tableName: 'product-images'
+        tableName:'product-images'
     }
     const Product_image = sequelize.define(alias, cols, config);
 
