@@ -1,6 +1,6 @@
 console.log("soy el creador de datos")
 const db = require('./database/models')
-const {User, Product, Cart } = db
+const {User, Product, Cart, Product_category } = db
 
 let user1 ={
     username: 'fede',
@@ -71,5 +71,30 @@ let user6 ={
 
 User.bulkCreate([user1, user2, user3, user4, user5, user6])
 
+// Product_category
+
+let cat1 = {
+    category_name: "Teclados"
+}
+let cat2 = {
+    category_name: "Mouses"
+}
+let cat3 = {
+    category_name: "Headsets"
+}
+let cat4 = {
+    category_name: "Monitores"
+}
+let cat5 = {
+    category_name: "Parlantes"
+}
+let cat6 = {
+    category_name: "Sillas Gamer"
+}
+let cat7 = {
+    category_name: "Juegos"
+}
+
+Product_category.bulkCreate([cat1, cat2, cat3, cat4, cat5, cat6, cat7])
 
 

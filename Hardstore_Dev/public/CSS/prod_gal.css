@@ -81,7 +81,7 @@ main .filtro{
     flex-direction: column;
     gap: 10px;
     position: relative;
-    transform: translate(500px, -70px);
+    /*transform: translate(500px, -70px);*/
 }
 .options .crear{
     transform: translate(575px, 45px); 

@@ -44,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: {
             type: DataTypes.STRING(500)
+        },
+        category: {
+            type: DataTypes.INTEGER
         }
     };
     let config = {
@@ -68,12 +71,12 @@ module.exports = (sequelize, DataTypes) => {
     //         otherKey: "order_id",
     //         timestamps: false
     //     })
-   
+    /*
         Product.belongsTo(models.Product_category,{
             as: "category",
-            foreignKey: "product_category_id" 
+            foreignKey: "category_id" 
         })
-  
+    */
     //     // Product.hasMany(models.Product_image,{
     //     //     as: "images",
     //     //     foreignKey: "product_id"

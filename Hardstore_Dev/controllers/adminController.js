@@ -9,9 +9,6 @@ const {agregarProducto, allDataBase, writeFile } = require('../services/adminSer
 
 
 const controller = {
-    login: function(req, res){
-        res.render("adminLogin")
-    },
     controlPanel:function(req, res){
         // Product.findAll()
         // .then((results)=>{
@@ -25,44 +22,41 @@ const controller = {
         })
     },
     addProduct: function(req, res){
-        // // Product_category.findAll({raw:true})
-        // // .then((categories)=>{
-        // //     res.render("adminProdCreation", {categories: categories})
-        // })
-        
+        Product_category.findAll({raw:true})
+        .then((categories)=>{
+        res.render("adminProdCreation", {categories: categories})
+        })
+
     },
-    addProductPost: function(req, res){     
+    addProductPost: function(req, res){
         if (req.file != undefined) {
             //creo objeto del producto nuevo
             console.log(req.body)
-            Product.create(
-                {
+            Product.create({
                     product_name: req.body.prodName,
                     description: req.body.description,
                     brand: req.body.brand,
                     model: req.body.model,
                     color: req.body.color,
-                    product_category_id: req.body.category,
                     price: req.body.price,
                     discount: req.body.dto,
+                    category: req.body.category,
                     // images: {
                     //     image_name: req.file.filename
                     // }
-                }
-                // , {
-                //     include: [{association: 'images'}]
-                // }
+                }//,
+                //{ include: [{association: 'category'}] }
             ).then(()=> {
                 res.redirect("/admin/controlPanel"); // Mas adelante hacer vista de detalle de producto
             })
             .catch(err =>{
                 console.log(err)
             })
-            
+
         }else{
             res.render("adminProdCreation", {mesage: "La imagen no ha sido cargada correctamente"})
         }
-    }, 
+    },
     manageProductEdit: function(req, res){
         //obtengo la información
         let product = Product.findByPk(req.params.id, {raw:true,
@@ -75,7 +69,7 @@ const controller = {
         Promise.all([product, categories, images]).then(([oneProduct, allCategories, allImages])=>{
             res.render("adminProdModification", {oneProduct, allCategories, allImages});
         })
-        
+
         },
     manageProductUpdate: function (req,res){
         Product.update({
@@ -92,7 +86,7 @@ const controller = {
             where: {product_id: req.params.id}
         })
         .then(function(){
-            return Product.findByPk(req.params.id) 
+            return Product.findByPk(req.params.id)
         })
         .then(product => {
             return product.setImages(req.file.filename);
