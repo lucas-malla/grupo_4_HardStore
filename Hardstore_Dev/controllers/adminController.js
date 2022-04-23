@@ -13,21 +13,28 @@ const controller = {
         res.render("adminLogin")
     },
     controlPanel:function(req, res){
-        Product.findAll({raw: true, include: [{association: 'images', attributes:['image_name'] }]},) // Find product- Para incluir imagen en su columna 'image_name'
+        // Product.findAll()
+        // .then((results)=>{
+        //     console.log(results)
+        // })
+        Product.findAll({raw: true, /*include: [{association: 'images', attributes:['image_name'] }]*/},) // Find product- Para incluir imagen en su columna 'image_name'
         .then((results) =>{
+
+            console.log("results", results)
             res.render("adminControlPanel", {results: results})
         })
     },
     addProduct: function(req, res){
-        Product_category.findAll({raw:true})
-        .then((categories)=>{
-            res.render("adminProdCreation", {categories: categories})
-        })
+        // // Product_category.findAll({raw:true})
+        // // .then((categories)=>{
+        // //     res.render("adminProdCreation", {categories: categories})
+        // })
         
     },
     addProductPost: function(req, res){     
         if (req.file != undefined) {
             //creo objeto del producto nuevo
+            console.log(req.body)
             Product.create(
                 {
                     product_name: req.body.prodName,
@@ -38,14 +45,15 @@ const controller = {
                     product_category_id: req.body.category,
                     price: req.body.price,
                     discount: req.body.dto,
-                    images: {
-                        image_name: req.file.filename
-                    }
-                }, {
-                    include: [{association: 'images'}]
+                    // images: {
+                    //     image_name: req.file.filename
+                    // }
                 }
+                // , {
+                //     include: [{association: 'images'}]
+                // }
             ).then(()=> {
-                res.redirect("/admin/controlPanel");
+                res.redirect("/admin/controlPanel"); // Mas adelante hacer vista de detalle de producto
             })
             .catch(err =>{
                 console.log(err)
@@ -66,7 +74,7 @@ const controller = {
         })
         Promise.all([product, categories, images]).then(([oneProduct, allCategories, allImages])=>{
             res.render("adminProdModification", {oneProduct, allCategories, allImages});
-        console.log(oneProduct)})
+        })
         
         },
     manageProductUpdate: function (req,res){
@@ -76,7 +84,7 @@ const controller = {
                     brand: req.body.brand,
                     model: req.body.model,
                     color: req.body.color,
-                    //product_category_id: req.body.category,
+                    product_category_id: req.body.category,
                     price: req.body.price,
                     discount: req.body.dto
         },

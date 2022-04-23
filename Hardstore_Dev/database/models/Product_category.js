@@ -3,7 +3,7 @@ const sequelize = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Product_category'; // esto debería estar en singular
     let cols = {
-        id: {
+        category_id: {
             type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,

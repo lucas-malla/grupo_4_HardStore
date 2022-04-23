@@ -57,6 +57,19 @@ let user5 ={
     street_number: '1234',
     avatar: 'default.jpg',
 }
+let user6 ={
+    username: 'admin',
+    password: '123',
+    email: 'admin@gmail.com',
+    first_name: 'admin',
+    last_name: 'admin',
+    cellphone: '',
+    street: '',
+    street_number: '',
+    avatar: '',
+}
 
-User.bulkCreate([user1, user2, user3, user4, user5])
+User.bulkCreate([user1, user2, user3, user4, user5, user6])
+
+
 
