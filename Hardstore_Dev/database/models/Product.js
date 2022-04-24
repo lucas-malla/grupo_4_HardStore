@@ -44,8 +44,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: {
             type: DataTypes.STRING(500)
-        },
-        product_category_id: DataTypes.BIGINT(10)
+        }
+        // ,
+        // product_category_id: DataTypes.BIGINT(10)
     };
     let config = {
         timestamps: false,
@@ -70,10 +71,10 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         })
    
-        Product.belongsTo(models.Product_category,{
-            as: "category",
-            foreignKey: "product_category_id" 
-        })
+        // Product.belongsTo(models.Product_category,{
+        //     as: "category",
+        //     foreignKey: "product_category_id" 
+        // })
   
         Product.hasMany(models.Product_image,{
             as: "images",

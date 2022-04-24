@@ -30,7 +30,6 @@ const controller = {
         })
     },
     detail: function(req, res){
-        //sumando pruductos que tambien compraron
         let random = function(productos){
             let resultado = [];
                 for(let i = 1; i <= 3; i++ ){
@@ -44,6 +43,7 @@ const controller = {
         let producto = data_base.find(function(producto){
             return  producto.prod_id == req.params.id
         })
+        //data base
         res.render('detail', {'producto': producto,  showRandom: showRandom});
         }
     }
