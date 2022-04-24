@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path')
+const db = require ('../database/models');
 
 
 function refreshContent(){
@@ -44,6 +45,12 @@ const controller = {
             return  producto.prod_id == req.params.id
         })
         //data base
+        db.Product.findByPk(req.params.id,{
+            include: [{association:'images'},{association:''}]
+        })
+           .then(product =>{
+               res.render('detail', {product:product})
+           })
         res.render('detail', {'producto': producto,  showRandom: showRandom});
         }
     }
