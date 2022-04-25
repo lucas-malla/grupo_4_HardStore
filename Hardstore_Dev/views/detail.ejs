@@ -18,7 +18,6 @@
     </header>
     <!-- detail product -->
     <div class="general">
-
         <div class="productos ">
 
             <div class="imagen">
@@ -36,13 +35,13 @@
             <div class="main-producto">
                 <div class="detail-product">
                     <div class="detail-product-2">
-                        <h3 class="producto-price"> $<%= product.price %></h3>
+                        <h3 class="producto-price">$<%= product.price %></h3>
                         <div class="detail-product-3">
                             <p>PRECIO ESPECIAL </p>
                             <p>EFECTIVO / TRANSFERENCIA</p>
                         </div>
                     </div>
-                    <h6 class="producto-dto">Descuento : $<%= product.discount%></h6>
+                    <h6 class="producto-dto">Dscuento: $<%= product.discount %></h6>
                 </div>
 
                 <div class="icon_deus_principal">
@@ -50,7 +49,7 @@
                         <img class="icon_deus_img" src="/images/detailView/ahora_12.png" alt="Logo ahora 12">
                         <div class="icon_deus_12">
                             <p>12 cuotas sin interés Sobre precio de</p>
-                            <p> lista</p>
+                            <p> lista </p>
                         </div>
                     </div>
 
@@ -98,9 +97,10 @@
         <div class="detail_product">
             <div class="detail-product_text">
                    <div class="row">
-                    <%= product.model %>
+                    <p>
+                        <%= product.description %>
+                   </p>
                    </div>
-                   
             </div>
 
         </div>

@@ -250,7 +250,7 @@ a {
     margin-left: -15px;
 }
 .row{
-    white-space: pre-wrap;
+    white-space: inherit;
     color: #0a072d;
     font-weight: 600;
     margin-top: 20px;
