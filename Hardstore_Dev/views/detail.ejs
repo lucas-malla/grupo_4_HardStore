@@ -24,33 +24,33 @@
             <div class="imagen">
                 <div>
                     <h3 class="name_product"><%= product.product_name %></h3>
-                    <img class="img_product" src=/images/products/<%= product['images.image_name']%>alt="monitor">
+                    <img class="img_product" src=/images/products/<%= product['images.image_name']%>alt="img">
                 </div>
                 <ul class="main-ul">
-                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%> alt="monitor"></li>
-                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%>alt="monitor"></li>
-                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%> alt="monitor"></li>
+                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%> alt="img"></li>
+                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%> alt="img"></li>
+                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%> alt="img"></li>
                 </ul>
             </div>
 
             <div class="main-producto">
                 <div class="detail-product">
                     <div class="detail-product-2">
-                        <h3 class="producto-price"><%= product.prince %></h3>
+                        <h3 class="producto-price"> $<%= product.price %></h3>
                         <div class="detail-product-3">
                             <p>PRECIO ESPECIAL </p>
                             <p>EFECTIVO / TRANSFERENCIA</p>
                         </div>
                     </div>
-                    <h6 class="producto-dto">Precio lista: <%= product.price_list %></h6>
+                    <h6 class="producto-dto">Descuento : $<%= product.discount%></h6>
                 </div>
 
                 <div class="icon_deus_principal">
                     <div class="icon_deus">
                         <img class="icon_deus_img" src="/images/detailView/ahora_12.png" alt="Logo ahora 12">
                         <div class="icon_deus_12">
-                            <p>12 cuotas sin interés de $4.955,33</p>
-                            <p>Sobre precio de lista</p>
+                            <p>12 cuotas sin interés Sobre precio de</p>
+                            <p> lista</p>
                         </div>
                     </div>
 
@@ -98,34 +98,7 @@
         <div class="detail_product">
             <div class="detail-product_text">
                    <div class="row">
-                    La silla de juegos CORSAIR T3 RUSH combina un diseño inspirado en las carreras y una comodidad
-                    contorneada con un exterior de tela suave y transpirable, una almohada cervical acolchada y un
-                    soporte lumbar de espuma viscoelástica.
-               
-                    Altura máxima del asiento: 54cm
-                    Altura mínima del asiento: 44cm
-                    Altura máxima del brazo: 36,5cm
-                    Altura mínima del brazo: 28,5cm
-                    Altura del respaldo: 85cm
-                    Ancho del hombro del respaldo: 54cm
-                    Tamaño del paquete: 88,5 x 69 x 37,5 cm
-                    Peso neto: 22,5 kg
-                    Peso bruto: 25,5 kg
-                    Capacidad de peso: 120 kg
-                    Almohada lumbar ajustable: si
-                    Almohada de cuello ajustable: si
-                    Material de la base de la silla: Nylon
-                    Tamaño de la rueda: 65 mm
-                    Material de la rueda: Nylon
-                    Tamaño del asiento: Los 56cm los x 58cm
-                    Tipo de espuma de asiento: Espuma de poliuretano (espuma fría)
-                    Densidad de la espuma del asiento: 55 kg / m³
-                    Color del marco del asiento: Negro
-                    Construcción del marco del asiento: Metal
-                    Material de la superficie del asiento: Tela Suave
-                    Material del respaldo del asiento: Tela Suave
-                
-                 
+                    <%= product.model %>
                    </div>
                    
             </div>
