@@ -44,9 +44,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: {
             type: DataTypes.STRING(500)
+        },
+        category_id: {
+            type: DataTypes.INTEGER
         }
-        // ,
-        // product_category_id: DataTypes.BIGINT(10)
     };
     let config = {
         timestamps: false,
@@ -56,34 +57,34 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define(alias,cols,config);
 
     Product.associate = function(models){
-        Product.belongsToMany(models.User, {
-            as: "on_users_cart",
-            through: "cart_product",
-            foreignKey: "cart_product_id",
-            otherKey: "user_id",
-            timestamps: false,
+    //     Product.belongsToMany(models.User, {
+    //         as: "on_users_cart",
+    //         through: "cart_product",
+    //         foreignKey: "cart_product_id",
+    //         otherKey: "user_id",
+    //         timestamps: false,
+    //     })
+    //     Product.belongsToMany(models.Order,{
+    //         as: "on_orders",
+    //         through: "order_product",
+    //         foreignKey: "product_id",
+    //         otherKey: "order_id",
+    //         timestamps: false
+    //     })
+    /*
+        Product.belongsTo(models.Product_category,{
+            as: "category",
+            foreignKey: "category_id" 
         })
-        Product.belongsToMany(models.Order,{
-            as: "on_orders",
-            through: "order_product",
-            foreignKey: "product_id",
-            otherKey: "order_id",
-            timestamps: false
-        })
-   
-        // Product.belongsTo(models.Product_category,{
-        //     as: "category",
-        //     foreignKey: "product_category_id" 
-        // })
-  
+    */
         Product.hasMany(models.Product_image,{
             as: "images",
-            foreignKey: "product_id"
+            foreignKey:"product_id"
         })
-        Product.hasMany(models.Cart,{
-            as: "in_users_cart",
-            foreignKey: "product_id"
-        })
+    //     Product.hasMany(models.Cart,{
+    //         as: "in_users_cart",
+    //         foreignKey: "product_id"
+    //     })
     }
 
     return Product

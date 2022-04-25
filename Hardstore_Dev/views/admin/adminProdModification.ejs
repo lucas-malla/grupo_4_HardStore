@@ -18,11 +18,10 @@
                     <% console.log(oneProduct) %> 
                     <label for="categoria">Categoria de Producto</label>
                     <select name="categoria" id="categoria" form="categoria">
-                        <% let categories = ["Monitores", "Headsets", "Sillas", "Teclados", "Mouses", "Parlantes", "Juegos"] %>
-                        <% for (category of categories){ %>
-                            <option value="<%= category %>"
-                                <%= oneProduct.product_category === category ? 'selected' : null %>>
-                                <%= category %>
+                        <% for (category of allCategories){ %>
+                            <option value="<%= category.id %>"
+                                <%= oneProduct.category_id === category.id ? 'selected' : null %>>
+                                <%= category.category_name %>
                             </option> 
                             <% } %>
                     </select>
@@ -42,12 +41,14 @@
                     </div>
                     <p>Imagen del producto</p>
                     <input class="file" type="file" name="prodImg">
-                    
                     <div class="buttons">
                         <button type="reset">Reset</button>
                         <button type="submit">Guardar</button>
                     </div>
                 </form>
+                <% if (locals.mesage) { %>
+                    <h4 class="mesage"> <%= mesage %> </h4>
+                <% } %>
             </div>
             
     </div>

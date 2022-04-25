@@ -13,6 +13,7 @@ function adminMiddleware(req, res, next){
             username : "admin"
         }})
         .then((user)=>{
+            console.log("admin acsess: GRANTED")
             return next();
         })
         .catch(function(error){

@@ -31,8 +31,8 @@
             <div class="productos">
                 <div class="producto">
                     <% for (product of results){ %>
-                        <hr>
-                        <a href=/products/product-detail/<%= product.product_id %>>
+                        <hr/>
+                        <a href="/products/<%= product.product_id %>">
                             <div class="img"><img src=/images/products/<%= product['images.image_name']%> ></div> 
                             <div class="info">
                                 <h4 class="product_name"><%= product.product_name %></h4>

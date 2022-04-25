@@ -7,7 +7,7 @@ const adminMiddleware =  require('../middlewares/admin')
 var multerWraper = require('../middlewares/multer') //multer as a function
 var uploadFile = multerWraper("products") //multer for products images
 
-router.get('/', adminController.login);
+
 router.get('/controlPanel',adminMiddleware, adminController.controlPanel);
 
 router.get('/products/:id/edit',adminMiddleware, adminController.manageProductEdit);

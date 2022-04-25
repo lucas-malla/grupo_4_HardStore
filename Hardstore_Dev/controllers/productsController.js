@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path')
+const db = require ('../database/models');
 
 
 function refreshContent(){
@@ -30,21 +31,28 @@ const controller = {
         })
     },
     detail: function(req, res){
-        let random = function(productos){
-            let resultado = [];
-                for(let i = 1; i <= 3; i++ ){
-                let aleatorio = productos[Math.floor(Math.random() * productos.length)]
-                resultado.push(aleatorio)
-            }
-            return resultado
-            }
-        let showRandom = random(data_base);
-        refreshContent()
-        let producto = data_base.find(function(producto){
-            return  producto.prod_id == req.params.id
-        })
+        // let random = function(productos){
+        //     let resultado = [];
+        //         for(let i = 1; i <= 3; i++ ){
+        //         let aleatorio = productos[Math.floor(Math.random() * productos.length)]
+        //         resultado.push(aleatorio)
+        //     }
+        //     return resultado
+        //     }
+        // let showRandom = random(data_base);
+        // refreshContent()
+        // let producto = data_base.find(function(producto){
+        //     return  producto.prod_id == req.params.id
+        // })
+        // res.render('detail', {'producto': producto,  showRandom: showRandom});
         //data base
-        res.render('detail', {'producto': producto,  showRandom: showRandom});
+        db.Product.findByPk(req.params.id,{
+            include: [{association:'images'}]
+        })
+           .then(product =>{
+               res.render('detail', {product:product})
+           })
+           
         }
     }
 module.exports = controller

@@ -3,17 +3,17 @@ const sequelize = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Product_image'; // esto debería estar en singular
     let cols = {
-        id: {
+        image_id: {
             type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
+        product_id: DataTypes.BIGINT(10).UNSIGNED,
         image_name: {
             type: DataTypes.STRING,
             allowNull: false
-        },
-        product_id: DataTypes.BIGINT(10).UNSIGNED
+        }
     };
     let config = {
         timestamps: false,
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     Product_image.associate = function (models) {
         Product_image.belongsTo(models.Product, {
             as: "product",
-            foreignKey: "product_id"
+            foreignKey:"product_id"
         })
     }
     return Product_image
