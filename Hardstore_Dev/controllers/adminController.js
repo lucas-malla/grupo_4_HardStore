@@ -16,7 +16,7 @@ const controller = {
             })
     },
     addProduct: function (req, res) {
-        Product_category.findAll({ raw: true })
+        Product_category.findAll({ raw: true }) // MIRAR solución de DataValues
             .then((categories) => {
                 res.render("adminProdCreation", { categories})
             })

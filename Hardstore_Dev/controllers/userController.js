@@ -103,7 +103,6 @@ const controller = {
         }else{
             res.redirect('/') 
         }
-
     },
     profileEdit: function(req, res){
         //restringir acceso 
