@@ -25,13 +25,13 @@ let user2 ={
     avatar: 'default.jpg',
 }
 let user3 ={
-    username: 'gaby',
+    username: 'Gaby',
     password: '123',
     email: 'Gaby@gmail.com',
-    first_name: 'Gaby',
-    last_name: 'P',
+    first_name: 'Gabriela',
+    last_name: 'Paez',
     cellphone: '15-1234-1234',
-    street: 'ni idea',
+    street: 'Asunción',
     street_number: '1234',
     avatar: 'default.jpg',
 }
@@ -39,8 +39,8 @@ let user4 ={
     username: 'genesis',
     password: '123',
     email: 'Gene@gmail.com',
-    first_name: 'Gene',
-    last_name: '?',
+    first_name: 'Genesis',
+    last_name: 'Leal',
     cellphone: '15-1234-1234',
     street: 'ni idea',
     street_number: '1234',
@@ -66,7 +66,7 @@ let user6 ={
     cellphone: '',
     street: '',
     street_number: '',
-    avatar: '',
+    avatar: 'default.jpg',
 }
 
 User.bulkCreate([user1, user2, user3, user4, user5, user6])
@@ -95,6 +95,39 @@ let cat7 = {
     category_name: "Juegos"
 }
 
+
+
 Product_category.bulkCreate([cat1, cat2, cat3, cat4, cat5, cat6, cat7])
 
+// Product 
+Product.create({
+    product_name: "Teclado gamer Redragon Kumara K552",
+    description: "ergonomico, velóz, con base antideslizante, con retroalimentación ",
+    brand:"Redragon",
+    model: "Kumara K552",
+    color: "Negro",
+    price: "6999",
+    discount: "5",
+    category_id: "1",
+    images: {
+        image_name: "prodImg-1645488763254.jpeg"
+    }
+},{
+    include: [{ association: 'images' }]
+})
 
+Product.create({
+    product_name: "Notebook Dell Inspiron 5510 Intel Core i5 8GB de RAM",
+    description: "Pantalla de 15.6' procesador Intel Core i5 11320H 8GB de memoria RAM 256GB disco solido, Intel Iris Xe Graphics G7 96EUs 60 Hz 1920x1080px Windows 11 Home ",
+    brand:"Dell",
+    model: "Inspiron 5510",
+    color: "Azul",
+    price: "170000",
+    discount: "5",
+    category_id: "4",
+    images: {
+        image_name: "prodImg-1646692200036.jpg"
+    }
+},{
+    include: [{ association: 'images' }]
+})

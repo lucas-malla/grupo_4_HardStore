@@ -41,13 +41,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`product` (
   `description` VARCHAR(500) NULL,
   `category_id` INT NOT NULL,
   PRIMARY KEY (`product_id`),
-  UNIQUE INDEX `id_UNIQUE` (`product_id` ASC) ,
-  INDEX `fk_product_category1_idx` (`category_id` ASC) ,
-  CONSTRAINT `fk_product_category1`
-    FOREIGN KEY (`category_id`)
-    REFERENCES `mydb`.`category` (`id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE)
+  UNIQUE INDEX `id_UNIQUE` (`product_id` ASC))
 ENGINE = InnoDB;
 
 
@@ -149,7 +143,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`product-images` (
     FOREIGN KEY (`product_id`)
     REFERENCES `mydb`.`product` (`product_id`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE CASCADE)
 ENGINE = InnoDB;
 
 

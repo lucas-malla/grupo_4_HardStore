@@ -18,7 +18,6 @@
                         <label for="categoria">Categoria de Producto</label>
                         <select name="category" id="categoria" >
                             <option value="" disabled selected>- Seleccioná la Categoría - </option> 
-                                <% console.log(categories) %>
                                 <% categories.forEach(category => { %>
                             <option value="<%= category.id %>"><%= category.category_name %></option>
                                 <% }); %>

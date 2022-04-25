@@ -81,10 +81,10 @@ main .filtro{
     flex-direction: column;
     gap: 10px;
     position: relative;
-    /*transform: translate(500px, -70px);*/
+    transform: translate(500px, -120px);
 }
 .options .crear{
-    transform: translate(575px, 45px); 
+    transform: translate(575px, 110px); 
 }
 .action-button {
     border: none;

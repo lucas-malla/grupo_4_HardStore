@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         description: {
             type: DataTypes.STRING(500)
         },
-        category: {
+        category_id: {
             type: DataTypes.INTEGER
         }
     };
@@ -77,10 +77,10 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: "category_id" 
         })
     */
-    //     // Product.hasMany(models.Product_image,{
-    //     //     as: "images",
-    //     //     foreignKey: "product_id"
-    //     // })
+        Product.hasMany(models.Product_image,{
+            as: "images",
+            foreignKey:"product_id"
+        })
     //     Product.hasMany(models.Cart,{
     //         as: "in_users_cart",
     //         foreignKey: "product_id"
