@@ -23,26 +23,26 @@
 
             <div class="imagen">
                 <div>
-                    <h3 class="name_product"><%= producto.prod_name %></h3>
-                    <img class="img_product" src=/images/products/<%= producto.prod_img %> alt="monitor">
+                    <h3 class="name_product"><%= product.product_name %></h3>
+                    <img class="img_product" src=/images/products/<%= product['images.image_name']%>alt="monitor">
                 </div>
                 <ul class="main-ul">
-                    <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
-                    <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
-                    <li><img class="monitor" src=/images/products/<%= producto.prod_img %> alt="monitor"></li>
+                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%> alt="monitor"></li>
+                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%>alt="monitor"></li>
+                    <li><img class="monitor" src=/images/products/<%= product['images.image_name']%> alt="monitor"></li>
                 </ul>
             </div>
 
             <div class="main-producto">
                 <div class="detail-product">
                     <div class="detail-product-2">
-                        <h3 class="producto-price"><%= producto.price %></h3>
+                        <h3 class="producto-price"><%= product.prince %></h3>
                         <div class="detail-product-3">
                             <p>PRECIO ESPECIAL </p>
                             <p>EFECTIVO / TRANSFERENCIA</p>
                         </div>
                     </div>
-                    <h6 class="producto-dto">Precio lista: <%= producto.price_list %></h6>
+                    <h6 class="producto-dto">Precio lista: <%= product.price_list %></h6>
                 </div>
 
                 <div class="icon_deus_principal">
@@ -133,30 +133,6 @@
         </div>
         <div class="title-product-interest">
             <h2>Personas que compraron este producto también compraron</h2>
-        </div>
-
-        <div class="add-product">
-            <div class="add-product-table">
-                <% showRandom.forEach(function(product){%>
-                <div class="add-item">
-                    <div class="add-img">
-                        <img src=/images/products/<%= product.prod_img %> alt="<%=product.prod_name%>"
-                            class="product-add-image">
-                    </div>
-                    <div>
-                        <ul class="details">
-                            <li>
-                                <p><%= product.prod_name %></p>
-                            </li>
-                            <li>
-                                <p class="price"><%= product.price %></p>
-                            </li>
-                            <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
-                        </ul>
-                    </div>
-                </div>
-                <% }) %>
-            </div>
         </div>
 
     </div>
