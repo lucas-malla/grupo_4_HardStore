@@ -71,12 +71,12 @@ module.exports = (sequelize, DataTypes) => {
     //         otherKey: "order_id",
     //         timestamps: false
     //     })
-    /*
-        Product.belongsTo(models.Product_category,{
-            as: "category",
-            foreignKey: "category_id" 
-        })
-    */
+    
+        // Product.belongsTo(models.Product_category,{
+        //     as: "category",
+        //     foreignKey: "category_id" 
+        // })
+    
         Product.hasMany(models.Product_image,{
             as: "images",
             foreignKey:"product_id"
