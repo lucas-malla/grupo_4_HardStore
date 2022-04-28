@@ -5,7 +5,6 @@ const sequelize = require('sequelize')
 const db = require('../database/models')
 const { User, Product, Cart, Product_category, Product_image } = db
 const { Op } = require("sequelize");
-const { agregarProducto, allDataBase, writeFile } = require('../services/adminServices')
 
 
 const controller = {
@@ -98,13 +97,21 @@ const controller = {
             })
     },
     delete: (req, res) => {
-        let products = allDataBase();
-        let productIndex = products.findIndex(function (product) {
-            return product.prod_id == req.params.id
-        })
-        products.splice(productIndex, 1)
-        writeFile(products)
-        res.redirect('/admin/ControlPanel')
+        return Product_image.destroy({
+            where: {
+                product_id: req.params.id
+            }
+            })
+            .then(function(){
+                return Product.destroy({
+                    where: {
+                        product_id: req.params.id
+                    }
+                })
+            })
+            .then(function(){
+                return res.redirect("/admin/controlPanel")
+            })
     }
 }
 

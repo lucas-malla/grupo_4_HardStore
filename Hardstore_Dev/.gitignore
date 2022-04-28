@@ -1,1 +1,26 @@
 productCreator.js
+
+
+        <div class="add-product">
+            <div class="add-product-table">
+                <% showRandom.forEach(function(product){%>
+                <div class="add-item">
+                    <div class="add-img">
+                        <img src=/images/products/<%= product['images.image_name']%>alt="<%=product.product_name%>"
+                            class="product-add-image">
+                    </div>
+                    <div>
+                        <ul class="details">
+                            <li>
+                                <p><%= product.product_name %></p>
+                            </li>
+                            <li>
+                                <p class="price"><%= product.prince %></p>
+                            </li>
+                            <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
+                        </ul>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
