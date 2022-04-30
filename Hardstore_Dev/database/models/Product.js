@@ -72,10 +72,13 @@ module.exports = (sequelize, DataTypes) => {
     //         timestamps: false
     //     })
     
-        // Product.belongsTo(models.Product_category,{
-        //     as: "category",
-        //     foreignKey: "category_id" 
-        // })
+        Product.belongsTo(models.Product_category,{
+            as: "category",
+            foreignKey: {
+                name: "category_id", // the JavaScript attribute name
+                field: "category_id", // the column name
+              }
+        })
     
         Product.hasMany(models.Product_image,{
             as: "images",

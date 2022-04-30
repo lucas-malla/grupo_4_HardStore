@@ -97,13 +97,13 @@ const controller = {
             })
     },
     delete: (req, res) => {
-        return Product_image.destroy({
+        return Product_image.destroy({ // Elimino la imagen del producto en tabla product_image. 
             where: {
                 product_id: req.params.id
             }
             })
             .then(function(){
-                return Product.destroy({
+                return Product.destroy({// elimino producto.
                     where: {
                         product_id: req.params.id
                     }
