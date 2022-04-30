@@ -79,7 +79,6 @@ module.exports = (sequelize, DataTypes) => {
                 field: "category_id", // the column name
               }
         })
-    
         Product.hasMany(models.Product_image,{
             as: "images",
             foreignKey:"product_id"

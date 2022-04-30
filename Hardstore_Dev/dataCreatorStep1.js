@@ -1,4 +1,4 @@
-console.log("soy el creador de datos")
+console.log("soy el creador de datos STEP1")
 const db = require('./database/models')
 const {User, Product, Cart, Product_category } = db
 
@@ -131,36 +131,33 @@ Product.create({
 },{
     include: [{ association: 'images' }]
 })
-
-/*
-Cart.create({
-    cart_product_id: 1,
-    product_id: 1,
-    user_id: 1,
-    quantity: 6,
+Product.create({
+    product_name: "Notebook Dell Inspiron 5510 Intel Core i5 8GB de RAM",
+    description: "Pantalla de 15.6' procesador Intel Core i5 11320H 8GB de memoria RAM 256GB disco solido, Intel Iris Xe Graphics G7 96EUs 60 Hz 1920x1080px Windows 11 Home ",
+    brand:"Dell",
+    model: "Inspiron 5510",
+    color: "Azul",
+    price: "170000",
+    discount: "5",
+    category_id: "4",
+    images: {
+        image_name: "prodImg-1650925851420.jpg"
+    }
+},{
+    include: [{ association: 'images' }]
 })
-Cart.create({
-    cart_product_id: 2,
-    product_id: 2,
-    user_id: 1,
-    quantity: 3,
+Product.create({
+    product_name: "Notebook Dell Inspiron 5510 Intel Core i5 8GB de RAM",
+    description: "Pantalla de 15.6' procesador Intel Core i5 11320H 8GB de memoria RAM 256GB disco solido, Intel Iris Xe Graphics G7 96EUs 60 Hz 1920x1080px Windows 11 Home ",
+    brand:"Dell",
+    model: "Inspiron 5510",
+    color: "Azul",
+    price: "170000",
+    discount: "5",
+    category_id: "4",
+    images: {
+        image_name: "prodImg-1650925851420.jpg"
+    }
+},{
+    include: [{ association: 'images' }]
 })
-Cart.create({
-    cart_product_id: 3,
-    product_id: 2,
-    user_id: 3,
-    quantity: 10,
-})
-Cart.create({
-    cart_product_id: 4,
-    product_id: 2,
-    user_id: 1,
-    quantity: 2,
-})
-Cart.create({
-    cart_product_id: 5,
-    product_id: 3,
-    user_id: 3,
-    quantity: 2,
-})
-*/

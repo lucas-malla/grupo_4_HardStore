@@ -40,8 +40,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`product` (
   `selection` INT NULL,
   `description` VARCHAR(500) NULL,
   `category_id` INT NOT NULL,
-  PRIMARY KEY (`product_id`),
-  UNIQUE INDEX `id_UNIQUE` (`product_id` ASC) ,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC) ,
   INDEX `fk_product_category1_idx` (`category_id` ASC) ,
   CONSTRAINT `fk_product_category1`
     FOREIGN KEY (`category_id`)
@@ -86,14 +86,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`cart_product` (
   UNIQUE INDEX `cart_product_id_UNIQUE` (`cart_product_id` ASC) ,
   CONSTRAINT `fk_cart_product_product1`
     FOREIGN KEY (`product_id`)
-    REFERENCES `mydb`.`product` (`product_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+    REFERENCES `mydb`.`product` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   CONSTRAINT `fk_cart_product_user1`
     FOREIGN KEY (`user_id`)
     REFERENCES `mydb`.`user` (`id`)
     ON DELETE CASCADE
-    ON UPDATE CASCADE)
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -124,12 +124,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`order_product` (
   `product_id` INT NOT NULL,
   `order_id` INT NOT NULL,
   `quantity` INT NULL,
-  PRIMARY KEY (`product_id`),
   INDEX `fk_order_product_product1_idx` (`product_id` ASC) ,
   INDEX `fk_order_product_orders1_idx` (`order_id` ASC) ,
   CONSTRAINT `fk_order_product_product1`
     FOREIGN KEY (`product_id`)
-    REFERENCES `mydb`.`product` (`product_id`)
+    REFERENCES `mydb`.`product` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_order_product_orders1`
@@ -152,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`product-images` (
   INDEX `fk_product-images_product1_idx` (`product_id` ASC) ,
   CONSTRAINT `fk_product-images_product1`
     FOREIGN KEY (`product_id`)
-    REFERENCES `mydb`.`product` (`product_id`)
+    REFERENCES `mydb`.`product` (`id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
