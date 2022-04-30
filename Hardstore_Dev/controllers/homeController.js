@@ -1,18 +1,17 @@
-const refreshContent = require('../services/homeServices')
-
 const db = require('../database/models');
 const sequelize = db.sequelize;
 
 const controller = {
     home: function(req, res){
         var ourSelection = db.Product.findAll({
-            include: [{ association: 'images' }]
+            raw: true , include: [{ association: 'images', attributes: ['image_name'] }]
         })
+        //var mostSold = db.Product.findAll({where: {selection: 2}},{
         var mostSold = db.Product.findAll({
-            include: [{ association: 'images' }]
+            raw: true ,include: [{ association: 'images', attributes: ['image_name'] }]
         })
         var offers = db.Product.findAll({
-            include: [{ association: 'images' }]
+            raw: true ,include: [{ association: 'images', attributes: ['image_name'] }]
         })
         ourSelectionOutput = []
         mostSoldOutput = []
@@ -21,19 +20,21 @@ const controller = {
         Promise.all([ourSelection, mostSold, offers])
             .then(([ourSelection, mostSold, offers])=>{
                 for (product of ourSelection){
-                    product.dataValues["price_dto"] = product.dataValues.price * (100-product.dataValues.discount)/100
-                    product.dataValues["prod_img"] = product.dataValues.images[0].image_name
-                    ourSelectionOutput.push(product.dataValues)
+                    console.log(product)
+                    //product['images.image_name']
+                    product["price_dto"] = product.price * (100-product.discount)/100
+                    product["prod_img"] = product['images.image_name']
+                    ourSelectionOutput.push(product)
                 }
                 for (product of mostSold){
-                    product.dataValues["price_dto"] = product.dataValues.price * (100-product.dataValues.discount)/100
-                    product.dataValues["prod_img"] = product.dataValues.images[0].image_name
-                    mostSoldOutput.push(product.dataValues)
+                    product["price_dto"] = product.price * (100-product.discount)/100
+                    product["prod_img"] = product['images.image_name']
+                    mostSoldOutput.push(product)
                 }
                 for (product of offers){
-                    product.dataValues["price_dto"] = product.dataValues.price * (100-product.dataValues.discount)/100
-                    product.dataValues["prod_img"] = product.dataValues.images[0].image_name
-                    offersOutput.push(product.dataValues)
+                    product["price_dto"] = product.price * (100-product.discount)/100
+                    product["prod_img"] = product['images.image_name']
+                    offersOutput.push(product)
                 }
                 res.render("index",{
                     'mostSold': mostSoldOutput,

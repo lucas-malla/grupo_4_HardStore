@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path')
 
+const {Cart, Product} =  require('../database/models')
+
 //Base de Datos de productos
 dataBasePath = path.join(__dirname, '../data_base/productos.json')
 data_base = fs.readFileSync(dataBasePath)
@@ -20,7 +22,17 @@ let showRandom = random(data_base);
 const controller = { 
     cartLogged: (req, res) => {
 
-        res.render("productCart", { 'itemCart':itemCart, 'showRandom': showRandom})
+        Cart.findAll({where: {user_id : 1}},{ include: [{ association: 'product'}]})
+            .then((productsOnCart)=>{
+                console.log(productsOnCart[0].product_id) //1
+
+                // Product.findOne({where: { id: productsOnCart[0].product_id}})
+                //     .then((detail)=>{
+                //         console.log(detail)
+                //     })
+                res.send(productsOnCart)
+                res.render("productCart", { 'itemCart':itemCart, 'showRandom': showRandom})
+            })
     },
     cartUnlogged: (req, res) => {
         //Problema para mas adelante

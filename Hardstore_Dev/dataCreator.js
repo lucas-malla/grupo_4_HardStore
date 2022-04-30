@@ -110,7 +110,7 @@ Product.create({
     discount: "5",
     category_id: "1",
     images: {
-        image_name: "prodImg-1650925851420.jpeg"
+        image_name: "prodImg-1650925851420.jpg"
     }
 },{
     include: [{ association: 'images' }]
@@ -131,3 +131,36 @@ Product.create({
 },{
     include: [{ association: 'images' }]
 })
+
+/*
+Cart.create({
+    cart_product_id: 1,
+    product_id: 1,
+    user_id: 1,
+    quantity: 6,
+})
+Cart.create({
+    cart_product_id: 2,
+    product_id: 2,
+    user_id: 1,
+    quantity: 3,
+})
+Cart.create({
+    cart_product_id: 3,
+    product_id: 2,
+    user_id: 3,
+    quantity: 10,
+})
+Cart.create({
+    cart_product_id: 4,
+    product_id: 2,
+    user_id: 1,
+    quantity: 2,
+})
+Cart.create({
+    cart_product_id: 5,
+    product_id: 3,
+    user_id: 3,
+    quantity: 2,
+})
+*/
