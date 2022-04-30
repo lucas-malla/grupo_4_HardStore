@@ -66,15 +66,15 @@
                 <hr class="line">
                 <div class="products">
                     <% for (product of mostSold){ %>
-                        <a href=products/<%= product.prod_id %>>
-                            <img src=images/products/<%= product.prod_img %> >
-                            <p class="prod_name"><%= product.prod_name %></p>
+                        <a href=products/<%= product.product_id %>>
+                            <img src="images/products/<%=product.prod_img %>" >
+                            <p class="prod_name"><%= product.brand %> <%= product.model %></p>
                             <div class="prices">
                                 <hr>
                                 <p class="price">$ <%= product.price %></p>
                                 <div class="price_down">
                                     <p class="price_dto">$ <%= product.price_dto %></p>
-                                    <p class="dto"><%= product.dto %>%OFF</p>
+                                    <p class="dto"><%= product.discount %>%OFF</p>
                                 </div>
                             </div>
                             <p class="envios">Envios a todo el pais</p>
@@ -85,15 +85,15 @@
                 <hr class="line">
                 <div class="products">
                     <% for (product of ourSelection){ %>
-                        <a href=products/<%= product.prod_id %>>
-                            <img src=images/products/<%= product.prod_img %> >
-                            <p class="prod_name"><%= product.prod_name %></p>
+                        <a href=products/<%= product.product_id %>>
+                            <img src="images/products/<%=product.prod_img %>" >
+                            <p class="prod_name"><%= product.brand %> <%= product.model %></p>
                             <div class="prices">
                                 <hr>
                                 <p class="price">$ <%= product.price %></p>
                                 <div class="price_down">
                                     <p class="price_dto">$ <%= product.price_dto %></p>
-                                    <p class="dto"><%= product.dto %>%OFF</p>
+                                    <p class="dto"><%= product.discount %>%OFF</p>
                                 </div>
                             </div>
                             <p class="envios">Envios a todo el pais</p>
@@ -104,15 +104,15 @@
                 <hr class="line">
                     <div class="products">
                         <% for (product of offers){ %>
-                            <a href=products/<%= product.prod_id %>>
-                                <img src=images/products/<%= product.prod_img %> >
-                                <p class="prod_name"><%= product.prod_name %></p>
+                            <a href=products/<%= product.product_id %>>
+                                <img src="images/products/<%=product.prod_img %>" >
+                                <p class="prod_name"><%= product.brand %> <%= product.model %></p>
                                 <div class="prices">
                                     <hr>
                                     <p class="price">$ <%= product.price %></p>
                                     <div class="price_down">
                                         <p class="price_dto">$ <%= product.price_dto %></p>
-                                        <p class="dto"><%= product.dto %>%OFF</p>
+                                        <p class="dto"><%= product.discount %>%OFF</p>
                                     </div>
                                 </div>
                                 <p class="envios">Envios a todo el pais</p>
