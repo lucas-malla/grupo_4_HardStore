@@ -110,7 +110,7 @@ Product.create({
     discount: "5",
     category_id: "1",
     images: {
-        image_name: "prodImg-1645488763254.jpeg"
+        image_name: "prodImg-1650925851420.jpeg"
     }
 },{
     include: [{ association: 'images' }]
@@ -126,7 +126,7 @@ Product.create({
     discount: "5",
     category_id: "4",
     images: {
-        image_name: "prodImg-1646692200036.jpg"
+        image_name: "prodImg-1650925851420.jpg"
     }
 },{
     include: [{ association: 'images' }]
