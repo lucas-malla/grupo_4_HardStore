@@ -3,6 +3,30 @@ const sequelize = db.sequelize;
 
 const controller = {
     home: function(req, res){
+        ourSelectionOutput = []
+        mostSoldOutput = []
+        offersOutput = []
+
+        db.Product.findAll()
+            .then((resp)=>{
+                res.render("index",{
+                    'mostSold': mostSoldOutput,
+                    'ourSelection': ourSelectionOutput,
+                    'offers': offersOutput,
+                })
+
+            })
+
+
+        // res.render("index",{
+        //     'mostSold': mostSoldOutput,
+        //     'ourSelection': ourSelectionOutput,
+        //     'offers': offersOutput,
+        // })
+
+
+        /*
+
         var ourSelection = db.Product.findAll({
             raw: true , include: [{ association: 'images', attributes: ['image_name'] }]
         })
@@ -42,6 +66,7 @@ const controller = {
                     'offers': offersOutput,
                 })
             })
+        */
     },
     test_user: function(req, res){
         db.User.findAll({
