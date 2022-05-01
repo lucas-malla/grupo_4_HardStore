@@ -57,13 +57,6 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define(alias,cols,config);
 
     Product.associate = function(models){
-    //     Product.belongsToMany(models.User, {
-    //         as: "on_users_cart",
-    //         through: "cart_product",
-    //         foreignKey: "cart_product_id",
-    //         otherKey: "user_id",
-    //         timestamps: false,
-    //     })
     //     Product.belongsToMany(models.Order,{
     //         as: "on_orders",
     //         through: "order_product",
@@ -72,6 +65,13 @@ module.exports = (sequelize, DataTypes) => {
     //         timestamps: false
     //     })
     
+        Product.belongsToMany(models.User, {
+            as: "clients",
+            through: "cart_product",
+            foreignKey: "product_id",
+            otherKey: "user_id",
+            timestamps: false,
+        })
         Product.belongsTo(models.Product_category,{
             as: "category",
             foreignKey: {

@@ -29,9 +29,7 @@ module.exports = (sequelize, DataTypes) => {
                 field: "category_id", // the column name
               }
         })
-    
-    
-}
+    }
 return Product_category
 
 }
