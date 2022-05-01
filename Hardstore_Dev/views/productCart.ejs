@@ -13,14 +13,16 @@
             <h2>MI CARRITO</h2>
             <% for (product of itemCart){ %>
             <div class="item">
-                <img src="/images/products/<%= %>" alt="Product Name" class="product-image">
+                <img src="/images/products/<%=product.images.image_name %>" alt="Product Name" class="product-image">
                 <ul class="item-order">
-                    <li><p class="name"><%= product['items.product_name'] %></p></li>
+                    <li><p class="name"><%= product['product.product_name'] %></p></li>
                    <li><div class="quantity"> <div class="quantity-buttons">
-                            <input type="button" value="-" class="minus"><input type="tel" class="Qty-value" value="<%=product['cart.quantity'] %>" ><input type="button" value="+" class="plus"></div>
+                            <input type="button" value="-" class="minus"><input type="tel" class="Qty-value" value="<%=product.quantity %>" ><input type="button" value="+" class="plus"></div>
                         </div>
                     </li>
-                    <li><p class="price"><%= product['items.price'] %></p></li>
+                    <li><p class="price" style="text-decoration: line-through;"><%= product['product.price'] %></p></li>
+                    <li><p class="price"><%= product['product.price_dto'] %></p></li>
+                    <p class="dto"><%= product['product.discount'] %>%OFF</p>
                     <li><div class="delete">
                             <button type="button"><i class="fas fa-times"></i></button>
                         </div>

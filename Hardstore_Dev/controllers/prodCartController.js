@@ -24,15 +24,12 @@ const controller = {
         let cart = Cart.findAll({raw: true, where: {user_id : req.params.id}, include: [{ association: 'user' }, { association: 'product' }]})
         let images = Product_image.findAll({raw: true})
         Promise.all([cart, images])
-            .then((products, images)=>{
-                //console.log(products)
-                //console.log(images)
-                //console.log(images.find(image=> image.product_id == product['product.id'] ))
-                // for (product of products){
-                //     product['product.image_name'] = images.findAll((image)=>{return image.product_id == product['product.id'] })
-                // }
-                // console.log(products)
-                //res.send(images)
+            .then(([products, images])=>{ //aca iba un array *
+                 for (product of products){
+                    product['images'] = images.find(image=> image.product_id == product['product.id'] )
+                    product["product.price_dto"] = product['product.price'] * (100-product['product.discount'])/100
+                }
+                //res.send(products)
                 res.render("productCart", { 'itemCart':products, 'showRandom': showRandom})
             })
 
