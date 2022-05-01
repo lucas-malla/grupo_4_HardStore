@@ -29,12 +29,13 @@
             </div>
             <div class="productos">
                 <div class="producto">
-                    <% for (product of results){ %>
-                        <a href=/products/<%= product.prod_id %>>
-                            <div class="img"><img src=/images/products/<%= product.prod_img %> ></div>
+                    
+                    <% for (product of  product){ %>
+                        <a href=/products/<%= product.category_id %>>
+                            <div class="img"><img src="/images/products/<%= product["images.image_name"] %>" ></div>
                             
                             <div class="info">
-                                <h4 class="product_name"><%= product.prod_name %></h4>
+                                <h4 class="product_name"><%= product.product_name %></h4>
                                 <div class="prices">
                                     <p class="price">$<%= product.price %></p>
                                     <p class="price_dto">$<%= product.price_dto %></p>

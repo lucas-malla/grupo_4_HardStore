@@ -1,58 +1,91 @@
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
+const { Sequelize } = require('../database/models');
 const db = require ('../database/models');
+const Op = Sequelize.Op
 
-
-function refreshContent(){
-    //Base de Datos de productos
-    dataBasePath = path.join(__dirname, '../data_base/productos.json')
-    data_base = fs.readFileSync(dataBasePath)
-    data_base = JSON.parse(data_base)
-    return data_base
-}
+// function refreshContent(){
+//     //Base de Datos de productos
+//     dataBasePath = path.join(__dirname, '../data_base/productos.json')
+//     data_base = fs.readFileSync(dataBasePath)
+//     data_base = JSON.parse(data_base)
+//     return data_base
+// }
 const controller = {
     galery: function(req, res){
-        // req.query.search     es el input del usuario al buscar un producto (GET)
-        // req.params.filter    es el parametro pasado por url si se abre una categoria
-        //Busqueda en  Base de Datos
-        let filter = req.query.search || req.params.filter
-        let results = []
-        refreshContent()
-        if (filter){
-            results = data_base.filter(producto => 
-                producto.prod_category == filter
-                )
-            }else{
-                results = data_base
+        if (req.query.search){
+            //console.log (req.query)
+                db.Product.findAll ({raw:true, include: [{ association: 'images', attributes: ['image_name'] }],
+                where: {
+                    product_name: {[Op.like]: '%'+req.query.search+'%'}  
+                }
+            })
+            .then ((products)=> {
+                for (product of products){
+                    console.log(product)
+                    product["price_dto"] = product.price * (100-product.discount)/100
+                }
+                return (products)
+            })   
+            .then ((product)=> {
+                res.render('products_galery', {product:product})
+            }) 
+            .catch ((error)=> {
+                res.send (error)
+            })
+        }
+
+        if (req.params.filter){
+        db.Product_category
+        .findOne ({
+            where: {
+                category_name: req.params.filter
             }
-        res.render("products_galery",
-        {
-            'results':results
         })
+        .then ((resultado)=> {
+            let category = resultado.id
+            db.Product
+            .findAll ({raw:true, include: [{ association: 'images', attributes: ['image_name'] }],
+                where: {
+                    category_id: category //|| req.query.search  
+                }
+             })
+             .then(product =>{
+                //res.send (product)
+                res.render('products_galery', {product:product})
+            })
+        })
+    }
+    else {
+        db.Product.findAll ({raw:true, include: [{ association: 'images', attributes: ['image_name'] }]})
+            .then(product =>{
+            res.render('products_galery', {product:product})
+        })
+        }
     },
+
+    // searchBar: function(req, res){
+    //     db.Product
+    //     .findAll({
+    //         include: [{association:'images'}],
+    //         where: {
+    //             category_id: {[Op.like]: '%req.query.search%'}
+    //         }
+    //     })
+    //        .then(product =>{
+    //            res.render('detail', {product:product})
+    //        })
+    //     },
+
+
     detail: function(req, res){
-        // let random = function(productos){
-        //     let resultado = [];
-        //         for(let i = 1; i <= 3; i++ ){
-        //         let aleatorio = productos[Math.floor(Math.random() * productos.length)]
-        //         resultado.push(aleatorio)
-        //     }
-        //     return resultado
-        //     }
-        // let showRandom = random(data_base);
-        // refreshContent()
-        // let producto = data_base.find(function(producto){
-        //     return  producto.prod_id == req.params.id
-        // })
-        // res.render('detail', {'producto': producto,  showRandom: showRandom});
-        //data base
+   
         db.Product.findByPk(req.params.id,{
             include: [{association:'images'}]
         })
            .then(product =>{
                res.render('detail', {product:product})
            })
-           
         }
     }
 module.exports = controller

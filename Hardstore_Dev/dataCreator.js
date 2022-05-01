@@ -94,6 +94,9 @@ let cat6 = {
 let cat7 = {
     category_name: "Juegos"
 }
+// let cat8 = {
+//     category_name: "Todo"
+// }
 
 
 
