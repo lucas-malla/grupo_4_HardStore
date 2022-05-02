@@ -67,7 +67,7 @@
                 <div class="products">
                     <% for (product of mostSold){ %>
                         <a href="products/<%=product.id %>">
-                            <img src="images/products/<%=product.prod_img %>" >
+                            <img src="images/products/<%=product['images.image_name'] %>" >
                             <p class="prod_name"><%= product.brand %> <%= product.model %></p>
                             <div class="prices">
                                 <hr>
@@ -86,7 +86,7 @@
                 <div class="products">
                     <% for (product of ourSelection){ %>
                         <a href="products/<%=product.id %>">
-                            <img src="images/products/<%=product.prod_img %>" >
+                            <img src="images/products/<%=product['images.image_name'] %>" >
                             <p class="prod_name"><%= product.brand %> <%= product.model %></p>
                             <div class="prices">
                                 <hr>
@@ -105,7 +105,7 @@
                     <div class="products">
                         <% for (product of offers){ %>
                             <a href="products/<%=product.id %>">
-                                <img src="images/products/<%=product.prod_img %>" >
+                                <img src="images/products/<%=product['images.image_name'] %>" >
                                 <p class="prod_name"><%= product.brand %> <%= product.model %></p>
                                 <div class="prices">
                                     <hr>

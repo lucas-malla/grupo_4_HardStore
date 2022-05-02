@@ -17,7 +17,7 @@ const controller = {
     addProduct: function (req, res) {
         Product_category.findAll({ raw: true }) // MIRAR solución de DataValues
             .then((categories) => {
-                res.render("adminProdCreation", { categories})
+                res.render("adminProdCreation", {categories})
             })
 
     },
@@ -44,7 +44,6 @@ const controller = {
                 .catch(err => {
                     console.log(err)
                 })
-
         } else {
             Product_category.findAll({ raw: true })
             .then((categories) => {

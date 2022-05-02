@@ -45,7 +45,12 @@ const controller = {
                       console.log("se ha creado la cookie")
                       res.cookie('userID',req.session.userID,{maxAge:60000})
                   }
-                  res.redirect('/user/' + String(req.session.userID))
+                  if(user.dataValues.username == "admin"){
+                    res.redirect('/admin/controlpanel')
+                  }else{
+                    //res.redirect('/user/' + String(req.session.userID))
+                    res.redirect('/')
+                  }
                 }
                 res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
             })
@@ -59,9 +64,6 @@ const controller = {
         req.session.destroy()
         res.clearCookie('userID')
         res.redirect('/')
-    },
-    userCheck: function(req, res){
-        res.send(req.session.userID)
     },
     registerPost: function(req, res){
         let validation = validationResult(req) //array de errores

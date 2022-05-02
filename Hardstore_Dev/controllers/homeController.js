@@ -21,17 +21,14 @@ const controller = {
                 for (product of ourSelection){
                     //console.log(product)
                     product["price_dto"] = product.price * (100-product.discount)/100
-                    product["prod_img"] = product['images.image_name']
                     ourSelectionOutput.push(product)
                 }
                 for (product of mostSold){
                     product["price_dto"] = product.price * (100-product.discount)/100
-                    product["prod_img"] = product['images.image_name']
                     mostSoldOutput.push(product)
                 }
                 for (product of offers){
                     product["price_dto"] = product.price * (100-product.discount)/100
-                    product["prod_img"] = product['images.image_name']
                     offersOutput.push(product)
                 }
                 res.render("index",{

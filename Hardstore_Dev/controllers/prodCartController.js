@@ -32,20 +32,6 @@ const controller = {
                 //res.send(products)
                 res.render("productCart", { 'itemCart':products, 'showRandom': showRandom})
             })
-
-        //busqueda sin imagen de producto funcional
-        // User.findAll({raw: true, where: {id : req.params.id}, include: [{ association: 'items' }, {association: 'cart'}]})
-        // .then((itemsCart)=>{
-            // productsOnCart.forEach(Element => {
-            //    console.log(Element); 
-            // }) //1
-            // Product.findOne({where: { id: productsOnCart[0].product_id}})
-            //     .then((detail)=>{
-            //         console.log(detail)
-            //     })
-            //res.send(itemsCart)
-            //res.render("productCart", { 'itemCart':itemsCart, 'showRandom': showRandom})
-        //})
     },
     cartUnlogged: (req, res) => {
         //Problema para mas adelante
