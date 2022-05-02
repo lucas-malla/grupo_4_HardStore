@@ -1,4 +1,5 @@
-const sequelize = require('sequelize')
+const sequelize = require('sequelize');
+const Product = require('./Product');
 
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Cart'; // esto debería estar en singular
@@ -13,6 +14,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(50),
             allowNull: false
         }
+
     };
     let config = {
         timestamps: false,
@@ -28,9 +30,11 @@ module.exports = (sequelize, DataTypes) => {
         })
         Cart.hasMany(models.Product,{
             as: "product",
-            foreignKey: "id"  // product_id
-        })
+            foreignKey: {name: "id", // the JavaScript attribute name
+            field: "product_id", // the column name
+           // product_id
+        }
+    })
     }
-
     return Cart
 }
