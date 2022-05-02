@@ -33,6 +33,7 @@ const controller = {
         ]})
     
         .then((products)=>{
+            //console.log(products)
             res.render("productCart", { 'itemCart':products, 'showRandom': showRandom}) // Error datos con match incorrecto
             })
     },
