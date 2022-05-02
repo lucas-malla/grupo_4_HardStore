@@ -29,10 +29,10 @@ const controller = {
                 { 
                 association: 'product', 
                 include: [{association: 'images' }] // opción sequelize que deja incluir asociaciones de modelos ya asociados. 
-                }
+                } 
         ]})
         .then((products)=>{
-            product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
+            products["price_dto"] = products['product.price'] * (100-products['product.discount'])/100
             console.log(products)
             res.render("productCart", { 'itemCart':products, 'showRandom': showRandom}) // Error datos con match incorrecto
             })
