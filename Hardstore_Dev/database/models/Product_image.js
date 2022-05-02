@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false,
             autoIncrement: true
         },
-        product_id: DataTypes.BIGINT(10).UNSIGNED,
+        //product_id: DataTypes.BIGINT(10).UNSIGNED,
         image_name: {
             type: DataTypes.STRING,
             allowNull: false

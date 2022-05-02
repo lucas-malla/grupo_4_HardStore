@@ -94,11 +94,6 @@ let cat6 = {
 let cat7 = {
     category_name: "Juegos"
 }
-// let cat8 = {
-//     category_name: "Todo"
-// }
-
-
 
 Product_category.bulkCreate([cat1, cat2, cat3, cat4, cat5, cat6, cat7])
 

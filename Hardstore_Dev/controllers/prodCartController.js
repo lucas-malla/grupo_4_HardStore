@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path')
 
+const {Cart, Product, User, Product_image} =  require('../database/models')
+
 //Base de Datos de productos
 dataBasePath = path.join(__dirname, '../data_base/productos.json')
 data_base = fs.readFileSync(dataBasePath)
@@ -19,8 +21,17 @@ let showRandom = random(data_base);
 
 const controller = { 
     cartLogged: (req, res) => {
-
-        res.render("productCart", { 'itemCart':itemCart, 'showRandom': showRandom})
+        let cart = Cart.findAll({raw: true, where: {user_id : req.params.id}, include: [{ association: 'user' }, { association: 'product' }]})
+        let images = Product_image.findAll({raw: true})
+        Promise.all([cart, images])
+            .then(([products, images])=>{ //aca iba un array *
+                 for (product of products){
+                    product['images'] = images.find(image=> image.product_id == product['product.id'] )
+                    product["product.price_dto"] = product['product.price'] * (100-product['product.discount'])/100
+                }
+                //res.send(products)
+                res.render("productCart", { 'itemCart':products, 'showRandom': showRandom})
+            })
     },
     cartUnlogged: (req, res) => {
         //Problema para mas adelante

@@ -1,1 +1,11 @@
-[]
+[{
+    "selection": "True",
+        "offer": "True",
+        "prod_img":"monitor.webp",
+        "price":"36.000",
+        "price_dto":"28.800",
+        "dto":"20",
+        "tamaño" :"Tamaño de la pantalla: 24",
+        "tipo": "Tipo de pantalla: LED",
+        "descripcion" : "Resolución de la pantalla: 1920 px x 1080 px"
+}]

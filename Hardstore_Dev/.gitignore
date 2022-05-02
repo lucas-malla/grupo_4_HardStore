@@ -1,6 +1,5 @@
 productCreator.js
-
-
+//en la vista
         <div class="add-product">
             <div class="add-product-table">
                 <% showRandom.forEach(function(product){%>
@@ -24,3 +23,20 @@ productCreator.js
                 <% }) %>
             </div>
         </div>
+
+// el controlador  
+ // let random = function(productos){
+        //     let resultado = [];
+        //         for(let i = 1; i <= 3; i++ ){
+        //         let aleatorio = productos[Math.floor(Math.random() * productos.length)]
+        //         resultado.push(aleatorio)
+        //     }
+        //     return resultado
+        //     }
+        // let showRandom = random(data_base);
+        // refreshContent()
+        // let producto = data_base.find(function(producto){
+        //     return  producto.prod_id == req.params.id
+        // })
+        // res.render('detail', {'producto': producto,  showRandom: showRandom});
+        //data base

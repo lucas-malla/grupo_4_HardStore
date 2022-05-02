@@ -4,7 +4,7 @@ const sequelize = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Product'; // esto debería estar en singular
     let cols = {
-        product_id: {
+        id: {
             type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
@@ -57,13 +57,6 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define(alias,cols,config);
 
     Product.associate = function(models){
-    //     Product.belongsToMany(models.User, {
-    //         as: "on_users_cart",
-    //         through: "cart_product",
-    //         foreignKey: "cart_product_id",
-    //         otherKey: "user_id",
-    //         timestamps: false,
-    //     })
     //     Product.belongsToMany(models.Order,{
     //         as: "on_orders",
     //         through: "order_product",
@@ -71,20 +64,29 @@ module.exports = (sequelize, DataTypes) => {
     //         otherKey: "order_id",
     //         timestamps: false
     //     })
-    /*
+    
+        Product.belongsToMany(models.User, {
+            as: "clients",
+            through: "cart_product",
+            foreignKey: "product_id",
+            otherKey: "user_id",
+            timestamps: false,
+        })
         Product.belongsTo(models.Product_category,{
             as: "category",
-            foreignKey: "category_id" 
+            foreignKey: {
+                name: "category_id", // the JavaScript attribute name
+                field: "category_id", // the column name
+              }
         })
-    */
         Product.hasMany(models.Product_image,{
             as: "images",
             foreignKey:"product_id"
         })
-    //     Product.hasMany(models.Cart,{
-    //         as: "in_users_cart",
-    //         foreignKey: "product_id"
-    //     })
+        Product.hasMany(models.Cart,{
+            as: "in_users_cart",
+            foreignKey: "product_id"
+        })
     }
 
     return Product

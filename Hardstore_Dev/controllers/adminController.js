@@ -5,7 +5,6 @@ const sequelize = require('sequelize')
 const db = require('../database/models')
 const { User, Product, Cart, Product_category, Product_image } = db
 const { Op } = require("sequelize");
-const { agregarProducto, allDataBase, writeFile } = require('../services/adminServices')
 
 
 const controller = {
@@ -18,7 +17,7 @@ const controller = {
     addProduct: function (req, res) {
         Product_category.findAll({ raw: true }) // MIRAR solución de DataValues
             .then((categories) => {
-                res.render("adminProdCreation", { categories})
+                res.render("adminProdCreation", {categories})
             })
 
     },
@@ -45,7 +44,6 @@ const controller = {
                 .catch(err => {
                     console.log(err)
                 })
-
         } else {
             Product_category.findAll({ raw: true })
             .then((categories) => {
@@ -98,13 +96,21 @@ const controller = {
             })
     },
     delete: (req, res) => {
-        let products = allDataBase();
-        let productIndex = products.findIndex(function (product) {
-            return product.prod_id == req.params.id
-        })
-        products.splice(productIndex, 1)
-        writeFile(products)
-        res.redirect('/admin/ControlPanel')
+        return Product_image.destroy({ // Elimino la imagen del producto en tabla product_image. 
+            where: {
+                product_id: req.params.id
+            }
+            })
+            .then(function(){
+                return Product.destroy({// elimino producto.
+                    where: {
+                        product_id: req.params.id
+                    }
+                })
+            })
+            .then(function(){
+                return res.redirect("/admin/controlPanel")
+            })
     }
 }
 

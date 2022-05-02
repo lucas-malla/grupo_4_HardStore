@@ -33,7 +33,5 @@ router.get('/user/:id/productCart', userMiddleware, prodCartController.cartLogge
 //Unlogged user
 router.get('/user//productCart', prodCartController.cartUnlogged);
 
-//TEST
-router.get('/check', userController.userCheck);
 
 module.exports = router;

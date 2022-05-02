@@ -64,27 +64,14 @@ const controller = {
         }
     },
 
-    // searchBar: function(req, res){
-    //     db.Product
-    //     .findAll({
-    //         include: [{association:'images'}],
-    //         where: {
-    //             category_id: {[Op.like]: '%req.query.search%'}
-    //         }
-    //     })
-    //        .then(product =>{
-    //            res.render('detail', {product:product})
-    //        })
-    //     },
-
-
     detail: function(req, res){
    
         db.Product.findByPk(req.params.id,{
-            include: [{association:'images'}]
+            raw: true,
+            include: [{ association: 'images', attributes: ['image_name'] }]
         })
-           .then(product =>{
-               res.render('detail', {product:product})
+        .then(product =>{
+            res.render('detail', {product:product})
            })
         }
     }

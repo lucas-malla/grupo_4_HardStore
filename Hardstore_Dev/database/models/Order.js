@@ -24,17 +24,17 @@ module.exports = (sequelize, DataTypes) => {
     const Order = sequelize.define(alias,cols,config);
 
     Order.associate = function(models){
-        Order.belongsTo(models.User,{
-            as: "user",
-            foreignKey: "user_id"
-        })
-        Order.belongsToMany(models.Product,{
-            as: "products",
-            through: "order_product",
-            foreignKey: "order_id",
-            otherKey: "product_id",
-            timestamps: false
-        })
+        // Order.belongsTo(models.User,{
+        //     as: "user",
+        //     foreignKey: "user_id"
+        // })
+        // Order.belongsToMany(models.Product,{
+        //     as: "products",
+        //     through: "order_product",
+        //     foreignKey: "order_id",
+        //     otherKey: "product_id",
+        //     timestamps: false
+        // })
     }
 
     return Order
