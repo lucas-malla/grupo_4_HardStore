@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path')
 
-const {Cart, Product, User, Product_image} =  require('../database/models')
+const {Cart, Product, User, Product_image, sequelize} =  require('../database/models')
 
 //Base de Datos de productos
 dataBasePath = path.join(__dirname, '../data_base/productos.json')
@@ -21,16 +21,20 @@ let showRandom = random(data_base);
 
 const controller = { 
     cartLogged: (req, res) => {
-        let cart = Cart.findAll({raw: true, where: {user_id : req.params.id}, include: [{ association: 'user' }, { association: 'product' }]})
-        let images = Product_image.findAll({raw: true})
-        Promise.all([cart, images])
-            .then(([products, images])=>{ //aca iba un array *
-                 for (product of products){
-                    product['images'] = images.find(image=> image.product_id == product['product.id'] )
-                    product["product.price_dto"] = product['product.price'] * (100-product['product.discount'])/100
+        Cart.findAll({
+        raw: true, 
+        where: {user_id : req.params.id}, 
+        include: [
+        {association: 'user'}, 
+                { 
+                association: 'product', 
+                include: [{association: 'images' }] // opción sequelize que deja incluir asociaciones de modelos ya asociados. 
                 }
-                //res.send(products)
-                res.render("productCart", { 'itemCart':products, 'showRandom': showRandom})
+        ]})
+        .then((products)=>{
+            product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
+            console.log(products)
+            res.render("productCart", { 'itemCart':products, 'showRandom': showRandom}) // Error datos con match incorrecto
             })
     },
     cartUnlogged: (req, res) => {
