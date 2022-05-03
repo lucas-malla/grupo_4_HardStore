@@ -23,7 +23,9 @@ const controller = {
     cartLogged: (req, res) => {
         Cart.findAll({
         raw: true, 
-        where: {user_id : req.params.id}, 
+        where: {
+             user_id : req.params.id
+            }, 
         include: [
         {association: 'user'}, 
                 { 
@@ -32,10 +34,11 @@ const controller = {
                 }
         ]})
         .then((products)=>{
-            product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
+            products["price_dto"] = products['product.price'] * (100-products['product.discount'])/100
             console.log(products)
             res.render("productCart", { 'itemCart':products, 'showRandom': showRandom}) // Error datos con match incorrecto
             })
+
     },
     cartUnlogged: (req, res) => {
         //Problema para mas adelante
