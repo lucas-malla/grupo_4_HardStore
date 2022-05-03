@@ -21,24 +21,18 @@ let showRandom = random(data_base);
 
 const controller = { 
     cartLogged: (req, res) => {
-        Cart.findAll({
-        raw: true, 
-        where: {
-             user_id : req.params.id
-            }, 
-        include: [
-        {association: 'user'}, 
-                { 
-                association: 'product', 
-                include: [{association: 'images' }] // opción sequelize que deja incluir asociaciones de modelos ya asociados. 
-                }
-        ]})
-        .then((products)=>{
-            products["price_dto"] = products['product.price'] * (100-products['product.discount'])/100
-            console.log(products)
-            res.render("productCart", { 'itemCart':products, 'showRandom': showRandom}) // Error datos con match incorrecto
+        User.findAll({
+            raw: true, 
+            where: {
+                 id : req.params.id
+                },
+                include: [{association: 'items', include: [{association: 'images' }] }, {association: 'cart'}]
             })
-
+            .then((products)=>{
+                    //products["price_dto"] = products['product.price'] * (100-products['product.discount'])/100
+                    console.log(products)
+                    res.render("productCart", { 'itemCart':products, 'showRandom': showRandom}) // Error datos con match incorrecto
+                    }) 
     },
     cartUnlogged: (req, res) => {
         //Problema para mas adelante
