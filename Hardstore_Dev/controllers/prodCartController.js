@@ -21,17 +21,32 @@ let showRandom = random(data_base);
 
 const controller = { 
     cartLogged: (req, res) => {
-        User.findAll({
+        let products = User.findAll({
             raw: true, 
             where: {
                  id : req.params.id
                 },
-                include: [{association: 'items', include: [{association: 'images' }] }, {association: 'cart'}]
+                include: [{association: 'product', include: [{association: 'images' }] }]
             })
-            .then((products)=>{
+        let quantity = Cart.findAll({
+            raw: true, 
+            where: {
+                 user_id : req.params.id
+                }
+            })
+            Promise.all([products, quantity])
+            .then((response)=>{
                     //products["price_dto"] = products['product.price'] * (100-products['product.discount'])/100
-                    console.log(products)
-                    res.render("productCart", { 'itemCart':products, 'showRandom': showRandom}) // Error datos con match incorrecto
+                    for(product of response[0]){
+                        let cart_row = response[1].find(element => 
+                           element.product_id == product['product.id']
+                        )
+                        //console.log(cart_row);
+                        product['quantity']= cart_row.quantity
+                        //console.log(product);
+                    }
+            
+                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) // Error datos con match incorrecto
                     }) 
     },
     cartUnlogged: (req, res) => {

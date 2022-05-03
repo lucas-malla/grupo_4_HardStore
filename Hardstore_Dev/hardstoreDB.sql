@@ -76,14 +76,14 @@ ENGINE = InnoDB;
 -- Table `mydb`.`cart_product`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`cart_product` (
-  `cart_product_id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `product_id` INT NOT NULL,
   `user_id` INT NOT NULL,
   `quantity` INT NULL,
   INDEX `fk_cart_product_product1_idx` (`product_id` ASC) ,
   INDEX `fk_cart_product_user1_idx` (`user_id` ASC) ,
-  PRIMARY KEY (`cart_product_id`),
-  UNIQUE INDEX `cart_product_id_UNIQUE` (`cart_product_id` ASC) ,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `cart_product_id_UNIQUE` (`id` ASC) ,
   CONSTRAINT `fk_cart_product_product1`
     FOREIGN KEY (`product_id`)
     REFERENCES `mydb`.`product` (`id`)

@@ -4,7 +4,7 @@ const Product = require('./Product');
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Cart'; // esto debería estar en singular
     let cols = {
-        cart_product_id: {
+        id: {
             type: DataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
@@ -30,11 +30,10 @@ module.exports = (sequelize, DataTypes) => {
         })
         Cart.hasMany(models.Product,{
             as: "product",
-            foreignKey: {name: "id", // the JavaScript attribute name
-            field: "product_id", // the column name
-           // product_id
+            foreignKey: "id",
         }
-    })
+        )
+    
     }
     return Cart
 }

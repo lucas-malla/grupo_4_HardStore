@@ -4,13 +4,6 @@ const { Sequelize } = require('../database/models');
 const db = require ('../database/models');
 const Op = Sequelize.Op
 
-// function refreshContent(){
-//     //Base de Datos de productos
-//     dataBasePath = path.join(__dirname, '../data_base/productos.json')
-//     data_base = fs.readFileSync(dataBasePath)
-//     data_base = JSON.parse(data_base)
-//     return data_base
-// }
 const controller = {
     galery: function(req, res){
         if (req.query.search){
@@ -75,4 +68,5 @@ const controller = {
            })
         }
     }
+    
 module.exports = controller
