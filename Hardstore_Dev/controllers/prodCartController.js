@@ -42,6 +42,7 @@ const controller = {
                            element.product_id == product['product.id']
                         )
                         //console.log(cart_row);
+                        product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
                         product['quantity']= cart_row.quantity
                         //console.log(product);
                     }

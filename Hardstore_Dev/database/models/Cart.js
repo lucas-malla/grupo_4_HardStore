@@ -14,7 +14,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(50),
             allowNull: false
         }
-
     };
     let config = {
         timestamps: false,
@@ -22,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         tableName: 'cart_product'
     }
     const Cart = sequelize.define(alias,cols,config);
-
+    
     Cart.associate = function(models){
         Cart.belongsTo(models.User, {
             as: "user",
@@ -30,10 +29,9 @@ module.exports = (sequelize, DataTypes) => {
         })
         Cart.hasMany(models.Product,{
             as: "product",
-            foreignKey: "id",
+            foreignKey: "id", //OJO
         }
         )
-    
     }
     return Cart
 }
