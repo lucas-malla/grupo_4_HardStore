@@ -18,7 +18,7 @@ let resultado = [];
 }
 return resultado
 }
-let showRandom = random(data_base);
+let showRandom = random(random);
 //MIRAR ESTO------------
 
 const controller = { 
@@ -45,7 +45,7 @@ const controller = {
                         product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
                         product['quantity']= cart_row.quantity
                     }
-                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) // Error datos con match incorrecto
+                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom})
             }) 
     },
     cartUnlogged: (req, res) => {
