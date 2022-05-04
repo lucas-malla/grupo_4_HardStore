@@ -1,6 +1,6 @@
 console.log("soy el creador de datos STEP2")
 const db = require('./database/models')
-const {User, Product, Cart, Product_category } = db
+const {Cart } = db
 
 Cart.create({
     product_id: 5,

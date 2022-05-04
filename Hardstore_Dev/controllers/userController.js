@@ -1,11 +1,7 @@
-const fs = require('fs')
-const path = require('path')
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
-const sequelize = require('sequelize')
 const db = require('../database/models')
-const {User, Product, Cart } = db
-const { Op } = require("sequelize");
+const {User} = db
 
 
 function get_next_id(data_base){
@@ -31,28 +27,25 @@ const controller = {
             where: {
                 username : req.body.userName
             }})
-            .then((user)=>{
-                // always throwing false
+            .then((user)=>{               
                 bcryptjs.compare(req.body.password, user.dataValues.password)
                 .then((check)=>{
-                    console.log(check)
+                    if (check){
+                    //login user
+                    req.session.userID = user.dataValues.id
+                    // if remember =>  GENERATE COOCKIE
+                    if (req.body.remember){
+                        console.log("se ha creado la cookie")
+                        res.cookie('userID',req.session.userID,{maxAge:60000})
+                    }
+                    if(user.dataValues.username == "admin"){
+                        res.redirect('/admin/controlpanel')
+                    }else{
+                        res.redirect('/')
+                    }
+                    }
+                    res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
                 })
-                if (req.body.password == user.dataValues.password){//provisorio
-                  //login user
-                  req.session.userID = user.dataValues.id
-                  //remember =>  GENERATE COOCKIE
-                  if (req.body.remember){
-                      console.log("se ha creado la cookie")
-                      res.cookie('userID',req.session.userID,{maxAge:60000})
-                  }
-                  if(user.dataValues.username == "admin"){
-                    res.redirect('/admin/controlpanel')
-                  }else{
-                    //res.redirect('/user/' + String(req.session.userID))
-                    res.redirect('/')
-                  }
-                }
-                res.render('login', {error: "Usuario o contraseña invalida",old : req.body})
             })
             .catch(function(error){
                 console.log("catch")
@@ -73,8 +66,7 @@ const controller = {
         }else{
             //no errors -> chech passwords maching
             if (req.body.password == req.body.password_repeat){   
-                //no errors -> user register in DB
-                //NEW
+                //no errors -> register NEW user in DB
                 let new_userSQL = {}
                 new_userSQL["username"] = req.body.userName
                 new_userSQL["email"] = req.body.email
@@ -144,6 +136,5 @@ const controller = {
         }
     }
 }
-
 
 module.exports = controller

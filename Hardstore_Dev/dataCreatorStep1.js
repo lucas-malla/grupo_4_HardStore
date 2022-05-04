@@ -1,10 +1,11 @@
 console.log("soy el creador de datos STEP1")
 const db = require('./database/models')
 const {User, Product, Cart, Product_category } = db
+const bcryptjs = require('bcryptjs')
 
 let user1 ={
     username: 'fede',
-    password: '123',
+    password: bcryptjs.hashSync('123', 10),
     email: 'fedeW@gmail.com',
     first_name: 'Federico',
     last_name: 'Wagner',
@@ -15,7 +16,7 @@ let user1 ={
 }
 let user2 ={
     username: 'juan',
-    password: '123',
+    password: bcryptjs.hashSync('123', 10),
     email: 'juan@gmail.com',
     first_name: 'juan',
     last_name: 'E',
@@ -26,7 +27,7 @@ let user2 ={
 }
 let user3 ={
     username: 'Gaby',
-    password: '123',
+    password: bcryptjs.hashSync('123', 10),
     email: 'Gaby@gmail.com',
     first_name: 'Gabriela',
     last_name: 'Paez',
@@ -36,19 +37,8 @@ let user3 ={
     avatar: 'default.jpg',
 }
 let user4 ={
-    username: 'genesis',
-    password: '123',
-    email: 'Gene@gmail.com',
-    first_name: 'Genesis',
-    last_name: 'Leal',
-    cellphone: '15-1234-1234',
-    street: 'ni idea',
-    street_number: '1234',
-    avatar: 'default.jpg',
-}
-let user5 ={
     username: 'lucas',
-    password: '123',
+    password: bcryptjs.hashSync('123', 10),
     email: 'lucas@gmail.com',
     first_name: 'Lucas',
     last_name: 'P',
@@ -57,9 +47,9 @@ let user5 ={
     street_number: '1234',
     avatar: 'default.jpg',
 }
-let user6 ={
+let user5 ={
     username: 'admin',
-    password: '123',
+    password: bcryptjs.hashSync('123', 10),
     email: 'admin@gmail.com',
     first_name: 'admin',
     last_name: 'admin',
@@ -69,10 +59,9 @@ let user6 ={
     avatar: 'default.jpg',
 }
 
-User.bulkCreate([user1, user2, user3, user4, user5, user6])
+User.bulkCreate([user1, user2, user3, user4, user5])
 
 // Product_category
-
 let cat1 = {
     category_name: "Teclados"
 }

@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path')
 
-const {Cart, Product, User, Product_image, sequelize} =  require('../database/models')
+const {Cart, User} =  require('../database/models')
 
+//MIRAR ESTO------------
 //Base de Datos de productos
 dataBasePath = path.join(__dirname, '../data_base/productos.json')
 data_base = fs.readFileSync(dataBasePath)
@@ -18,6 +19,7 @@ let resultado = [];
 return resultado
 }
 let showRandom = random(data_base);
+//MIRAR ESTO------------
 
 const controller = { 
     cartLogged: (req, res) => {
@@ -36,19 +38,15 @@ const controller = {
             })
             Promise.all([products, quantity])
             .then((response)=>{
-                    //products["price_dto"] = products['product.price'] * (100-products['product.discount'])/100
                     for(product of response[0]){
                         let cart_row = response[1].find(element => 
                            element.product_id == product['product.id']
                         )
-                        //console.log(cart_row);
                         product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
                         product['quantity']= cart_row.quantity
-                        //console.log(product);
                     }
-            
                     res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) // Error datos con match incorrecto
-                    }) 
+            }) 
     },
     cartUnlogged: (req, res) => {
         //Problema para mas adelante

@@ -1,5 +1,4 @@
-const fs = require('fs');
-const path = require('path');
+
 const { Sequelize } = require('../database/models');
 const db = require ('../database/models');
 const Op = Sequelize.Op

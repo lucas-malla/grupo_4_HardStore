@@ -1,10 +1,4 @@
-const req = require('express/lib/request');
-const fs = require('fs');
-const path = require('path')
-const sequelize = require('sequelize')
-const db = require('../database/models')
-const { User, Product, Cart, Product_category, Product_image } = db
-const { Op } = require("sequelize");
+const {Product,Product_category, Product_image } = require('../database/models')
 
 
 const controller = {
