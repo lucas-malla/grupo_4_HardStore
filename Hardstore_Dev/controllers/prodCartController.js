@@ -1,3 +1,4 @@
+const { Console } = require('console');
 const fs = require('fs');
 const path = require('path')
 
@@ -38,14 +39,21 @@ const controller = {
             })
             Promise.all([products, quantity])
             .then((response)=>{
+                console.log(response)
+                if(response[1].length==0){  //no hay productos!
+                    console.log("no hay productos!!!!!!!!!!!!!!!!!!!!!!")
+                    response[0] = []
+                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) //fix for empty carts 
+                }else{
                     for(product of response[0]){
                         let cart_row = response[1].find(element => 
-                           element.product_id == product['product.id']
+                            element.product_id == product['product.id']
                         )
                         product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
                         product['quantity']= cart_row.quantity
                     }
                     res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) // Error datos con match incorrecto
+                }
             }) 
     },
     cartUnlogged: (req, res) => {
