@@ -48,7 +48,7 @@ const userValidations = {
                                         })    
                                 })                      
                         }).withMessage('Usuario o contraseña invalida MIDELLWARE'),
-        ]
+    ]
 }
 
 module.exports = userValidations

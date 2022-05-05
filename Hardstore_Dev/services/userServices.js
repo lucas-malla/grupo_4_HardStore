@@ -1,5 +1,3 @@
-const { validationResult } = require('express-validator')
-const bcryptjs = require('bcryptjs')
 const {User} = require('../database/models')
 
 

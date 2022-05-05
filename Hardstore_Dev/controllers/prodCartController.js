@@ -1,4 +1,3 @@
-const { Console } = require('console');
 const fs = require('fs');
 const path = require('path')
 
@@ -12,14 +11,15 @@ data_base = JSON.parse(data_base)
 
 let itemCart = data_base.filter(producto => producto.prod_id <= 7)
 let random = function(productos){
-let resultado = [];
+    let resultado = [];
     for(let i = 1; i <= 3; i++ ){
     let aleatorio = productos[Math.floor(Math.random() * productos.length)]
     resultado.push(aleatorio)
+    }
+    console.log(resultado)
+    return resultado
 }
-return resultado
-}
-let showRandom = random(random);
+let showRandom = [] //random(random);   ME tiraba error en la view gaby , milldisss
 //MIRAR ESTO------------
 
 const controller = { 
@@ -41,7 +41,7 @@ const controller = {
             .then((response)=>{
                 console.log(response)
                 if(response[1].length==0){  //no hay productos!
-                    console.log("no hay productos!!!!!!!!!!!!!!!!!!!!!!")
+                    console.log("si no hay productos en el carrito...") //proximamente mejoramso esta logica
                     response[0] = []
                     res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) //fix for empty carts 
                 }else{

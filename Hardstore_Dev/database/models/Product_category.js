@@ -1,5 +1,3 @@
-const sequelize = require('sequelize')
-
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Product_category'; // esto debería estar en singular
     let cols = {
@@ -31,5 +29,4 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
 return Product_category
-
 }

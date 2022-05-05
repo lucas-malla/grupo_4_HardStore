@@ -1,6 +1,3 @@
-const { TINYINT } = require('sequelize');
-const sequelize = require('sequelize')
-
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Product'; // esto debería estar en singular
     let cols = {

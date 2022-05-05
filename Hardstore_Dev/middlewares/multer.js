@@ -1,7 +1,7 @@
 const multer = require("multer");
 const path = require("path");
 
-//Esta funcio es implementada para reutilizar este codigo tanto para 
+//Esta funcioN es implementada para reutilizar este codigo tanto para 
 //la carga de productos como para los avatares de usuarios
 function multerWraper(tipe){
     let imagePath

@@ -1,5 +1,3 @@
-const sequelize = require('sequelize')
-
 module.exports = (sequelize, DataTypes) => {
     let alias = 'Order_product'; // esto debería estar en singular
     let cols = {

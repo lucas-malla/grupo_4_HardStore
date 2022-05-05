@@ -1,7 +1,3 @@
-const req = require("express/lib/request");
-const path = require('path')
-const fs = require('fs')
-const sequelize = require('sequelize')
 const {User} = require('../database/models')
 
 function adminMiddleware(req, res, next){

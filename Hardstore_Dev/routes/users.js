@@ -13,7 +13,7 @@ const userValidations = require('../middlewares/userValidations');
 let validationsReg = userValidations.validationsReg
 let validationsLogin = userValidations.validationsLogin
 
-
+//ROUTES
 router.get('/login', userController.login);
 router.get('/register', userController.register);
 router.get('/logout', userController.logout);
@@ -28,10 +28,8 @@ router.post('/user/:id/edit',userMiddleware, userController.profileEditPost)
 
 
 //PRODUCT CART
-//logged user
-router.get('/user/:id/productCart', userMiddleware, prodCartController.cartLogged);
-//Unlogged user
-router.get('/user//productCart', prodCartController.cartUnlogged);
+router.get('/user/:id/productCart', userMiddleware, prodCartController.cartLogged);     //logged user
+router.get('/user//productCart', prodCartController.cartUnlogged);                      //Unlogged user
 
 
 module.exports = router;
