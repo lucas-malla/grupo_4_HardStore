@@ -1,4 +1,4 @@
-const {Product,Product_category, Product_image } = require('../database/models')
+const {Product,Product_category, Product_image, Cart } = require('../database/models')
 
 
 const controller = {
@@ -96,14 +96,24 @@ const controller = {
             }
             })
             .then(function(){
-                return Product.destroy({// elimino producto.
+                return Cart.destroy({
                     where: {
                         product_id: req.params.id
                     }
                 })
             })
             .then(function(){
+                return Product.destroy({// elimino producto.
+                    where: {
+                        id: req.params.id
+                    }
+                })
+            })
+            .then(function(){
                 return res.redirect("/admin/controlPanel")
+            })
+            .catch(err => {
+                console.log(err)
             })
     }
 }

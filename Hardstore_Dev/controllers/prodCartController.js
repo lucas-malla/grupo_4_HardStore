@@ -19,7 +19,7 @@ let resultado = [];
 }
 return resultado
 }
-let showRandom = random(data_base);
+let showRandom = random(random);
 //MIRAR ESTO------------
 
 const controller = { 
@@ -30,14 +30,14 @@ const controller = {
                  id : req.params.id
                 },
                 include: [{association: 'product', include: [{association: 'images' }] }]
-            })
+        })
         let quantity = Cart.findAll({
             raw: true, 
             where: {
                  user_id : req.params.id
                 }
-            })
-            Promise.all([products, quantity])
+        })
+        Promise.all([products, quantity])
             .then((response)=>{
                 console.log(response)
                 if(response[1].length==0){  //no hay productos!
@@ -52,10 +52,10 @@ const controller = {
                         product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
                         product['quantity']= cart_row.quantity
                     }
-                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) // Error datos con match incorrecto
-                }
-            }) 
-    },
+                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom})
+                } 
+            })
+    },  
     cartUnlogged: (req, res) => {
         //Problema para mas adelante
 
