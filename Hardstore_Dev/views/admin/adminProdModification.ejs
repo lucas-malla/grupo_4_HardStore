@@ -27,10 +27,18 @@
                     </select>
                     <label>Nombre de Producto</label>
                     <input type="text" name="prodName" value="<%= oneProduct.product_name%>">
+                    <label>Marca</label>
+                    <input type="text" name="brand" value="<%= oneProduct.brand%>">
+                    <label>Modelo</label>
+                    <input type="text" name="model" value="<%= oneProduct.model%>">
+                    <label>Color</label>
+                    <input type="text" name="color" value="<%= oneProduct.color%>">
                     <label>Precio</label>
                     <input type="text" name="price" value=<%= oneProduct.price%>>
                     <label>Descuento</label>
                     <input type="text" name="dto" value=<%= oneProduct.discount%>>
+                    <label>Stock</label>
+                    <input type="number" name="stock" value=<%= oneProduct.stock%>>
                     <label>Descripción</label>
                     <textarea name="description"><%= oneProduct.description%></textarea>
                     <p>Caracteristicas:</p>

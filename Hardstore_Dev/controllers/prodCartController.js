@@ -39,7 +39,6 @@ const controller = {
         })
         Promise.all([products, quantity])
             .then((response)=>{
-                console.log(response)
                 if(response[1].length==0){  //no hay productos!
                     console.log("si no hay productos en el carrito...") //proximamente mejoramso esta logica
                     response[0] = []

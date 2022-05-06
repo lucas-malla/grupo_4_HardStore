@@ -26,7 +26,9 @@ const controller = {
                 color: req.body.color,
                 price: req.body.price,
                 discount: req.body.dto,
+                stock: req.body.stock,
                 category_id: req.body.category,
+                selection: req.body.selection,
                 images: {
                     image_name: req.file.filename
                 }

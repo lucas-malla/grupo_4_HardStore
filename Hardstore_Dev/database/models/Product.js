@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         selection:{ 
-            type: DataTypes.BOOLEAN,
+            type: DataTypes.INTEGER,
             allowNull: true
         },
         description: {
