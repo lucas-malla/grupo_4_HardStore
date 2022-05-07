@@ -5,20 +5,15 @@ const {User} = db
 
 function locals(req, res, next){
     res.locals.userLocals = false;
-    console.log("req.session.userID:" + req.session.userID)
     if (req.session.userID){
-        //FIND user
-        User.findOne({
+        User.findOne({                      //FIND user
             where: {
                 id : req.session.userID
             }})
             .then((user)=>{
                 let data = user.dataValues
-                data["password"] = null
+                data["password"] = null     //Hiding password for user locals variable
                 res.locals.userLocals = data
-                // console.log("#############################################")
-                // console.log("res.locals.userLocals:",res.locals.userLocals)
-                // console.log("#############################################")
                 next();
             })
             .catch(function(error){

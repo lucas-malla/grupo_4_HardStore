@@ -8,17 +8,15 @@ const locals = require('./middlewares/locals')
 
 let mainRoutes = require('./routes/main.js');
 let rutasProductos = require('./routes/products.js');
-//let cartRoutes = require('./routes/prodCart.js');
 let adminRoutes = require('./routes/admin.js');
 let userRoutes = require('./routes/users.js');
 
-//para metodos post
-const methodOverride = require("method-override"); 
+const methodOverride = require("method-override");          //FOR POST METHODS
 const req = require('express/lib/request');
 app.use(methodOverride("_method"));
 
 app.use(express.static(path.resolve(__dirname, './public')));
-app.use(express.urlencoded({ extended: false })); //para capturar envios por post en "req.body"
+app.use(express.urlencoded({ extended: false }));           //para capturar envios por post en "req.body"
 app.use(express.json());
 app.use(session( {secret: "la clave secreta"}));
 app.use(cookieParser());
