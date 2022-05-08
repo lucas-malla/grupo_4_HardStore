@@ -3,12 +3,12 @@ const path = require("path");
 
 //Esta funcioN es implementada para reutilizar este codigo tanto para 
 //la carga de productos como para los avatares de usuarios
-function multerWraper(tipe){
+function multerWraper(type){
     let imagePath
-    if (tipe == "products"){
+    if (type == "products"){
         imagePath = '../public/images/products'
     }else{
-        if(tipe == "users"){
+        if(type == "users"){
         imagePath = '../public/images/users'
     }}
 
