@@ -1,4 +1,5 @@
 const {Product,Product_category, Product_image, Cart } = require('../database/models')
+const {validationResult} = require('express-validator')
 
 
 const controller = {
@@ -16,7 +17,19 @@ const controller = {
 
     },
     addProductPost: function (req, res) {
-        if (req.file != undefined) {
+        let validation = validationResult(req)                                  //array de errores
+        if (validation.errors.length > 0 && !req.file){
+            Product_category.findAll({ raw: true })
+            .then(categories => res.render("adminProdCreation",{ categories,errors : validation.errors, mesage: "La imagen no ha sido cargada correctamente"  }) ) 
+        
+        }else if (!req.file){
+            Product_category.findAll({ raw: true })
+            .then(categories => res.render("adminProdCreation",{ categories, mesage: "La imagen no ha sido cargada correctamente"  }) )
+        }
+        else if (validation.errors.length > 0){
+            Product_category.findAll({ raw: true })
+            .then(categories => res.render("adminProdCreation",{ categories, errors : validation.errors, old : req.body}) )
+        }else {
             //creo objeto del producto nuevo
             Product.create({
                 product_name: req.body.prodName,
@@ -37,15 +50,10 @@ const controller = {
             ).then(() => {
                 res.redirect("/admin/controlPanel"); // Mas adelante hacer vista de detalle de producto
             })
-                .catch(err => {
+            .catch(err => {
                     console.log(err)
                 })
-        } else {
-            Product_category.findAll({ raw: true })
-            .then((categories) => {
-                res.render("adminProdCreation", { categories,  mesage: "La imagen no ha sido cargada correctamente" })
-            })
-        }
+        } 
     },
     manageProductEdit: function (req, res) {
         //obtengo la información
