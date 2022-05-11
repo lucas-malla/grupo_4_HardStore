@@ -18,13 +18,9 @@ const controller = {
     },
     addProductPost: function (req, res) {
         let validation = validationResult(req)                                  //array de errores
-        if (validation.errors.length > 0 && !req.file){
+        if (!req.file){
             Product_category.findAll({ raw: true })
-            .then(categories => res.render("adminProdCreation",{ categories,errors : validation.errors, mesage: "La imagen no ha sido cargada correctamente"  }) ) 
-        
-        }else if (!req.file){
-            Product_category.findAll({ raw: true })
-            .then(categories => res.render("adminProdCreation",{ categories, mesage: "La imagen no ha sido cargada correctamente"  }) )
+            .then(categories => res.render("adminProdCreation",{ categories, errors : validation.errors, mesage: "La imagen no ha sido cargada correctamente"  }) ) 
         }
         else if (validation.errors.length > 0){
             Product_category.findAll({ raw: true })
