@@ -94,12 +94,18 @@
         <div class="detail_product_title">
             <p>Detalle del Producto</p>
         </div>
+
         <div class="detail_product">
             <div class="detail-product_text">
                    <div class="row">
-                    <p>
-                        <%= product.description %>
-                   </p>
+                       <p><%= product.description %></p>
+                    
+                       <p>Color: <%= product.color %></p>
+                        
+                        <p>Modelo: <%= product.model %></p>
+                        
+                        <p>Marca: <%= product.brand%></p>
+
                    </div>
             </div>
 

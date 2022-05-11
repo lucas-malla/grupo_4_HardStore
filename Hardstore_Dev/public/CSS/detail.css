@@ -233,14 +233,14 @@ a {
     background-color: #fff;
     border-bottom: 1px solid ;
 }
-.general .detail_product {
+.detail_product {
     display: flex;
     flex-wrap: wrap;
     background-color: #fff;
     padding: 5px 50px;    
 }
 
-.detail_product div {
+.detail_product{
     margin-top: 20px;
 }
 .detail-product_text{
@@ -250,6 +250,7 @@ a {
     margin-left: -15px;
 }
 .row{
+    display: flex;
     white-space: inherit;
     color: #0a072d;
     font-weight: 600;

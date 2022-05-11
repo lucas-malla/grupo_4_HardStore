@@ -1,3 +1,4 @@
+const { validationResult } = require('express-validator');
 const {Product,Product_category, Product_image, Cart } = require('../database/models')
 
 
@@ -60,6 +61,11 @@ const controller = {
         })
     },
     manageProductUpdate: function (req, res) {
+               //validation 
+               let resultValidation = validationResult(req);
+               if (resultValidation.errors.length > 0 ){
+               res.render("adminProdModification",{errors: resultValidation.errors})
+               }  
         Product.update({ 
             product_name: req.body.prodName,
             description: req.body.description,
