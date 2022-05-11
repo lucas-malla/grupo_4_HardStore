@@ -10,6 +10,15 @@
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
+        //imprimirndo errors
+        <div class="error">
+            <% if (locals.errors) {%> 
+            <% for (error of errors) {%>
+                <p><%= errors.msg %> </p>
+                   <% } %>  
+                <% } %> 
+        </div>
+
         <h1>Modificacion de datos de producto</h1>
         <div class="data">
             <div class="newData">

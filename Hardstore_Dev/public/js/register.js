@@ -6,6 +6,7 @@ window.onload = function(){
     let email =  document.querySelector("#email")
     let password =  document.querySelector("#password")
     let passwordReapeat =  document.querySelector("#passwordRepeat")
+    let file = document.querySelector("#file")
     let button = document.querySelector("#buttonSubmit")
 
     let usuarioError =  document.querySelector(".nameError")
@@ -126,6 +127,15 @@ window.onload = function(){
 
 
     form.addEventListener('submit',(event)=>{
+        //image validation
+        if (file.value != ""){ //user selected a file
+            const whitelist = ['png', 'jpeg', 'jpg', 'webp']   
+            if (!whitelist.includes(file.value.split(".")[1])){
+                event.preventDefault()
+                alert("La imagen debe ser formato: \n .png , jpeg , jpg o webp")
+            }
+        }
+        //fields validations
         if (usuario.value.length == 0){
             usuario.classList.add("nonValidInput")
         }
