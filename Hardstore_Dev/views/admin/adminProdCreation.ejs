@@ -52,10 +52,20 @@
                             <button type="submit">Crear producto</button>
                         </div>
                     </form>
+                    <div class="error">
+                        <% if (locals.error){ %>
+                          <p><%= error %></p>
+                        <% } %>
+                        <% if(locals.errors){ %>
+                          <% for (error of errors){ %>
+                            <p><%= error.msg %></p>
+                        <% }} %>
+                      </div>
                     
                         <% if (locals.mesage) { %>
                             <h4 class="mesage"> <%= mesage %> </h4>
                         <% } %>
+                       
                 </div>
             </div>
         </main>

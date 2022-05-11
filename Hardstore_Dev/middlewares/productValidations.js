@@ -10,7 +10,7 @@ const productValidations ={
     .isNumeric().withMessage('Ingrese un valor numerico'),
     body('dto').isNumeric().withMessage('Ingrese un valor numerico'),
     body('stock').isNumeric().withMessage('Ingrese un valor numerico').toInt(), 
-
-]}  
+]
+}  
 
 module.exports = productValidations
