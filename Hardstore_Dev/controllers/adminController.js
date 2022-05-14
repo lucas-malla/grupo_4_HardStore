@@ -1,4 +1,3 @@
-const { validationResult } = require('express-validator');
 const {Product,Product_category, Product_image, Cart } = require('../database/models')
 const {validationResult} = require('express-validator')
 
@@ -65,11 +64,11 @@ const controller = {
         })
     },
     manageProductUpdate: function (req, res) {
-               //validation 
-               let resultValidation = validationResult(req);
-               if (resultValidation.errors.length > 0 ){
-               res.render("adminProdModification",{errors: resultValidation.errors})
-               }  
+         // validando productModified
+         let validation = validationResult(req)                                          //array de errores
+         if (validation.errors.length > 0){
+             res.render("adminProdModification",{errors : validation.errors, oneProduct : req.body})
+         }else{  
         Product.update({ 
             product_name: req.body.prodName,
             description: req.body.description,
@@ -80,14 +79,14 @@ const controller = {
             price: req.body.price,
             discount: req.body.dto
         },
-            {
-                where: { product_id: req.params.id }
-            })
-            .then(() => {
-                if (req.file != undefined) { //Verifica si se cargó alguna imagen para actualizar en campo image_name
-                    Product_image.findOne(
+        {
+            where: { product_id: req.params.id }
+        })
+        .then(() => {
+            if (req.file != undefined) { //Verifica si se cargó alguna imagen para actualizar en campo image_name
+                Product_image.findOne(
                         { where: { product_id: req.params.id } }
-                    )
+                        )
                         .then((images) => {
                             images.update({
                                 image_name: req.file.filename
@@ -96,11 +95,12 @@ const controller = {
                         .then(() => {
                             res.redirect("/admin/controlPanel");
                         })
-                } else {
-                    res.redirect("/admin/controlPanel");// Si imagen es undefined simplemente actualiza datos de producto y redirecciona
-                }
-            })
-    },
+                    } else {
+                        res.redirect("/admin/controlPanel");// Si imagen es undefined simplemente actualiza datos de producto y redirecciona
+                    }
+                })
+         }
+            },
     delete: (req, res) => {
         return Product_image.destroy({ // Elimino la imagen del producto en tabla product_image. 
             where: {

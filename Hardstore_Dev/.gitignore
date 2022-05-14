@@ -25,6 +25,7 @@ productCreator.js
         </div>
 
 // el controlador  
+
  // let random = function(productos){
         //     let resultado = [];
         //         for(let i = 1; i <= 3; i++ ){
@@ -40,3 +41,12 @@ productCreator.js
         // })
         // res.render('detail', {'producto': producto,  showRandom: showRandom});
         //data base
+
+
+//problemas con categori, esto estaba en la views de mofication product.
+ <!-- <% for (category of allCategories){ %>
+                            <option value="<%= category.id %>"
+                                <%= oneProduct.category_id === category.id ? 'selected' : null %>>
+                                <%= category.category_name %>
+                            </option> 
+                            <% } %> -->

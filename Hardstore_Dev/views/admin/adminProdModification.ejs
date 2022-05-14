@@ -10,15 +10,6 @@
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        //imprimirndo errors
-        <div class="error">
-            <% if (locals.errors) {%> 
-            <% for (error of errors) {%>
-                <p><%= errors.msg %> </p>
-                   <% } %>  
-                <% } %> 
-        </div>
-
         <h1>Modificacion de datos de producto</h1>
         <div class="data">
             <div class="newData">
@@ -27,15 +18,10 @@
                     <% console.log(oneProduct) %> 
                     <label for="categoria">Categoria de Producto</label>
                     <select name="categoria" id="categoria" form="categoria">
-                        <% for (category of allCategories){ %>
-                            <option value="<%= category.id %>"
-                                <%= oneProduct.category_id === category.id ? 'selected' : null %>>
-                                <%= category.category_name %>
-                            </option> 
-                            <% } %>
+                      //categoria
                     </select>
                     <label>Nombre de Producto</label>
-                    <input type="text" name="prodName" value="<%= oneProduct.product_name%>">
+                    <input type="text" name="prodName" value="<%= oneProduct.product_name%>"> 
                     <label>Marca</label>
                     <input type="text" name="brand" value="<%= oneProduct.brand%>">
                     <label>Modelo</label>
@@ -62,6 +48,15 @@
                         <button type="reset">Reset</button>
                         <button type="submit">Guardar</button>
                     </div>
+                    <div class="error">
+                        <% if (locals.error){ %>
+                          <p><%= error %></p>
+                        <% } %>
+                        <% if(locals.errors){ %>
+                          <% for (error of errors){ %>
+                            <p><%= error.msg %></p>
+                        <% }} %>
+                      </div>
                 </form>
                 <% if (locals.mesage) { %>
                     <h4 class="mesage"> <%= mesage %> </h4>
