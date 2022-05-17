@@ -79,12 +79,17 @@ const controller = {
         }
     },
     profileEditPost: function(req,res){
+        let validation = validationResult(req)                                          //array de errores
+        if (validation.errors.length > 0){
+            req.body["id"] = req.session.userID
+            res.render("profileEdit",{errors : validation.errors, data : req.body})
+        } else {
         if(req.params.id  == req.session.userID){       //access restiction
-            newData = req.body
+            newData =  req.body
             if (req.file){
                 newData["avatar"] =  req.file.filename
             }
-        User.update(newData,{
+            User.update(newData,{
                 where: {
                     id : req.session.userID
                 }})
@@ -96,7 +101,7 @@ const controller = {
                 })
         }else{
             res.redirect('/') 
-        }
+        }}
     }
 }
 

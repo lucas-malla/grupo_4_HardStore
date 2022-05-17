@@ -1,18 +1,20 @@
-console.log("Js Register is Linked!")
+console.log("Js profileEdit is Linked!")
 
 window.onload = function(){
-    let form = document.querySelector("#formRegister")
+    let form = document.querySelector("#formProfileEdit")
     let usuario =  document.querySelector("#username")
     let email =  document.querySelector("#email")
-    let password =  document.querySelector("#password")
-    let passwordReapeat =  document.querySelector("#passwordRepeat")
+    let nombre = document.querySelector("#nombre")
+    let apellido = document.querySelector("#apellido")
     let file = document.querySelector("#file")
+
 
     let usuarioError =  document.querySelector(".nameError")
     let emailError =  document.querySelector(".emailError")
-    let passwordError =  document.querySelector(".passwordError")
-    let passwordReapeatError =  document.querySelector(".passwordRepeatnameError")
+    let nombreError = document.querySelector(".nombreError")
+    let apellidoError = document.querySelector(".apellidoError")
     let errorsFront = {}
+
 
     function validateField(selector, errorSelector ){
         console.log("validating from function")
@@ -68,59 +70,44 @@ window.onload = function(){
         email.classList.remove("validInput", "nonValidInput")
     })
 
-
-    password.addEventListener('keyup',(event)=>{
-        if  ((password.value.length >= 8 &&
-            (new RegExp(/[A-Z]/)).test(password.value) &&
-            (new RegExp(/[0-9]/)).test(password.value) &&
-            (new RegExp(/[¡¿?!&#%]/)).test(password.value)) ){
-            // Valid Password
-            validateField(password, passwordError)
-            delete errorsFront.password
+    nombre.addEventListener('keyup',(event)=>{
+        if (nombre.value.length  >= 2){
+            validateField(nombre, nombreError)
+             delete errorsFront.nombre
         }else{
-            password.classList.remove("validInput")
+            nombre.classList.remove("validInput")
         }
     })
-    password.addEventListener('blur',(event)=>{
-        if (password.value.length >= 8 &&
-            (new RegExp(/[A-Z]/)).test(password.value) &&
-            (new RegExp(/[0-9]/)).test(password.value) &&
-            (new RegExp(/[¡¿?!&#%]/)).test(password.value)){
-                validateField(password, passwordError)
+    nombre.addEventListener('blur',(event)=>{
+        if (nombre.value.length  < 2){
+            rejectField(nombre, "nombre")
+            nombreError.innerHTML = "El nombre debe poseer al menos 2 caracteres"
         }else{
-            rejectField(password, "password")
-            passwordError.innerHTML =
-            "<div>" + 
-            "<p>La contraseña debe contener:</p>" + 
-            "<ul>" +
-            "<li>Un caracter numérico</li>" + 
-            "<li>Una letra mayuscula</li>" +
-            "<li>Un caracter especial</li>" +
-            "</ul>"+
-            "</div>"
+            nombre.classList.add("validInput")
         }
-    })    
-    password.addEventListener('focus',(event)=>{
-        password.classList.remove("validInput", "nonValidInput")
+    })
+    nombre.addEventListener('focus',(event)=>{
+        nombre.classList.remove("validInput", "nonValidInput")
     })
 
-    passwordReapeat.addEventListener('keyup',(event)=>{
-        if (passwordReapeat.value == password.value && passwordReapeat.value.length != 0){
-            //Valid passwordReapeat
-            validateField(passwordReapeat, passwordReapeatError)
-        }
-    })
-    passwordReapeat.addEventListener('blur',(event)=>{
-        if (passwordReapeat.value == password.value && passwordReapeat.value.length != 0){
-            delete errorsFront.passwordReapeat
-            validateField(passwordReapeat, passwordReapeatError)
+    apellido.addEventListener('keyup',(event)=>{
+        if (apellido.value.length  >= 2){
+            validateField(apellido, apellidoError)
+             delete errorsFront.apellido
         }else{
-            passwordReapeatError.innerHTML = "Las contraseñas ingresadas no coinciden"
-            rejectField(passwordReapeat, "passwordReapeat")
+            apellido.classList.remove("validInput")
         }
     })
-    passwordReapeat.addEventListener('focus',(event)=>{
-        passwordReapeat.classList.remove("validInput", "nonValidInput")
+    apellido.addEventListener('blur',(event)=>{
+        if (apellido.value.length  < 2){
+            rejectField(apellido, "apellido")
+            apellidoError.innerHTML = "El apellido debe poseer al menos 2 caracteres"
+        }else{
+            apellido.classList.add("validInput")
+        }
+    })
+    apellido.addEventListener('focus',(event)=>{
+        apellido.classList.remove("validInput", "nonValidInput")
     })
 
 
@@ -140,18 +127,18 @@ window.onload = function(){
         if (email.value.length == 0){
             email.classList.add("nonValidInput")
         }
-        if (password.value.length == 0){
-            password.classList.add("nonValidInput")
+        if (nombre.value.length == 0){
+            nombre.classList.add("nonValidInput")
         }
-        if (passwordReapeat.value.length == 0){
-            passwordReapeat.classList.add("nonValidInput")
+        if (apellido.value.length == 0){
+            apellido.classList.add("nonValidInput")
         }
 
         if (Object.keys(errorsFront).length != 0 ||
             usuario.value.length == 0 ||
             email.value.length == 0 ||
-            password.value.length == 0 ||
-            passwordReapeat.value.length == 0
+            nombre.value.length == 0 ||
+            apellido.value.length == 0
         ){
             //presence of errorsFront
             event.preventDefault()

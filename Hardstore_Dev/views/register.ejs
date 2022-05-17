@@ -26,7 +26,7 @@
           </ul>
         </div>
         <form id="formRegister" action="/register" method="POST" enctype="multipart/form-data">
-          <input id="name" type="name" placeholder="Usuario" name="userName" value="<%= locals.old ? old.userName : '' %>" >
+          <input id="username" type="name" placeholder="Usuario" name="userName" value="<%= locals.old ? old.userName : '' %>" >
           <p class="nameError errores"></p>
           <input id="email" type="email" placeholder="email" name="email" value="<%= locals.old ? old.email : '' %>">
           <p class="emailError errores"></p>

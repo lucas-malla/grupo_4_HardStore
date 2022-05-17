@@ -12,6 +12,7 @@ var uploadFile = multerWraper("users") //multer for user avatar
 const userValidations = require('../middlewares/userValidations');
 let validationsReg = userValidations.validationsReg
 let validationsLogin = userValidations.validationsLogin
+let validationsEdit = userValidations.validationsEditUser
 
 //ROUTES
 router.get('/login', userController.login);
@@ -24,7 +25,7 @@ router.post('/register',uploadFile.single('avatar'), validationsReg, userControl
 router.get('/user/:id',userMiddleware, userController.profile)
 
 router.get('/user/:id/edit',userMiddleware, userController.profileEdit)
-router.post('/user/:id/edit',uploadFile.single('avatar'), userMiddleware, userController.profileEditPost)
+router.post('/user/:id/edit',uploadFile.single('avatar'), userMiddleware,validationsEdit, userController.profileEditPost)
 
 
 //PRODUCT CART

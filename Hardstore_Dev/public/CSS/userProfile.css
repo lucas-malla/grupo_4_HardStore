@@ -9,6 +9,9 @@ h2{
 main{
     margin: 15px;
 }
+.dataBody{
+    width: 380px;
+}
 .imgTitle{
     display: flex;
     flex-direction: column;
@@ -18,6 +21,7 @@ main .navbar{
     justify-content: space-around;
     margin-left: 20px;
     margin-bottom: 10px;
+    width: 100%;
 }
 main .navbar a{
     background-color: rgb(115, 190, 1);
@@ -36,7 +40,7 @@ main .navbar a{
     margin-left: 20px;
     background-color: rgba(245, 245, 245, 0.712);
     padding: 10px 20px 15px 20px;
-    width: 320px;
+    width: 100%;
     border-radius: 15px;
 }
 .datos i{

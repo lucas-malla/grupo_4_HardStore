@@ -22,7 +22,7 @@ let random = function(productos){
 let showRandom = [] //random(random);   ME tiraba error en la view gaby , milldisss
 //MIRAR ESTO------------
 
-const controller = { 
+const controller = {
     cartLogged: (req, res) => {
         let products = User.findAll({
             raw: true, 

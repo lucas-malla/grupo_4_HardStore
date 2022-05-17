@@ -13,28 +13,37 @@
     <main>
         <div class="userCont">
             <div class="imgTitle">
-                <h2>Profile edit</h2>
+                <h2>Modificacion de usuario</h2>
                 <img src="/images/users/<%=data.avatar%>">
             </div>
-            <div>
-                <form method="post" action="/user/<%=data.id%>/edit" enctype="multipart/form-data">
+            <div class="dataBody">
+                <form id="formProfileEdit" method="post" action="/user/<%=data.id%>/edit" enctype="multipart/form-data">
                     <div class="datos">
+                        <div class="errores">
+                            <% if(locals.errors){ %>
+                              <% for (error of errors){ %>
+                                <p><%= error.msg %></p>
+                            <% }} %>
+                        </div>
                         <h4>Imagen de usuario:</h4>
                         <input id="file" class="file" type="file" name="avatar">
                         <h4>Nombre de usuario:</h4>
-                        <input type="text" value="<%=data.username%>" name="username">
+                        <input id="username" type="text" value="<%=data.username%>" name="username">
+                        <p class="nameError errores"></p>
                         <h4>Email:</h4>
-                        <input type="text" value="<%=data.email%>" name="email">
+                        <input id="email" type="text" value="<%=data.email%>" name="email">
+                        <p class="emailError errores"></p>
                         <h4>Nombre:</h4>
-                        <input type="text" value="<%=data.first_name%>" name="first_name">
+                        <input id="nombre" type="text" value="<%=data.first_name%>" name="first_name">
+                        <p class="nombreError errores"></p>
                         <h4>Apellido:</h4>
-                        <input type="text" value="<%=data.last_name%>" name="last_name">
+                        <input id="apellido" type="text" value="<%=data.last_name%>" name="last_name">
+                        <p class="apellidoError errores"></p>
                         <h4>Direccion:</h4>
                         <p>calle: </p>
                         <input type="text" value="<%=data.street%>" name="street">
                         <p>altura: </p>
                         <input type="text" value="<%=data.street_number%>" name="street_number">
-
                         <h4>Contacto:</h4>
                         <p>Celular:</p>
                         <input type="text" value="<%=data.cellphone%>" name="cellphone">
@@ -51,5 +60,6 @@
     <footer>
         <%- include("./partials/footer.ejs") %>
     </footer>
+    <script src="/js/profileEdit.js"></script>
 </body>
 </html>

@@ -9,9 +9,13 @@ h2{
 main{
     margin: 15px;
 }
+.dataBody{
+    width: 400px;
+}
 .imgTitle{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 main .navbar{
     display: flex;
@@ -36,7 +40,7 @@ main .navbar a{
     margin-left: 20px;
     background-color: rgba(245, 245, 245, 0.712);
     padding: 10px 20px 20px 20px;
-    width: 320px;
+    width: 100%;
     border-radius: 15px;
 }
 .datos i{
@@ -45,8 +49,8 @@ main .navbar a{
 }
 main img{
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
+    height: 180px;
+    width: 180px;
 }
 main p{
     margin-top: 0.2rem;
@@ -90,4 +94,18 @@ input{
 h4{
     margin: 7px 0px 3px 0px;
 }
-
+.errores{
+    margin-top: 10px;
+    padding-top: 10px;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin: auto;
+    text-align: left;
+}
+.validInput{
+background-color: rgba(184, 236, 106, 0.8);
+}
+.nonValidInput{
+background-color: rgba(247, 166, 166, 0.8);
+}

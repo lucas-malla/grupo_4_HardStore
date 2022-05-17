@@ -13,7 +13,7 @@ const controller = {
             })
             .then ((products)=> {
                 for (product of products){
-                    console.log(product)
+                    //console.log(product)
                     product["price_dto"] = product.price * (100-product.discount)/100
                 }
                 return (products)

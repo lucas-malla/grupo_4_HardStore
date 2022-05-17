@@ -37,7 +37,7 @@ const userValidations = {
                             .then(user => {
                                 return (user != null ? true : Promise.reject() )
                             })                      
-                        }).withMessage('Usuario o contraseña invalida M').bail(),
+                        }).withMessage('Usuario o contraseña invalida').bail(),
         body('password').notEmpty().withMessage("Ingrese una contraseña").bail()
                         .custom((value, {req}) => {
                             return User.findOne({raw: true, where: {username : req.body.userName }})
@@ -47,8 +47,43 @@ const userValidations = {
                                             return (passMach==true ? true : Promise.reject())
                                         })    
                                 })                      
-                        }).withMessage('Usuario o contraseña invalida M').bail(),
-    ]
+                        }).withMessage('Usuario o contraseña invalida').bail(),
+    ],
+    validationsEditUser : [
+        body('username').notEmpty().withMessage("El nombre de usuario esta vacio M").bail()
+            .isLength({ min: 2 }).withMessage("El nombre de usuario debe tener al menos 2 caracteres M").bail()
+            .custom((value, {req}) => {
+            return User.findOne({raw: true, where: {username : value}})
+                .then(user => {
+                    if (user && user.id==req.session.userID){
+                        return true
+                    } else {
+                    return (user == null ? true : Promise.reject() )
+                    }
+                })
+            }).withMessage("El nombre de usuario ya esta en uso M"),
+        body('email').notEmpty().withMessage("Ingrese un Email").bail()
+            .isEmail().withMessage("Email invalido").bail(),
+        //     .custom((value) => {
+        //         return(
+        //             User.findOne({raw: true, where: {email : value}})
+        //                 .then(user => {
+        //                     return User.findOne({raw: true, where: {email : value}})
+        //                     .then(user => {
+        //                         if (user && user.id==req.session.userID){
+        //                             return true
+        //                         } else {
+        //                         return (user == null ? true : Promise.reject() )
+        //                         }
+        //                     })    
+        //                 })             
+        //         )
+        // }).withMessage('El Email ya se encuentra registrado'),
+        body('first_name').notEmpty().withMessage('Debe ingresar su nombre').bail()
+            .isLength({min:2}).withMessage('Su nombre debe poseer al menos 2 caracteres').bail(),
+        body('last_name').notEmpty().withMessage('Debe ingresar su apellido').bail()
+            .isLength({min:2}).withMessage('Su apellido debe poseer al menos 2 caracteres').bail()
+        ]
 }
 
 module.exports = userValidations
