@@ -4,7 +4,7 @@
   font-family: 'Roboto', sans-serif;
 }
 main{
-  width: 300px;
+  width: 380px;
   border: black solid 1px;
   display: flex;
   flex-direction: column;
@@ -42,9 +42,11 @@ main form{
   margin-top: 15px;
 }
 main input{
-  margin: 5px;
+  width: 80%;
+  height: 35px;
+  margin: 8px;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
 }
 main button{
   margin: 15px;
@@ -69,10 +71,6 @@ main .icons{
   font-size: 40px;
   margin-top: 10px;
 }
-main .icons .iconify-inline{
-  height: 28px;
-  padding-bottom: 10px;
-}
 main a{
   display: block;
   text-align: center;
@@ -81,4 +79,8 @@ main a{
 }
 .error{
   color: red;
+}
+.rememberCheck{
+  height: 20px;
+  width: 20px;
 }

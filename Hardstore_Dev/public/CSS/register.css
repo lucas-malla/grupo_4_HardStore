@@ -43,7 +43,6 @@ main form{
   margin-top: 15px;
 }
 main input{
-
   width: 80%;
   height: 35px;
   margin: 8px;
@@ -73,10 +72,6 @@ main .icons{
   font-size: 40px;
   margin-top: 10px;
 }
-main .icons .iconify-inline{
-  height: 28px;
-  padding-bottom: 10px;
-}
 main a{
   display: block;
   text-align: center;
@@ -100,7 +95,6 @@ main a{
 .validInput{
   background-color: rgba(184, 236, 106, 0.8);
 }
-
 .nonValidInput{
   background-color: rgba(247, 166, 166, 0.8);
 }
