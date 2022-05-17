@@ -7,13 +7,11 @@ window.onload = function(){
     let password =  document.querySelector("#password")
     let passwordReapeat =  document.querySelector("#passwordRepeat")
     let file = document.querySelector("#file")
-    let button = document.querySelector("#buttonSubmit")
 
     let usuarioError =  document.querySelector(".nameError")
     let emailError =  document.querySelector(".emailError")
     let passwordError =  document.querySelector(".passwordError")
     let passwordReapeatError =  document.querySelector(".passwordRepeatnameError")
-
     let errorsFront = {}
 
     function validateField(selector, errorSelector ){
@@ -41,7 +39,7 @@ window.onload = function(){
     usuario.addEventListener('blur',(event)=>{
         if (usuario.value.length  < 2){
             rejectField(usuario, "usuario")
-            usuarioError.innerHTML = "El nombre de usuario debe poseer al menos 8 caracteres"
+            usuarioError.innerHTML = "El usuario debe poseer al menos 2 caracteres"
         }else{
             usuario.classList.add("validInput")
         }
@@ -95,9 +93,9 @@ window.onload = function(){
             "<div>" + 
             "<p>La contraseña debe contener:</p>" + 
             "<ul>" +
-            "<li>&#8226 Un caracter numérico</li>" + 
-            "<li>&#8226 Una letra mayuscula</li>" +
-            "<li>&#8226 Un caracter especial</li>" +
+            "<li>Un caracter numérico</li>" + 
+            "<li>Una letra mayuscula</li>" +
+            "<li>Un caracter especial</li>" +
             "</ul>"+
             "</div>"
         }

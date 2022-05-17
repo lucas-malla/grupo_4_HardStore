@@ -17,8 +17,16 @@
           <h2>Bienvenido a HARDSTORE</h2>
           <h5>Registrate y aprovecha descuentos exclusivos</h5>
         </header>
+        <div class="errores">
+          <ul>
+            <% if(locals.errors){ %>
+              <% for (error of errors){ %>
+                <li><%= error.msg %></li>
+            <% }} %>
+          </ul>
+        </div>
         <form id="formRegister" action="/register" method="POST" enctype="multipart/form-data">
-          <input id="name" type="name" placeholder="Usuario" name="userName" value="<%= locals.old ? old.userName : '' %>" > 
+          <input id="name" type="name" placeholder="Usuario" name="userName" value="<%= locals.old ? old.userName : '' %>" >
           <p class="nameError errores"></p>
           <input id="email" type="email" placeholder="email" name="email" value="<%= locals.old ? old.email : '' %>">
           <p class="emailError errores"></p>
@@ -30,12 +38,6 @@
           <input id="file" class="file" type="file" name="avatar">
           <button id="buttonSubmit" type="submit" class="mensaje">Registrarme</button>
         </form>
-        <div class="errores">
-          <% if(locals.errors){ %>
-            <% for (error of errors){ %>
-              <p><%= error.msg %></p>
-          <% }} %>
-        </div>
         <hr>                     
         <p>Registrate con:</p>
         <div class= icons>
@@ -50,5 +52,5 @@
         <%- include("./partials/footer.ejs") %>
       </footer>
       <script src="js/register.js"></script>
-  </body> 
+  </body>
 </html>
