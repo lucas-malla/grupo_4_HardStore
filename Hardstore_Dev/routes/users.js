@@ -24,7 +24,7 @@ router.post('/register',uploadFile.single('avatar'), validationsReg, userControl
 router.get('/user/:id',userMiddleware, userController.profile)
 
 router.get('/user/:id/edit',userMiddleware, userController.profileEdit)
-router.post('/user/:id/edit',userMiddleware, userController.profileEditPost)
+router.post('/user/:id/edit',uploadFile.single('avatar'), userMiddleware, userController.profileEditPost)
 
 
 //PRODUCT CART

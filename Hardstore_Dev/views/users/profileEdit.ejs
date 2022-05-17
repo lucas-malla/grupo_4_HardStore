@@ -17,25 +17,18 @@
                 <img src="/images/users/<%=data.avatar%>">
             </div>
             <div>
-                <div class="navbar">
-                    <a href="">Mis Datos</a>
-                    <a href="">Mis Compras</a>
-                    <a href="">Carrito</a>
-                </div>
-                <form method="post" action="/user/<%=data.id%>/edit">
+                <form method="post" action="/user/<%=data.id%>/edit" enctype="multipart/form-data">
                     <div class="datos">
+                        <h4>Imagen de usuario:</h4>
+                        <input id="file" class="file" type="file" name="avatar">
                         <h4>Nombre de usuario:</h4>
                         <input type="text" value="<%=data.username%>" name="username">
-
                         <h4>Email:</h4>
                         <input type="text" value="<%=data.email%>" name="email">
-
                         <h4>Nombre:</h4>
                         <input type="text" value="<%=data.first_name%>" name="first_name">
-
                         <h4>Apellido:</h4>
                         <input type="text" value="<%=data.last_name%>" name="last_name">
-
                         <h4>Direccion:</h4>
                         <p>calle: </p>
                         <input type="text" value="<%=data.street%>" name="street">

@@ -81,6 +81,11 @@ const controller = {
     profileEditPost: function(req,res){
         if(req.params.id  == req.session.userID){       //access restiction
             newData = req.body
+            console.log(newData)
+            if (req.file){
+                newData["avatar"] =  req.file.filename
+            }
+            console.log(newData)
         User.update(newData,{
                 where: {
                     id : req.session.userID
