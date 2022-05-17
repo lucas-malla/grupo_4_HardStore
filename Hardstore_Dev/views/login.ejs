@@ -18,22 +18,21 @@
           <h5>Inicia sesión y aprovecha los </h5>
           <h5>descuentos que tenemos para vos!</h5>
         </header>
-        <div class="error">
-          <% if (locals.error){ %>
-            <p><%= error %></p>
-          <% } %>
-          <% if(locals.errors){ %>
-            <% for (error of errors){ %>
-              <p><%= error.msg %></p>
-          <% }} %>
-        </div>
-        <form action="/login" method="POST">
-          <input type="name" placeholder="Usuario" name="userName" 
+        <form id="formLogin" action="/login" method="POST">
+          <input id="userName" type="name" placeholder="Usuario" name="userName" 
           <% if (locals.old){ %>
             value=<%= old.userName %>
             <% } %>
           > 
-          <input type="contraseña" value=""placeholder="Contraseña" name="password">
+          <p class="nameError errores"></p>
+          <input id="password" type="contraseña" value=""placeholder="Contraseña" name="password">
+          <p class="passwordError errores"></p>
+          <div class="error">
+            <% if(locals.errors){ %>
+              <% for (error of errors){ %>
+                <p><%= error.msg %></p>
+            <% }} %>
+          </div>
           <p><label><input class="rememberCheck" type="checkbox" name="remember" value="true"> Recordarme </label></p>
           <a href="#">Recuperar contraseña</a>
           <button type="submit" class="mensaje">LOGIN</button>
@@ -51,5 +50,6 @@
       <footer>
         <%- include("./partials/footer.ejs") %>
       </footer>
+      <script src="js/login.js"></script>
   </body> 
 </html> 

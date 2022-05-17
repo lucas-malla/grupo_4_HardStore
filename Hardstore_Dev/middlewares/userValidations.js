@@ -37,7 +37,7 @@ const userValidations = {
                             .then(user => {
                                 return (user != null ? true : Promise.reject() )
                             })                      
-                        }).withMessage('Usuario o contraseña invalida'),
+                        }).withMessage('Usuario o contraseña invalida M').bail(),
         body('password').notEmpty().withMessage("Ingrese una contraseña").bail()
                         .custom((value, {req}) => {
                             return User.findOne({raw: true, where: {username : req.body.userName }})
@@ -47,7 +47,7 @@ const userValidations = {
                                             return (passMach==true ? true : Promise.reject())
                                         })    
                                 })                      
-                        }).withMessage('Usuario o contraseña invalida'),
+                        }).withMessage('Usuario o contraseña invalida M').bail(),
     ]
 }
 
