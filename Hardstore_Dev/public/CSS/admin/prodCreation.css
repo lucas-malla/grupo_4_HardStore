@@ -68,3 +68,33 @@ body main .newData form button{
 .mesage{
     color: red;
 }
+
+.input-control input:focus{
+outline: 0;
+}
+
+.input-control.success input{
+    border-color: green;
+}
+
+.input-control.success select{
+    border-color: green;
+}
+
+.input-control.success textarea{
+    border-color: green;
+}
+
+.input-control.error input{
+    border-color: red
+}
+.input-control.error select{
+    border-color: red
+}
+.input-control.error textarea{
+    border-color: red
+}
+
+.input-control .error{
+    color: red
+}

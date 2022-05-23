@@ -1,76 +1,125 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Admin - Product Manager</title>
-        <%- include("../partials/head.ejs") %>
+
+<head>
+    <title>Admin - Product Manager</title>
+    <%- include("../partials/head.ejs") %>
         <link href="/CSS/admin/prodCreation.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <%- include("./partials/header.ejs") %>
-        </header>
-        <main>
-            <h1>Creación de datos de producto</h1>
-            <div class="data">
-                <div class="newData">
-                    <form action="/admin/products/create" method="POST" enctype="multipart/form-data" >
-                        <h3>Nuevos datos</h3>
-                        <label for="categoria">Categoria de Producto</label>
-                        <select name="category" id="categoria" >
-                            <option value="" disabled selected>- Seleccioná la Categoría - </option> 
-                                <% categories.forEach(category => { %>
-                            <option value="<%= category.id %>"><%= category.category_name %></option>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <%- include("./partials/header.ejs") %>
+    </header>
+    <main>
+        <h1>Creá un nuevo producto</h1>
+        <br />
+        <div class="container-sm">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <form class="formCreation row g-3" action="/admin/products/create" method="POST" enctype="multipart/form-data">
+
+                    <div class="col-md-6 position-relative input-control">
+                        <label class="form-label">Nombre de Producto</label>
+                        <input type="text" name="prodName" class="form-control prodName" placeholder=" Nombre de Producto">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-6 position-relative input-control">
+                        <label for="categoria" class="form-label">Categoria de Producto</label>
+                        <select name="category" class="form-select" id="categoria">
+                            <option value="" disabled selected>- Seleccioná la Categoría - </option>
+                            <% categories.forEach(category=> { %>
+                                <option value="<%= category.id %>">
+                                    <%= category.category_name %>
+                                </option>
                                 <% }); %>
                         </select>
-                        <label>Nombre de Producto</label>
-                        <input type="text" name="prodName" placeholder=" Nombre de Producto">
-                        <label>Marca</label>
-                        <input type="text" name="brand" placeholder="Marca">
-                        <label>Modelo</label>
-                        <input type="text" name="model" placeholder="Modelo">
-                        <label>Color</label>
-                        <input type="text" name="color" placeholder="Color">
-                        <label>Precio $</label>
-                        <input type="number" name="price" placeholder="$">
-                        <label>Descuento %</label>
-                        <input type="number" name="dto" placeholder="%">
-                        <label>Stock</label>
-                        <input type="number" name="stock" placeholder="stock"  value="0" aria-valuemin="0">
-                        <label>Descripcion</label>
-                        <input type="textarea" name="description" placeholder="Descripción">
-                        <p>Caracteristicas:</p>
-                        <div class="caracteristicas">
-                            <label><input type="checkbox" name="selection" value="1" > Mas vendido </label>
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Marca</label>
+                        <input type="text" name="brand" class="form-control" id="prodBrand" placeholder="Marca">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Modelo</label>
+                        <input type="text" name="model" class="form-control" id="prodModel" placeholder="Modelo">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Color</label>
+                        <input type="text" name="color" class="form-control" id='prodColor'placeholder="Color">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Precio $</label>
+                        <input type="number" name="price" class="form-control" id="prodPrice" placeholder="$">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Descuento %</label>
+                        <input type="number" name="dto" class="form-control" id="prodDesc" placeholder="%">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Stock</label>
+                        <input type="number" name="stock" class="form-control" id="prodStock" placeholder="stock" value="0"
+                            aria-valuemin="0">
+                        <p class="error"></p>
+                    </div>
+                    <div class="mb-3 input-control">
+                        <label class="form-label">Descripcion</label>
+                        <textarea name="description" class="form-control" id="prodDescrip" placeholder="Descripción" rows="2"></textarea>
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="form-label">Caracteristicas:</p>
+                        <div class="form-control">
+                            <label><input type="checkbox" name="selection" value="1"> Mas vendido </label>
                             <label><input type="checkbox" name="selection" value="2"> Nuestra seleccion </label>
                             <label><input type="checkbox" name="selection" value="3"> Ofertas </label>
                         </div>
-                        <p>Imagen del producto</p>
-                        <input class="file" type="file" name="prodImg">
-                        
-                        <div class="buttons">
-                            <button type="reset">Cancelar</button>
-                            <button type="submit">Crear producto</button>
-                        </div>
-                    </form>
-                    <div class="error">
-                        <% if (locals.error){ %>
-                          <p><%= error %></p>
+                    </div>
+                    <div class="mb-3 input-control" style="margin-bottom: 10px;">
+                        <label for="formFile" class="form-label">Imagen del producto</label>
+                        <input class="form-control" type="file" id="formFile" name="prodImg">
+                        <p class="error"></p>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="col-4" style="margin: 0 auto;">
+                        <button class="btn btn-secondary" type="reset">Cancelar</button>
+                        <button class="btn btn-primary" type="submit">Crear producto</button>
+                    </div>
+                </form>
+                <br />
+                <div class="error">
+                    <% if (locals.error){ %>
+                        <p>
+                            <%= error %>
+                        </p>
                         <% } %>
-                        <% if(locals.errors){ %>
-                          <% for (error of errors){ %>
-                            <p><%= error.msg %></p>
-                        <% }} %>
-                      </div>
-                    
-                        <% if (locals.mesage) { %>
-                            <h4 class="mesage"> <%= mesage %> </h4>
-                        <% } %>
-                       
+                            <% if(locals.errors){ %>
+                                <% for (error of errors){ %>
+                                    <p>
+                                        <%= error.msg %>
+                                    </p>
+                                    <% }} %>
                 </div>
+
+                <% if (locals.mesage) { %>
+                    <h4 class="mesage">
+                        <%= mesage %>
+                    </h4>
+                    <% } %>
             </div>
-        </main>
-        <footer>
-            <%- include("./partials/footer.ejs") %>
-        </footer>
-    </body>
+
+        </div>
+    </main>
+    <footer>
+        <%- include("./partials/footer.ejs") %>
+    </footer>
+    <script src="/js/productCreation.js"></script>
+</body>
+
 </html>

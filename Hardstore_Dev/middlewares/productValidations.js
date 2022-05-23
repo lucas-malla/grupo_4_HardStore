@@ -10,7 +10,8 @@ const productValidations ={
     .isNumeric().withMessage('Ingrese un valor numerico'),
     body('dto').isNumeric().withMessage('Ingrese un valor numerico'),
     body('stock').isNumeric().withMessage('Ingrese un valor numerico').toInt(),
-    body('description').notEmpty().withMessage('Ingrese una descripción')
+    body('description').notEmpty().withMessage('Ingrese una descripción').bail()
+    .isLength({ min: 20}).withMessage('La decripción es muy corta')
 
 
 ],

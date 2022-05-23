@@ -26,36 +26,36 @@
             <a href="/"><img class="logo" src="/images/header/logo.png" alt="Logo1"></a>
             <div class="central_head">
                 <div class="head_up">
-                    <a href="/"><h1>HARDSTORE</h1></a>
+                    <a class="yellow" href="/"><h1>HARDSTORE</h1></a>
                 </div>
                     <div class="head_down">
                         <div class="user_menu">
                             <% if(locals.userLocals){ %>
-                                <a href="/user/<%=locals.userLocals.id%>">
-                                    <p> <%=locals.userLocals.username %> </p>
+                                <a class="yellow" href="/user/<%=locals.userLocals.id%>">
+                                    <p class="p"> <%=locals.userLocals.username %> </p>
                                 </a>
-                                <a href="/logout"><p>Logout</p>
+                                <a class="yellow" href="/logout"><p class="p">Logout</p>
                                 <i class="fas fa-sign-in-alt"></i>
                                 </a>
                                 <% }else{ %>
-                                    <a href="/register"><p>Registrarme</p>
+                                    <a class="yellow" href="/register"><p class="p">Registrarme</p>
                                         <i class="far fa-user"></i>
                                     </a>
-                                    <a href="/login"><p>Login</p>
+                                    <a class="yellow" href="/login"><p class="p">Login</p>
                                         <i class="fas fa-sign-in-alt"></i>
                                     </a>
                                 <% } %>
                         </div>
-                        <a class="carrito" href="/user/<%=locals.userLocals.id %>/productCart"><i class="fas fa-shopping-cart"></i></a>
+                        <a class="yellow" class="carrito" href="/user/<%=locals.userLocals.id %>/productCart"><i class="fas fa-shopping-cart"></i></a>
                     </div>
                 </div>
             </div>
             <div class="navbar">
                 <ul>
-                    <a>Home</a>
-                    <a>Nosotros</a>
-                    <a>Contacto</a>
-                    <a>Ubicacion</a>
+                    <a class="yellow">Home</a>
+                    <a class="yellow">Nosotros</a>
+                    <a class="yellow">Contacto</a>
+                    <a class="yellow">Ubicacion</a>
                 </ul>
             </div>
         </div>

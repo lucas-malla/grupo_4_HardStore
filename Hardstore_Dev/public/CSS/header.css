@@ -3,13 +3,14 @@
     margin: 0px;
     font-family: 'Roboto', sans-serif;
 }
-header a {
+header .yellow {
     text-decoration: none;
     font-weight: bold;
     color: #FCE05B;
 }
-header p {
+header .p {
     color: #FCE05B;
+   margin: 0 auto;
 }
 header H1 {
     color: black;
