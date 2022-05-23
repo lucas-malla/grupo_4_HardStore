@@ -76,15 +76,15 @@ main .producto .info .prices .dto{
 main .filtro{
     display: none;
 }
-.options{
+/*.options{
     display: inline-flex;
     flex-direction: column;
     gap: 10px;
     position: relative;
     transform: translate(500px, -120px);
-}
+}*/
 .options .crear{
-    transform: translate(575px, 110px); 
+     
 }
 .action-button {
     border: none;
@@ -97,15 +97,29 @@ main .filtro{
   }
   .action-button.edit.crear{
     background-color: rgb(24, 48, 231);
+    
+    
   }
   .action-button.edit {
     background-color: rgb(231, 231, 24);
     display: inline;
     padding: 12px 16px;
+    margin-top: 15px;
   }
   .action-button.delete {
     background-color: rgb(248, 69, 37);
+    margin-top: 15px;
   }
+
+.row .img{
+    width: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.row .img .medida{
+    max-height: 110px;
+    max-width: 140px;
+}
 @media (min-width: 500px){
     .filtro-desplegable{
         display: none;
