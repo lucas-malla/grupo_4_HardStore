@@ -13,60 +13,82 @@
         <h1>Modificacion de datos de producto</h1>
         <div class="data">
             <div class="newData">
-                <form action="/admin/products/<%=oneProduct.product_id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                
+                <form id="formModification" action="/admin/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                   <ul class='error'>
+                       
+                   </ul>
                     <h3>Producto ID: <%= oneProduct.product_id %></h3>
-                    <% console.log(oneProduct) %> 
+                  
                     <label for="categoria">Categoria de Producto</label>
                     <select name="categoria" id="categoria" form="categoria">
-                      //categoria
+                      <% for (category of allCategories){ %>
+                            <option value="<%= category.id %>">
+                                <%= oneProduct.category_id === category.id ? 'selected' : null %>>
+                                <%= category.category_name %>
+                            </option> 
+                            <% } %>
                     </select>
                     <label>Nombre de Producto</label>
-                    <input type="text" name="prodName" value="<%= oneProduct.product_name%>"> 
+                    <input id="inputName" type="text" name="prodName" placeholder ='Nombre'> 
+                    <p class="error"></p>
                     <label>Marca</label>
-                    <input type="text" name="brand" value="<%= oneProduct.brand%>">
+                    <input id="inputBrand" type="text" name="brand" value="<%= oneProduct.brand%>" placeholder ='Marca'>
+                    <p class="error"></p>
                     <label>Modelo</label>
-                    <input type="text" name="model" value="<%= oneProduct.model%>">
+                    <input id="inputModel" type="text" name="model" value="<%= oneProduct.model%>" placeholder ='Modelo'>
+                    <h1 class="error"></h1>
                     <label>Color</label>
-                    <input type="text" name="color" value="<%= oneProduct.color%>">
+                    <input type="text" name="color"  id='prodColor' placeholder="Color" placeholder ='Color'>
+                    <p class="error"></p>
                     <label>Precio</label>
-                    <input type="text" name="price" value=<%= oneProduct.price%>>
+                    <input id="inputPrice" type="text" name="price" value=<%= oneProduct.price%> placeholder ='Precio'>
+                    <p class="error"></p>
                     <label>Descuento</label>
-                    <input type="text" name="dto" value=<%= oneProduct.discount%>>
+                    <input id="inputDto" type="text" name="dto" value=<%= oneProduct.discount%> placeholder ='Descuento'>
+                    <p class="error"></p>
                     <label>Stock</label>
-                    <input type="number" name="stock" value=<%= oneProduct.stock%>>
+                    <p class="error"></p>
+                    <input id="inputStock" type="number" name="stock"  placeholder ='stock' value="0">
                     <label>Descripción</label>
-                    <textarea name="description"><%= oneProduct.description%></textarea>
+                    <textarea id="inputDescri" name="description"><%= oneProduct.description%></textarea>
                     <p>Caracteristicas:</p>
                     <div class="caracteristicas">
-                        <label><input type="checkbox" name="mostSold" > Mas vendido </label>
-                        <label><input type="checkbox" name="selection" > Nuestra seleccion </label>
-                        <label><input type="checkbox" name="offer" > Ofertas </label>
+                        <label><input id="inputCategori" type="checkbox" name="selection" > Mas vendido </label>
+                        <label><input id="inputCategori" type="checkbox" name="selection" > Nuestra seleccion </label>
+                        <label><input id="inputCategori" type="checkbox" name="selection" > Ofertas </label>
                     </div>
                     <p>Imagen del producto</p>
-                    <input class="file" type="file" name="prodImg">
+                    <input id="formFile" type="file" name="prodImg">
                     <div class="buttons">
                         <button type="reset">Reset</button>
                         <button type="submit">Guardar</button>
                     </div>
-                    <div class="error">
-                        <% if (locals.error){ %>
-                          <p><%= error %></p>
-                        <% } %>
-                        <% if(locals.errors){ %>
-                          <% for (error of errors){ %>
-                            <p><%= error.msg %></p>
-                        <% }} %>
-                      </div>
                 </form>
+                <div class="error">
+                    <% if (locals.error){ %>
+                        <p>
+                            <%= error %>
+                        </p>
+                        <% } %>
+                            <% if(locals.errors){ %>
+                                <% for (error of errors){ %>
+                                    <p>
+                                        <%= error.msg %>
+                                    </p>
+                                    <% }} %>
+                </div>
+
                 <% if (locals.mesage) { %>
-                    <h4 class="mesage"> <%= mesage %> </h4>
-                <% } %>
-            </div>
-            
+                    <h4 class="mesage">
+                        <%= mesage %>
+                    </h4>
+                    <% } %>
     </div>
     </main>
     <footer>
         <%- include("./partials/footer.ejs") %>
     </footer>
+    <script src="/js/adminProdModification.js"></script>
 </body>
 </html>

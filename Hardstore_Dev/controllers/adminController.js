@@ -67,7 +67,11 @@ const controller = {
          // validando productModified
          let validation = validationResult(req)                                          //array de errores
          if (validation.errors.length > 0){
-             res.render("adminProdModification",{errors : validation.errors, oneProduct : req.body})
+             Product_category.findAll({ raw: true }).then(allCategories => {
+                 console.log(allCategories);
+                 res.render("adminProdModification",{allCategories: allCategories, errors : validation.errors, oneProduct : req.body})       
+             })
+
          }else{  
         Product.update({ 
             product_name: req.body.prodName,

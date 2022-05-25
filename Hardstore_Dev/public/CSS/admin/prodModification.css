@@ -44,6 +44,7 @@ body main p{
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 0px;
+    color:red;
 }
 body main .newData form .caracteristicas{
     display: flex;
@@ -70,4 +71,7 @@ body main .oldData{
     border: 1px solid black;
     border-radius: 5px;
     width: 330px;
+}
+p .error {
+    color:black;
 }

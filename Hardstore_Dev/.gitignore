@@ -43,7 +43,7 @@ productCreator.js
         //data base
 
 
-//problemas con categori, esto estaba en la views de mofication product.
+//problemas con categori 
  <!-- <% for (category of allCategories){ %>
                             <option value="<%= category.id %>"
                                 <%= oneProduct.category_id === category.id ? 'selected' : null %>>
