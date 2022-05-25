@@ -50,3 +50,106 @@ productCreator.js
                                 <%= category.category_name %>
                             </option> 
                             <% } %> -->
+
+
+   //front-end
+      form.addEventListener('submit', e => {
+        const errores = [];
+         
+
+        if(name.value === ''){
+            setError(name, 'Ingrese un nombre de producto')
+            errores.push('error')
+        }
+        else if(name.value.length < 5){
+            setError(name, 'El nombre debe tener al menos 5 caracteres')
+            errores.push('error')
+        }
+        else{
+            setSuccess(name)
+        }
+
+        if(categori.value === ''){
+            setError(categori, 'Seleccione una categoria')
+            errores.push('error')
+        }else{
+            setSuccess(categori)
+        }
+        
+        if(brand.value === ''){
+            setError(brand, 'Ingrese una marca')
+            errores.push('error')
+        }else{
+            setSuccess(brand)
+        }
+
+        if(model.value === ''){
+            setError(model, 'Ingrese un modelo')
+            errores.push('error')
+        }else{
+            setSuccess(model)
+        }
+
+        if(color.value === ''){
+            setError(color, 'Ingrese un color')
+            errores.push('error')
+        }else{
+            setSuccess(color)
+        }
+
+        if(price.value === ''){
+            setError(price, 'Ingrese un precio')
+            errores.push('error')
+        }else{
+            setSuccess(price)
+        }
+
+        if(dto.value === ''){
+            setError(desc, 'Ingrese un valor')
+            errores.push('error')
+        }else{
+            setSuccess(dto)
+        }
+
+        if(stock.value === ''){
+            setError(stock, 'Ingrese el stock')
+            errores.push('error')
+        }else{
+            setSuccess(stock)
+        }
+
+        if(descrip.value === ''){
+            setError(descrip, 'Ingrese una descripción')
+            errores.push('error')
+        } 
+        else if(descrip.value.length < 20){
+            setError(descrip, 'La decripción debe tener al menos 20 carácteres')
+            errores.push('error')
+        }
+        else{
+            setSuccess(descrip)
+        }
+
+        if(file.value === ''){
+            setError(file, 'Ingrese una imagen')
+            errores.push('error')
+        }
+        else if(file.value != ""){
+            const whitelist = ['png', 'jpeg', 'jpg', 'webp']   
+            if (!whitelist.includes(file.value.split(".")[1])){
+                setError(file, 'La imagen debe ser formato: \n .png , jpeg , jpg o webp')
+                errores.push('error')
+            }
+            else{
+                setSuccess(file)
+            }
+        }
+
+        if (errores.length > 0) {
+            e.preventDefault();
+        }else{
+            form.submit();
+        }
+
+    
+    })                         
