@@ -4,9 +4,8 @@ const productsAPIController = require('../../controllers/api/productsAPIControll
 
 //Rutas
 //listado productos
-
+router.get('/?', productsAPIController.pagination)
 router.get('/', productsAPIController.list)
-
 
 
 
