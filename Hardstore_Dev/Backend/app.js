@@ -6,10 +6,14 @@ const cookieParser = require('cookie-parser')
 const remember = require('./middlewares/remember')
 const locals = require('./middlewares/locals')
 
+//Llamado a Rutas
 let mainRoutes = require('./routes/main.js');
 let rutasProductos = require('./routes/products.js');
 let adminRoutes = require('./routes/admin.js');
 let userRoutes = require('./routes/users.js');
+
+// Llamado rutas API
+let productsRoutes = require('./routes/api/products.js');
 
 const methodOverride = require("method-override");          //FOR POST METHODS
 const req = require('express/lib/request');
@@ -42,8 +46,12 @@ app.use('/products', rutasProductos);
 //ADMIN
 app.use('/admin', adminRoutes)
 
+//Recursos APIs
+app.use('/api/products', productsRoutes)
+
 //404
 app.use((req, res, next)=>{
     res.status(404).render('notFound');
     next();
 })
+
