@@ -32,16 +32,28 @@ const controller ={
             raw: true,
         })
         .then(user => {
-            delete user.password,
-            user.avatar = `/images/products/${user.avatar}`
-            let response = {
-                meta: {
-                    status : 200,
-                    url: 'api/user/:id'
-                },
-                data: user
+            try{
+                delete user.password,
+                user.avatar = `/images/products/${user.avatar}`
+                let response = {
+                    meta: {
+                        status : 200,
+                        url: `api/user/${req.params.id}`
+                    },
+                    data: user
+                }
+                res.json(response);
+            } catch {
+                let response = {
+                    meta: {
+                        status : 400,
+                        msj: "bad id request",
+                        url: `api/user/${req.params.id}`
+                        
+                    }
+                }
+                res.status(400).json(response)
             }
-            res.json(response);
         })
     }
 }
