@@ -14,6 +14,7 @@ let userRoutes = require('./routes/users.js');
 
 // Llamado rutas API
 let productsRoutes = require('./routes/api/products.js');
+let usersRoutes = require('./routes/api/users.js');
 
 const methodOverride = require("method-override");          //FOR POST METHODS
 const req = require('express/lib/request');
@@ -48,10 +49,10 @@ app.use('/admin', adminRoutes)
 
 //Recursos APIs
 app.use('/api/products', productsRoutes)
+app.use('/api/users', usersRoutes)
 
 //404
 app.use((req, res, next)=>{
     res.status(404).render('notFound');
     next();
 })
-
