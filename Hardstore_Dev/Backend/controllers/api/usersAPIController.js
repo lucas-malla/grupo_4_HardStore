@@ -1,4 +1,5 @@
 const { User } = require('../../database/models')
+const path = require('path')
 
 const controller ={
     list: (req,res) =>{
@@ -34,7 +35,7 @@ const controller ={
         .then(user => {
             try{
                 delete user.password,
-                user.avatar = `/images/products/${user.avatar}`
+                user.avatar = `/images/users/${user.avatar}`
                 let response = {
                     meta: {
                         status : 200,
@@ -49,11 +50,21 @@ const controller ={
                         status : 400,
                         msj: "bad id request",
                         url: `api/user/${req.params.id}`
-                        
                     }
                 }
                 res.status(400).json(response)
             }
+        })
+    },
+    userImage: (req, res)=>{
+        User.findByPk(req.params.id,{
+            raw: true,
+        })
+        .then(user => {
+            var options = {
+                root: "C:/VS_code/Digital-House/proyecto/grupo_4_HardStore/Hardstore_Dev/Backend/public/images/users"
+            };
+            res.sendFile(user.avatar, options)
         })
     }
 }
