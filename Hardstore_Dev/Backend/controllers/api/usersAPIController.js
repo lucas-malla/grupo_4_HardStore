@@ -66,6 +66,16 @@ const controller ={
             };
             res.sendFile(user.avatar, options)
         })
+    },
+    lastUser: (req, res)=>{
+        User.findAll({
+            raw: true,
+            order: [['id', 'DESC']],
+            limit: 1
+        })
+            .then(users=>{
+                res.json(users[0])
+            })
     }
 }
 
