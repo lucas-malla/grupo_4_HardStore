@@ -4,6 +4,7 @@ const usersAPIController = require('../../controllers/api/usersAPIController');
 
 //API: users
 router.get('/', usersAPIController.list)
+router.get('/lastUser', usersAPIController.lastUser)
 router.get('/:id', usersAPIController.detail)
 router.get('/:id/img', usersAPIController.userImage)
 
