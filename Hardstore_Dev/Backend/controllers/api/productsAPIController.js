@@ -1,46 +1,46 @@
-const {Product,Product_category, Product_image, Cart } = require('../../database/models')
+const { Product, Product_category, Product_image, Cart } = require('../../database/models')
 
 
-const controller ={
-
-list: (req,res) =>{
-    Product.findAll({
-        raw: true,
-        include: [{association:'category'},{ association: 'images', attributes: ['image_name'] }]
-    })
-    .then(products => {
-        let respuesta = {
-            meta: {
-                status : 200,
-                total: products.length,
-                url: 'api/products'
-            },
-            data: products
-        }
+const controller = {
+    total: (req, res) => {
+        let products = Product.count({ raw: true })
+        let category = Product_category.count({ raw: true })
+        Promise.all([products, category]).then(([products, categories]) => {
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    total: products.length,
+                    url: 'api/products/totals'
+                },
+                data: [{ products }, { categories }]
+            }
             res.json(respuesta);
         })
-},
-pagination: (req,res) =>{
-    let perPage= 5;
-    const page = parseInt(req.query.page)
-    Product.findAll({
-        raw: true,
-        include: [{association:'category'},{ association: 'images', attributes: ['image_name'] }],
-        offset: perPage * (page - 1),
-        limit: perPage
-    })
-    .then(products => {
-        let respuesta = {
-            meta: {
-                status : 200,
-                total: products.length,
-                url: 'api/products/?'
-            },
-            data: products
-        }
-            res.json(respuesta);
-    })
-}
+    },
+    list: (req, res) => {
+        let perPage = 5;
+        const page = parseInt(req.query.page)
+        let products = Product.findAll({
+            raw: true,
+            include: [{ association: 'category' }, { association: 'images', attributes: ['image_name'] }],
+            offset: perPage * (page - 1),
+            limit: perPage
+        })
+            .then(products => {
+                for (product of products) {
+                    product['images.image_name'] = `http://localhost:3000/images/products/${product['images.image_name']}`
+                }
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: products.length,
+                        url: 'api/products/?'
+                    },
+                    data: products
+                }
+                res.json(respuesta);
+            })
+    }
 }
 
 
