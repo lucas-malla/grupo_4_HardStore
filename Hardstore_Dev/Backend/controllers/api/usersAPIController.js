@@ -35,7 +35,7 @@ const controller ={
         .then(user => {
             try{
                 delete user.password,
-                user.avatar = `/images/users/${user.avatar}`
+                user.avatar = `http://localhost:3000/api/users/${req.params.id}/img`
                 let response = {
                     meta: {
                         status : 200,
