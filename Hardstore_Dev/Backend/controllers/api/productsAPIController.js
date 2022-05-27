@@ -27,6 +27,7 @@ const controller = {
             limit: perPage
         })
             .then(products => {
+            try{
                 for (product of products) {
                     product['images.image_name'] = `http://localhost:3000/images/products/${product['images.image_name']}`
                 }
@@ -34,11 +35,22 @@ const controller = {
                     meta: {
                         status: 200,
                         total: products.length,
-                        url: 'api/products/?'
+                        url: `api/products/?page=${page}`
                     },
                     data: products
                 }
                 res.json(respuesta);
+            } catch{
+                let respuesta = {
+                    meta: {
+                        status : 400,
+                        msj: "bad query request",
+                        url: `api/products/?page=${page}`
+                    }
+                }
+                res.status(400).json(respuesta)
+
+            }
             })
     }
 }
