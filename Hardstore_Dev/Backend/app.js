@@ -5,6 +5,10 @@ const session = require('express-session')
 const cookieParser = require('cookie-parser')
 const remember = require('./middlewares/remember')
 const locals = require('./middlewares/locals')
+const cors = require("cors");
+var corsOptions = {
+  origin: "*"
+};
 
 //Llamado a Rutas
 let mainRoutes = require('./routes/main.js');
@@ -20,9 +24,25 @@ const methodOverride = require("method-override");          //FOR POST METHODS
 const req = require('express/lib/request');
 app.use(methodOverride("_method"));
 
+
+app.use(cors(corsOptions));
+let allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header("Access-Control-Allow-Methods", "OPTIONS, POST, GET, PUT, DELETE");
+    res.header('Access-Control-Allow-Headers', "*");
+    res.header("Access-Control-Allow-Headers", "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With")
+    next();
+  }
+app.use(allowCrossDomain);
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
+
+
+
 app.use(express.static(path.resolve(__dirname, './public')));
-app.use(express.urlencoded({ extended: false }));           //para capturar envios por post en "req.body"
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));           //para capturar envios por post en "req.body"
 app.use(session( {secret: "la clave secreta"}));
 app.use(cookieParser());
 app.use(remember);

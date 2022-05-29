@@ -73,8 +73,52 @@ const controller = {
                 res.json(respuesta);
 
             })
-    }
+    },
+    create: (req, res) => {
+        Product.create({
+            product_name: req.body.prodName,
+            description: req.body.description,
+            brand: req.body.brand,
+            model: req.body.model,
+            color: req.body.color,
+            price: req.body.price,
+            discount: req.body.dto,
+            stock: req.body.stock,
+            category_id: req.body.category,
+            selection: req.body.selection,
+            images: {
+                image_name: req.body.filename
+            }
+        },
+            { include: [{ association: 'images' }] }
+        )
+        .then(confirm => {
+            let respuesta;
+            if(confirm){
+                respuesta ={
+                    meta: {
+                        status: 200,
+                        total: confirm.length,
+                        url: 'api/products/create'
+                    },
+                    data:confirm
+                }
+            }else{
+                respuesta ={
+                    meta: {
+                        status: 200,
+                        total: confirm.length,
+                        url: 'api/products/create'
+                    },
+                    data:confirm
+                }
+            }
+            res.json(respuesta);
+        })    
+        .catch(error => res.send(error))
+    } 
 }
+
 
 
 module.exports = controller
