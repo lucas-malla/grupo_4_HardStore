@@ -1,18 +1,23 @@
-const { Product, Product_category, Product_image, Cart } = require('../../database/models')
+const { Product, Product_category, Product_image, Cart, User } = require('../../database/models')
 
 
 const controller = {
     total: (req, res) => {
         let products = Product.count({ raw: true })
         let category = Product_category.count({ raw: true })
-        Promise.all([products, category]).then(([products, categories]) => {
+        let users = User.count({ raw: true })
+        Promise.all([products, category, users]).then(([products, categories, users]) => {
             let respuesta = {
                 meta: {
                     status: 200,
                     total: products.length,
                     url: 'api/products/totals'
                 },
-                data: [{ products }, { categories }]
+                data : {
+                    "products": products,
+                    "categories": categories,
+                    "users": users
+                }
             }
             res.json(respuesta);
         })
@@ -53,7 +58,46 @@ const controller = {
                 }
             })
     },
+    detail: (req, res) => {
+        Product.findByPk(req.params.id,{
+            raw: true,
+            include: [{ association: 'images', attributes: ['image_name'] }]
+            })
+            .then(product => {
+                if(product){
+                    //BUENISIMO!
+                    product['images.image_name'] = `http://localhost:3000/images/products/${product['images.image_name']}`
+                    let respuesta = {
+                        meta: {
+                            status: 200,
+                            url: `api/products/detail/${req.params.id}`
+                        },
+                        data: product
+                    }
+                    res.json(respuesta)
+                }else{
+                    let respuesta = {
+                        meta: {
+                            status: 400,
+                            url: `api/products/detail/${req.params.id}`,
+                            msg: "Product not found"
+                        }
+                    }
+                    res.json(respuesta)
 
+                }
+            })
+            .catch(error =>{
+                let respuesta = {
+                    meta: {
+                        status: 400,
+                        url: `api/products/detail/${req.params.id}`
+                    },
+                    data: error
+                }
+                res.json(respuesta)
+            })
+    },
     lastProduct: (req, res) => {
         Product.findAll({
             raw: true,
@@ -116,7 +160,7 @@ const controller = {
             res.json(respuesta);
         })    
         .catch(error => res.send(error))
-    } 
+    }
 }
 
 

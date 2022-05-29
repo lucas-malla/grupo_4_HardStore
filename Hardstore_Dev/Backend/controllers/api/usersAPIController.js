@@ -74,7 +74,15 @@ const controller ={
             limit: 1
         })
             .then(users=>{
-                res.json(users[0])
+                users[0].avatar = `http://localhost:3000/images/users/${users[0].avatar}`
+                let response = {
+                    meta: {
+                        status : 200,
+                        url: `api/user/lastUser`
+                    },
+                    data: users[0]
+                }
+                res.json(response);
             })
     }
 }

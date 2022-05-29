@@ -1,45 +1,48 @@
 import React from 'react';
 import SmallCard from './SmallCard';
-
-/*  Cada set de datos es un objeto literal */
-
-/* <!-- Movies in DB --> */
-
-let moviesInDB = {
-    title: 'Movies in Data Base',
-    color: 'primary', 
-    cuantity: 21,
-    icon: 'fa-clipboard-list'
-}
-
-/* <!-- Total awards --> */
-
-let totalAwards = {
-    title:' Total awards', 
-    color:'success', 
-    cuantity: '79',
-    icon:'fa-award'
-}
-
-/* <!-- Actors quantity --> */
-
-let actorsQuantity = {
-    title:'Actors quantity' ,
-    color:'warning',
-    cuantity:'49',
-    icon:'fa-user-check'
-}
-
-let cartProps = [moviesInDB, totalAwards, actorsQuantity];
+import { useState, useEffect } from 'react'
 
 function ContentRowMovies(){
+
+    const [totals, setTotals] = useState([]);
+
+    //api calls
+
+    useEffect(() => {
+        fetch("http://localhost:3000/api/products/totals")
+            .then(response=> response.json())
+            .then(totals=>{
+				console.log(totals)
+                let totalProducts = {
+                    title: 'Total de productos',
+                    color: 'primary', 
+                    cuantity: totals.data.products,
+                    icon: 'fa-clipboard-list'
+                }
+                let totalUsers = {
+                    title:' Total de usuarios', 
+                    color:'success', 
+                    cuantity: totals.data.users,
+                    icon:'fa-award'
+                }
+                let totalCat = {
+                    title:'Total de categorías' ,
+                    color:'warning',
+                    cuantity: totals.data.categories,
+                    icon:'fa-user-check'
+                }
+                let newData = [totalProducts, totalUsers, totalCat]
+                setTotals(newData)
+				
+            })
+            .catch(err => console.log(err))
+    }, [])
     return (
-    
         <div className="row">
             
-            {cartProps.map( (movie, i) => {
+            {totals.map( (data, i) => {
 
-                return <SmallCard {...movie} key={i}/>
+                return <SmallCard {...data} key={i}/>
             
             })}
 
