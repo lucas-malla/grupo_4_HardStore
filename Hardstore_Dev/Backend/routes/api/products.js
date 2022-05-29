@@ -5,6 +5,7 @@ const productsAPIController = require('../../controllers/api/productsAPIControll
 //Rutas
 //listado productos
 router.get('/totals', productsAPIController.total)
+router.get('/lastProduct', productsAPIController.lastProduct)
 router.get('/?', productsAPIController.list)
 
 
