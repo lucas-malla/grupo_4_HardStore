@@ -1,5 +1,7 @@
 const { Product, Product_category, Product_image, Cart, User } = require('../../database/models')
 
+const Sequelize =  require('Sequelize')
+
 
 const controller = {
     total: (req, res) => {
@@ -24,7 +26,12 @@ const controller = {
     },
     list: (req, res) => {
         let perPage = 5;
-        const page = parseInt(req.query.page)
+        var page;
+        if(req.query.page){
+            page = parseInt(req.query.page)
+        }else{
+            page = 1
+        }
         Product.findAll({
             raw: true,
             include: [{ association: 'category' }, { association: 'images', attributes: ['image_name'] }],
@@ -116,6 +123,27 @@ const controller = {
                 }
                 res.json(respuesta);
 
+            })
+    },
+    categories: (req, res)=> {
+        let products = Product.count({
+            raw: true,
+            include: [{association: "category", attributes: ["category_name"]}],
+            group: ["Product.category_id"],
+            count:[]
+            })
+        let categories =  Product_category.findAll({raw: true })
+        
+        Promise.all([products, categories])
+            .then(([products, categories]) => {
+                for(group of products){
+                    let categoryDetail = categories.find(element => 
+                        element.id == group["category_id"]
+                    )
+                    group['category_name']= categoryDetail.category_name
+                    console.log(group)
+                }
+                res.json(products)
             })
     },
     create: (req, res) => {
