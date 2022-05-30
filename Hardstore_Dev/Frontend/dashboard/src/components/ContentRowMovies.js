@@ -23,13 +23,13 @@ function ContentRowMovies(){
                     title:' Total de usuarios', 
                     color:'success', 
                     cuantity: totals.data.users,
-                    icon:'fa-award'
+                    icon:'fa-user-check'
                 }
                 let totalCat = {
                     title:'Total de categorías' ,
                     color:'warning',
                     cuantity: totals.data.categories,
-                    icon:'fa-user-check'
+                    icon:'fa-award'
                 }
                 let newData = [totalProducts, totalUsers, totalCat]
                 setTotals(newData)

@@ -1,8 +1,9 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/baner.png';
 import ContentWrapper from './ContentWrapper';
 import GenresInDb from './GenresInDb';
 import LastProductInDb from './LastProductInDb';
+import LastUserInDb from './LastUserInDb';
 import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
 import SearchMovies from './SearchMovies'
@@ -17,7 +18,7 @@ function SideBar(){
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                        <img className="w-100" src={image} alt="Hardstore"/>
                     </div>
                 </a>
 
@@ -28,42 +29,32 @@ function SideBar(){
                 <li className="nav-item active">
                     <Link className="nav-link" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - Hardstore</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider"/>
-
-                {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
-
+             
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item">
-                <Link className="nav-link" to="/GenresInDb">
+                <Link className="nav-link" to="/Users">
                         <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                        <span>Users</span>
                     </Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
                 <li className="nav-item">
-                    <Link className="nav-link" to="/LastProductInDb">
+                    <Link className="nav-link" to="/Products">
                         <i className="fas fa-fw fa-chart-area"></i>
-                        <span>Charts</span></Link>
-                </li>
-
-                {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Products</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - SearchMovies -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/SearchMovies">
+                <Link className="nav-link" to="/Search">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>SearchMovies</span></Link>
+                        <span>Search Products</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -91,17 +82,14 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/SearchMovies">
+                <Route path="/Search">
                     <SearchMovies />
                 </Route>
-                <Route path="/GenresInDb">
-                    <GenresInDb />
-                </Route>
-                <Route path="/LastProductInDb">
+                <Route path="/Products">
                     <LastProductInDb />
                 </Route>
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                <Route path="/Users">
+                    <LastUserInDb />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

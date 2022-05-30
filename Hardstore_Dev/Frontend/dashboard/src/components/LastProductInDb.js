@@ -21,10 +21,10 @@ function LastProductInDb(){
                 <h5 className="m-0 font-weight-bold text-gray-800">{ lastInDb.product_name}</h5>
                 <h6 className="m-0 font-weight-bold text-gray-800">{ lastInDb.price} $</h6>
                     <div className="text-center">
-                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={lastInDb["images.image_name"]} alt=" Star Wars - Mandalorian "/>
+                        <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={lastInDb["images.image_name"]} alt=" Product image "/>
                     </div>
                     <p>{lastInDb.description}</p>
-                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>
+                    <a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View product detail</a>
                 </div>
             </div>
         </div>
