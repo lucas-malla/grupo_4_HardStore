@@ -99,37 +99,27 @@ const controller = {
         }
     },
     addToCart:(req, res)=>{
-        if(req.session.userID){ //user logged
+        if(req.session.userID){                 //user logged
             Cart.findAll({
                 raw: true, 
-                where: {
-                     user_id : req.session.userID
-                    }
+                where: {user_id : req.session.userID}
             })
                 .then((products)=>{
                     let match = products.find(product=> product.product_id == req.params.id)
-                    if(match){
-                        //el usuario posee ese item en el carrito => sumo una unidad
+                    if(match){                  //el usuario posee ese item en el carrito => sumo una unidad
                         Cart.update({
                             quantity: (match.quantity + 1)
                             },{
-                            where: {
-                                product_id : req.params.id
-                            } 
+                            where: {product_id : req.params.id} 
                         })
                         res.redirect(`/user/${req.session.userID}/Cart`)
-                    }else{
-                        //El producto no esta en el Carrito
-                        if (req.session.userID){
-                            Cart.create({
-                                product_id: req.params.id,
-                                user_id: req.session.userID,
-                                quantity: 1,
-                            })
-                            res.redirect(`/user/${req.session.userID}/Cart`)
-                        }else{
-                            res.redirect('/login')
-                        }
+                    }else{                      //El producto no esta en el Carrito
+                        Cart.create({
+                            product_id: req.params.id,
+                            user_id: req.session.userID,
+                            quantity: 1,
+                        })
+                        res.redirect(`/user/${req.session.userID}/Cart`)
                     }
                 })
         }else{ //user unlogged
