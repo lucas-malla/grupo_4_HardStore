@@ -12,7 +12,6 @@ function ContentRowMovies(){
         fetch("http://localhost:3000/api/products/totals")
             .then(response=> response.json())
             .then(totals=>{
-				console.log(totals)
                 let totalProducts = {
                     title: 'Total de productos',
                     color: 'primary', 

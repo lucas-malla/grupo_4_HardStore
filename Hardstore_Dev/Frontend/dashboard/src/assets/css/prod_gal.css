@@ -1,0 +1,172 @@
+main .filt-ord{
+    display: flex;
+    justify-content: space-around;
+    margin: 8px 0px;
+}
+main .filt-ord p {
+    background-color: rgb(213, 213, 213);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+}
+main a{
+    text-decoration: none;
+    color: black;
+}
+main .producto a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main .producto a{
+    justify-content: start;
+}
+main .producto .img{
+    width: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+main .producto img{
+    max-height: 110px;
+    max-width: 140px;
+}
+main .producto .info{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+}
+main .producto .info h4{
+    margin: 0px;
+    justify-content: start;
+    margin-bottom: 5px;  
+}
+main .producto .info button{
+    background-color: rgb(115, 236, 115); 
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    padding: 3px 8px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+}
+main .producto .info .prices{
+    width: 100%;
+    font-size: 18px;
+    display: flex;
+    font-weight: normal;
+    margin-top: 5px;
+    justify-content: start;
+    align-items: center;
+}
+main .producto .info .prices .price{
+    font-size: 12px;
+    color: gray;
+    text-decoration: line-through;
+    display: block;
+    margin-right: 5px;
+}
+main .producto .info .prices .dto{
+    color: rgb(10, 212, 10);
+    font-weight: bold;
+    font-size: 12px;
+    margin-left: 10px;
+}
+main .filtro{
+    display: none;
+}
+/*.options{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    transform: translate(500px, -120px);
+}*/
+.options .crear{
+     
+}
+.action-button {
+    border: none;
+    border-radius: 8px;
+    font-size: 0.6em;
+    color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+  }
+ .edit.crear{
+    border: none;
+    font-size: 0.6em;
+    color: #ffffff;
+    padding: 12px 18px;
+     background-color: rgb(24, 48, 231);
+     margin-right: 2rem ;
+    
+    
+  }
+  .action-button.edit {
+    background-color: rgb(231, 231, 24);
+    display: inline;
+    padding: 12px 16px;
+    margin-top: 15px;
+  }
+  .action-button.delete {
+    background-color: rgb(248, 69, 37);
+    margin-top: 15px;
+  }
+
+.row .img{
+    width: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.row .img .medida{
+    max-height: 110px;
+    max-width: 140px;
+}
+@media (min-width: 500px){
+    .filtro-desplegable{
+        display: none;
+    }
+    .ordenar-por{
+        position: relative;
+        left: 50px;
+    }
+    main .producto .img{
+        width: 130px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    main .productos{
+        width: 60%;
+    }
+    main .producto a{
+        display: flex;
+        justify-content: start;
+        align-items: center;
+    }
+    .filt-prod{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    main .filtro{
+        display: block;
+        height: 400px;
+        width: 200px;
+        border: gray 2px solid;
+        margin: 10px 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 1000px){
+    main .productos{
+        max-width: 600px;
+
+        
+    }
+
+}

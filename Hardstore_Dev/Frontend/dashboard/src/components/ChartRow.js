@@ -1,9 +1,7 @@
 import React from 'react';
 
-
 function ChartRow(props){
     return (
-        <a href="/products/<%= product.id %>">
         <tr>
             <th className="row"><div className="img"><img className="medida" src={props['images.image_name']}/></div></th>
             <td>
@@ -26,7 +24,6 @@ function ChartRow(props){
                 </div>
             </td>
         </tr>
-        </a>
     )
 }
     

@@ -1,22 +1,45 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ChartRow from './ChartRow';
-import { useState, useEffect } from 'react'
+import '../assets/css/bootstrap.min.css'
+import '../assets/css/prod_gal.css';
 
 
 function Chart(){
 
     let [products, setProducts] = useState([])
     let [page, setPage] = useState(1)
+    let [totalsProducts, setTotalsProducts] = useState(0)
 
     useEffect(()=>{
         fetch(`http://localhost:3000/api/products/?page=${page}`)
-            .then(response=> response.json())
+            .then(response=> {
+               return response.json()
+            })
+            
             .then(productss=>{
                 setProducts(productss.data)
             })
+            totalPages();
         },[page])
+
+    const totalPages = () => {
+        fetch(`http://localhost:3000/api/products/totals`)
+        .then(response=> {
+           return response.json()
+        })
+        
+        .then(totals=>{
+            setTotalsProducts(totals.data.products)
+        })
+    }
+
+    const totalPaginas = Math.ceil(totalsProducts / 5)
+    console.log(totalPaginas)
+
     let showMore = (e)=>{
-        setPage(page+1)
+        if(totalPaginas && totalPaginas < page){
+            setPage(page+1)
+        }
     }
     let showless = (e)=>{
         if (page != 1){
@@ -24,16 +47,14 @@ function Chart(){
         }
     }
     return(
-        <React.Fragment>
-            <div className="container-sm">
-                        <div className="filt-ord">
-                            <p className="filtro-desplegable">Filtrar: <i className="fas fa-sort-down"></i></p>
-                            <p className="ordenar-por">Ordenar por: <i className="fas fa-sort-down"></i></p>
+       
+        <main>
+            <div className="card shadow mb-12">
+                    <div className="card header py-3">
+                        <div className=" d-md-flex justify-content-md-end"><a href="/admin/products/create" className="btn btn-lg edit crear">CREAR NUEVO</a>
                         </div>
-                    <div style={{"maxWidth": '1000px' , "margin": '0 auto'}}>
-                    <div className="options crear"><a href="/admin/products/create" className="action-button edit crear">CREAR NUEVO</a>
                     </div>
-                    <hr/>
+                    
                     <table className="table caption-top">
                         <thead>
                             <tr>
@@ -53,11 +74,12 @@ function Chart(){
                             }
                         </tbody>
                     </table>
-                        <button onClick={showless}>Previous</button>
-                        <button onClick={showMore}>Next</button>
-                    </div>
+                    <div className='d-grid gap-2 d-md-flex mx-auto mb-3'>
+                        <button className='btn btn-primary' onClick={showless}>Previous</button>
+                        <button className='btn btn-primary' onClick={showMore}>Next</button>
+                    </div>      
                 </div>
-        </React.Fragment>
+        </main>
     )
 }
 
