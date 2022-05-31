@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
 const {User} = require('../database/models')
-const logInUser = require('../services/userServices.js')
+const {logInUser, addLocalProductsToCart} = require('../services/userServices.js')
 
 
 const controller = {
@@ -17,6 +17,7 @@ const controller = {
             res.render("login",{errors : validation.errors, old : req.body})
         }else{
             logInUser(req.body.userName, req.body.remember, req, res)
+            //addLocalProductsToCart(req, res, req.session.userID)
         }
     },
     logout: function(req, res){
