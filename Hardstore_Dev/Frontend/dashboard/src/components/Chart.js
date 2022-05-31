@@ -25,7 +25,7 @@ function Chart(){
     const totalPages = () => {
         fetch(`http://localhost:3000/api/products/totals`)
         .then(response=> {
-           return response.json()
+            return response.json()
         })
         
         .then(totals=>{
@@ -34,10 +34,9 @@ function Chart(){
     }
 
     const totalPaginas = Math.ceil(totalsProducts / 5)
-    console.log(totalPaginas)
 
     let showMore = (e)=>{
-        if(totalPaginas && totalPaginas < page){
+        if( totalPaginas > page){
             setPage(page+1)
         }
     }
