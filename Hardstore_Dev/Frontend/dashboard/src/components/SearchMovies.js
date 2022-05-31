@@ -19,12 +19,10 @@ function SearchMovies(){
 			})
 			.catch(error => console.log(error))
 		},[keyword])
-		
 	const buscar = (e)=>{
 		e.preventDefault();
 		setKeyword(searchBar.current.value)
 	}
-	
 	return(
 		<div className="container-fluid">
 			{

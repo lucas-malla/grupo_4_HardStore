@@ -12,7 +12,6 @@ function locals(req, res, next){
             }})
             .then((user)=>{
                 let data = user.dataValues
-                console.log(data)
                 data["password"] = null     //Hiding password for user locals variable
                 data["username"] = data["username"].trim().replace(/^\w/, (c) => c.toUpperCase());
                 res.locals.userLocals = data

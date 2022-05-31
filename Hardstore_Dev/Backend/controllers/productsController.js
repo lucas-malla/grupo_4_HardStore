@@ -54,9 +54,7 @@ const controller = {
         })
         }
     },
-
     detail: function(req, res){
-   
         db.Product.findByPk(req.params.id,{
             raw: true,
             include: [{ association: 'images', attributes: ['image_name'] }]
@@ -64,7 +62,7 @@ const controller = {
         .then(product =>{
             res.render('detail', {product:product})
            })
-        }
     }
+}
     
 module.exports = controller

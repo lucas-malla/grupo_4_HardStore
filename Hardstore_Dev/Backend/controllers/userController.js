@@ -1,7 +1,7 @@
 const { validationResult } = require('express-validator')
 const bcryptjs = require('bcryptjs')
 const {User} = require('../database/models')
-const logInUser = require('../services/userServices.js')
+const {logInUser} = require('../services/userServices.js')
 
 
 const controller = {
@@ -27,7 +27,6 @@ const controller = {
     registerPost: function(req, res){
         let validation = validationResult(req)                                          //array de errores
         if (validation.errors.length > 0){
-            //console.log(validation.errors)
             res.render("register",{errors : validation.errors, old : req.body})
         }else{                                                                          //no errors -> chech passwords maching
             let new_userSQL = {}
@@ -38,12 +37,12 @@ const controller = {
             User.create(new_userSQL)
                 .then((newUser)=>{
                     console.log(newUser.dataValues)
-                    logInUser(newUser.dataValues.username, true, req, res)                 //user log after registration
+                    logInUser(newUser.dataValues.username, true, req, res)  //user log after registration
                 })
         }
     },
     profile: function(req, res){
-        if(req.params.id  == req.session.userID){       //access restiction
+        if(req.params.id  == req.session.userID){   //access restiction
             User.findOne({
                 where: {
                     id : req.session.userID
@@ -68,18 +67,17 @@ const controller = {
                 }})
                 .then((user)=>{
                     let data = user.dataValues
-                    //console.log(data)
                     res.render('profileEdit',{data})
                 })
                 .catch(function(error){
-                    console.log("sali por catch")
+                    console.log("error")
                 })
         }else{
             res.redirect('/') 
         }
     },
     profileEditPost: function(req,res){
-        let validation = validationResult(req)                                          //array de errores
+        let validation = validationResult(req)          //array de errores
         if (validation.errors.length > 0){
             req.body["id"] = req.session.userID
             res.render("profileEdit",{errors : validation.errors, data : req.body})

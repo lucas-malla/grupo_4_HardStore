@@ -29,8 +29,10 @@ router.post('/user/:id/edit',uploadFile.single('avatar'), userMiddleware,validat
 
 
 //PRODUCT CART
-router.get('/user/:id/productCart', userMiddleware, prodCartController.cartLogged);     //logged user
-router.get('/user//productCart', prodCartController.cartUnlogged);                      //Unlogged user
+router.get('/user/:id/Cart', userMiddleware, prodCartController.cartLogged);     //logged user
+router.get('/user//Cart', prodCartController.cartUnlogged);                      //Unlogged user
+router.get('/addToCart/:id', prodCartController.addToCart);
+router.get('/removeFromCart/:id', prodCartController.removeFromCart);
 
 
 module.exports = router;
