@@ -38,12 +38,12 @@ const controller = {
             User.create(new_userSQL)
                 .then((newUser)=>{
                     console.log(newUser.dataValues)
-                    logInUser(newUser.dataValues.username, true, req, res)                 //user log after registration
+                    logInUser(newUser.dataValues.username, true, req, res)  //user log after registration
                 })
         }
     },
     profile: function(req, res){
-        if(req.params.id  == req.session.userID){       //access restiction
+        if(req.params.id  == req.session.userID){   //access restiction
             User.findOne({
                 where: {
                     id : req.session.userID

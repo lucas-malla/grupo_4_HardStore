@@ -23,8 +23,13 @@
                     <li><p class="price" style="text-decoration: line-through;"><%= product['product.price'] %></p></li>
                     <li><p class="price"><%=  %></p></li>
                     <p class="dto"><%= product['product.discount'] %>%OFF</p>
-                    <li><div class="delete">
-                            <button type="button"><i class="fas fa-times"></i></button>
+                    <li>
+                        <div class="delete">
+                            <button type="button">
+                                <a href="/removeFromCart/<%= product['product.id'] %>">
+                                    <i class="fas fa-times"></i>
+                                </a>
+                            </button>
                         </div>
                     </li>
                 </ul>
@@ -39,14 +44,15 @@
             <div class="buy">
                 <div class="buy-table">
                     <div class="table-price">
-                    <dl class="Sub-total">
-                    <dt>Sub-total</dt>
-                    <dd class="Price-right">$167.998</dd>
-                    </dl>
-                    <dl class="total">
-                    <dt><strong>Total</strong></dt>
-                    <dd class="Price-right bold"><strong>$167.998</strong></dd>
-                    </dl></div>
+                        <dl class="Sub-total">
+                            <dt>Sub-total</dt>
+                            <dd class="Price-right">$<%=total %></dd>
+                        </dl>
+                        <dl class="total">
+                            <dt><strong>Total</strong></dt>
+                            <dd class="Price-right bold"><strong>$<%=total %></strong></dd>
+                        </dl>
+                    </div>
                     <button class="btn-buy">FINALIZAR COMPRA</button> 
                 </div>
             </div>

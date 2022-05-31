@@ -44,14 +44,17 @@ const controller = {
                     response[0] = []
                     res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom}) //fix for empty carts 
                 }else{
+                    let total = 0
                     for(product of response[0]){
                         let cart_row = response[1].find(element => 
                             element.product_id == product['product.id']
                         )
                         product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
                         product['quantity']= cart_row.quantity
+                        total += product["price_dto"]
                     }
-                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom})
+                    console.log(total)
+                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom, total})
                 } 
             })
     },  
@@ -65,6 +68,52 @@ const controller = {
         //al loguearse añadir esos productos al servidor => base de datos para los carrito de los users
 
         res.render("productCart", { 'itemCart':itemCart, 'showRandom': showRandom})
+    },
+    addToCart: function (req, res){
+        Cart.findAll({
+            raw: true, 
+            where: {
+                 user_id : req.session.userID
+                }
+        })
+            .then((products)=>{
+                let match = products.find(product=> product.product_id == req.params.id)
+                if(match){
+                    //el usuario posee ese item en el carrito => sumo una unidad
+                    Cart.update({
+                        quantity: (match.quantity + 1)
+                        },{
+                        where: {
+                            product_id : req.params.id
+                        } 
+                    })
+                    res.redirect(`/user/${req.session.userID}/productCart`)
+                }else{
+                    //El producto no esta en el Carrito
+                    if (req.session.userID){
+                        Cart.create({
+                            product_id: req.params.id,
+                            user_id: req.session.userID,
+                            quantity: 1,
+                        })
+                        res.redirect(`/user/${req.session.userID}/productCart`)
+                    }else{
+                        res.redirect('/login')
+                    }
+                }
+            })
+    },
+    removeFromCart: function (req, res){
+        if(req.session.userID){
+            Cart.destroy({where:{
+                product_id : req.params.id,
+                user_id: req.session.userID
+            }})
+            .then(response=>{
+                res.redirect(`/user/${req.session.userID}/productCart`)
+            })
+
+        }
     }
 }
 
