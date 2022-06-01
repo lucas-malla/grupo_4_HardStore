@@ -8,6 +8,7 @@ import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
 import SearchMovies from './SearchMovies'
 import {Link, Route, Switch} from 'react-router-dom';
+import Chart from './Chart';
 
 function SideBar(){
     return(
@@ -50,43 +51,16 @@ function SideBar(){
                         <span>Products</span></Link>
                 </li>
 
-                {/*<!-- Nav Item - SearchMovies -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/Search">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Search Products</span></Link>
-                </li>
-
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
             </ul>
-            {/*<!-- End of Sidebar -->*/}
 
-            {/*<!-- Microdesafio 1 -->*/}
-            {/*<!--<Route exact path="/">
-                <ContentWrapper />
-            </Route>
-            <Route path="/GenresInDb">
-                <GenresInDb />
-            </Route>
-            <Route path="/LastProductInDb">
-                <LastProductInDb />
-            </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
-            </Route>*/}
-            {/*<!-- End Microdesafio 1 -->*/}
-
-            {/*<!-- End Microdesafio 2 -->*/}
             <Switch>
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/Search">
-                    <SearchMovies />
-                </Route>
                 <Route path="/Products">
-                    <LastProductInDb />
+                    <Chart />
                 </Route>
                 <Route path="/Users">
                     <LastUserInDb />

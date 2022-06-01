@@ -25,7 +25,7 @@ let user2 ={
     street_number: '1234',
     avatar: 'default.jpg',
 }
-let user3 ={
+let user5 ={
     username: 'Gaby',
     password: bcryptjs.hashSync('123', 10),
     email: 'Gaby@gmail.com',
@@ -34,7 +34,7 @@ let user3 ={
     cellphone: '15-1234-1234',
     street: 'Asunción',
     street_number: '1234',
-    avatar: 'default.jpg',
+    avatar: 'avatar-1652799739612.jpg',
 }
 let user4 ={
     username: 'lucas',
@@ -47,7 +47,7 @@ let user4 ={
     street_number: '1234',
     avatar: 'default.jpg',
 }
-let user5 ={
+let user3 ={
     username: 'admin',
     password: bcryptjs.hashSync('123', 10),
     email: 'admin@gmail.com',
