@@ -2,7 +2,7 @@ const {User} = require('../database/models')
 
 
 function remember(req, res, next){   
-    if(req.cookies.userCookie && !req.session.userID){      //a cookie was seended in the request => check cookie
+    if(req.cookies.userCookie && !req.session.userID){      //a cookie was seended in the request (and not logged) => check cookie
         User.findOne({                                      //FIND user
             raw: true,
             where: {
@@ -15,9 +15,9 @@ function remember(req, res, next){
                    req.session.userID = user.id             //log in user from cookie
                    return next();
                 }else{
-                console.log("Corrupted cookie detected: ", req.cookies.userCookie)
-                res.clearCookie('userCookie')  //cleaning corrupted cookie
-                res.redirect('/login')
+                    console.log("Corrupted cookie detected: ", req.cookies.userCookie)
+                    res.clearCookie('userCookie')  //cleaning corrupted cookie
+                    res.redirect('/login')
                 }
             })
             .catch(function(error){

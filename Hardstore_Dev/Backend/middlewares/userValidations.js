@@ -22,9 +22,9 @@ const userValidations = {
                 }).withMessage('El Email ya se encuentra registrado'),
         body('password').notEmpty().withMessage("Ingrese una contraseña").bail()
                         .isLength({ min: 8 }).withMessage("La contraseña debe tener al menos 8 caracteres").bail()
-                        .matches(/[A-Z]/).withMessage("1").withMessage("La contraseña debe contener un caracter en mayuscula").bail()
-                        .matches(/[0-9]/).withMessage("2").withMessage("La contraseña debe contener un numero").bail()
-                        .matches(/[¡¿?!&#%]/).withMessage("3").withMessage("La contraseña debe contener un caracter especial"),
+                        .matches(/[A-Z]/).withMessage("La contraseña debe contener un caracter en mayuscula").bail()
+                        .matches(/[0-9]/).withMessage("La contraseña debe contener un numero").bail()
+                        .matches(/[¡¿?!&#%]/).withMessage("La contraseña debe contener un caracter especial"),
         body('password_repeat').notEmpty().withMessage("Repita su contraseña").bail()
                         .custom((value, { req }) => {
                             return (value == req.body.password ? true : Promise.reject() )
@@ -64,21 +64,6 @@ const userValidations = {
             }).withMessage("El nombre de usuario ya esta en uso M"),
         body('email').notEmpty().withMessage("Ingrese un Email").bail()
             .isEmail().withMessage("Email invalido").bail(),
-        //     .custom((value) => {
-        //         return(
-        //             User.findOne({raw: true, where: {email : value}})
-        //                 .then(user => {
-        //                     return User.findOne({raw: true, where: {email : value}})
-        //                     .then(user => {
-        //                         if (user && user.id==req.session.userID){
-        //                             return true
-        //                         } else {
-        //                         return (user == null ? true : Promise.reject() )
-        //                         }
-        //                     })    
-        //                 })             
-        //         )
-        // }).withMessage('El Email ya se encuentra registrado'),
         body('first_name').notEmpty().withMessage('Debe ingresar su nombre').bail()
             .isLength({min:2}).withMessage('Su nombre debe poseer al menos 2 caracteres').bail(),
         body('last_name').notEmpty().withMessage('Debe ingresar su apellido').bail()

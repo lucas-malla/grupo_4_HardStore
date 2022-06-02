@@ -4,7 +4,7 @@ const Sequelize =  require('Sequelize')
 
 
 const controller = {
-    total: (req, res) => {
+    total: (req, res) => { //returns totals of (products categories and users) (just totals)
         let products = Product.count({ raw: true })
         let category = Product_category.count({ raw: true })
         let users = User.count({ raw: true })
@@ -24,7 +24,7 @@ const controller = {
             res.json(respuesta);
         })
     },
-    list: (req, res) => {
+    list: (req, res) => {  //lists products whith pagination
         let perPage = 5;
         var page;
         if(req.query.page){
@@ -61,18 +61,16 @@ const controller = {
                         }
                     }
                     res.status(400).json(respuesta)
-
                 }
             })
     },
-    detail: (req, res) => {
+    detail: (req, res) => {  // product detail
         Product.findByPk(req.params.id,{
             raw: true,
             include: [{ association: 'images', attributes: ['image_name'] }]
             })
             .then(product => {
                 if(product){
-                    //BUENISIMO!
                     product['images.image_name'] = `http://localhost:3000/images/products/${product['images.image_name']}`
                     let respuesta = {
                         meta: {
@@ -91,7 +89,6 @@ const controller = {
                         }
                     }
                     res.json(respuesta)
-
                 }
             })
             .catch(error =>{
@@ -122,7 +119,6 @@ const controller = {
                     data: product
                 }
                 res.json(respuesta);
-
             })
     },
     categories: (req, res)=> {
@@ -190,7 +186,6 @@ const controller = {
         .catch(error => res.send(error))
     }
 }
-
 
 
 module.exports = controller

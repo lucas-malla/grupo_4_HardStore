@@ -37,5 +37,4 @@ const productValidations ={
 }  
 
 
-
 module.exports = productValidations

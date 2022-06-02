@@ -5,7 +5,6 @@ const Op = Sequelize.Op
 const controller = {
     galery: function(req, res){
         if (req.query.search){
-            //console.log (req.query)
                 db.Product.findAll ({raw:true, include: [{ association: 'images', attributes: ['image_name'] }],
                 where: {
                     product_name: {[Op.like]: '%'+req.query.search+'%'}  
@@ -13,7 +12,6 @@ const controller = {
             })
             .then ((products)=> {
                 for (product of products){
-                    //console.log(product)
                     product["price_dto"] = product.price * (100-product.discount)/100
                 }
                 return (products)
@@ -25,7 +23,6 @@ const controller = {
                 res.send (error)
             })
         }
-
         if (req.params.filter){
         db.Product_category
         .findOne ({
@@ -42,7 +39,6 @@ const controller = {
                 }
              })
              .then(product =>{
-                //res.send (product)
                 res.render('products_galery', {product:product})
             })
         })

@@ -22,6 +22,5 @@ function ContentRowTop(){
 
         </React.Fragment>
     )
-
 }
 export default ContentRowTop;

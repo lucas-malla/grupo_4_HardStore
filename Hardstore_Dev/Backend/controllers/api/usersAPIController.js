@@ -2,9 +2,9 @@ const { User } = require('../../database/models')
 const path = require('path')
 
 const controller ={
-    list: (req,res) =>{
+    list: (req, res) =>{
         User.findAll({
-            raw: true,
+            raw: true
         })
         .then(users => {
             users.forEach((user)=>{
@@ -14,7 +14,7 @@ const controller ={
                 delete user.street_number,
                 delete user.avatar,
                 delete user.created_at,
-                delete user.updated_at
+                delete user.updated_at,
                 user["detail"] = `/api/users/${user.id}`
             })
             let response = {

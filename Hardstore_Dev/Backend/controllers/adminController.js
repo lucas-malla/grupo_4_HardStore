@@ -14,7 +14,6 @@ const controller = {
             .then((categories) => {
                 res.render("adminProdCreation", {categories})
             })
-
     },
     addProductPost: function (req, res) {
         let validation = validationResult(req)                                  //array de errores
@@ -26,7 +25,7 @@ const controller = {
             Product_category.findAll({ raw: true })
             .then(categories => res.render("adminProdCreation",{ categories, errors : validation.errors, old : req.body}) )
         }else {
-            //creo objeto del producto nuevo
+            //creo objeto del producto nuevo  (no hay errores)
             Product.create({
                 product_name: req.body.prodName,
                 description: req.body.description,
@@ -44,15 +43,14 @@ const controller = {
             },
                 { include: [{ association: 'images' }] }
             ).then(() => {
-                res.redirect("/admin/controlPanel"); // Mas adelante hacer vista de detalle de producto
+                res.redirect("/admin/controlPanel");
             })
             .catch(err => {
                     console.log(err)
                 })
         } 
     },
-    manageProductEdit: function (req, res) {
-        //obtengo la información
+    manageProductEdit: function (req, res) {  //edit view
         let product = Product.findByPk(req.params.id, {
             raw: true,
             include: [{ association: 'images' }]
@@ -66,13 +64,12 @@ const controller = {
     manageProductUpdate: function (req, res) {
          // validando productModified
          let validation = validationResult(req)                                          //array de errores
-         if (validation.errors.length > 0){
+         if (validation.errors.length > 0){ // hay errores
              Product_category.findAll({ raw: true }).then(allCategories => {
-                 console.log(allCategories);
                  res.render("adminProdModification",{allCategories: allCategories, errors : validation.errors, oneProduct : req.body})       
              })
 
-         }else{  
+         }else{  //NO hay errores
         Product.update({ 
             product_name: req.body.prodName,
             description: req.body.description,

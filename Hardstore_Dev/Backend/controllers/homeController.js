@@ -19,7 +19,6 @@ const controller = {
         Promise.all([ourSelection, mostSold, offers])
             .then(([ourSelection, mostSold, offers])=>{
                 for (product of ourSelection){
-                    //console.log(product)
                     product["price_dto"] = product.price * (100-product.discount)/100
                     ourSelectionOutput.push(product)
                 }

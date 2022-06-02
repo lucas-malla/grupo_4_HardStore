@@ -42,7 +42,6 @@ const controller = {
         Promise.all([products, quantity])
             .then((response)=>{
                 if(response[1].length==0){  //no hay productos!
-                    console.log("si no hay productos en el carrito...") //proximamente mejoramso esta logica
                     response[0] = []
                     res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom, total}) //fix for empty carts 
                 }else{
@@ -54,7 +53,6 @@ const controller = {
                         product['quantity']= cart_row.quantity
                         total += product["price_dto"]
                     }
-                    console.log(response[0])
                     res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom, total})
                 } 
             })
@@ -62,15 +60,15 @@ const controller = {
     cartUnlogged: (req, res) => {
         let total = 0
         let products = []
-        if(req.cookies.cartUnlogged){ // presece of products in unlogged cart
+        if(req.cookies.cartUnlogged){ // presece of products in unlogged cart (cookie)
             let productsID = []
             for (product of req.cookies.cartUnlogged){
-                productsID.push(product.prodID)
+                productsID.push(product.prodID) //from cookie
             }
             Product.findAll({
                 raw: true, 
                 where: {
-                     id : productsID
+                     id : productsID  //array whith products IDs
                     },
                     include: [{association: 'images'}]
                 })
@@ -139,7 +137,7 @@ const controller = {
             }else{
                 cookieData = [{prodID: req.params.id, quantity: "1"}]//first product
             }
-            res.cookie('cartUnlogged', cookieData, {maxAge:30*24*60*60}) //unlogged cart will save for 30days
+            res.cookie('cartUnlogged', cookieData, {maxAge:30*24*60*60*1000}) //unlogged cart will save for 30days
             res.redirect('/')
         }
     },
@@ -149,14 +147,14 @@ const controller = {
                 product_id : req.params.id,
                 user_id: req.session.userID
             }})
-            .then(response=>{
+            .then(()=>{
                 res.redirect(`/user/${req.session.userID}/Cart`)
             })
         }else{                          //user is unLogged
-            let localData = req.cookies.cartUnlogged.filter((product)=>{
+            let cookieData = req.cookies.cartUnlogged.filter((product)=>{
                 return product.prodID != req.params.id
             })
-            res.cookie('cartUnlogged',localData, {maxAge:30*24*60*60}) //unlogged cart will save for 30days)
+            res.cookie('cartUnlogged', cookieData, {maxAge:30*24*60*60*1000}) //unlogged cart will save for 30days)
             res.redirect(`/user//Cart`)
         }
     }
