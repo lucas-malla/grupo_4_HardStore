@@ -69,10 +69,10 @@ header{
 }
 .btn-apply-coupon{
     background-color: #ffffff;
-    color: rgb(115, 190, 1);
+    color: #2be299;
     font-size: 19px;
     font-weight: 700;
-    border: solid 0.5px rgb(115, 190, 1);
+    border: solid 0.5px #2be299;
     border-radius: 5px;
     box-shadow: 0.5px 0.5px rgba(7, 7, 12, 0.5) ;
     padding: 0.5rem 1rem;
@@ -119,7 +119,7 @@ dl {
     text-align: right;
   }
 .btn-buy{
-    background:rgb(115, 190, 1);
+    background:#2be299;
     box-shadow: 0 2px 2px rgb(17, 17, 34);
     color:#ffffff;
     font-size: 24px;
@@ -129,6 +129,9 @@ dl {
     width: 82%;
     align-self: center;
     border-radius: 5px;
+}
+.btn-buy:hover{
+    background:#35fead;
 }
 .add-product{
     grid-template-areas: add-product;

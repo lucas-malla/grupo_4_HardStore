@@ -7,45 +7,52 @@
       <!-- iconos -->
       <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
       <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
       <header>
         <%- include("./partials/header.ejs") %>
       </header>
       <main>
-        <header class="login">
-          <h2>Bienvenido a HARDSTORE</h2>
-          <h5>Inicia sesión y aprovecha los </h5>
-          <h5>descuentos que tenemos para vos!</h5>
-        </header>
-        <form id="formLogin" action="/login" method="POST">
-          <input id="userName" type="name" placeholder="Usuario" name="userName" 
-          <% if (locals.old){ %>
-            value=<%= old.userName %>
-            <% } %>
-          > 
-          <p class="nameError errores"></p>
-          <input id="password" type="contraseña" value=""placeholder="Contraseña" name="password">
-          <p class="passwordError errores"></p>
-          <div class="error">
-            <% if(locals.errors){ %>
-              <% for (error of errors){ %>
-                <p><%= error.msg %></p>
-            <% }} %>
+        <div class="container-md mt-2">
+          <div class="card">
+            <div>
+              <h2 class="text-center">Bienvenido a HARDSTORE</h2>
+              <h5 class="text-center">Inicia sesión y aprovecha los </h5>
+              <h5 class="text-center">descuentos que tenemos para vos!</h5>
+            </div>
+            <form id="formLogin" action="/login" method="POST">
+              <input id="userName" type="name" placeholder="Usuario" name="userName" 
+              <% if (locals.old){ %>
+                value=<%= old.userName %>
+                <% } %>
+              > 
+              <p class="nameError errores"></p>
+              <input id="password" type="contraseña" value=""placeholder="Contraseña" name="password">
+              <p class="passwordError errores"></p>
+              <div class="error">
+                <% if(locals.errors){ %>
+                  <% for (error of errors){ %>
+                    <p><%= error.msg %></p>
+                <% }} %>
+              </div>
+              <p><label><input class="rememberCheck" type="checkbox" name="remember" value="true"> Recordarme </label></p>
+              <a href="#">Recuperar contraseña</a>
+              <button type="submit" class="mensaje">LOGIN</button>
+            </form>
+            <hr>                     
+            <p>Ingresar con:</p>
+            <div class= icons>
+              <i class='bx bxl-instagram'></i>
+              <span class="iconify-inline" data-icon="logos:google-gmail"></span>
+              <i class='bx bxl-facebook-circle' ></i>
+              </div>
+            <p>¿Todavía no tenes cuenta?</p>
+            <a href="/registrarme">Hace click acá</a>
           </div>
-          <p><label><input class="rememberCheck" type="checkbox" name="remember" value="true"> Recordarme </label></p>
-          <a href="#">Recuperar contraseña</a>
-          <button type="submit" class="mensaje">LOGIN</button>
-        </form>
-        <hr>                     
-        <p>Ingresar con:</p>
-        <div class= icons>
-          <i class='bx bxl-instagram'></i>
-          <span class="iconify-inline" data-icon="logos:google-gmail"></span>
-          <i class='bx bxl-facebook-circle' ></i>
-          </div>
-        <p>¿Todavía no tenes cuenta?</p>
-        <a href="/registrarme">Hace click acá</a>
+        </div>
+      <br>
+      <br>
       </main>
       <footer>
         <%- include("./partials/footer.ejs") %>
