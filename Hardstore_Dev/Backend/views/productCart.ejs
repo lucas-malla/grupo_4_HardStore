@@ -3,6 +3,7 @@
 <head>
     <%- include("./partials/head.ejs") %>
     <link href="/CSS/productCart.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
      <header>
@@ -11,8 +12,47 @@
     <div class="grid-container">
         <div class="table-cart">
             <h2>MI CARRITO</h2>
-            <% for (product of itemCart){ %>
-            <div class="item">
+            <table class="table caption-top">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Promoción</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <% for (product of itemCart){ %>
+                            <a href="/products/<%= product['product.id'] %>">
+                                <tr>
+                                    <th class="row"><div class="img"><img class="medida" src="/images/products/<%=product['product.images.image_name'] %>" ></div></th>
+                                    <td>
+                                        <%= product['product.product_name'] %>
+                                    </td>
+                                    <td >
+                                        <del> <%= product['product.price'] %></del>
+                                    </td>
+                                    <td><%= product['product.price'] * (100-product['product.discount'])/100 %> </td>
+                                    <td>
+                                        <div class="quantity"> <div class="quantity-buttons">
+                                            <input type="button" value="-" class="minus"><input type="tel" class="Qty-value" value="<%=product.quantity%>" ><input type="button" value="+" class="plus"></div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <button type="button" class= "btn btn-danger btn-xs">
+                                            <a href="/removeFromCart/<%= product['product.id'] %>" style="text-decoration:none;">
+                                                <i class="fas fa-times"></i>
+                                            </a>
+                                        </button>
+                                    </td>
+                                    </tr>
+                                    <a>
+                                        <% } %>
+                                    </tbody>
+                                </table>
+            <!-- <div class="item">
                 <img src="/images/products/<%=product['product.images.image_name'] %>" alt="Product Name" class="product-image">
                 <ul class="item-order">
                     <li><p class="name"><%= product['product.product_name'] %></p></li>
@@ -33,8 +73,7 @@
                         </div>
                     </li>
                 </ul>
-            </div>
-            <% } %>
+            </div> -->
         </div>
         <div class="pago">
             <div class="cupon">

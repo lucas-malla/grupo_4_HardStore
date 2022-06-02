@@ -11,7 +11,7 @@ const productValidations ={
     body('dto').isNumeric().withMessage('Ingrese un valor numerico'),
     body('stock').isNumeric().withMessage('Ingrese un valor numerico').toInt(),
     body('description').notEmpty().withMessage('Ingrese una descripción').bail()
-    .isLength({ min: 20}).withMessage('La decripción es muy corta')
+    .isLength({ min: 20}).withMessage('La decripcion mínimo 20 caracteres')
 
 
 ],
@@ -32,13 +32,7 @@ const productValidations ={
     body('stock')
         .isNumeric().withMessage('Ingrese el Stock').toInt(), 
     body('description')
-        .notEmpty().isLength({ min: 20}).withMessage('La decripcion es corta'),
-    body('mostSold')
-        .notEmpty().withMessage('Selecciona una Caracteristica'),
-    body('offer')
-        .notEmpty().withMessage('Selecciona una Caracteristica'),
-    body('selection')
-        .notEmpty().withMessage('Selecciona una Caracteristica') 
+        .notEmpty().isLength({ min: 20}).withMessage('La decripcion mínimo 20 caracteres') 
   ]
 }  
 

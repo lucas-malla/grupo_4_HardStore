@@ -32,6 +32,15 @@ header{
     grid-template-areas: cart;
     width: 100%;
 }
+.row .img{
+    width: 130px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.row .img .medida{
+    max-height: 110px;
+    max-width: 140px;
+}
 .pago{
     background-color: #ffffff;
     display: flex;
