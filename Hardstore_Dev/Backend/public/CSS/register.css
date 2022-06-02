@@ -48,15 +48,17 @@ main input{
   margin: 8px;
   text-align: center;
   font-size: 16px;
+  border-radius: 5px;
+  border-color: rgb(206, 206, 206);
 }
 main button{
   margin: 15px;
   margin-top: 10px;
-  padding: 5px 20px;
-  background-color: rgb(115, 190, 1);
+  padding: 8px 20px;
+  background-color: #2be299;
   font-weight: bold;
   color: white;
-  border: solid black 1px;
+  border: none;
   border-radius: 5px;
   font-size: 18px;
 }
