@@ -3,71 +3,118 @@
 <head>
     <title>Admin - Product Manager</title>
     <%- include("../partials/head.ejs") %>
-    <link href="/CSS/admin/prodModification.css" rel="stylesheet">
+    <link href="/CSS/admin/prodCreation.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <header>
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        <h1>Modificacion de datos de producto</h1>
-        <div class="data">
-            <div class="newData">
-                
-                <form id="formModification" action="/admin/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
-                   <ul class='errores'></ul>
-                    <h3>Producto ID: <%= oneProduct.product_id %></h3>
-                    <label for="categoria">Categoria de Producto</label>
-                    <select name="categoria" id="categoria" form="categoria">
-                      <% for (category of allCategories){ %>
-                            <option value="<%= category.id %>">
-                                <%= oneProduct.category_id === category.id ? 'selected' : null %>>
-                                <%= category.category_name %>
-                            </option> 
-                            <% } %>
-                    </select>
-                    <label>Nombre de Producto</label>
-                    <input id="inputName" type="text" name="prodName" placeholder ='Nombre'> 
-                    <p class="error"></p>
-                    <label>Marca</label>
-                    <input id="inputBrand" type="text" name="brand" value="<%= oneProduct.brand%>" placeholder ='Marca'>
-                    <p class="error"></p>
-                    <label>Modelo</label>
-                    <input id="inputModel" type="text" name="model" value="<%= oneProduct.model%>" placeholder ='Modelo'>
-                    <h1 class="error"></h1>
-                    <label>Color</label>
-                    <input type="text" name="color"  id='prodColor' placeholder="Color" placeholder ='Color'>
-                    <p class="error"></p>
-                    <label>Precio</label>
-                    <input id="inputPrice" type="text" name="price" value=<%= oneProduct.price%> placeholder ='Precio'>
-                    <p class="error"></p>
-                    <label>Descuento</label>
-                    <input id="inputDto" type="text" name="dto" value=<%= oneProduct.discount%> placeholder ='Descuento'>
-                    <p class="error"></p>
-                    <label>Stock</label>
-                    <p class="error"></p>
-                    <input id="inputStock" type="number" name="stock"  placeholder ='stock' value="0">
-                    <label>Descripción</label>
-                    <textarea id="inputDescrip" name="description" placeholder="Descripción"></textarea>
-                    <p>Caracteristicas:</p>
-                    <div class="caracteristicas">
-                        <label><input type="checkbox" name="selection" value="1"> Nuestra seleccion </label>
-                        <label><input type="checkbox" name="selection" value="2"> Mas vendido </label>
-                        <label><input type="checkbox" name="selection" value="3"> Ofertas </label>
+        <h1>Actualizá el producto</h1>
+        <div class="container-sm">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <form class="formCreation row g-3" action="/admin/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+
+                    <div class="col-md-6 position-relative input-control">
+                        <label class="form-label">Nombre de Producto</label>
+                        <input type="text" name="prodName" class="form-control prodName" value="<%= oneProduct.product_name%>" placeholder=" Nombre de Producto">
+                        <p class="error"></p>
                     </div>
-                    <p>Imagen del producto</p>
-                    <input id="formFile" type="file" name="prodImg">
-                    <div class="buttons">
-                        <button type="reset">Reset</button>
-                        <button type="submit">Guardar</button>
+                    <div class="col-md-6 position-relative input-control">
+                        <label for="categoria" class="form-label">Categoria de Producto</label>
+                        <select name="category" class="form-select" id="categoria">
+                            <% for (category of allCategories){ %>
+                                <option value="<%= category.id %>">
+                                    <%= oneProduct.category_id === category.id ? 'selected' : null %>
+                                    <%= category.category_name %>
+                                </option> 
+                            </option> 
+                                </option> 
+                                <% } %>
+                        </select>
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Marca</label>
+                        <input type="text" name="brand" class="form-control" id="prodBrand" value="<%= oneProduct.brand%>" placeholder="Marca">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Modelo</label>
+                        <input type="text" name="model" class="form-control" id="prodModel" value="<%= oneProduct.model%>" placeholder="Modelo">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Color</label>
+                        <input type="text" name="color" class="form-control" id='prodColor' value=<%= oneProduct.color%> placeholder="Color">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Precio $</label>
+                        <input type="number" name="price" class="form-control" id="prodPrice" value=<%= oneProduct.price%> placeholder="$">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Descuento %</label>
+                        <input type="number" name="dto" class="form-control" id="prodDesc" value=<%= oneProduct.discount%> placeholder="%">
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-md-4 position-relative input-control">
+                        <label class="form-label">Stock</label>
+                        <input type="number" name="stock" class="form-control" id="prodStock" placeholder="stock" value=<%= oneProduct.stock%>
+                            aria-valuemin="0">
+                        <p class="error"></p>
+                    </div>
+                    <div class="mb-3 input-control">
+                        <label class="form-label">Descripcion</label>
+                        <textarea name="description" class="form-control" id="prodDescrip" placeholder="Descripción" rows="2"><%= oneProduct.description%></textarea>
+                        <p class="error"></p>
+                    </div>
+                    <div class="col-auto">
+                        <p class="form-label">Caracteristicas:</p>
+                        <div class="form-control">
+
+                            <label><input type="checkbox" name="selection" value="1" <%= oneProduct.selection == 1 ? 'checked': null %>> Mas vendido </label>
+                            <label><input type="checkbox" name="selection" value="2" <%= oneProduct.selection == 2 ? 'checked': null %>> Nuestra seleccion </label>
+                            <label><input type="checkbox" name="selection" value="3"<%= oneProduct.selection == 3 ? 'checked': null %>> Ofertas </label>
+                        </div>
+                    </div>
+                    <div class="mb-3 input-control" style="margin-bottom: 10px;">
+                        <label for="formFile" class="form-label">Imagen del producto</label>
+                        <input class="form-control" type="file" id="formFile" name="prodImg">
+                        <p class="error"></p>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="col-4" style="margin: 0 auto;">
+                        <button class="btn btn-secondary" type="reset">Cancelar</button>
+                        <button class="btn btn-primary" type="submit">Modificar producto</button>
                     </div>
                 </form>
+                <br />
+                <div class="error">
+                    <% if (locals.error){ %>
+                        <p>
+                            <%= error %>
+                        </p>
+                        <% } %>
+                            <% if(locals.errors){ %>
+                                <% for (error of errors){ %>
+                                    <p>
+                                        <%= error.msg %>
+                                    </p>
+                                    <% }} %>
+                </div>
+
                 <% if (locals.mesage) { %>
                     <h4 class="mesage">
                         <%= mesage %>
                     </h4>
                     <% } %>
-    </div>
+            </div>
+
+        </div>
     </main>
     <footer>
         <%- include("./partials/footer.ejs") %>

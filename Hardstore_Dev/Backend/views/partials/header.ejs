@@ -23,7 +23,7 @@
     </div>
     <div class="desktop">
         <div class="structure">
-            <a href="/"><img class="logo" src="/images/header/logo.png" alt="Logo1"></a>
+            <a href="/"><img class="logo" src="/images/header/recurso.png" alt="Logo1"></a>
             <div class="central_head">
                 <div class="head_up">
                     <a class="yellow" href="/"><h1>HARDSTORE</h1></a>
@@ -31,19 +31,27 @@
                     <div class="head_down">
                         <div class="user_menu">
                             <% if(locals.userLocals){ %>
-                                <a class="yellow" href="/user/<%=locals.userLocals.id%>">
-                                    <p class="p"> <%=locals.userLocals.username %> </p>
-                                </a>
-                                <a class="yellow" href="/logout"><p class="p">Logout</p>
-                                <i class="fas fa-sign-in-alt"></i>
-                                </a>
+                                <div  class="boxi">
+                                    <a class="yellow" href="/user/<%=locals.userLocals.id%>">
+                                        <p class="p"> <%=locals.userLocals.username %> </p>
+                                    </a>
+                                </div>
+                                <div class="boxi">
+                                    <a class="yellow" href="/logout"><p class="p">Logout</p>
+                                    <i class="fas fa-sign-in-alt"></i>
+                                    </a>
+                                </div>
                                 <% }else{ %>
-                                    <a class="yellow" href="/register"><p class="p">Registrarme</p>
-                                        <i class="far fa-user"></i>
-                                    </a>
-                                    <a class="yellow" href="/login"><p class="p">Login</p>
-                                        <i class="fas fa-sign-in-alt"></i>
-                                    </a>
+                                    <div class="boxi">
+                                        <a class="yellow" href="/register"><p class="p">Registrarme</p>
+                                            <i class="far fa-user"></i>
+                                        </a>
+                                    </div>
+                                    <div class="boxi">
+                                        <a class="yellow" href="/login"><p class="p">Login</p>
+                                            <i class="fas fa-sign-in-alt"></i>
+                                        </a>
+                                    </div>
                                 <% } %>
                         </div>
                         <a class="yellow" class="carrito" href="/user/<%=locals.userLocals.id %>/Cart"><i class="fas fa-shopping-cart"></i></a>

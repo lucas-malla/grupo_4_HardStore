@@ -88,16 +88,22 @@ main .filtro{
     justify-content: center;
     padding: 12px 18px;
   }
-.action-button.edit.crear{
-    background-color: rgb(24, 48, 231);
-}
-.action-button.edit {
-    background-color: rgb(231, 231, 24);
+  .action-button.edit.crear{
+    background-color: #43e3a3;
+    
+    
+    
+  }
+  .action-button.edit {
+    background-color: #2e6ed5;
     display: inline;
     padding: 12px 16px;
     margin-top: 15px;
-}
-.action-button.delete {
+  }
+  .action-button.edit:hover{
+      background-color: #35fead;
+  }
+  .action-button.delete {
     background-color: rgb(248, 69, 37);
     margin-top: 15px;
 }
