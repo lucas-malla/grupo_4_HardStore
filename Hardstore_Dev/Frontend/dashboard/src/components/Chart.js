@@ -46,7 +46,6 @@ function Chart(){
         }
     }
     return(
-       
         <main>
             <div className="card shadow mb-12">
                     <div className="card header py-3">
@@ -83,7 +82,3 @@ function Chart(){
 }
 
 export default Chart;
-
-
-
-

@@ -15,7 +15,7 @@ const services = {
                         userName: user.username,
                         userEmail: user.email
                     }
-                    res.cookie('userCookie', cookieData, {maxAge:60000})
+                    res.cookie('userCookie', cookieData, {maxAge:60000}) //cookie creator
                 }
                 services.addLocalProductsToCart(req, res)
                     .then(()=>{
@@ -27,14 +27,14 @@ const services = {
                     })
             })
     },
-    addLocalProductsToCart: async function (req, res){
-        if(req.cookies.cartUnlogged){
+    addLocalProductsToCart: async function (req, res){ //info rearranger
+        if(req.cookies.cartUnlogged){      // if presence of cookie of unlogged Cart...
             let data = []
             for (product of req.cookies.cartUnlogged){
-                data.push({
+                data.push({                 //Rearange data to store it directly to DB
                     product_id: product.prodID,
                     user_id: req.session.userID,
-                    quantity: product.quantity,
+                    quantity: product.quantity
                 })
             }
             services.addProductsToCart(req, data)
@@ -47,7 +47,7 @@ const services = {
             where: {user_id : req.session.userID}
             })
             .then((productsDB)=>{
-                for (product of data){
+                for (product of data){          //###
                     let match = productsDB.find(productDB=> productDB.product_id == product.product_id)
                     if(match){                  //el usuario posee ese item en el carrito => sumo una unidad
                         Cart.update({

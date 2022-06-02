@@ -7,14 +7,10 @@ function adminMiddleware(req, res, next){
         }})
         .then((user)=>{
             if(req.session.userID == user.dataValues.id){
-                console.log("#####################")
                 console.log("Admin acsess: GRANTED")
-                console.log("#####################")
                 return next();
             }else{
-                console.log("###################################################")
-                console.log("Not admin user tried to enter to admin/controlpanel")
-                console.log("###################################################")
+                console.log("Not an admin user tried to enter to admin/controlpanel")
                 res.redirect('/')
             }
         })
