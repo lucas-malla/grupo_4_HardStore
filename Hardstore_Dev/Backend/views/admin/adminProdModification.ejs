@@ -14,7 +14,7 @@
         <h1>Actualizá el producto</h1>
         <div class="container-sm">
             <div style="max-width: 800px; margin: 0 auto;">
-                <form class="formCreation row g-3" action="/admin/products/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form class="formCreation row g-3" action="/admin/products/<%= oneProduct.id %>/edit?_method=PUT" method="POST" enctype="multipart/form-data">
 
                     <div class="col-md-6 position-relative input-control">
                         <label class="form-label">Nombre de Producto</label>

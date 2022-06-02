@@ -1,46 +1,45 @@
-const { Console } = require('console');
-const fs = require('fs');
-const path = require('path')
 const {Cart, User, Product} =  require('../database/models');
 const { randomProducts } = require('../services/productServices')
 
 
 const controller = {
     cartLogged: (req, res) => {
-        let total = 0
-        let products = User.findAll({
-            raw: true, 
-            where: {
-                 id : req.params.id
-                },
-                include: [{association: 'product', include: [{association: 'images' }] }]
-        })
-        let quantity = Cart.findAll({
-            raw: true, 
-            where: {
-                 user_id : req.params.id
-                }
-        })
-        Promise.all([products, quantity])
-            .then((response)=>{
-                if(response[1].length==0){  //no hay productos!
-                    response[0] = []
-                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom, total}) //fix for empty carts 
-                }else{
-                    for(product of response[0]){
-                        let cart_row = response[1].find(element => 
-                            element.product_id == product['product.id']
-                        )
-                        product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
-                        product['quantity']= cart_row.quantity
-                        total += product["price_dto"]
-                    }
-                    res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom, total})
-                } 
+        randomProducts()
+            .then((showRandom)=>{
+                let total = 0
+                let products = User.findAll({
+                    raw: true, 
+                    where: {
+                         id : req.params.id
+                        },
+                        include: [{association: 'product', include: [{association: 'images' }] }]
+                })
+                let quantity = Cart.findAll({
+                    raw: true, 
+                    where: {
+                         user_id : req.params.id
+                        }
+                })
+                Promise.all([products, quantity])
+                    .then((response)=>{
+                        if(response[1].length==0){  //no hay productos!
+                            response[0] = []
+                            res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom, total}) //fix for empty carts 
+                        }else{
+                            for(product of response[0]){
+                                let cart_row = response[1].find(element => 
+                                    element.product_id == product['product.id']
+                                )
+                                product["price_dto"] = product['product.price'] * (100-product['product.discount'])/100
+                                product['quantity']= cart_row.quantity
+                                total += product["price_dto"]
+                            }
+                            res.render("productCart", { 'itemCart':response[0], 'showRandom': showRandom, total})
+                        } 
+                    })
             })
     },  
     cartUnlogged: (req, res) => {
-        showRandom = []
         let total = 0
         let products = []
         randomProducts()
@@ -76,7 +75,6 @@ const controller = {
                                 total += product['price_dto']
                                 products.push(product)
                             }
-                            console.log(products)
                             res.render("productCart", { 'itemCart':products, 'showRandom': showRandom, total})
                         })
                 }else{ //unLogged Cart is empty

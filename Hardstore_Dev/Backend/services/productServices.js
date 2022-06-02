@@ -13,6 +13,7 @@ const  productServices = {
                 let aleatorio = products[Math.floor(Math.random() * products.length)]
                 resultado.push(aleatorio)
                 }
+                //console.log(resultado)
                 return (resultado)
             })
         )

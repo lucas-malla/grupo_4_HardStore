@@ -81,7 +81,7 @@ const controller = {
             discount: req.body.dto
         },
         {
-            where: { product_id: req.params.id }
+            where: { id: req.params.id }
         })
         .then(() => {
             if (req.file != undefined) { //Verifica si se cargó alguna imagen para actualizar en campo image_name
