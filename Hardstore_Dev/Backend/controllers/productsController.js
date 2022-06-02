@@ -46,7 +46,8 @@ const controller = {
     else {
         db.Product.findAll ({raw:true, include: [{ association: 'images', attributes: ['image_name'] }]})
             .then(product =>{
-            res.render('products_galery', {product:product})
+                console.log(product)
+                res.render('products_galery', {product:product})
         })
         }
     },

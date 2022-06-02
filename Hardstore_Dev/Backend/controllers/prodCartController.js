@@ -2,26 +2,8 @@ const { Console } = require('console');
 const fs = require('fs');
 const path = require('path')
 const {Cart, User, Product} =  require('../database/models');
+const { randomProducts } = require('../services/productServices')
 
-
-//MIRAR ESTO------------
-//Base de Datos de productos
-dataBasePath = path.join(__dirname, '../data_base/productos.json')
-data_base = fs.readFileSync(dataBasePath)
-data_base = JSON.parse(data_base)
-
-let itemCart = data_base.filter(producto => producto.prod_id <= 7)
-let random = function(productos){
-    let resultado = [];
-    for(let i = 1; i <= 3; i++ ){
-    let aleatorio = productos[Math.floor(Math.random() * productos.length)]
-    resultado.push(aleatorio)
-    }
-    console.log(resultado)
-    return resultado
-}
-let showRandom = [] //random(random);   ME tiraba error en la view gaby , milldisss
-//MIRAR ESTO------------
 
 const controller = {
     cartLogged: (req, res) => {
@@ -58,44 +40,49 @@ const controller = {
             })
     },  
     cartUnlogged: (req, res) => {
+        showRandom = []
         let total = 0
         let products = []
-        if(req.cookies.cartUnlogged){ // presece of products in unlogged cart (cookie)
-            let productsID = []
-            for (product of req.cookies.cartUnlogged){
-                productsID.push(product.prodID) //from cookie
-            }
-            Product.findAll({
-                raw: true, 
-                where: {
-                     id : productsID  //array whith products IDs
-                    },
-                    include: [{association: 'images'}]
-                })
-                .then(cart=>{
-                    for(product of cart){
-                        let cart_row = req.cookies.cartUnlogged.find(element => 
-                            element.prodID == product.id)
-                        product = { //Rearrange data to work correctly with the view
-                            'product.id': product.id,
-                            'product.brand': product.brand,
-                            'product.model': product.model,
-                            'product.price': product.price,
-                            'product.discount': product.discount,
-                            'price_dto': product.price * (100-product.discount)/100,
-                            'product.stock': product.stock,
-                            'product.product_name': product.product_name,
-                            'product.images.image_name': product['images.image_name'],
-                            'quantity': cart_row.quantity
-                        }
-                        total += product['price_dto']
-                        products.push(product)
+        randomProducts()
+            .then((showRandom)=>{
+                if(req.cookies.cartUnlogged){ // presece of products in unlogged cart (cookie)
+                    let productsID = []
+                    for (product of req.cookies.cartUnlogged){
+                        productsID.push(product.prodID) //from cookie
                     }
+                    Product.findAll({
+                        raw: true, 
+                        where: {
+                             id : productsID  //array whith products IDs
+                            },
+                            include: [{association: 'images'}]
+                        })
+                        .then(cart=>{
+                            for(product of cart){
+                                let cart_row = req.cookies.cartUnlogged.find(element => 
+                                    element.prodID == product.id)
+                                product = { //Rearrange data to work correctly with the view
+                                    'product.id': product.id,
+                                    'product.brand': product.brand,
+                                    'product.model': product.model,
+                                    'product.price': product.price,
+                                    'product.discount': product.discount,
+                                    'price_dto': product.price * (100-product.discount)/100,
+                                    'product.stock': product.stock,
+                                    'product.product_name': product.product_name,
+                                    'product.images.image_name': product['images.image_name'],
+                                    'quantity': cart_row.quantity
+                                }
+                                total += product['price_dto']
+                                products.push(product)
+                            }
+                            console.log(products)
+                            res.render("productCart", { 'itemCart':products, 'showRandom': showRandom, total})
+                        })
+                }else{ //unLogged Cart is empty
                     res.render("productCart", { 'itemCart':products, 'showRandom': showRandom, total})
-                })
-        }else{ //unLogged Cart is empty
-            res.render("productCart", { 'itemCart':products, 'showRandom': showRandom, total})
-        }
+                }
+            })
     },
     addToCart:(req, res)=>{
         if(req.session.userID){                 //user logged

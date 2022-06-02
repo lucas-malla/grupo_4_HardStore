@@ -231,7 +231,6 @@ dl {
 }
 footer{
     grid-template-areas: footer;
-    background-color: #c4c2c2;
 }
 @media (min-width: 992px){
     .grid-container{
@@ -250,6 +249,7 @@ footer{
         max-width: 12rem;
         padding-top: 10px;
         font-weight: 500;
+        margin-left: 25px;
     }
     .item .quantity .quantity-buttons{
         transform: translateY(26px);
@@ -276,10 +276,11 @@ footer{
         font-weight: 550;
     }
     .item .delete button[type="button"]{
-        font-size: 14px;
+        font-size: 24px;
     }
     .item .delete .fas{
         color: rgba(196, 28, 42, 0.774)
+
     }
     .pago{
     justify-content: flex-start;

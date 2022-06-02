@@ -13,7 +13,9 @@
             <h2>MI CARRITO</h2>
             <% for (product of itemCart){ %>
             <div class="item">
-                <img src="/images/products/<%=product['product.images.image_name'] %>" alt="Product Name" class="product-image">
+                <a href="/products/<%= product['product.id'] %>" %>>
+                    <img src="/images/products/<%=product['product.images.image_name'] %>" alt="Product Name" class="product-image">
+                </a>
                 <ul class="item-order">
                     <li><p class="name"><%= product['product.product_name'] %></p></li>
                    <li><div class="quantity"> <div class="quantity-buttons">
@@ -58,25 +60,25 @@
             </div>
         </div>
         <div class="add-product">
-            <h2>Personas que compraron este producto también compraron</h2>
+            <h2>Otros productos que podrían interesarte: </h2>
             <div class="add-product-table">
-                <% showRandom.forEach(function(product){%>
-                <div class="add-item">
-                    <img src=/images/products/<%= product.prod_img %> alt="<%=product.prod_name%>" class="product-add-image">
+                <% for (product of showRandom){ %>
+                    <div class="add-item">
+                        <a href="/products/<%=product.id%>" %>>
+                            <img src=/images/products/<%= product['images.image_name'] %> alt="<%=product.prod_name%>" class="product-add-image">
+                        </a>
                         <ul class="details">
-                        <li><p><%= product.prod_name %></p></li>
-                        <li><p class="price"><%= product.price %></p></li>
+                        <li><p><%= product.brand + " " + product.model %></p></li>
+                        <li><p class="price">$ <%= product.price %></p></li>
                         <li><button class="btn btn-primary btn-addCart">Agregar a carrito</button></li>
                         </ul>
-                </div>
-                <% }) %>
+                    </div>
+                <% } %>
             </div>
         </div>
-
-    
     </div>
     <footer class="footer">
-            <%- include("./partials/footer.ejs") %>
+        <%- include("./partials/footer.ejs") %>
     </footer>
 </body>
 </html>

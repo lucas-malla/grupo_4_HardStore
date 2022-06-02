@@ -18,15 +18,8 @@
         <%- include("./partials/header.ejs") %>
     </header>
     <main>
-        <div class="filt-ord">
-            <p class="filtro-desplegable">Filtrar: <i class="fas fa-sort-down"></i></p>
-            <p class="ordenar-por">Ordenar por: <i class="fas fa-sort-down"></i></p>
-        </div>
-        <hr>
+
         <div class="filt-prod">
-            <div class="filtro">
-                <p>Soy un filtro de productos</p>
-            </div>
             <div class="productos">
                 <div class="producto">
                     
@@ -38,8 +31,8 @@
                                 <h4 class="product_name"><%= product.product_name %></h4>
                                 <div class="prices">
                                     <p class="price">$<%= product.price %></p>
-                                    <p class="price_dto">$<%= product.price_dto %></p>
-                                    <p class="dto"><%= product.dto %>%OFF</p>
+                                    <p class="price_dto">$<%= product.price * (100-product.discount)/100 %></p>
+                                    <p class="dto"><%= product.discount %>%OFF</p>
                                 </div>
                                 <button><p>Agregar al carrito</p></button>
                             </div>
